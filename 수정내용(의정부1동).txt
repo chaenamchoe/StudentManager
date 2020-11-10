@@ -1,0 +1,10 @@
+SP_GET_COMPANSATION 프로시져에서 
+
+-- if (calc_kind = 1) then
+--  id = parent_lecture_id;
+
+위의 라인 코멘트부분을 수정.
+
+강사가 바뀌었을 경우 calc_kind 필드에 값이 1로 저장은 되나
+parent_lecture_id 필드에 값이 없어서 감면보조계산이 안되는 것 수정할 것.
+강좌관리에서 강사변경을 할 때 parent_lecture_id 값이 저장되도록 해야 함. 

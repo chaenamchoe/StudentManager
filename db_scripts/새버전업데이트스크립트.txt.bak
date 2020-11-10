@@ -1,0 +1,25 @@
+﻿1. 강좌자료에 강사수당 퍼센트가 없는 경우
+UPDATE LECTURE_ACTIVE SET TEACHER_PERCENT = 70;
+
+2. 강좌에 이강관련 정보를 저장하기 위한 초기설정.
+update registed_lecture set reg_kind = 0; //등록구분을 등록/이강으로 표시하기위한 작업
+update lecture_active set calc_kind = 0, month1_days = 0, month2_days = 0, month3_days = 0;
+
+3. 강좌등록자료에 해당 필드값 업데이트.
+update REGISTED_LECTURE set reg_month = 1, reg_month2 = 1, reg_month3 = 1;
+update REGISTED_LECTURE set out_month = 0, out_month2 = 0, out_month3 = 0;
+update REGISTED_LECTURE set out_month = 1, out_month2 = 1, out_month3 = 1 where pay_kind = 3;
+update REGISTED_LECTURE set out_month = 0, out_month2 = 1, out_month3 = 1 where pay_kind = 2;
+update REGISTED_LECTURE set out_month = 0, out_month2 = 0, out_month3 = 1 where pay_kind = 1;
+
+update registed_lecture set reg_month = 0 where out_month = 1;
+update registed_lecture set reg_month2 = 0 where out_month2 = 1;
+update registed_lecture set reg_month3 = 0 where out_month3 = 1;
+
+/* 정렬필드추가  */
+ALTER TABLE LECTURE_ACTIVE ADD L_IDX SMALLINT;
+
+
+
+4. 은행별 코드값을 등록할 것.
+bank_code_insert.sql 파일을 실행...

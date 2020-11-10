@@ -1,0 +1,423 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{6A445490-2407-4C5F-BE4A-A25EC49C2CE0}</ProjectGuid>
+			<ProjectVersion>12.0</ProjectVersion>
+			<MainSource>StudentManager.dpr</MainSource>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_UsePackage>vclx;vcl;vclimg;dbrtl;Rave77VCL;bdertl;rtl;vclactnband;vcldb;vcldbx;vcltouch;xmlrtl;dsnap;dsnapcon;TeeUI;TeeDB;Tee;vclib;ibxpress;adortl;IndyCore;IndySystem;IndyProtocols;inet;intrawebdb_100_140;Intraweb_100_140;VclSmp;vclie;websnap;webdsnap;inetdb;inetdbbde;inetdbxpress;soaprtl;vclribbon;dbexpress;DbxCommonDriver;DataSnapIndy10ServerTransport;DataSnapProviderClient;DbxClientDriver;DBXInterBaseDriver;DBXMySQLDriver;dbxcds;DBXFirebirdDriver;DBXSybaseASEDriver;DBXSybaseASADriver;DBXOracleDriver;DBXMSSQLDriver;DBXInformixDriver;DBXDb2Driver;FlashPackage;TVidGrab;wmp;ActiveSoundSuite;DataSnapServer;skinpackd2010;cad;FlexD2010;PKIECtrl14;PKIEDB14;CPortLibD2010;DropMasterVcl;fs14;fsDB14;fsBDE14;fsADO14;fsIBX14;fsTee14;frx14;frxDB14;frxADO14;frxBDE14;frxIBX14;frxDBX14;frxTee14;frxe14;MS_WMI;gtRtlD14;gtDocEngD14;gtFRExpD14;adgrm2010;vclSQLMemTabled14;SFSPackd14;PackageKDTele;Chilkat;QExport4RT_D14;QImport3RT_D14;AbbreviaVCL;MIDIComp;TSlider;vbFaxs;nxpClient;nxpGate;nxpHost;dacvcl140;dac140;crcontrols140;unidacvcl140;unidac140;AnyDAC_PhysSQLite_D14;AnyDAC_Phys_D14;AnyDAC_ComI_D14;AnyDAC_PhysPg_D14;AnyDAC_PhysIB_D14;AnyDAC_PhysTDBX_D14;AnyDAC_PhysADS_D14;AnyDAC_PhysASA_D14;AnyDAC_PhysODBC_D14;AnyDAC_PhysOracle_D14;AnyDAC_PhysMySQL_D14;AnyDAC_PhysDb2_D14;AnyDAC_PhysMSSQL_D14;AnyDAC_PhysMSAcc_D14;AnyDAC_GUIxForms_D14;AnyDAC_Comp_D14;SynEdit_R2010;kbmMemRunD2010Pro;tmsd2010;tmsexd2010;tmswizd2010;tmsxlsd2010;vclAbsDBd15;bsfd2010;dxCoreRS14;dxServerModeRS14;cxDataRS14;cxLibraryRS14;dxGDIPlusRS14;dxThemeRS14;dxADOServerModeRS14;dxDBXServerModeRS14;cxEditorsRS14;dxmdsRS14;dxBarRS14;dxComnRS14;dxBarDBNavRS14;dxBarExtDBItemsRS14;dxBarExtItemsRS14;dxRibbonRS14;cxBarEditItemRS14;dxdbtrRS14;dxtrmdRS14;cxPageControlRS14;dxDockingRS14;dxFlowChartRS14;cxPageControldxBarPopupMenuRS14;dxTabbedMDIRS14;dxLayoutControlRS14;dxNavBarRS14;dxorgcRS14;dxdborRS14;cxGridRS14;cxExportRS14;cxPivotGridRS14;cxPivotGridChartRS14;cxPivotGridOLAPRS14;cxTreeListRS14;cxTreeListdxBarPopupMenuRS14;cxSchedulerRS14;cxSchedulerGridRS14;dcldxSkinsCoreRS14;dxSkinsCoreRS14;dxSkinscxPCPainterRS14;dxSkinscxSchedulerPainterRS14;dxSkinsdxDLPainterRS14;dxSkinsdxBarPainterRS14;dxSkinsdxNavBarPainterRS14;dxSkinsdxRibbonPainterRS14;dxSpellCheckerRS14;cxSpreadSheetRS14;cxVerticalGridRS14;dxPSCoreRS14;dxPSLnksRS14;dxPScxCommonRS14;dxPScxExtCommonRS14;dxPScxGridLnkRS14;dxPSdxLCLnkRS14;dxPScxPivotGridLnkRS14;dxPScxSchedulerLnkRS14;dxPScxSSLnkRS14;dxPScxTLLnkRS14;dxPScxVGridLnkRS14;dxPSTeeChartRS14;dxPSDBTeeChartRS14;dxPSdxOCLnkRS14;dxPSdxDBOCLnkRS14;dxPSdxDBTVLnkRS14;dxPSdxFCLnkRS14;dxPScxPCProdRS14;dxPsPrVwAdvRS14;dxPSPrVwRibbonRS14;dxSkinBlackRS14;dxSkinBlueRS14;dxSkinCaramelRS14;dxSkinCoffeeRS14;dxSkinDarkRoomRS14;dxSkinDarkSideRS14;dxSkinFoggyRS14;dxSkinGlassOceansRS14;dxSkiniMaginaryRS14;dxSkinLilianRS14;dxSkinLiquidSkyRS14;dxSkinLondonLiquidSkyRS14;dxSkinMcSkinRS14;dxSkinMoneyTwinsRS14;dxSkinOffice2007BlackRS14;dxSkinOffice2007BlueRS14;dxSkinOffice2007GreenRS14;dxSkinOffice2007PinkRS14;dxSkinOffice2007SilverRS14;dxSkinOffice2010BlackRS14;dxSkinOffice2010BlueRS14;dxSkinOffice2010SilverRS14;dxSkinPumpkinRS14;dxSkinSevenRS14;dxSkinSharpRS14;dxSkinSilverRS14;dxSkinSpringTimeRS14;dxSkinStardustRS14;dxSkinSummer2008RS14;dxSkinValentineRS14;dxSkinXmas2008BlueRS14;dxSkinBlueprintRS14;dxSkinDevExpressDarkStyleRS14;dxSkinDevExpressStyleRS14;dxSkinHighContrastRS14;dxSkinSevenClassicRS14;dxSkinSharpPlusRS14;dxSkinTheAsphaltWorldRS14;dxSkinVS2010RS14;dxSkinWhiteprintRS14;dxTileControlRS14</DCC_UsePackage>
+			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;$(DCC_UnitAlias)</DCC_UnitAlias>
+			<DCC_DependencyCheckOutputName>StudentManager.exe</DCC_DependencyCheckOutputName>
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<DCC_Platform>x86</DCC_Platform>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_DebugInformation>false</DCC_DebugInformation>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_MapFile>3</DCC_MapFile>
+			<DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="StudentManager.dpr">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="uMain.pas">
+				<Form>fmMain</Form>
+			</DCCReference>
+			<DCCReference Include="uCommonLogic.pas"/>
+			<DCCReference Include="GlobalVar.pas"/>
+			<DCCReference Include="uLogin.pas">
+				<Form>fmLogin</Form>
+			</DCCReference>
+			<DCCReference Include="Udm.pas">
+				<Form>dm</Form>
+				<DesignClass>TDataModule</DesignClass>
+			</DCCReference>
+			<DCCReference Include="강좌\UfmLectureView.pas">
+				<Form>fmLectureView</Form>
+			</DCCReference>
+			<DCCReference Include="강좌\UfmTeacherView.pas">
+				<Form>fmTeacherView</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmStudentView.pas">
+				<Form>fmStudentView</Form>
+			</DCCReference>
+			<DCCReference Include="강좌\UfmTeacherEdit.pas">
+				<Form>fmTeacherEdit</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmStudentEdit.pas">
+				<Form>fmStudentEdit</Form>
+			</DCCReference>
+			<DCCReference Include="강좌\UfmLectureEdit.pas">
+				<Form>fmLectureEdit</Form>
+			</DCCReference>
+			<DCCReference Include="기초\UfmBasicCode.pas">
+				<Form>fmBasicCode</Form>
+			</DCCReference>
+			<DCCReference Include="기초\UfmUserManager.pas">
+				<Form>fmUserManager</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmRequestManager.pas">
+				<Form>fmRequestManager</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmRequestEdit.pas">
+				<Form>fmRequestEdit</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmSelectStudent.pas">
+				<Form>fmSelectStudent</Form>
+			</DCCReference>
+			<DCCReference Include="기초\UfmUserEdit.pas">
+				<Form>fmUserEdit</Form>
+			</DCCReference>
+			<DCCReference Include="강좌\UfmLectureCopy.pas">
+				<Form>fmLectureCopy</Form>
+			</DCCReference>
+			<DCCReference Include="강좌\UfmTeacherPay.pas">
+				<Form>fmTeacherPay</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmRefundPayment.pas">
+				<Form>fmRefundPayment</Form>
+			</DCCReference>
+			<DCCReference Include="기초\uAbout.pas">
+				<Form>fmAbout</Form>
+			</DCCReference>
+			<DCCReference Include="기초\UfmUserRegistration.pas">
+				<Form>fmUserRegistration</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmRegistWait.pas">
+				<Form>fmRegistWait</Form>
+			</DCCReference>
+			<DCCReference Include="보고서\UfmReportTeacherPay.pas">
+				<Form>fmReportTeacherPay</Form>
+			</DCCReference>
+			<DCCReference Include="보고서\UfmLectureAnalyse.pas">
+				<Form>fmLectureAnalyse</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmStudentByLecture.pas">
+				<Form>fmStudentByLecture</Form>
+			</DCCReference>
+			<DCCReference Include="강좌\UfmTimeTableEdit.pas">
+				<Form>fmTimeTableEdit</Form>
+			</DCCReference>
+			<DCCReference Include="회계\UfmExpenseBudget.pas">
+				<Form>fmExpenseBudget</Form>
+			</DCCReference>
+			<DCCReference Include="회계\UfmExpenseBudgetEdit.pas">
+				<Form>fmExpenseBudgetEdit</Form>
+			</DCCReference>
+			<DCCReference Include="회계\UfmMoneyInOut.pas">
+				<Form>fmMoneyInOut</Form>
+			</DCCReference>
+			<DCCReference Include="회계\UfmMoneyInOutEdit.pas">
+				<Form>fmMoneyInOutEdit</Form>
+			</DCCReference>
+			<DCCReference Include="회계\UfmMoneyInOutEdit2.pas">
+				<Form>fmMoneyInOutEdit2</Form>
+			</DCCReference>
+			<DCCReference Include="회계\UfmMoneyByItem.pas">
+				<Form>fmMoneyByItem</Form>
+			</DCCReference>
+			<DCCReference Include="회계\UfmAccountCompare.pas">
+				<Form>fmAccountCompare</Form>
+			</DCCReference>
+			<DCCReference Include="회계\UfmExpenseBudgetEdit2.pas">
+				<Form>fmExpenseBudgetEdit2</Form>
+			</DCCReference>
+			<DCCReference Include="UfmUpdate.pas">
+				<Form>fmUpdate</Form>
+			</DCCReference>
+			<DCCReference Include="보고서\UfmLecturePivot.pas">
+				<Form>fmLecturePivot</Form>
+			</DCCReference>
+			<DCCReference Include="동별현황\UfmDongTotal.pas">
+				<Form>fmDongTotal</Form>
+			</DCCReference>
+			<DCCReference Include="동별현황\UfmDongLectureList.pas">
+				<Form>fmDongLectureList</Form>
+			</DCCReference>
+			<DCCReference Include="동별현황\UfmDongExpenseBudget.pas">
+				<Form>fmDongExpenseBudget</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmReportIncome.pas">
+				<Form>fmReportIncome</Form>
+			</DCCReference>
+			<DCCReference Include="보고서\UfmRegistedByLecture.pas">
+				<Form>fmRegistedByLecture</Form>
+			</DCCReference>
+			<DCCReference Include="보고서\UfmLectureGraph.pas">
+				<Form>fmLectureGraph</Form>
+			</DCCReference>
+			<DCCReference Include="기초\UfmAccountCode.pas">
+				<Form>fmAccountCode</Form>
+			</DCCReference>
+			<DCCReference Include="UfrmYearMonth.pas">
+				<Form>frmYearMonth</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="강좌\UfmTeacherImportMap.pas">
+				<Form>fmTeacherImportMap</Form>
+			</DCCReference>
+			<DCCReference Include="강좌\UfmExcelOpen.pas">
+				<Form>fmExcelOpen</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmExcelOpen2.pas">
+				<Form>fmExcelOpen2</Form>
+			</DCCReference>
+			<DCCReference Include="강좌\UfmLectureReport.pas">
+				<Form>fmLectureReport</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmRegistedStudent.pas">
+				<Form>fmRegistedStudent</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmRequestEdit2.pas">
+				<Form>fmRequestEdit2</Form>
+			</DCCReference>
+			<DCCReference Include="UfrmYearQuarter.pas">
+				<Form>frmYearQuarter</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="회계\UfmMoneyOutReport.pas">
+				<Form>fmMoneyOutReport</Form>
+			</DCCReference>
+			<DCCReference Include="회계\UfmMoneyOutReportList.pas">
+				<Form>fmMoneyOutReportList</Form>
+			</DCCReference>
+			<DCCReference Include="회계\UfmMoneyBackReport.pas">
+				<Form>fmMoneyBackReport</Form>
+			</DCCReference>
+			<DCCReference Include="회계\UfmMoneyBackReportList.pas">
+				<Form>fmMoneyBackReportList</Form>
+			</DCCReference>
+			<DCCReference Include="회계\UfmMoneyInReport.pas">
+				<Form>fmMoneyInReport</Form>
+			</DCCReference>
+			<DCCReference Include="회계\UfmMoneyInReportList.pas">
+				<Form>fmMoneyInReportList</Form>
+			</DCCReference>
+			<DCCReference Include="회계\UfmMoneyInOutMonth.pas">
+				<Form>fmMoneyInOutMonth</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmCashReceipt.pas">
+				<Form>fmCashReceipt</Form>
+			</DCCReference>
+			<DCCReference Include="UfmDataBackupRestore.pas">
+				<Form>fmDataBackupRestore</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmDCList.pas">
+				<Form>fmDCList</Form>
+			</DCCReference>
+			<DCCReference Include="강좌\UfmTeacherCompensation.pas">
+				<Form>fmTeacherCompensation</Form>
+			</DCCReference>
+			<DCCReference Include="강좌\UfmAttendingSetting.pas">
+				<Form>fmAttendingSetting</Form>
+			</DCCReference>
+			<DCCReference Include="USQLExecuter.pas">
+				<Form>fmSQLExecuter</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmRegistedStudentByLecture.pas">
+				<Form>fmRegistedStudentByLecture</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmOutList2.pas">
+				<Form>fmOutList2</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmRequestMonthly.pas">
+				<Form>fmRequestMonthly</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmRequestChange.pas">
+				<Form>fmRequestChange</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmOutlistMonthly.pas">
+				<Form>fmOutlistMonthly</Form>
+			</DCCReference>
+			<DCCReference Include="회계\UfmMoneyInOutEdit3.pas">
+				<Form>fmMoneyInOutEdit3</Form>
+			</DCCReference>
+			<DCCReference Include="강좌\UfmLectureOrder.pas">
+				<Form>fmLectureOrder</Form>
+			</DCCReference>
+			<DCCReference Include="scheduler\DemoBasicMain.pas">
+				<Form>DemoBasicMainForm</Form>
+			</DCCReference>
+			<DCCReference Include="scheduler\DBDemoMainUnit.pas">
+				<Form>DBScheduleForm</Form>
+			</DCCReference>
+			<DCCReference Include="UfmClosingBackup.pas">
+				<Form>fmClosingBackup</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmRegistedStudentByQuarter.pas">
+				<Form>fmRegistedStudentByQuarter</Form>
+			</DCCReference>
+			<DCCReference Include="보고서\UfmTotalByLecture.pas">
+				<Form>fmTotalByLecture</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmBatchPayback.pas">
+				<Form>fmBatchPayback</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmRefundBatch.pas">
+				<Form>fmRefundBatch</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmRefundPerson.pas">
+				<Form>fmRefundPerson</Form>
+			</DCCReference>
+			<DCCReference Include="강좌\UfmLectureCopyDialog.pas">
+				<Form>fmLectureCopyDialog</Form>
+			</DCCReference>
+			<DCCReference Include="강좌\UfmLectureChange.pas">
+				<Form>fmLectureChange</Form>
+			</DCCReference>
+			<DCCReference Include="회계\UfmMoneyInoutMove.pas">
+				<Form>fmMoneyInoutMove</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmStudentUpdate.pas">
+				<Form>fmStudentUpdate</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmTotalReport.pas">
+				<Form>fmTotalReport</Form>
+			</DCCReference>
+			<DCCReference Include="보고서\UfmLectureAnalyseMonthly.pas">
+				<Form>fmLectureAnalyseMonthly</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmTotalReportOut.pas">
+				<Form>fmTotalReportOut</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmStudentExists.pas">
+				<Form>fmStudentExists</Form>
+			</DCCReference>
+			<DCCReference Include="보고서\UfmLectureAnalyseAge.pas">
+				<Form>fmLectureAnalyseAge</Form>
+			</DCCReference>
+			<DCCReference Include="sms\UfmContacts.pas">
+				<Form>fmContacts</Form>
+			</DCCReference>
+			<DCCReference Include="sms\BaroService_CASHBILL.pas"/>
+			<DCCReference Include="sms\BaroService_SMS.pas"/>
+			<DCCReference Include="sms\UfmContactsEdit.pas">
+				<Form>fmContactsEdit</Form>
+			</DCCReference>
+			<DCCReference Include="sms\UfmSenderTelEdit.pas">
+				<Form>fmSenderTelEdit</Form>
+			</DCCReference>
+			<DCCReference Include="sms\UfmSMSMember.pas">
+				<Form>fmSMSMember</Form>
+			</DCCReference>
+			<DCCReference Include="sms\UfmSMSOption.pas">
+				<Form>fmSMSOption</Form>
+			</DCCReference>
+			<DCCReference Include="sms\UfmSMSSetting.pas">
+				<Form>fmSMSSetting</Form>
+			</DCCReference>
+			<DCCReference Include="sms\uSendingSMS.pas">
+				<Form>fmSendingSMS</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmCashBill.pas">
+				<Form>fmCashBill</Form>
+			</DCCReference>
+			<DCCReference Include="sms\UfmAddTempTel.pas">
+				<Form>fmAddTempTel</Form>
+			</DCCReference>
+			<DCCReference Include="수강자\UfmRegistedCashbill.pas">
+				<Form>fmRegistedCashbill</Form>
+			</DCCReference>
+			<DCCReference Include="강좌\UfmLectureOnline.pas">
+				<Form>fmLectureOnline</Form>
+			</DCCReference>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Delphi.Personality>
+					<Source>
+						<Source Name="MainSource">StudentManager.dpr</Source>
+					</Source>
+					<Parameters>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+					</Parameters>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">3</VersionInfo>
+						<VersionInfo Name="Build">15</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1042</VersionInfo>
+						<VersionInfo Name="CodePage">949</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName">ccnsoft</VersionInfoKeys>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">1.0.3.15</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright">ccnsoft 2013</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalTrademarks">강좌/수강관리</VersionInfoKeys>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName">강좌/수강관리</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductVersion">1.0.3.11</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments">강좌/수강관리</VersionInfoKeys>
+					</VersionInfoKeys>
+					<Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\7.0\Bpl\oraprovider140.bpl">(untitled)</Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\7.0\Bpl\myprovider140.bpl">(untitled)</Excluded_Packages>
+						<Excluded_Packages Name="C:\Program Files (x86)\EldoS\SecureBlackbox.VCL\Packages\DCBBoxD14.bpl">File C:\Program Files (x86)\EldoS\SecureBlackbox.VCL\Packages\DCBBoxD14.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="C:\Program Files (x86)\EldoS\SecureBlackbox.VCL\Packages\DsgnBBoxD14.bpl">File C:\Program Files (x86)\EldoS\SecureBlackbox.VCL\Packages\DsgnBBoxD14.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\7.0\Bpl\RVPkgD2010.bpl">TRichView for Delphi 2010</Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\7.0\Bpl\RichViewActionsD2010.bpl">TRichView: RichViewActions for Delphi 2010</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\samplevisualizers140.bpl">Embarcadero Sample Debugger Visualizers</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dcloffice2k140.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dclofficexp140.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\7.0\Bpl\RVDBPkgD2010.bpl">TRichView DB for Delphi 2010</Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\7.0\Bpl\RvXmlD2010.bpl">TRichView: RVXML for Delphi 2010</Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\7.0\Bpl\RvHtmlD2010.bpl">TRichView: RvHTMLImporter for Delphi 2010</Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\7.0\Bpl\SRVPkgD2010.bpl">TRichView: ScaleRichView for Delphi 2010</Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\7.0\Bpl\DBSRVPkgD2010.bpl">TRichView: ScaleRichView DB for Delphi 2010</Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\7.0\Bpl\SRVControlsD2010.bpl">TRichView: ScaleRichView&apos;s SRVControls for Delphi 2010</Excluded_Packages>
+						<Excluded_Packages Name="C:\Program Files (x86)\EldoS\SecureBlackbox.VCL\Packages\Delphi2010\DCPKIBBoxD14.bpl">File C:\Program Files (x86)\EldoS\SecureBlackbox.VCL\Packages\Delphi2010\DCPKIBBoxD14.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="C:\Program Files (x86)\EldoS\SecureBlackbox.VCL\Packages\Delphi2010\SAMLBBoxD14.bpl">File C:\Program Files (x86)\EldoS\SecureBlackbox.VCL\Packages\Delphi2010\SAMLBBoxD14.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="C:\Program Files (x86)\EldoS\SecureBlackbox.VCL\Packages\Delphi2010\SAMLBBoxSrvD14.bpl">File C:\Program Files (x86)\EldoS\SecureBlackbox.VCL\Packages\Delphi2010\SAMLBBoxSrvD14.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="C:\Program Files (x86)\EldoS\SecureBlackbox.VCL\Packages\Delphi2010\SMIMECAdESBBoxD14.bpl">File C:\Program Files (x86)\EldoS\SecureBlackbox.VCL\Packages\Delphi2010\SMIMECAdESBBoxD14.bpl not found</Excluded_Packages>
+					</Excluded_Packages>
+				</Delphi.Personality>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>
