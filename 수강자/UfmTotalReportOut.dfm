@@ -23,6 +23,8 @@ object fmTotalReportOut: TfmTotalReportOut
     Height = 637
     Align = alClient
     TabOrder = 0
+    ExplicitLeft = -8
+    ExplicitTop = 56
     object Label1: TLabel
       Left = 219
       Top = 9
@@ -126,7 +128,7 @@ object fmTotalReportOut: TfmTotalReportOut
       Left = 400
       Top = 136
       Width = 305
-      Height = 369
+      Height = 481
       TabOrder = 0
       object gridDC: TcxGridDBTableView
         Navigator.Buttons.CustomButtons = <>
@@ -228,7 +230,7 @@ object fmTotalReportOut: TfmTotalReportOut
       Left = 23
       Top = 136
       Width = 370
-      Height = 369
+      Height = 481
       TabOrder = 1
       object gridMoney: TcxGridDBTableView
         Navigator.Buttons.CustomButtons = <>
@@ -315,7 +317,7 @@ object fmTotalReportOut: TfmTotalReportOut
             end
             item
               Description = #52852#46300
-              Value = 4
+              Value = 3
             end>
           HeaderAlignmentHorz = taCenter
           Width = 49
@@ -429,6 +431,7 @@ object fmTotalReportOut: TfmTotalReportOut
       Component = Panel1
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
+      PrinterPage.GrayShading = True
       PrinterPage.Header = 6350
       PrinterPage.Margins.Bottom = 12700
       PrinterPage.Margins.Left = 12700
@@ -439,7 +442,7 @@ object fmTotalReportOut: TfmTotalReportOut
       PrinterPage.PageSize.Y = 297000
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
-      ReportDocument.CreationDate = 44007.470618368050000000
+      ReportDocument.CreationDate = 44200.733635011570000000
       BuiltInReportLink = True
       HiddenComponents = {}
       ExcludedComponents = {}
