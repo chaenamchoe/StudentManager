@@ -516,6 +516,7 @@ object fmOutlistMonthly: TfmOutlistMonthly
           OptionsSelection.HideFocusRectOnExit = False
           OptionsSelection.MultiSelect = True
           OptionsSelection.UnselectFocusedRecordOnExit = False
+          OptionsView.FocusRect = False
           OptionsView.Footer = True
           OptionsView.GroupByBox = False
           OptionsView.GroupByHeaderLayout = ghlHorizontal
@@ -555,10 +556,8 @@ object fmOutlistMonthly: TfmOutlistMonthly
             Properties.ListOptions.RowSelect = False
             Properties.ListOptions.ShowHeader = False
             Properties.ListSource = dm.d_LECTURE_look
-            Visible = False
-            GroupIndex = 0
             Options.CellMerging = True
-            Width = 300
+            Width = 145
           end
           object gridRequestSTUDENT_ID: TcxGridDBColumn
             DataBinding.FieldName = 'STUDENT_ID'
@@ -720,6 +719,11 @@ object fmOutlistMonthly: TfmOutlistMonthly
             DataBinding.FieldName = 'CASH_RECEIPT_YESNO'
             Visible = False
           end
+          object gridRequestL_IDX: TcxGridDBColumn
+            Caption = #44053#51340'ID'
+            DataBinding.FieldName = 'L_IDX'
+            GroupIndex = 0
+          end
         end
         object cxGrid1Level1: TcxGridLevel
           GridView = gridRequest
@@ -740,8 +744,10 @@ object fmOutlistMonthly: TfmOutlistMonthly
     object dxComponentPrinter1Link1: TdxGridReportLink
       Active = True
       Component = cxGrid1
+      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
+      PrinterPage.GrayShading = True
       PrinterPage.Header = 6350
       PrinterPage.Margins.Bottom = 12700
       PrinterPage.Margins.Left = 12700
@@ -762,7 +768,7 @@ object fmOutlistMonthly: TfmOutlistMonthly
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
       ReportDocument.Caption = #48372#44256#49436
-      ReportDocument.CreationDate = 43565.722126388890000000
+      ReportDocument.CreationDate = 44263.531370729160000000
       ReportTitle.AdjustOnReportScale = True
       ReportTitle.Font.Charset = DEFAULT_CHARSET
       ReportTitle.Font.Color = clBlack
@@ -770,6 +776,7 @@ object fmOutlistMonthly: TfmOutlistMonthly
       ReportTitle.Font.Name = #44404#47548
       ReportTitle.Font.Style = [fsBold]
       ReportTitle.Text = #44053#49324#49688#45817#51648#44553#54788#54889
+      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -13
@@ -1058,6 +1065,7 @@ object fmOutlistMonthly: TfmOutlistMonthly
       '    lecture_active.l_year,'
       '    lecture_active.l_step,'
       '    lecture_active.l_name,'
+      '    lecture_active.l_idx,'
       '    REGISTED_LECTURE.lecture_id,'
       '    REGISTED_LECTURE.student_id,'
       '    REGISTED_LECTURE.p_date,'
@@ -1090,7 +1098,9 @@ object fmOutlistMonthly: TfmOutlistMonthly
       'where (lecture_active.l_year = :lyear) and '
       '   (lecture_active.l_step = :lstep) and '
       '   (REGISTED_LECTURE.lecture_id like :lecture_id)'
-      'order by p_date, id')
+      
+        'order by lecture_active.l_idx, registed_lecture.p_date, registed' +
+        '_lecture.id')
     SpecificOptions.Strings = (
       'InterBase.FetchAll=True')
     IndexFieldNames = 'ID'
@@ -1237,6 +1247,9 @@ object fmOutlistMonthly: TfmOutlistMonthly
       FieldKind = fkCalculated
       FieldName = 'rec_id'
       Calculated = True
+    end
+    object q_REQUEST_VIEWL_IDX: TSmallintField
+      FieldName = 'L_IDX'
     end
   end
   object d_REQUEST_VIEW: TDataSource

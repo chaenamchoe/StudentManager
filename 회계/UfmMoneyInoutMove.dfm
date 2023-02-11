@@ -2,7 +2,7 @@ object fmMoneyInoutMove: TfmMoneyInoutMove
   Left = 0
   Top = 0
   BorderStyle = bsDialog
-  Caption = #53685#51109#51060#46041
+  Caption = #53685#51109#49440#53469
   ClientHeight = 208
   ClientWidth = 282
   Color = clBtnFace
@@ -26,10 +26,8 @@ object fmMoneyInoutMove: TfmMoneyInoutMove
     Margins.Right = 8
     Margins.Bottom = 1
     Align = alTop
-    Caption = #51060#46041#54624' '#53685#51109' '#49440#53469
+    Caption = #53685#51109' '#49440#53469
     TabOrder = 0
-    ExplicitLeft = 9
-    ExplicitWidth = 265
     object cxGrid1: TcxGrid
       AlignWithMargins = True
       Left = 5
@@ -39,10 +37,6 @@ object fmMoneyInoutMove: TfmMoneyInoutMove
       Align = alClient
       TabOrder = 0
       LookAndFeel.SkinName = 'Black'
-      ExplicitLeft = 13
-      ExplicitTop = 24
-      ExplicitWidth = 250
-      ExplicitHeight = 200
       object gridAccount: TcxGridDBTableView
         Navigator.Buttons.CustomButtons = <>
         Navigator.Buttons.First.Visible = False

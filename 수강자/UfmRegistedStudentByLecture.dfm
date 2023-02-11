@@ -1071,7 +1071,11 @@ object fmRegistedStudentByLecture: TfmRegistedStudentByLecture
           end
           item
             Description = #52852#46300
-            Value = '3'
+            Value = 3
+          end
+          item
+            Description = #51060#52404
+            Value = 4
           end>
         HeaderAlignmentHorz = taCenter
         Styles.OnGetContentStyle = gridRequestS_SEXStylesGetContentStyle
@@ -1310,6 +1314,7 @@ object fmRegistedStudentByLecture: TfmRegistedStudentByLecture
     object dxComponentPrinter1Link1: TdxGridReportLink
       Active = True
       Component = cxGrid1
+      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
       PrinterPage.GrayShading = True
@@ -1333,7 +1338,7 @@ object fmRegistedStudentByLecture: TfmRegistedStudentByLecture
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
       ReportDocument.Caption = #48372#44256#49436
-      ReportDocument.CreationDate = 44200.736130312500000000
+      ReportDocument.CreationDate = 44953.487158750000000000
       ReportTitle.AdjustOnReportScale = True
       ReportTitle.Font.Charset = DEFAULT_CHARSET
       ReportTitle.Font.Color = clBlack
@@ -1341,6 +1346,7 @@ object fmRegistedStudentByLecture: TfmRegistedStudentByLecture
       ReportTitle.Font.Name = #44404#47548
       ReportTitle.Font.Style = [fsBold]
       ReportTitle.Text = #44053#49324#49688#45817#51648#44553#54788#54889
+      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
       OptionsFormatting.UseNativeStyles = True
       OptionsOnEveryPage.Footers = False
       OptionsOnEveryPage.Caption = False

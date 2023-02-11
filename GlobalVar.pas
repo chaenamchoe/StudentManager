@@ -46,6 +46,7 @@ var
     UpdateComments : string;
     AUTO_MONEY_ADD : boolean;
     CASH_RECEIPT_CONTACTS : string;
+    MONEY_BACK_REPORT_WAY : Integer;
 
     CERTKEY, USER_ID, USER_PASS, BUSINESS_ID : string;
 implementation

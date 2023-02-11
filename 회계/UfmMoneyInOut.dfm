@@ -161,7 +161,7 @@ object fmMoneyInOut: TfmMoneyInOut
       OnChange = edtEndDateChange
     end
     object btnMoneyIn: TBitBtn
-      Left = 666
+      Left = 665
       Top = 2
       Width = 66
       Height = 25
@@ -459,7 +459,7 @@ object fmMoneyInOut: TfmMoneyInOut
       PrinterPage.ScaleFactor = 95
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
-      ReportDocument.CreationDate = 42447.729189212970000000
+      ReportDocument.CreationDate = 44968.146312476850000000
       ReportTitle.Font.Charset = ANSI_CHARSET
       ReportTitle.Font.Color = clBlack
       ReportTitle.Font.Height = -19

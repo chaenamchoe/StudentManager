@@ -105,7 +105,8 @@ uses
   UfmCashBill in '수강자\UfmCashBill.pas' {fmCashBill},
   UfmAddTempTel in 'sms\UfmAddTempTel.pas' {fmAddTempTel},
   UfmRegistedCashbill in '수강자\UfmRegistedCashbill.pas' {fmRegistedCashbill},
-  UfmLectureOnline in '강좌\UfmLectureOnline.pas' {fmLectureOnline};
+  UfmLectureOnline in '강좌\UfmLectureOnline.pas' {fmLectureOnline},
+  UfmMoneyBackReport2 in '회계\UfmMoneyBackReport2.pas' {fmMoneyBackReport2};
 
 {$R *.res}
 
@@ -119,8 +120,8 @@ begin
     fmLogin.ShowModal;
     if fmLogin.ModalResult = mrOk then begin
       Application.CreateForm(TfmMain, fmMain);
-      Application.CreateForm(Tdm, dm);
-      Application.Run;
+  Application.CreateForm(Tdm, dm);
+  Application.Run;
     end else begin
       fmLogin.Hide;
       fmLogin.Close;

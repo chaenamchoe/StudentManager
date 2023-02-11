@@ -10,9 +10,10 @@ object dm: Tdm
   object UniConnection1: TUniConnection
     ProviderName = 'InterBase'
     Port = 3050
-    Database = 'D:\fb_data\StudentManager\'#51032#51221#48512#49884'\'#54840#50896'1'#46041'\uijungbu.FDB'
+    Database = 'D:\fb_data\StudentManager\'#51032#51221#48512#49884'\'#49888#44257'1'#46041'\uijungbu.FDB'
     Username = 'sysdba'
     Server = '210.122.7.67'
+    Connected = True
     LoginPrompt = False
     Left = 32
     Top = 64
@@ -693,6 +694,9 @@ object dm: Tdm
     object q_basic_valueCASH_RECEIPT_CONTACTS: TStringField
       FieldName = 'CASH_RECEIPT_CONTACTS'
       Size = 30
+    end
+    object q_basic_valueMONEY_BACK_REPORT_WAY: TSmallintField
+      FieldName = 'MONEY_BACK_REPORT_WAY'
     end
   end
   object d_basic_value: TDataSource

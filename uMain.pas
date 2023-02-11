@@ -186,6 +186,7 @@ type
     N53: TMenuItem;
     N54: TMenuItem;
     BMDThread1: TBMDThread;
+    N11: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure ActionLectureRegistExecute(Sender: TObject);
     procedure ActionTeacherViewExecute(Sender: TObject);
@@ -250,6 +251,7 @@ type
     procedure ActionRegistCashbillExecute(Sender: TObject);
     procedure BMDThread1Execute(Sender: TObject; Thread: TBMDExecuteThread;
       var Data: Pointer);
+    procedure N11Click(Sender: TObject);
   private
     procedure CloseAllWindows;
     { Private declarations }
@@ -741,11 +743,17 @@ begin
   auto_money := dm.q_basic_valueREGIST_MONEY_AUTOADD.AsInteger;
   AUTO_MONEY_ADD := auto_money = 1;
   CASH_RECEIPT_CONTACTS := dm.q_basic_valueCASH_RECEIPT_CONTACTS.AsString;
+  MONEY_BACK_REPORT_WAY := dm.q_basic_valueMONEY_BACK_REPORT_WAY.AsInteger;
 end;
 
 procedure TfmMain.mnuCloseWindowClick(Sender: TObject);
 begin
   CloseAllWindows;
+end;
+
+procedure TfmMain.N11Click(Sender: TObject);
+begin
+  ShellExecute(0,'open','ccnplaza-1.exe',nil,nil, SW_NORMAL);
 end;
 
 procedure TfmMain.N1Click(Sender: TObject);

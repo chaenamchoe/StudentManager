@@ -20,7 +20,7 @@ uses
   cxCalc, cxDropDownEdit, cxCalendar, StdCtrls, Buttons, cxTextEdit, cxMaskEdit,
   cxLookupEdit, cxDBLookupEdit, cxDBLookupComboBox, Uni, UniProvider,
   dxSkinMetropolis, dxSkinMetropolisDark, dxSkinOffice2013DarkGray,
-  dxSkinOffice2013LightGray;
+  dxSkinOffice2013LightGray, MemDS, DBAccess;
 
 type
   TfmMoneyInOutEdit3 = class(TForm)
@@ -53,10 +53,13 @@ type
     d_temp: TDataSource;
     dxTempid: TIntegerField;
     dxTempreg_lecture_id: TStringField;
-    cbBankKind: TcxImageComboBox;
     Label3: TLabel;
+    UniQuery1: TUniQuery;
+    DataSource1: TDataSource;
+    cbBankKind: TcxLookupComboBox;
     procedure cbKindPropertiesEditValueChanged(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -76,7 +79,10 @@ uses GlobalVar, Udm;
 procedure TfmMoneyInOutEdit3.btnSaveClick(Sender: TObject);
 begin
   dxTemp.Post;
-  ModalResult := mrOk;
+  if cbBankKind.EditValue > 0 then
+    ModalResult := mrOk
+  else
+    ShowMessage('통장을 선택하세요.');
 end;
 
 procedure TfmMoneyInOutEdit3.cbKindPropertiesEditValueChanged(Sender: TObject);
@@ -86,6 +92,13 @@ begin
   end else begin
     dxTempacc_item.AsInteger := 2;
   end;
+end;
+
+procedure TfmMoneyInOutEdit3.FormShow(Sender: TObject);
+begin
+  UniQuery1.Open;
+  DataSource1.DataSet.Refresh;
+
 end;
 
 end.

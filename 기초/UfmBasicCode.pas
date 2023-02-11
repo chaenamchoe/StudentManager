@@ -22,7 +22,7 @@ uses
   cxGridCustomView, cxGrid, ExtCtrls, cxTextEdit, cxContainer, cxMaskEdit,
   cxDropDownEdit, cxImageComboBox, cxCurrencyEdit, cxSpinEdit,
   dxSkinOffice2013White, dxSkinMetropolis, dxSkinMetropolisDark,
-  dxSkinOffice2013DarkGray, dxSkinOffice2013LightGray;
+  dxSkinOffice2013DarkGray, dxSkinOffice2013LightGray, MemDS, DBAccess, Uni;
 
 type
   TfmBasicCode = class(TForm)
@@ -127,6 +127,10 @@ type
     cxGridLevel5: TcxGridLevel;
     gridBankID: TcxGridDBColumn;
     gridBankBANK_NAME: TcxGridDBColumn;
+    Label21: TLabel;
+    icbMoneyBackWay: TcxImageComboBox;
+    btnSavePayback: TBitBtn;
+    UniQuery1: TUniQuery;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnAddRoomClick(Sender: TObject);
     procedure btnEditRoomClick(Sender: TObject);
@@ -162,6 +166,7 @@ type
     procedure btnAddBankClick(Sender: TObject);
     procedure btnEditBankClick(Sender: TObject);
     procedure btnDelBankClick(Sender: TObject);
+    procedure btnSavePaybackClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -197,6 +202,8 @@ begin
   edtJigwi.Text := dm.q_basic_valueLECTURE_REPORT_JIGWI.AsString;
   edtName.Text  := dm.q_basic_valueLECTURE_REPORT_NAME.AsString;
   edtContacts.Text := dm.q_basic_valueCASH_RECEIPT_CONTACTS.AsString;
+  MONEY_BACK_REPORT_WAY := dm.q_basic_valueMONEY_BACK_REPORT_WAY.AsInteger;
+  icbMoneyBackWay.EditValue := MONEY_BACK_REPORT_WAY;
   if auto_money = 1 then begin
     chkAutoMoney.Checked := True;
     AUTO_MONEY_ADD := True;
@@ -441,6 +448,27 @@ begin
   dm.q_basic_valueCASH_RECEIPT_CONTACTS.AsString := CASH_RECEIPT_CONTACTS;
   dm.q_basic_value.Post;
   dm.d_basic_value.DataSet.Refresh;
+end;
+
+procedure TfmBasicCode.btnSavePaybackClick(Sender: TObject);
+var
+  automoney : Integer;
+begin
+  if chkAutoMoney.Checked then
+    automoney := 1
+  else
+    automoney := 0;
+
+  MONEY_BACK_REPORT_WAY := icbMoneyBackWay.EditValue;
+  try
+    UniQuery1.SQL.Clear;
+    UniQuery1.SQL.Add('update basic_value set regist_money_autoadd = :automoney, money_back_report_way = :pway where id = 1');
+    UniQuery1.ParamByName('automoney').Value := automoney;
+    UniQuery1.ParamByName('pway').Value := MONEY_BACK_REPORT_WAY;
+    UniQuery1.ExecSQL;
+  except on E: Exception do
+    ShowMessage(E.Message);
+  end;
 end;
 
 procedure TfmBasicCode.btnSAVE_LECTUREClick(Sender: TObject);

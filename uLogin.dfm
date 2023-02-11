@@ -983,9 +983,6 @@ object fmLogin: TfmLogin
       object cxTabSheet2: TcxTabSheet
         Caption = #46321#47197
         ImageIndex = 1
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object GroupBox1: TGroupBox
           Left = 15
           Top = 5
@@ -1226,9 +1223,6 @@ object fmLogin: TfmLogin
       object cxTabSheet3: TcxTabSheet
         Caption = #50629#45936#51060#53944
         ImageIndex = 2
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object GroupBox2: TGroupBox
           AlignWithMargins = True
           Left = 14

@@ -29,7 +29,8 @@ uses
   dxSkinGlassOceans, dxSkinHighContrast, dxSkiniMaginary, dxSkinLilian,
   dxSkinLiquidSky, dxSkinLondonLiquidSky, dxSkinMoneyTwins, dxSkinPumpkin,
   dxSkinSilver, dxSkinSpringTime, dxSkinStardust, dxSkinSummer2008,
-  dxSkinTheAsphaltWorld, dxSkinValentine, dxSkinWhiteprint, dxSkinXmas2008Blue;
+  dxSkinTheAsphaltWorld, dxSkinValentine, dxSkinWhiteprint, dxSkinXmas2008Blue,
+  Gauges;
 
 type
   TfmOutList2 = class(TForm)
@@ -152,6 +153,8 @@ type
     QueryInsertSurvey: TUniQuery;
     QueryDeleteSurvey: TUniQuery;
     PanelMessage: TPanel;
+    Label2: TLabel;
+    Gauge1: TGauge;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnAttendListClick(Sender: TObject);
     procedure btnExportClick(Sender: TObject);
@@ -192,7 +195,7 @@ var
 
 implementation
 
-uses GlobalVar, Udm, UfmTotalReportOut;
+uses GlobalVar, Udm, UfmTotalReportOut, UfmMoneyInoutMove;
 
 {$R *.dfm}
 
@@ -304,7 +307,7 @@ end;
 
 procedure TfmOutList2.btnRefundMultiClick(Sender: TObject);
 var
-  i, col, cnt, filter_cnt, select_cnt, p_kind, col_name : Integer;
+  i, col, cnt, filter_cnt, select_cnt, p_kind, col_name, bankid : Integer;
   jukyo, money_str, msg, f_name, r_date, id : string;
   tprice, l_price : Double;
 begin
@@ -332,8 +335,17 @@ begin
          jukyo + ' 금액:' + money_str + '의 자료를 등록합니다.';
   if MessageBox(Handle, PWideChar(msg), '회계자료등록', MB_OKCANCEL + MB_ICONQUESTION) = IDOK then
   begin
-    dm.InsertMoneyINOUT(1, 2, 5, 15, 2, StrToDateTime(R_DATE), JUKYO, LoginUserDong, '', 0, tprice, 0);
-    ShowMessage('회계자료가 등록되었습니다.');
+    fmMoneyInoutMove := TfmMoneyInoutMove.Create(Self);
+    try
+      fmMoneyInoutMove.ShowModal;
+      if fmMoneyInoutMove.ModalResult = mrOk then begin
+        bankid := fmMoneyInoutMove.gridAccountID.EditValue;
+        dm.InsertMoneyINOUT(bankid, 2, 5, 15, 2, StrToDateTime(R_DATE), JUKYO, LoginUserDong, '', 0, tprice, 0);
+        ShowMessage('회계자료가 등록되었습니다.');
+      end;
+    finally
+      fmMoneyInoutMove.Free;
+    end;
   end;
 end;
 
@@ -367,12 +379,13 @@ begin
     Screen.Cursor := crHourGlass;
     PanelMessage.Visible := True;
     PanelMessage.Refresh;
-    q_SELECTED_DATA_LIST.Active := True;
-    if q_SELECTED_DATA_LIST.RecordCount > 0 then
-      UniQuery1.Execute;
+//    q_SELECTED_DATA_LIST.Active := True;
+//    if q_SELECTED_DATA_LIST.RecordCount > 0 then
+//      UniQuery1.Execute;
     QueryDeleteSurvey.ExecSQL;
     with gridOutList do begin
       cnt := DataController.FilteredRecordCount;
+      Gauge1.MaxValue := cnt;
       for i := 0 to cnt - 1 do begin
         sel_id := DataController.FilteredRecordIndex[i];
         out_when := DataController.GetValue(sel_id, gridOutListOUT_WHEN.Index);
@@ -388,6 +401,8 @@ begin
         QueryInsertSurvey.ParamByName('out_kind').Value := out_kind;
         QueryInsertSurvey.ParamByName('out_amount').Value := out_amount;
         QueryInsertSurvey.ExecSQL;
+        Gauge1.Progress := i + 1;
+        Application.ProcessMessages;
       end;
       PanelMessage.Visible := False;
       Screen.Cursor := crArrow;

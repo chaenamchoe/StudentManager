@@ -35,7 +35,7 @@ object fmOutList2: TfmOutList2
       Caption = #53748#44053#51068':'
     end
     object btnSaveColumn: TcxButton
-      Left = 1015
+      Left = 1081
       Top = 2
       Width = 41
       Height = 25
@@ -154,7 +154,7 @@ object fmOutList2: TfmOutList2
       OnClick = btnRetrieveClick
     end
     object btnExport: TcxButton
-      Left = 839
+      Left = 905
       Top = 2
       Width = 99
       Height = 25
@@ -203,7 +203,7 @@ object fmOutList2: TfmOutList2
       OnClick = btnExportClick
     end
     object btnAttendList: TcxButton
-      Left = 939
+      Left = 1005
       Top = 2
       Width = 63
       Height = 25
@@ -252,7 +252,7 @@ object fmOutList2: TfmOutList2
       OnClick = btnAttendListClick
     end
     object btnRefund: TcxButton
-      Left = 430
+      Left = 496
       Top = 2
       Width = 81
       Height = 25
@@ -301,7 +301,7 @@ object fmOutList2: TfmOutList2
       OnClick = btnRefundClick
     end
     object btnRefundMulti: TcxButton
-      Left = 512
+      Left = 578
       Top = 2
       Width = 81
       Height = 25
@@ -350,7 +350,7 @@ object fmOutList2: TfmOutList2
       OnClick = btnRefundMultiClick
     end
     object rbSelect: TcxRadioButton
-      Left = 601
+      Left = 667
       Top = 7
       Width = 52
       Height = 17
@@ -362,7 +362,7 @@ object fmOutList2: TfmOutList2
       LookAndFeel.SkinName = 'DevExpressStyle'
     end
     object rbAll: TcxRadioButton
-      Left = 654
+      Left = 720
       Top = 7
       Width = 51
       Height = 17
@@ -372,7 +372,7 @@ object fmOutList2: TfmOutList2
       LookAndFeel.SkinName = 'DevExpressStyle'
     end
     object btnTotalReport: TcxButton
-      Left = 326
+      Left = 392
       Top = 2
       Width = 100
       Height = 25
@@ -421,7 +421,7 @@ object fmOutList2: TfmOutList2
       OnClick = btnTotalReportClick
     end
     object btnCancelPartial: TcxButton
-      Left = 734
+      Left = 800
       Top = 2
       Width = 104
       Height = 25
@@ -730,6 +730,10 @@ object fmOutList2: TfmOutList2
           item
             Description = #52852#46300
             Value = 3
+          end
+          item
+            Description = #51060#52404
+            Value = 4
           end>
         OnCustomDrawCell = gridOutListPAY_WAYCustomDrawCell
         HeaderAlignmentHorz = taCenter
@@ -848,8 +852,7 @@ object fmOutList2: TfmOutList2
     Left = 512
     Top = 224
     Width = 300
-    Height = 60
-    Caption = #51089#50629#51012' '#51652#54665#54616#44256' '#51080#49845#45768#45796'...'
+    Height = 73
     Color = clBlue
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
@@ -860,6 +863,21 @@ object fmOutList2: TfmOutList2
     ParentFont = False
     TabOrder = 2
     Visible = False
+    object Label2: TLabel
+      Left = 16
+      Top = 16
+      Width = 179
+      Height = 13
+      Caption = #51089#50629#51012' '#51652#54665#54616#44256' '#51080#49845#45768#45796'...'
+    end
+    object Gauge1: TGauge
+      Left = 16
+      Top = 35
+      Width = 273
+      Height = 20
+      ForeColor = clRed
+      Progress = 0
+    end
   end
   object d_REQUEST_VIEW: TDataSource
     DataSet = LECTURE_OUT_SEL
@@ -876,7 +894,6 @@ object fmOutList2: TfmOutList2
     object dxComponentPrinter1Link1: TdxGridReportLink
       Active = True
       Component = cxGrid1
-      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
       PrinterPage.GrayShading = True
@@ -899,14 +916,13 @@ object fmOutList2: TfmOutList2
       PrinterPage.PageSize.Y = 297000
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
-      ReportDocument.CreationDate = 44200.686849837960000000
+      ReportDocument.CreationDate = 44967.496558680560000000
       ReportTitle.Font.Charset = DEFAULT_CHARSET
       ReportTitle.Font.Color = clBlack
       ReportTitle.Font.Height = -21
       ReportTitle.Font.Name = 'Times New Roman'
       ReportTitle.Font.Style = [fsBold]
       ReportTitle.Text = #44053#51340#46321#47197#54788#54889
-      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -13

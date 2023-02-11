@@ -163,6 +163,8 @@ type
       ANewItemRecordFocusingChanged: Boolean);
     procedure btnMoveClick(Sender: TObject);
   private
+    procedure ReportFormNew;
+    procedure ReportFormOld;
     { Private declarations }
   public
     { Public declarations }
@@ -174,7 +176,7 @@ var
 implementation
 
 uses GlobalVar, Udm, UfmMoneyInOutEdit, UfmMoneyInOutEdit2, uCommonLogic,
-  UfmMoneyOutReport, UfmMoneyBackReport, UfmMoneyInReport, UfmMoneyInoutMove;
+  UfmMoneyOutReport, UfmMoneyBackReport, UfmMoneyInReport, UfmMoneyInoutMove, UfmMoneyBackReport2;
 
 {$R *.dfm}
 
@@ -277,7 +279,6 @@ begin
     fmMoneyInReport.edtYear.Text := IntToStr(YearOf(Date));
     fmMoneyInReport.edtBalDate.Date := Date;
     fmMoneyInReport.edtOutDate.Date := Date;
-    fmMoneyInReport.edtRegDate1.Date := Date;
     fmMoneyInReport.edtRegDate2.Date := Date;
     fmMoneyInReport.edtAmount.EditValue := gridMoneyInoutIO_OUT.EditValue;
 
@@ -361,7 +362,6 @@ begin
     fmMoneyOutReport.edtYear.Text := IntToStr(YearOf(Date));
     fmMoneyOutReport.edtBalDate.Date := Date;
     fmMoneyOutReport.edtOutDate.Date := Date;
-    fmMoneyOutReport.edtRegDate1.Date := Date;
     fmMoneyOutReport.edtRegDate2.Date := Date;
     fmMoneyOutReport.edtAmount.EditValue := gridMoneyInoutIO_OUT.EditValue;
     fmMoneyOutReport.edtOwener.Text := '';
@@ -438,6 +438,14 @@ begin
 end;
 
 procedure TfmMoneyInOut.btnMoneyReturnClick(Sender: TObject);
+begin
+  if MONEY_BACK_REPORT_WAY = 1 then
+    ReportFormNew
+  else
+    ReportFormOld;
+end;
+
+procedure TfmMoneyInOut.ReportFormNew;
 var
   uid : string;
   student_id, lecture_id : string;
@@ -447,7 +455,6 @@ begin
     fmMoneyBackReport.edtYear.Text := IntToStr(YearOf(Date));
     fmMoneyBackReport.edtBalDate.Date := Date;
     fmMoneyBackReport.edtOutDate.Date := Date;
-    fmMoneyBackReport.edtRegDate1.Date := Date;
     fmMoneyBackReport.edtRegDate2.Date := Date;
     fmMoneyBackReport.edtAmount.EditValue := gridMoneyInoutIO_OUT.EditValue;
 
@@ -466,26 +473,63 @@ begin
     q_lecture_active.Active := True;
     d_lecture_active.DataSet.Refresh;
 
-
-    fmMoneyBackReport.edtOwener.Text := q_STUDENTSS_NAME.Value;
-    fmMoneyBackReport.edtPhone.Text := q_STUDENTSS_TEL.Value;
-    fmMoneyBackReport.edtAddr.Text := q_STUDENTSS_ADDR.Value;
-    fmMoneyBackReport.edtBankName.Text := q_REGISTED_LECTUREPAYBACK_BANK.Value;
-    fmMoneyBackReport.edtBankOwener.Text := q_REGISTED_LECTUREPAYBACK_BANKOWNER.Value;
-    fmMoneyBackReport.edtBankID.Text := q_REGISTED_LECTUREPAYBACK_BANKID.Value;
-    fmMoneyBackReport.edtBigo.Text := '';
-
-    fmMoneyBackReport.edtLectureName.Text   := q_lecture_activeL_NAME.Value;
-    fmMoneyBackReport.edtRequester.Text     := q_STUDENTSS_NAME.Value;
-    fmMoneyBackReport.edtPayDate.Text       := q_REGISTED_LECTUREP_DATE.AsString;
-    fmMoneyBackReport.edtPayAmount.Text     := FloatToStr(q_REGISTED_LECTUREPAY_AMOUNT.AsFloat);
-    fmMoneyBackReport.edtRequestPrice.Text  := FloatToStr(q_REGISTED_LECTUREOUT_AMOUNT.AsFloat);
-    fmMoneyBackReport.edtBackReason.Text := '개인사유';
-    fmMoneyBackReport.edtBigo.Text := '';
-
+    fmMoneyBackReport.edtOwener.Text := gridMoneyInoutIO_JUKYO.EditValue;
+    fmMoneyBackReport.edtBackReason.Text := '사유를 입력하세요';
     fmMoneyBackReport.ShowModal;
   finally
     fmMoneyBackReport.Free;
+  end;
+end;
+
+procedure TfmMoneyInOut.ReportFormOld;
+var
+  uid : string;
+  student_id, lecture_id : string;
+begin
+  fmMoneyBackReport2 := TfmMoneyBackReport2.Create(Self);
+  try
+    fmMoneyBackReport2.edtYear.Text := IntToStr(YearOf(Date));
+    fmMoneyBackReport2.edtBalDate.Date := Date;
+    fmMoneyBackReport2.edtOutDate.Date := Date;
+    fmMoneyBackReport2.edtRegDate1.Date := Date;
+    fmMoneyBackReport2.edtRegDate2.Date := Date;
+    fmMoneyBackReport2.edtAmount.EditValue := gridMoneyInoutIO_OUT.EditValue;
+
+    uid := gridMoneyInoutIO_REG_LECTURE_ID.EditValue;
+    q_REGISTED_LECTURE.ParamByName('ID').Value := uid;
+    q_REGISTED_LECTURE.Active := True;
+    d_REGISTED_LECTURE.DataSet.Refresh;
+
+    student_id := q_REGISTED_LECTURESTUDENT_ID.Value;
+    q_STUDENTS.ParamByName('student_id').Value := student_id;
+    q_STUDENTS.Active := True;
+    d_STUDENTS.DataSet.Refresh;
+
+    lecture_id := q_REGISTED_LECTURELECTURE_ID.Value;
+    q_lecture_active.ParamByName('lecture_id').Value := lecture_id;
+    q_lecture_active.Active := True;
+    d_lecture_active.DataSet.Refresh;
+
+
+    fmMoneyBackReport2.edtOwener.Text := q_STUDENTSS_NAME.Value;
+    fmMoneyBackReport2.edtPhone.Text := q_STUDENTSS_TEL.Value;
+    fmMoneyBackReport2.edtAddr.Text := q_STUDENTSS_ADDR.Value;
+    fmMoneyBackReport2.edtBankName.Text := q_REGISTED_LECTUREPAYBACK_BANK.Value;
+    fmMoneyBackReport2.edtBankOwener.Text := q_REGISTED_LECTUREPAYBACK_BANKOWNER.Value;
+    fmMoneyBackReport2.edtBankID.Text := q_REGISTED_LECTUREPAYBACK_BANKID.Value;
+    fmMoneyBackReport2.edtBigo.Text := '';
+
+    fmMoneyBackReport2.edtLectureName.Text   := q_lecture_activeL_NAME.Value;
+    fmMoneyBackReport2.edtRequester.Text     := q_STUDENTSS_NAME.Value;
+    fmMoneyBackReport2.edtPayDate.Text       := q_REGISTED_LECTUREP_DATE.AsString;
+    fmMoneyBackReport2.edtPayAmount.Text     := FloatToStr(q_REGISTED_LECTUREPAY_AMOUNT.AsFloat);
+    fmMoneyBackReport2.edtRequestPrice.Text  := FloatToStr(q_REGISTED_LECTUREOUT_AMOUNT.AsFloat);
+    fmMoneyBackReport2.edtBackReason.Text := '개인사유';
+    fmMoneyBackReport2.edtBigo.Text := '';
+
+    fmMoneyBackReport2.ShowModal;
+  finally
+    fmMoneyBackReport2.Free;
   end;
 end;
 

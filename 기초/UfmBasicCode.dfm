@@ -971,12 +971,19 @@ object fmBasicCode: TfmBasicCode
       Left = 8
       Top = 299
       Width = 241
-      Height = 58
+      Height = 111
       Caption = #49688#44053#46321#47197'/'#54872#48520' '#52376#47532
       TabOrder = 2
+      object Label21: TLabel
+        Left = 24
+        Top = 45
+        Width = 65
+        Height = 13
+        Caption = #48152#54872#44208#51032#49436
+      end
       object chkAutoMoney: TCheckBox
         Left = 24
-        Top = 24
+        Top = 21
         Width = 145
         Height = 17
         Caption = #54924#44228#51088#47308' '#51088#46041#46321#47197
@@ -985,10 +992,46 @@ object fmBasicCode: TfmBasicCode
         TabOrder = 0
         WordWrap = True
       end
+      object icbMoneyBackWay: TcxImageComboBox
+        Left = 95
+        Top = 41
+        EditValue = 1
+        Properties.ImmediatePost = True
+        Properties.Items = <
+          item
+            Description = #54633#44228#48152#54872'('#49888')'
+            ImageIndex = 0
+            Value = 1
+          end
+          item
+            Description = #44148#48324#48152#54872'('#44396')'
+            Value = 2
+          end>
+        TabOrder = 1
+        Width = 114
+      end
+      object btnSavePayback: TBitBtn
+        Left = 83
+        Top = 68
+        Width = 75
+        Height = 25
+        Caption = #51200#51109
+        Glyph.Data = {
+          F6000000424DF600000000000000760000002800000010000000100000000100
+          04000000000080000000120B0000120B00001000000010000000000000000000
+          8000008000000080800080000000800080008080000080808000C0C0C0000000
+          FF00C0C0C00000FFFF00FF000000C0C0C000FFFF0000FFFFFF00DADADADADADA
+          DADAAD0000000000000DD03300000088030AA03300000088030DD03300000088
+          030AA03300000000030DD03333333333330AA03300000000330DD03088888888
+          030AA03088888888030DD03088888888030AA03088888888030DD03088888888
+          000AA03088888888080DD00000000000000AADADADADADADADAD}
+        TabOrder = 2
+        OnClick = btnSavePaybackClick
+      end
     end
     object GroupBox4: TGroupBox
       Left = 8
-      Top = 364
+      Top = 420
       Width = 241
       Height = 101
       Caption = #44053#49324#44368#50977#51068#51648' '#48372#44256#49436
@@ -1044,7 +1087,7 @@ object fmBasicCode: TfmBasicCode
     end
     object GroupBox5: TGroupBox
       Left = 8
-      Top = 472
+      Top = 528
       Width = 241
       Height = 92
       Caption = #54788#44552#50689#49688#51613' '#48156#44553#51088' '#50672#46973#52376
@@ -1227,5 +1270,10 @@ object fmBasicCode: TfmBasicCode
         GridView = gridLecture
       end
     end
+  end
+  object UniQuery1: TUniQuery
+    Connection = dm.UniConnection1
+    Left = 696
+    Top = 408
   end
 end

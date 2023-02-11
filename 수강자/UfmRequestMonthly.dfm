@@ -2,8 +2,8 @@ object fmRequestMonthly: TfmRequestMonthly
   Left = 0
   Top = 0
   Caption = #50900#48324#49688#44053#54788#54889
-  ClientHeight = 656
-  ClientWidth = 1096
+  ClientHeight = 665
+  ClientWidth = 1208
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -23,7 +23,7 @@ object fmRequestMonthly: TfmRequestMonthly
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 1096
+    Width = 1208
     Height = 30
     Align = alTop
     TabOrder = 0
@@ -271,8 +271,8 @@ object fmRequestMonthly: TfmRequestMonthly
   object Panel2: TPanel
     Left = 0
     Top = 30
-    Width = 1096
-    Height = 626
+    Width = 1208
+    Height = 635
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 1
@@ -280,7 +280,7 @@ object fmRequestMonthly: TfmRequestMonthly
       Left = 281
       Top = 0
       Width = 2
-      Height = 626
+      Height = 635
       ExplicitLeft = 297
       ExplicitHeight = 584
     end
@@ -288,14 +288,14 @@ object fmRequestMonthly: TfmRequestMonthly
       Left = 0
       Top = 0
       Width = 281
-      Height = 626
+      Height = 635
       Align = alLeft
       TabOrder = 0
       object cxGrid2: TcxGrid
         Left = 1
         Top = 1
         Width = 279
-        Height = 624
+        Height = 633
         Align = alClient
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -386,15 +386,15 @@ object fmRequestMonthly: TfmRequestMonthly
     object Panel4: TPanel
       Left = 283
       Top = 0
-      Width = 813
-      Height = 626
+      Width = 925
+      Height = 635
       Align = alClient
       TabOrder = 1
       object cxGrid1: TcxGrid
         Left = 1
         Top = 1
-        Width = 811
-        Height = 624
+        Width = 923
+        Height = 633
         Align = alClient
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -423,7 +423,7 @@ object fmRequestMonthly: TfmRequestMonthly
           Navigator.InfoPanel.Visible = True
           Navigator.Visible = True
           DataController.DataSource = d_REQUEST_VIEW
-          DataController.Options = [dcoAnsiSort, dcoAssignGroupingValues, dcoAssignMasterDetailKeys, dcoSaveExpanding, dcoFocusTopRowAfterSorting, dcoGroupsAlwaysExpanded]
+          DataController.Options = [dcoAnsiSort, dcoAssignGroupingValues, dcoAssignMasterDetailKeys, dcoSaveExpanding, dcoGroupsAlwaysExpanded]
           DataController.Summary.DefaultGroupSummaryItems = <
             item
               Format = '0 '#47749
@@ -556,9 +556,6 @@ object fmRequestMonthly: TfmRequestMonthly
                 FieldName = 'L_NAME'
               end>
             Properties.ListSource = dm.d_LECTURE_look
-            Visible = False
-            GroupIndex = 0
-            VisibleForCustomization = False
           end
           object gridRequestSTUDENT_ID: TcxGridDBColumn
             DataBinding.FieldName = 'STUDENT_ID'
@@ -701,6 +698,10 @@ object fmRequestMonthly: TfmRequestMonthly
               item
                 Description = #52852#46300
                 Value = 3
+              end
+              item
+                Description = #51060#52404
+                Value = 4
               end>
             Visible = False
             HeaderAlignmentHorz = taCenter
@@ -818,6 +819,11 @@ object fmRequestMonthly: TfmRequestMonthly
             DataBinding.FieldName = 'PAYBACK_BANKOWNER'
             Visible = False
           end
+          object gridRequestL_IDX: TcxGridDBColumn
+            DataBinding.FieldName = 'L_IDX'
+            SortIndex = 0
+            SortOrder = soAscending
+          end
         end
         object cxGrid1Level1: TcxGridLevel
           GridView = gridRequest
@@ -838,8 +844,10 @@ object fmRequestMonthly: TfmRequestMonthly
     object dxComponentPrinter1Link1: TdxGridReportLink
       Active = True
       Component = cxGrid1
+      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
+      PrinterPage.GrayShading = True
       PrinterPage.Header = 6350
       PrinterPage.Margins.Bottom = 12700
       PrinterPage.Margins.Left = 12700
@@ -860,7 +868,7 @@ object fmRequestMonthly: TfmRequestMonthly
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
       ReportDocument.Caption = #48372#44256#49436
-      ReportDocument.CreationDate = 43614.295497187500000000
+      ReportDocument.CreationDate = 44953.485521203710000000
       ReportTitle.AdjustOnReportScale = True
       ReportTitle.Font.Charset = DEFAULT_CHARSET
       ReportTitle.Font.Color = clBlack
@@ -868,6 +876,7 @@ object fmRequestMonthly: TfmRequestMonthly
       ReportTitle.Font.Name = #44404#47548
       ReportTitle.Font.Style = [fsBold]
       ReportTitle.Text = #44053#49324#49688#45817#51648#44553#54788#54889
+      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -13
@@ -1462,6 +1471,11 @@ object fmRequestMonthly: TfmRequestMonthly
         Size = 30
       end
       item
+        DataType = ftInteger
+        Name = 'L_IDX'
+        ParamType = ptOutput
+      end
+      item
         DataType = ftString
         Name = 'LECTURE_ID'
         ParamType = ptOutput
@@ -1772,6 +1786,9 @@ object fmRequestMonthly: TfmRequestMonthly
     object REQUEST_MONTHLY_SELID: TStringField
       FieldName = 'ID'
       Size = 17
+    end
+    object REQUEST_MONTHLY_SELL_IDX: TIntegerField
+      FieldName = 'L_IDX'
     end
   end
 end

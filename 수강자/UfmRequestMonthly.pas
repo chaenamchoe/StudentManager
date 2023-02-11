@@ -178,6 +178,8 @@ type
     REQUEST_MONTHLY_SELCASH_RECEIPT_YESNO: TSmallintField;
     REQUEST_MONTHLY_SELID: TStringField;
     REQUEST_MONTHLY_SELlec_id: TIntegerField;
+    REQUEST_MONTHLY_SELL_IDX: TIntegerField;
+    gridRequestL_IDX: TcxGridDBColumn;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure btnRetrieveClick(Sender: TObject);

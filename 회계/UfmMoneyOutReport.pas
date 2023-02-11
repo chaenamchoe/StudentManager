@@ -37,7 +37,6 @@ type
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
-    Label4: TLabel;
     Label5: TLabel;
     edtYear: TEdit;
     Label6: TLabel;
@@ -72,7 +71,6 @@ type
     dxComponentPrinter1Link1: TdxCustomContainerReportLink;
     ScrollBox1: TScrollBox;
     PanelClient: TPanel;
-    Label13: TLabel;
     Label14: TLabel;
     lblYear: TLabel;
     Label16: TLabel;
@@ -81,7 +79,6 @@ type
     Label19: TLabel;
     Label20: TLabel;
     Label21: TLabel;
-    Label22: TLabel;
     Label23: TLabel;
     Label24: TLabel;
     Label25: TLabel;
@@ -98,11 +95,9 @@ type
     Shape8: TShape;
     Shape9: TShape;
     Shape10: TShape;
-    Shape11: TShape;
     Shape12: TShape;
     Label29: TLabel;
     Label30: TLabel;
-    Label31: TLabel;
     Label32: TLabel;
     Shape13: TShape;
     Shape14: TShape;
@@ -117,11 +112,9 @@ type
     Shape17: TShape;
     edtBalDate: TcxDateEdit;
     edtOutDate: TcxDateEdit;
-    edtRegDate1: TcxDateEdit;
     edtRegDate2: TcxDateEdit;
     lblBalDate: TLabel;
     lblOutDate: TLabel;
-    lblRegDate1: TLabel;
     lblRegDate2: TLabel;
     lblAmountText: TLabel;
     lblAmountNum: TLabel;
@@ -141,15 +134,10 @@ type
     Panel2: TPanel;
     btnEditDesc: TBitBtn;
     q_MONEY_OUT_REPORT_INS: TUniQuery;
-    shp1: TShape;
-    lbl1: TLabel;
-    chkAddSign: TCheckBox;
     procedure btnPrintClick(Sender: TObject);
     procedure edtYearChange(Sender: TObject);
     procedure edtBalDatePropertiesEditValueChanged(Sender: TObject);
-    procedure FormShow(Sender: TObject);
     procedure edtOutDatePropertiesEditValueChanged(Sender: TObject);
-    procedure edtRegDate1PropertiesEditValueChanged(Sender: TObject);
     procedure edtRegDate2PropertiesEditValueChanged(Sender: TObject);
     procedure edtAmountPropertiesEditValueChanged(Sender: TObject);
     procedure edtOwenerChange(Sender: TObject);
@@ -161,7 +149,6 @@ type
     procedure edtBigoChange(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
     procedure btnEditDescClick(Sender: TObject);
-    procedure chkAddSignClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -222,21 +209,6 @@ begin
   end;
 end;
 
-procedure TfmMoneyOutReport.FormShow(Sender: TObject);
-var
-  FIni : TIniFile;
-  iniFileName, addsign : string;
-begin
-  //lblDongName.Caption := LoginUserDongName + ' 주민자치위원장 귀하';
-  iniFileName := gsDefaultFolder + 'ReportSetting.ini';
-  FIni := TIniFile.Create(iniFileName);
-  addsign := FIni.ReadString('Report', 'MoneyOut', '0');
-  if addsign = '0' then
-    chkAddSign.Checked := False
-  else
-    chkAddSign.Checked := True;
-end;
-
 procedure TfmMoneyOutReport.btnSaveClick(Sender: TObject);
 var
   i, cnt : Integer;
@@ -253,7 +225,6 @@ begin
   q_MONEY_OUT_REPORT_INS.ParamByName('M_YEAR').Value := StrToInt(edtYear.Text);
   q_MONEY_OUT_REPORT_INS.ParamByName('BALUI_DATE').Value := edtBalDate.Date;
   q_MONEY_OUT_REPORT_INS.ParamByName('OUT_DATE').Value := edtOutDate.Date;
-  q_MONEY_OUT_REPORT_INS.ParamByName('REG_DATE1').Value := edtRegDate1.Date;
   q_MONEY_OUT_REPORT_INS.ParamByName('REG_DATE2').Value := edtRegDate2.Date;
   q_MONEY_OUT_REPORT_INS.ParamByName('OUT_AMOUNT').Value := edtAmount.Value;
   q_MONEY_OUT_REPORT_INS.ParamByName('BANK_NAME').Value := edtBankName.Text;
@@ -268,41 +239,6 @@ begin
   q_MONEY_OUT_REPORT_INS.ParamByName('OUT_LIST').Value := jukyo_list;
   q_MONEY_OUT_REPORT_INS.Execute;
   ShowMessage('지출결의서 저장완료!');
-end;
-
-procedure TfmMoneyOutReport.chkAddSignClick(Sender: TObject);
-var
-  FIni : TIniFile;
-  iniFileName : string;
-begin
-  if chkAddSign.Checked = True then begin
-    Label16.Left := 177;
-    Label17.Left := 413;
-    Label18.Left := 538;
-    lbl1.Left :=   294;
-    lbl1.Visible := True;
-    Shape5.Left := 270;
-    shp1.Left := 388;
-    shp1.Visible := True;
-    Shape6.Left := 506;
-  end else begin
-    Label16.Left := 195;
-    Label17.Left := 343;
-    Label18.Left := 508;
-    lbl1.Left :=   292;
-    lbl1.Visible := False;
-    Shape5.Left := 301;
-    shp1.Left := 387;
-    shp1.Visible := False;
-    Shape6.Left := 467;
-  end;
-
-  iniFileName := gsDefaultFolder + 'ReportSetting.ini';
-  FIni := TIniFile.Create(iniFileName);
-  if chkAddSign.Checked then
-    FIni.WriteString('Report', 'MoneyOut', '1')
-  else
-    FIni.WriteString('Report', 'MoneyOut', '0');
 end;
 
 procedure TfmMoneyOutReport.btnEditDescClick(Sender: TObject);
@@ -327,6 +263,7 @@ begin
   dxComponentPrinter1Link1.ReportTitle.Font.Name := '굴림';
   dxComponentPrinter1Link1.ReportTitle.Font.Size := 16;
   dxComponentPrinter1Link1.ReportTitle.Font.Style := [fsBold];
+  dxComponentPrinter1Link1.PrinterPage.Orientation := poPortrait;
   dxComponentPrinter1.Preview(True, dxComponentPrinter1Link1);
 end;
 
@@ -391,15 +328,6 @@ end;
 procedure TfmMoneyOutReport.edtOwenerChange(Sender: TObject);
 begin
   lblName.Caption := edtOwener.Text;
-end;
-
-procedure TfmMoneyOutReport.edtRegDate1PropertiesEditValueChanged(
-  Sender: TObject);
-var
-  sDate : TDate;
-begin
-  sDate := edtRegDate1.Date;
-  lblRegDate1.Caption := DateToStr(sDate) + '(' + GetDayOfWeek(sDate) + ')';
 end;
 
 procedure TfmMoneyOutReport.edtRegDate2PropertiesEditValueChanged(

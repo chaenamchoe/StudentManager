@@ -192,6 +192,10 @@ object fmRequestEdit: TfmRequestEdit
         item
           Description = #52852#46300
           Value = 3
+        end
+        item
+          Description = #51060#52404
+          Value = 4
         end>
       TabOrder = 17
       Width = 95

@@ -28,7 +28,7 @@ object fmMoneyBackReport: TfmMoneyBackReport
       Left = 4
       Top = 4
       Width = 305
-      Height = 161
+      Height = 142
       Align = alTop
       Caption = #51648#52636#44208#51032
       TabOrder = 0
@@ -53,30 +53,23 @@ object fmMoneyBackReport: TfmMoneyBackReport
         Height = 13
         Caption = #48152#54872#51068#51088':'
       end
-      object Label4: TLabel
-        Left = 19
-        Top = 90
-        Width = 95
-        Height = 13
-        Caption = #54788#44552#52636#45225#48512#44592#51116':'
-      end
       object Label5: TLabel
         Left = 19
-        Top = 112
+        Top = 90
         Width = 95
         Height = 13
         Caption = #51648#52636#45236#50669#48512#44592#51116':'
       end
       object Label6: TLabel
         Left = 58
-        Top = 134
+        Top = 112
         Width = 56
         Height = 13
         Caption = #48152#54872#44552#50529':'
       end
       object edtYear: TEdit
-        Left = 119
-        Top = 22
+        Left = 120
+        Top = 20
         Width = 66
         Height = 21
         ImeName = 'Microsoft IME 2010'
@@ -98,263 +91,65 @@ object fmMoneyBackReport: TfmMoneyBackReport
         TabOrder = 2
         Width = 121
       end
-      object edtRegDate1: TcxDateEdit
-        Left = 119
-        Top = 87
-        Properties.OnEditValueChanged = edtRegDate1PropertiesEditValueChanged
-        TabOrder = 3
-        Width = 121
-      end
       object edtRegDate2: TcxDateEdit
         Left = 119
-        Top = 109
+        Top = 87
         Properties.OnEditValueChanged = edtRegDate2PropertiesEditValueChanged
-        TabOrder = 4
+        TabOrder = 3
         Width = 121
       end
       object edtAmount: TcxCurrencyEdit
         Left = 119
-        Top = 131
+        Top = 109
         Properties.AssignedValues.DisplayFormat = True
         Properties.UseThousandSeparator = True
         Properties.OnEditValueChanged = edtAmountPropertiesEditValueChanged
-        TabOrder = 5
+        TabOrder = 4
         Width = 121
       end
     end
     object GroupBox2: TGroupBox
       AlignWithMargins = True
       Left = 4
-      Top = 171
+      Top = 152
       Width = 305
-      Height = 160
+      Height = 91
       Align = alTop
-      Caption = #49888#52397#51064
+      Caption = #52292#44428#51088
       TabOrder = 1
-      object Label7: TLabel
-        Left = 33
-        Top = 89
-        Width = 43
-        Height = 13
-        Caption = #51008#54665#47749':'
-      end
-      object Label8: TLabel
-        Left = 33
-        Top = 111
-        Width = 43
-        Height = 13
-        Caption = #50696#44552#51452':'
-      end
-      object Label9: TLabel
-        Left = 20
-        Top = 133
-        Width = 56
-        Height = 13
-        Caption = #44228#51340#48264#54840':'
-      end
-      object Label10: TLabel
-        Left = 46
-        Top = 67
-        Width = 30
-        Height = 13
-        Caption = #51452#49548':'
-      end
       object Label12: TLabel
-        Left = 46
-        Top = 23
-        Width = 30
-        Height = 13
-        Caption = #49457#47749':'
-      end
-      object Label11: TLabel
         Left = 20
-        Top = 45
+        Top = 23
+        Width = 43
+        Height = 13
+        Caption = #52292#44428#51088':'
+      end
+      object Label60: TLabel
+        Left = 6
+        Top = 47
         Width = 56
         Height = 13
-        Caption = #51204#54868#48264#54840':'
+        Caption = #48152#54872#49324#50976':'
       end
       object edtOwener: TEdit
-        Left = 82
+        Left = 68
         Top = 20
-        Width = 121
+        Width = 229
         Height = 21
         ImeMode = imSHanguel
         ImeName = 'Microsoft IME 2010'
         TabOrder = 0
         OnChange = edtOwenerChange
       end
-      object edtAddr: TEdit
-        Left = 82
-        Top = 64
-        Width = 215
-        Height = 21
-        ImeMode = imSHanguel
-        ImeName = 'Microsoft IME 2010'
-        TabOrder = 1
-        OnChange = edtAddrChange
-      end
-      object edtBankName: TEdit
-        Left = 82
-        Top = 86
-        Width = 121
-        Height = 21
-        ImeMode = imSHanguel
-        ImeName = 'Microsoft IME 2010'
-        TabOrder = 2
-        OnChange = edtBankNameChange
-      end
-      object edtBankOwener: TEdit
-        Left = 82
-        Top = 108
-        Width = 121
-        Height = 21
-        ImeMode = imSHanguel
-        ImeName = 'Microsoft IME 2010'
-        TabOrder = 3
-        OnChange = edtBankOwenerChange
-      end
-      object edtBankID: TEdit
-        Left = 82
-        Top = 130
-        Width = 215
-        Height = 21
-        ImeName = 'Microsoft IME 2010'
-        TabOrder = 4
-        OnChange = edtBankIDChange
-      end
-      object edtPhone: TEdit
-        Left = 82
-        Top = 42
-        Width = 121
-        Height = 21
-        ImeMode = imSHanguel
-        ImeName = 'Microsoft IME 2010'
-        TabOrder = 5
-      end
-    end
-    object GroupBox3: TGroupBox
-      AlignWithMargins = True
-      Left = 4
-      Top = 337
-      Width = 305
-      Height = 176
-      Align = alTop
-      Caption = #48152#54872#45236#50669
-      TabOrder = 2
-      object Label55: TLabel
-        Left = 32
-        Top = 20
-        Width = 69
-        Height = 13
-        Caption = #54532#47196#44536#47016#47749':'
-      end
-      object Label56: TLabel
-        Left = 32
-        Top = 41
-        Width = 69
-        Height = 13
-        Caption = #45225#48512#51088#49457#47749':'
-      end
-      object Label57: TLabel
-        Left = 19
-        Top = 62
-        Width = 82
-        Height = 13
-        Caption = #49688#44053#47308#45225#48512#51068':'
-      end
-      object Label58: TLabel
-        Left = 45
-        Top = 83
-        Width = 56
-        Height = 13
-        Caption = #45225#48512#44552#50529':'
-      end
-      object Label59: TLabel
-        Left = 32
-        Top = 104
-        Width = 69
-        Height = 13
-        Caption = #48152#54872#49888#52397#50529':'
-      end
-      object Label60: TLabel
-        Left = 45
-        Top = 125
-        Width = 56
-        Height = 13
-        Caption = #48152#54872#49324#50976':'
-      end
-      object Label61: TLabel
-        Left = 45
-        Top = 146
-        Width = 56
-        Height = 13
-        Caption = #48708#44256#49324#54637':'
-      end
-      object edtLectureName: TEdit
-        Left = 109
-        Top = 17
-        Width = 121
-        Height = 21
-        ImeMode = imSHanguel
-        ImeName = 'Microsoft IME 2010'
-        TabOrder = 0
-        OnChange = edtLectureNameChange
-      end
-      object edtRequester: TEdit
-        Left = 109
-        Top = 38
-        Width = 121
-        Height = 21
-        ImeMode = imSHanguel
-        ImeName = 'Microsoft IME 2010'
-        TabOrder = 1
-        OnChange = edtRequesterChange
-      end
-      object edtPayDate: TEdit
-        Left = 109
-        Top = 59
-        Width = 121
-        Height = 21
-        ImeName = 'Microsoft IME 2010'
-        TabOrder = 2
-        OnChange = edtPayDateChange
-      end
-      object edtPayAmount: TEdit
-        Left = 109
-        Top = 80
-        Width = 121
-        Height = 21
-        ImeName = 'Microsoft IME 2010'
-        TabOrder = 3
-        OnChange = edtPayAmountChange
-      end
-      object edtRequestPrice: TEdit
-        Left = 109
-        Top = 101
-        Width = 121
-        Height = 21
-        ImeName = 'Microsoft IME 2010'
-        TabOrder = 4
-        OnChange = edtRequestPriceChange
-      end
       object edtBackReason: TEdit
-        Left = 109
-        Top = 122
-        Width = 121
+        Left = 68
+        Top = 44
+        Width = 229
         Height = 21
         ImeMode = imSHanguel
         ImeName = 'Microsoft IME 2010'
-        TabOrder = 5
+        TabOrder = 1
         OnChange = edtBackReasonChange
-      end
-      object edtBigo: TEdit
-        Left = 109
-        Top = 143
-        Width = 121
-        Height = 21
-        ImeMode = imSHanguel
-        ImeName = 'Microsoft IME 2010'
-        TabOrder = 6
       end
     end
     object btnSave: TBitBtn
@@ -372,7 +167,7 @@ object fmMoneyBackReport: TfmMoneyBackReport
         030AA03300000000030DD03333333333330AA03300000000330DD03088888888
         030AA03088888888030DD03088888888030AA03088888888030DD03088888888
         000AA03088888888080DD00000000000000AADADADADADADADAD}
-      TabOrder = 3
+      TabOrder = 2
       OnClick = btnSaveClick
     end
   end
@@ -410,15 +205,6 @@ object fmMoneyBackReport: TfmMoneyBackReport
         TabOrder = 0
         OnClick = btnPrintClick
       end
-      object chkAddSign: TCheckBox
-        Left = 168
-        Top = 9
-        Width = 145
-        Height = 17
-        Caption = #52509#47924#50948#50896' '#44208#51116#52628#44032
-        TabOrder = 1
-        OnClick = chkAddSignClick
-      end
     end
     object ScrollBox1: TScrollBox
       Left = 0
@@ -439,51 +225,16 @@ object fmMoneyBackReport: TfmMoneyBackReport
         Color = clWhite
         ParentBackground = False
         TabOrder = 0
-        object Shape2: TShape
-          Left = 6
-          Top = 112
-          Width = 672
-          Height = 337
-          Pen.Width = 2
-        end
         object Shape1: TShape
           Left = 6
-          Top = 488
+          Top = 136
           Width = 672
-          Height = 468
+          Height = 774
           Pen.Width = 2
-        end
-        object Label13: TLabel
-          Left = 6
-          Top = 24
-          Width = 117
-          Height = 15
-          Caption = '['#48324#51648' '#51228'8'#54840#49436#49885']'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
-        object Label14: TLabel
-          Left = 6
-          Top = 81
-          Width = 667
-          Height = 27
-          Alignment = taCenter
-          AutoSize = False
-          Caption = #49688#44053#47308' '#48152#54872#49888#52397' '#48143' '#48152#54872#44208#51032#49436
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -27
-          Font.Name = #48148#53461
-          Font.Style = [fsBold]
-          ParentFont = False
         end
         object lblYear: TLabel
           Left = 40
-          Top = 544
+          Top = 192
           Width = 73
           Height = 16
           Caption = '2015 '#45380#46020
@@ -495,11 +246,11 @@ object fmMoneyBackReport: TfmMoneyBackReport
           ParentFont = False
         end
         object Label16: TLabel
-          Left = 195
-          Top = 502
-          Width = 69
+          Left = 202
+          Top = 150
+          Width = 48
           Height = 16
-          Caption = #54924#44228' '#45812#45817
+          Caption = #45812#45817#51088
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -16
@@ -508,11 +259,11 @@ object fmMoneyBackReport: TfmMoneyBackReport
           ParentFont = False
         end
         object Label17: TLabel
-          Left = 343
-          Top = 502
-          Width = 69
+          Left = 362
+          Top = 150
+          Width = 48
           Height = 16
-          Caption = #48512' '#50948#50896#51109
+          Caption = #48512#54924#51109
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -16
@@ -521,11 +272,11 @@ object fmMoneyBackReport: TfmMoneyBackReport
           ParentFont = False
         end
         object Label18: TLabel
-          Left = 508
-          Top = 502
-          Width = 48
+          Left = 522
+          Top = 150
+          Width = 47
           Height = 16
-          Caption = #50948#50896#51109
+          Caption = #54924'   '#51109
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -16
@@ -535,7 +286,7 @@ object fmMoneyBackReport: TfmMoneyBackReport
         end
         object Label19: TLabel
           Left = 643
-          Top = 518
+          Top = 166
           Width = 19
           Height = 67
           AutoSize = False
@@ -550,7 +301,7 @@ object fmMoneyBackReport: TfmMoneyBackReport
         end
         object Label20: TLabel
           Left = 32
-          Top = 625
+          Top = 273
           Width = 87
           Height = 16
           Caption = #48156'           '#51032
@@ -563,7 +314,7 @@ object fmMoneyBackReport: TfmMoneyBackReport
         end
         object Label21: TLabel
           Left = 32
-          Top = 664
+          Top = 312
           Width = 88
           Height = 16
           Caption = #48152'    '#54872'    '#51068
@@ -574,22 +325,9 @@ object fmMoneyBackReport: TfmMoneyBackReport
           Font.Style = []
           ParentFont = False
         end
-        object Label22: TLabel
-          Left = 22
-          Top = 704
-          Width = 112
-          Height = 16
-          Caption = #54788#44552#52636#45225#48512#44592#51116
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
         object Label23: TLabel
           Left = 14
-          Top = 744
+          Top = 352
           Width = 128
           Height = 16
           Caption = #49688#44053#47308#49688#45225#48512#44592#51116
@@ -602,7 +340,7 @@ object fmMoneyBackReport: TfmMoneyBackReport
         end
         object Label27: TLabel
           Left = 40
-          Top = 902
+          Top = 737
           Width = 77
           Height = 16
           Caption = #50689'         '#49688
@@ -615,77 +353,77 @@ object fmMoneyBackReport: TfmMoneyBackReport
         end
         object Shape3: TShape
           Left = 150
-          Top = 531
+          Top = 179
           Width = 470
           Height = 1
           Brush.Color = clBlack
         end
         object Shape4: TShape
           Left = 150
-          Top = 488
+          Top = 136
           Width = 1
-          Height = 468
+          Height = 460
           Brush.Color = clBlack
         end
         object Shape5: TShape
           Left = 301
-          Top = 488
+          Top = 136
           Width = 1
           Height = 126
           Brush.Color = clBlack
         end
         object Shape6: TShape
           Left = 467
-          Top = 488
+          Top = 136
           Width = 1
           Height = 126
           Brush.Color = clBlack
         end
         object Shape7: TShape
           Left = 619
-          Top = 488
+          Top = 136
           Width = 1
           Height = 126
           Brush.Color = clBlack
         end
         object Shape8: TShape
           Left = 6
-          Top = 651
+          Top = 299
           Width = 672
           Height = 1
           Brush.Color = clBlack
         end
         object Shape9: TShape
           Left = 6
-          Top = 691
+          Top = 339
           Width = 672
           Height = 1
           Brush.Color = clBlack
         end
         object Shape10: TShape
           Left = 6
-          Top = 731
+          Top = 379
           Width = 672
           Height = 1
           Brush.Color = clBlack
         end
         object Shape11: TShape
           Left = 6
-          Top = 613
+          Top = 261
           Width = 672
           Height = 1
           Brush.Color = clBlack
         end
         object Shape12: TShape
           Left = 619
-          Top = 613
+          Top = 261
           Width = 1
-          Height = 160
+          Height = 119
           Brush.Color = clBlack
         end
         object Label29: TLabel
           Left = 639
-          Top = 625
+          Top = 273
           Width = 26
           Height = 16
           Caption = '('#51064')'
@@ -698,20 +436,7 @@ object fmMoneyBackReport: TfmMoneyBackReport
         end
         object Label30: TLabel
           Left = 639
-          Top = 664
-          Width = 26
-          Height = 16
-          Caption = '('#51064')'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
-        object Label31: TLabel
-          Left = 639
-          Top = 704
+          Top = 312
           Width = 26
           Height = 16
           Caption = '('#51064')'
@@ -724,7 +449,7 @@ object fmMoneyBackReport: TfmMoneyBackReport
         end
         object Label32: TLabel
           Left = 639
-          Top = 744
+          Top = 352
           Width = 26
           Height = 16
           Caption = '('#51064')'
@@ -736,94 +461,22 @@ object fmMoneyBackReport: TfmMoneyBackReport
           ParentFont = False
         end
         object Shape14: TShape
-          Left = 183
-          Top = 791
+          Left = 177
+          Top = 457
           Width = 450
           Height = 49
           Pen.Width = 2
         end
-        object Shape15: TShape
-          Left = 6
-          Top = 772
-          Width = 672
-          Height = 1
-          Brush.Color = clBlack
-        end
         object Shape16: TShape
           Left = 6
-          Top = 872
+          Top = 595
           Width = 672
           Height = 1
           Brush.Color = clBlack
-        end
-        object Label33: TLabel
-          Left = 112
-          Top = 325
-          Width = 110
-          Height = 16
-          Caption = #49888#52397#51064'   '#49457'  '#47749':'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
-        object Label35: TLabel
-          Left = 175
-          Top = 345
-          Width = 47
-          Height = 16
-          Caption = #51452'  '#49548':'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
-        object Label36: TLabel
-          Left = 175
-          Top = 367
-          Width = 53
-          Height = 16
-          Caption = #51008#54665#47749':'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
-        object Label37: TLabel
-          Left = 383
-          Top = 367
-          Width = 53
-          Height = 16
-          Caption = #50696#44552#51452':'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
-        object Label38: TLabel
-          Left = 175
-          Top = 388
-          Width = 69
-          Height = 16
-          Caption = #44228#51340#48264#54840':'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
         end
         object lblBalDate: TLabel
           Left = 183
-          Top = 625
+          Top = 273
           Width = 410
           Height = 16
           Alignment = taCenter
@@ -838,22 +491,7 @@ object fmMoneyBackReport: TfmMoneyBackReport
         end
         object lblOutDate: TLabel
           Left = 183
-          Top = 664
-          Width = 410
-          Height = 16
-          Alignment = taCenter
-          AutoSize = False
-          Caption = '2015. 03. 05('#54868')'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
-        object lblRegDate1: TLabel
-          Left = 183
-          Top = 704
+          Top = 312
           Width = 410
           Height = 16
           Alignment = taCenter
@@ -868,7 +506,7 @@ object fmMoneyBackReport: TfmMoneyBackReport
         end
         object lblRegDate2: TLabel
           Left = 183
-          Top = 744
+          Top = 352
           Width = 410
           Height = 16
           Alignment = taCenter
@@ -882,8 +520,8 @@ object fmMoneyBackReport: TfmMoneyBackReport
           ParentFont = False
         end
         object lblAmountText: TLabel
-          Left = 200
-          Top = 805
+          Left = 194
+          Top = 471
           Width = 410
           Height = 22
           Alignment = taCenter
@@ -897,8 +535,8 @@ object fmMoneyBackReport: TfmMoneyBackReport
           ParentFont = False
         end
         object lblAmountNum: TLabel
-          Left = 202
-          Top = 845
+          Left = 196
+          Top = 511
           Width = 410
           Height = 16
           Alignment = taCenter
@@ -911,79 +549,9 @@ object fmMoneyBackReport: TfmMoneyBackReport
           Font.Style = []
           ParentFont = False
         end
-        object lblName: TLabel
-          Left = 228
-          Top = 325
-          Width = 141
-          Height = 16
-          AutoSize = False
-          Caption = #49457#47749
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
-        object lblAddr: TLabel
-          Left = 228
-          Top = 345
-          Width = 429
-          Height = 16
-          AutoSize = False
-          Caption = #51452#49548
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
-        object lblBankName: TLabel
-          Left = 233
-          Top = 367
-          Width = 120
-          Height = 16
-          AutoSize = False
-          Caption = #51008#54665#47749
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
-        object lblBankOwener: TLabel
-          Left = 442
-          Top = 367
-          Width = 167
-          Height = 16
-          AutoSize = False
-          Caption = #50696#44552#51452
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
-        object lblBankID: TLabel
-          Left = 250
-          Top = 388
-          Width = 271
-          Height = 16
-          AutoSize = False
-          Caption = #44228#51340#48264#54840
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
         object Label15: TLabel
           Left = 307
-          Top = 880
+          Top = 718
           Width = 159
           Height = 16
           Caption = #50948' '#44552#50529#51012' '#50689#49688#54633#45768#45796'.'
@@ -996,7 +564,7 @@ object fmMoneyBackReport: TfmMoneyBackReport
         end
         object lblReceiptDate: TLabel
           Left = 299
-          Top = 902
+          Top = 740
           Width = 170
           Height = 16
           Alignment = taCenter
@@ -1011,233 +579,10 @@ object fmMoneyBackReport: TfmMoneyBackReport
         end
         object Label26: TLabel
           Left = 307
-          Top = 928
-          Width = 184
+          Top = 766
+          Width = 53
           Height = 16
-          Caption = #50689#49688#51088':                     ('#51064')'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
-        object Shape13: TShape
-          Left = 6
-          Top = 152
-          Width = 672
-          Height = 1
-          Brush.Color = clBlack
-        end
-        object Label24: TLabel
-          Left = 253
-          Top = 122
-          Width = 184
-          Height = 21
-          Caption = #49688#44053#47308' '#48152#54872#49888#52397#49436
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -21
-          Font.Name = #48148#53461
-          Font.Style = [fsBold]
-          ParentFont = False
-        end
-        object Shape17: TShape
-          Left = 6
-          Top = 188
-          Width = 672
-          Height = 1
-          Brush.Color = clBlack
-        end
-        object Shape18: TShape
-          Left = 6
-          Top = 227
-          Width = 672
-          Height = 1
-          Brush.Color = clBlack
-        end
-        object Label28: TLabel
-          Left = 20
-          Top = 162
-          Width = 80
-          Height = 16
-          Caption = #54532#47196#44536#47016#47749
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
-        object Label34: TLabel
-          Left = 148
-          Top = 162
-          Width = 80
-          Height = 16
-          Caption = #45225#48512#51088#49457#47749
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
-        object Label39: TLabel
-          Left = 239
-          Top = 162
-          Width = 96
-          Height = 16
-          Caption = #49688#44053#47308#45225#48512#51068
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
-        object Label40: TLabel
-          Left = 352
-          Top = 162
-          Width = 64
-          Height = 16
-          Caption = #45225#48512#44552#50529
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
-        object Label41: TLabel
-          Left = 432
-          Top = 162
-          Width = 80
-          Height = 16
-          Caption = #48152#54872#49888#52397#50529
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
-        object Label42: TLabel
-          Left = 530
-          Top = 162
-          Width = 64
-          Height = 16
-          Caption = #48152#54872#49324#50976
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
-        object Label43: TLabel
-          Left = 625
-          Top = 162
-          Width = 32
-          Height = 16
-          Caption = #48708#44256
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
-        object Shape19: TShape
-          Left = 139
-          Top = 152
-          Width = 1
-          Height = 76
-          Brush.Color = clBlack
-        end
-        object Shape20: TShape
-          Left = 233
-          Top = 152
-          Width = 1
-          Height = 76
-          Brush.Color = clBlack
-        end
-        object Shape21: TShape
-          Left = 341
-          Top = 152
-          Width = 1
-          Height = 76
-          Brush.Color = clBlack
-        end
-        object Shape22: TShape
-          Left = 430
-          Top = 152
-          Width = 1
-          Height = 76
-          Brush.Color = clBlack
-        end
-        object Shape23: TShape
-          Left = 517
-          Top = 152
-          Width = 1
-          Height = 76
-          Brush.Color = clBlack
-        end
-        object Shape24: TShape
-          Left = 606
-          Top = 152
-          Width = 1
-          Height = 76
-          Brush.Color = clBlack
-        end
-        object Label44: TLabel
-          Left = 36
-          Top = 239
-          Width = 605
-          Height = 32
-          Caption = '  '#50948#50752' '#44057#51060' '#51032#51221#48512#49884#51452#48124#51088#52824#49468#53552#49444#52824#48143#50868#50689#51312#47168' 10'#51312' '#48143' '#44057#51008' '#51312#47168' '#49884#54665#44508#52825' '#51228'6'#51312#13#10
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Pitch = fpFixed
-          Font.Style = []
-          ParentFont = False
-        end
-        object Label45: TLabel
-          Left = 36
-          Top = 265
-          Width = 327
-          Height = 16
-          Caption = #51228'2'#54637' '#44508#51221#50640' '#51032#44144' '#49688#44053#47308' '#48152#54872#51012' '#49888#52397#54633#45768#45796'.'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Pitch = fpFixed
-          Font.Style = []
-          ParentFont = False
-        end
-        object lblDongName: TLabel
-          Left = 80
-          Top = 418
-          Width = 285
-          Height = 19
-          Caption = #51032#51221#48512'2'#46041' '#51452#48124#51088#52824#50948#50896#51109' '#44480#54616
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -19
-          Font.Name = #48148#53461
-          Font.Style = [fsBold]
-          ParentFont = False
-        end
-        object lblRequestDate: TLabel
-          Left = 200
-          Top = 297
-          Width = 265
-          Height = 16
-          Alignment = taCenter
-          AutoSize = False
-          Caption = #49888#52397#51068#51088
+          Caption = #50689#49688#51088':'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -16
@@ -1246,41 +591,47 @@ object fmMoneyBackReport: TfmMoneyBackReport
           ParentFont = False
         end
         object Label48: TLabel
-          Left = 285
-          Top = 462
-          Width = 110
-          Height = 21
-          Caption = #48152#54872#44208#51032#49436
+          Left = 6
+          Top = 81
+          Width = 667
+          Height = 27
+          Alignment = taCenter
+          AutoSize = False
+          Caption = #48152'  '#54872'  '#44208'  '#51032'  '#49436
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -21
+          Font.Height = -27
           Font.Name = #48148#53461
           Font.Style = [fsBold]
           ParentFont = False
         end
-        object lblProgramName: TLabel
-          Left = 10
-          Top = 199
-          Width = 123
-          Height = 16
-          Alignment = taCenter
-          AutoSize = False
-          Caption = #54532#47196#44536#47016#47749
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
+        object Shape2: TShape
+          Left = 6
+          Top = 686
+          Width = 672
+          Height = 1
+          Brush.Color = clBlack
         end
-        object lblRequester: TLabel
-          Left = 145
-          Top = 199
+        object Shape13: TShape
+          Left = 6
+          Top = 813
+          Width = 672
+          Height = 1
+          Brush.Color = clBlack
+        end
+        object Shape15: TShape
+          Left = 150
+          Top = 595
+          Width = 1
+          Height = 315
+          Brush.Color = clBlack
+        end
+        object Label14: TLabel
+          Left = 40
+          Top = 635
           Width = 83
           Height = 16
-          Alignment = taCenter
-          AutoSize = False
-          Caption = #45225#48512#51088#47749
+          Caption = #52292'   '#44428'    '#51088
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -16
@@ -1288,29 +639,12 @@ object fmMoneyBackReport: TfmMoneyBackReport
           Font.Style = []
           ParentFont = False
         end
-        object lblPayDate: TLabel
-          Left = 237
-          Top = 199
-          Width = 100
-          Height = 16
-          Alignment = taCenter
-          AutoSize = False
-          Caption = #45225#48512#51068#51088
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
-        object lblPayAmount: TLabel
-          Left = 348
-          Top = 199
+        object Label22: TLabel
+          Left = 40
+          Top = 852
           Width = 77
           Height = 16
-          Alignment = taRightJustify
-          AutoSize = False
-          Caption = #45225#48512#44552#50529
+          Caption = #49324'         '#50976
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -16
@@ -1318,14 +652,13 @@ object fmMoneyBackReport: TfmMoneyBackReport
           Font.Style = []
           ParentFont = False
         end
-        object lblRequestPrice: TLabel
-          Left = 435
-          Top = 199
-          Width = 77
+        object lblOwner: TLabel
+          Left = 183
+          Top = 635
+          Width = 410
           Height = 16
-          Alignment = taRightJustify
           AutoSize = False
-          Caption = #49888#52397#50529
+          Caption = #54861#44600#46041' '#50808' '#52509'10'#47749
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -16
@@ -1334,13 +667,12 @@ object fmMoneyBackReport: TfmMoneyBackReport
           ParentFont = False
         end
         object lblBackReason: TLabel
-          Left = 522
-          Top = 199
-          Width = 80
+          Left = 183
+          Top = 852
+          Width = 410
           Height = 16
-          Alignment = taCenter
           AutoSize = False
-          Caption = #48152#54872#49324#50976
+          Caption = '2023'#45380#46020' 1'#48516#44592' '#54872#44553#49888#52397
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -16
@@ -1348,41 +680,18 @@ object fmMoneyBackReport: TfmMoneyBackReport
           Font.Style = []
           ParentFont = False
         end
-        object Label54: TLabel
-          Left = 610
-          Top = 199
-          Width = 62
+        object Label4: TLabel
+          Left = 32
+          Top = 473
+          Width = 94
           Height = 16
-          Alignment = taCenter
-          AutoSize = False
+          Caption = #48152'  '#54872'  '#44552'  '#50529
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -16
           Font.Name = #48148#53461
           Font.Style = []
           ParentFont = False
-        end
-        object shp1: TShape
-          Left = 387
-          Top = 488
-          Width = 1
-          Height = 126
-          Brush.Color = clBlack
-          Visible = False
-        end
-        object lbl1: TLabel
-          Left = 292
-          Top = 502
-          Width = 69
-          Height = 16
-          Caption = #48512' '#50948#50896#51109
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-          Visible = False
         end
       end
     end
@@ -1419,12 +728,13 @@ object fmMoneyBackReport: TfmMoneyBackReport
       PrinterPage.Margins.Left = 12700
       PrinterPage.Margins.Right = 12700
       PrinterPage.Margins.Top = 12700
+      PrinterPage.Orientation = poLandscape
       PrinterPage.PageSize.X = 210000
       PrinterPage.PageSize.Y = 297000
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
       ReportDocument.Caption = #51648#52636#44208#51032#49436
-      ReportDocument.CreationDate = 42884.687138622680000000
+      ReportDocument.CreationDate = 44967.492225509260000000
       BuiltInReportLink = True
       HiddenComponents = {}
       ExcludedComponents = {}

@@ -313,7 +313,6 @@ end;
 
 procedure TfmLogin.GetLoginUserInfo;
 begin
-  LoginUserCityIMAGE := TMemoryStream.Create;
   LoginUserPass   := d_user.DataSet.FieldByName('login_pass').AsString;
   LoginUserNo     := d_user.DataSet.FieldByName('id').AsString;
   LoginUserName   := d_user.DataSet.FieldByName('user_name').AsString;

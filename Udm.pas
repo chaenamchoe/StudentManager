@@ -529,6 +529,7 @@ type
     q_REQUEST_VIEWOUT_KIND2: TSmallintField;
     q_REQUEST_VIEWOUT_WHEN2: TSmallintField;
     q_REQUEST_VIEWOUT_AMOUNT2: TFloatField;
+    q_basic_valueMONEY_BACK_REPORT_WAY: TSmallintField;
     procedure q_CLASSROOMNewRecord(DataSet: TDataSet);
     procedure q_LECTURENewRecord(DataSet: TDataSet);
     procedure t_LOGIN_USERNewRecord(DataSet: TDataSet);

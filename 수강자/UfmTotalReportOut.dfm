@@ -23,8 +23,6 @@ object fmTotalReportOut: TfmTotalReportOut
     Height = 637
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = -8
-    ExplicitTop = 56
     object Label1: TLabel
       Left = 219
       Top = 9
@@ -442,7 +440,7 @@ object fmTotalReportOut: TfmTotalReportOut
       PrinterPage.PageSize.Y = 297000
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
-      ReportDocument.CreationDate = 44200.733635011570000000
+      ReportDocument.CreationDate = 44201.344672777780000000
       BuiltInReportLink = True
       HiddenComponents = {}
       ExcludedComponents = {}

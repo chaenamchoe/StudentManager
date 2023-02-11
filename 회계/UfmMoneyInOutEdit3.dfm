@@ -13,6 +13,7 @@ object fmMoneyInOutEdit3: TfmMoneyInOutEdit3
   Font.Style = []
   OldCreateOrder = False
   Position = poMainFormCenter
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object GroupBox1: TGroupBox
@@ -210,7 +211,7 @@ object fmMoneyInOutEdit3: TfmMoneyInOutEdit3
       Width = 126
     end
     object edtOut: TcxDBCalcEdit
-      Left = 165
+      Left = 184
       Top = 226
       DataBinding.DataField = 'm_out'
       DataBinding.DataSource = d_temp
@@ -224,7 +225,7 @@ object fmMoneyInOutEdit3: TfmMoneyInOutEdit3
       StyleFocused.LookAndFeel.NativeStyle = False
       StyleHot.LookAndFeel.NativeStyle = False
       TabOrder = 6
-      Width = 131
+      Width = 112
     end
     object cbKind: TcxDBImageComboBox
       Left = 165
@@ -247,38 +248,18 @@ object fmMoneyInOutEdit3: TfmMoneyInOutEdit3
       TabOrder = 1
       Width = 84
     end
-    object cbBankKind: TcxImageComboBox
+    object cbBankKind: TcxLookupComboBox
       Left = 24
-      Top = 225
-      EditValue = 1
-      Properties.Items = <
+      Top = 226
+      Properties.KeyFieldNames = 'ID'
+      Properties.ListColumns = <
         item
-          Description = #49688#44053#47308#44288#47532#53685#51109
-          ImageIndex = 0
-          Value = 1
-        end
-        item
-          Description = #50868#50689#48708#44288#47532#53685#51109'1'
-          Value = 2
-        end
-        item
-          Description = #50868#50689#48708#44288#47532#53685#51109'2'
-          Value = 3
+          FieldName = 'BANK_NAME'
         end>
-      Style.LookAndFeel.Kind = lfStandard
-      Style.LookAndFeel.NativeStyle = True
-      Style.LookAndFeel.SkinName = ''
-      StyleDisabled.LookAndFeel.Kind = lfStandard
-      StyleDisabled.LookAndFeel.NativeStyle = True
-      StyleDisabled.LookAndFeel.SkinName = ''
-      StyleFocused.LookAndFeel.Kind = lfStandard
-      StyleFocused.LookAndFeel.NativeStyle = True
-      StyleFocused.LookAndFeel.SkinName = ''
-      StyleHot.LookAndFeel.Kind = lfStandard
-      StyleHot.LookAndFeel.NativeStyle = True
-      StyleHot.LookAndFeel.SkinName = ''
+      Properties.ListOptions.ShowHeader = False
+      Properties.ListSource = DataSource1
       TabOrder = 9
-      Width = 131
+      Width = 154
     end
   end
   object dxTemp: TdxMemData
@@ -325,5 +306,17 @@ object fmMoneyInOutEdit3: TfmMoneyInOutEdit3
     DataSet = dxTemp
     Left = 280
     Top = 264
+  end
+  object UniQuery1: TUniQuery
+    Connection = dm.UniConnection1
+    SQL.Strings = (
+      'select * from bank_account;')
+    Left = 280
+    Top = 40
+  end
+  object DataSource1: TDataSource
+    DataSet = UniQuery1
+    Left = 280
+    Top = 88
   end
 end

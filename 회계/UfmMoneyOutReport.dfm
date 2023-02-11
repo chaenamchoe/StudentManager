@@ -13,7 +13,6 @@ object fmMoneyOutReport: TfmMoneyOutReport
   Font.Style = []
   OldCreateOrder = False
   Position = poMainFormCenter
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object TPanel
@@ -28,7 +27,7 @@ object fmMoneyOutReport: TfmMoneyOutReport
       Left = 4
       Top = 4
       Width = 305
-      Height = 161
+      Height = 143
       Align = alTop
       Caption = #51648#52636#44208#51032
       TabOrder = 0
@@ -53,23 +52,16 @@ object fmMoneyOutReport: TfmMoneyOutReport
         Height = 13
         Caption = #51648#52636#51068#51088':'
       end
-      object Label4: TLabel
-        Left = 19
-        Top = 90
-        Width = 95
-        Height = 13
-        Caption = #54788#44552#52636#45225#48512#44592#51116':'
-      end
       object Label5: TLabel
         Left = 19
-        Top = 112
+        Top = 90
         Width = 95
         Height = 13
         Caption = #51648#52636#45236#50669#48512#44592#51116':'
       end
       object Label6: TLabel
         Left = 58
-        Top = 134
+        Top = 112
         Width = 56
         Height = 13
         Caption = #51648#52636#44552#50529':'
@@ -98,34 +90,27 @@ object fmMoneyOutReport: TfmMoneyOutReport
         TabOrder = 2
         Width = 121
       end
-      object edtRegDate1: TcxDateEdit
-        Left = 119
-        Top = 87
-        Properties.OnEditValueChanged = edtRegDate1PropertiesEditValueChanged
-        TabOrder = 3
-        Width = 121
-      end
       object edtRegDate2: TcxDateEdit
         Left = 119
-        Top = 109
+        Top = 87
         Properties.OnEditValueChanged = edtRegDate2PropertiesEditValueChanged
-        TabOrder = 4
+        TabOrder = 3
         Width = 121
       end
       object edtAmount: TcxCurrencyEdit
         Left = 120
-        Top = 131
+        Top = 109
         Properties.AssignedValues.DisplayFormat = True
         Properties.UseThousandSeparator = True
         Properties.OnEditValueChanged = edtAmountPropertiesEditValueChanged
-        TabOrder = 5
+        TabOrder = 4
         Width = 121
       end
     end
     object GroupBox2: TGroupBox
       AlignWithMargins = True
       Left = 4
-      Top = 171
+      Top = 153
       Width = 305
       Height = 160
       Align = alTop
@@ -236,7 +221,7 @@ object fmMoneyOutReport: TfmMoneyOutReport
     object GroupBox3: TGroupBox
       AlignWithMargins = True
       Left = 4
-      Top = 337
+      Top = 319
       Width = 305
       Height = 146
       Align = alTop
@@ -330,7 +315,7 @@ object fmMoneyOutReport: TfmMoneyOutReport
     object GroupBox4: TGroupBox
       AlignWithMargins = True
       Left = 4
-      Top = 489
+      Top = 471
       Width = 305
       Height = 72
       Align = alTop
@@ -402,15 +387,6 @@ object fmMoneyOutReport: TfmMoneyOutReport
         TabOrder = 0
         OnClick = btnPrintClick
       end
-      object chkAddSign: TCheckBox
-        Left = 168
-        Top = 9
-        Width = 145
-        Height = 17
-        Caption = #52509#47924#50948#50896' '#44208#51116#52628#44032
-        TabOrder = 1
-        OnClick = chkAddSignClick
-      end
     end
     object ScrollBox1: TScrollBox
       Left = 0
@@ -438,24 +414,13 @@ object fmMoneyOutReport: TfmMoneyOutReport
           Height = 824
           Pen.Width = 2
         end
-        object Label13: TLabel
-          Left = 6
-          Top = 24
-          Width = 117
-          Height = 15
-          Caption = '['#48324#51648' '#51228'8'#54840#49436#49885']'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
         object Label14: TLabel
-          Left = 245
+          Left = 6
           Top = 81
-          Width = 220
+          Width = 667
           Height = 27
+          Alignment = taCenter
+          AutoSize = False
           Caption = #51648'  '#52636'  '#44208'  '#51032'  '#49436
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
@@ -478,11 +443,13 @@ object fmMoneyOutReport: TfmMoneyOutReport
           ParentFont = False
         end
         object Label16: TLabel
-          Left = 195
+          Left = 151
           Top = 145
-          Width = 69
+          Width = 154
           Height = 16
-          Caption = #54924#44228' '#45812#45817
+          Alignment = taCenter
+          AutoSize = False
+          Caption = #45812#45817#51088
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -16
@@ -491,11 +458,13 @@ object fmMoneyOutReport: TfmMoneyOutReport
           ParentFont = False
         end
         object Label17: TLabel
-          Left = 343
+          Left = 310
           Top = 145
-          Width = 69
+          Width = 154
           Height = 16
-          Caption = #48512' '#50948#50896#51109
+          Alignment = taCenter
+          AutoSize = False
+          Caption = #48512#54924#51109
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -16
@@ -504,11 +473,13 @@ object fmMoneyOutReport: TfmMoneyOutReport
           ParentFont = False
         end
         object Label18: TLabel
-          Left = 508
+          Left = 469
           Top = 145
-          Width = 48
+          Width = 148
           Height = 16
-          Caption = #50948#50896#51109
+          Alignment = taCenter
+          AutoSize = False
+          Caption = #54924'   '#51109
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -16
@@ -517,10 +488,10 @@ object fmMoneyOutReport: TfmMoneyOutReport
           ParentFont = False
         end
         object Label19: TLabel
-          Left = 642
+          Left = 640
           Top = 167
-          Width = 16
-          Height = 64
+          Width = 20
+          Height = 48
           Caption = #44208'      '#51116
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
@@ -556,22 +527,9 @@ object fmMoneyOutReport: TfmMoneyOutReport
           Font.Style = []
           ParentFont = False
         end
-        object Label22: TLabel
-          Left = 22
-          Top = 386
-          Width = 112
-          Height = 16
-          Caption = #54788#44552#52636#45225#48512#44592#51116
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
         object Label23: TLabel
           Left = 22
-          Top = 431
+          Top = 386
           Width = 112
           Height = 16
           Caption = #51648#52636#45236#50669#48512#44592#51116
@@ -584,7 +542,7 @@ object fmMoneyOutReport: TfmMoneyOutReport
         end
         object Label24: TLabel
           Left = 36
-          Top = 497
+          Top = 476
           Width = 79
           Height = 16
           Caption = #51648' '#52636' '#44552' '#50529
@@ -669,7 +627,7 @@ object fmMoneyOutReport: TfmMoneyOutReport
           Brush.Color = clBlack
         end
         object Shape5: TShape
-          Left = 301
+          Left = 305
           Top = 132
           Width = 1
           Height = 150
@@ -710,18 +668,11 @@ object fmMoneyOutReport: TfmMoneyOutReport
           Height = 1
           Brush.Color = clBlack
         end
-        object Shape11: TShape
-          Left = 6
-          Top = 459
-          Width = 672
-          Height = 1
-          Brush.Color = clBlack
-        end
         object Shape12: TShape
           Left = 619
           Top = 281
           Width = 1
-          Height = 179
+          Height = 136
           Brush.Color = clBlack
         end
         object Label29: TLabel
@@ -750,22 +701,9 @@ object fmMoneyOutReport: TfmMoneyOutReport
           Font.Style = []
           ParentFont = False
         end
-        object Label31: TLabel
-          Left = 639
-          Top = 386
-          Width = 26
-          Height = 16
-          Caption = '('#51064')'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
         object Label32: TLabel
           Left = 639
-          Top = 431
+          Top = 386
           Width = 26
           Height = 16
           Caption = '('#51064')'
@@ -785,7 +723,7 @@ object fmMoneyOutReport: TfmMoneyOutReport
         end
         object Shape14: TShape
           Left = 183
-          Top = 472
+          Top = 450
           Width = 450
           Height = 49
           Pen.Width = 2
@@ -919,7 +857,7 @@ object fmMoneyOutReport: TfmMoneyOutReport
           Font.Style = []
           ParentFont = False
         end
-        object lblRegDate1: TLabel
+        object lblRegDate2: TLabel
           Left = 183
           Top = 386
           Width = 410
@@ -934,24 +872,9 @@ object fmMoneyOutReport: TfmMoneyOutReport
           Font.Style = []
           ParentFont = False
         end
-        object lblRegDate2: TLabel
-          Left = 183
-          Top = 431
-          Width = 410
-          Height = 16
-          Alignment = taCenter
-          AutoSize = False
-          Caption = '2015. 03. 05('#54868')'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
         object lblAmountText: TLabel
           Left = 200
-          Top = 486
+          Top = 464
           Width = 410
           Height = 22
           Alignment = taCenter
@@ -966,7 +889,7 @@ object fmMoneyOutReport: TfmMoneyOutReport
         end
         object lblAmountNum: TLabel
           Left = 202
-          Top = 526
+          Top = 504
           Width = 410
           Height = 16
           Alignment = taCenter
@@ -1135,28 +1058,6 @@ object fmMoneyOutReport: TfmMoneyOutReport
           Font.Style = []
           ParentFont = False
         end
-        object shp1: TShape
-          Left = 388
-          Top = 132
-          Width = 1
-          Height = 150
-          Brush.Color = clBlack
-          Visible = False
-        end
-        object lbl1: TLabel
-          Left = 294
-          Top = 145
-          Width = 69
-          Height = 16
-          Caption = #48512' '#50948#50896#51109
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-          Visible = False
-        end
       end
     end
   end
@@ -1192,12 +1093,13 @@ object fmMoneyOutReport: TfmMoneyOutReport
       PrinterPage.Margins.Left = 12700
       PrinterPage.Margins.Right = 12700
       PrinterPage.Margins.Top = 12700
+      PrinterPage.Orientation = poLandscape
       PrinterPage.PageSize.X = 210000
       PrinterPage.PageSize.Y = 297000
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
       ReportDocument.Caption = #51648#52636#44208#51032#49436
-      ReportDocument.CreationDate = 42884.686779803240000000
+      ReportDocument.CreationDate = 44967.492655219910000000
       BuiltInReportLink = True
       HiddenComponents = {}
       ExcludedComponents = {}

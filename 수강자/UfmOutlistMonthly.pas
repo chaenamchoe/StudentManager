@@ -130,6 +130,8 @@ type
     frxDBDataset1: TfrxDBDataset;
     q_REQUEST_VIEWrec_id: TIntegerField;
     gridRequestrec_id: TcxGridDBColumn;
+    q_REQUEST_VIEWL_IDX: TSmallintField;
+    gridRequestL_IDX: TcxGridDBColumn;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure btnRetrieveClick(Sender: TObject);

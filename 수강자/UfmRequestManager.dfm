@@ -1298,6 +1298,10 @@ object fmRequestManager: TfmRequestManager
             item
               Description = #52852#46300
               Value = 3
+            end
+            item
+              Description = #51060#52404
+              Value = 4
             end>
           Visible = False
           HeaderAlignmentHorz = taCenter
@@ -1534,7 +1538,6 @@ object fmRequestManager: TfmRequestManager
     object dxComponentPrinter1Link1: TdxGridReportLink
       Active = True
       Component = cxGrid1
-      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
       PrinterPage.Header = 6350
@@ -1557,7 +1560,7 @@ object fmRequestManager: TfmRequestManager
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
       ReportDocument.Caption = #48372#44256#49436
-      ReportDocument.CreationDate = 43999.199541689810000000
+      ReportDocument.CreationDate = 44953.415664363430000000
       ReportTitle.AdjustOnReportScale = True
       ReportTitle.Font.Charset = DEFAULT_CHARSET
       ReportTitle.Font.Color = clBlack
@@ -1565,7 +1568,6 @@ object fmRequestManager: TfmRequestManager
       ReportTitle.Font.Name = #44404#47548
       ReportTitle.Font.Style = [fsBold]
       ReportTitle.Text = #44053#49324#49688#45817#51648#44553#54788#54889
-      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -13
@@ -1797,7 +1799,6 @@ object fmRequestManager: TfmRequestManager
     object dxComponentPrinter2Link1: TdxGridReportLink
       Active = True
       Component = cxGrid2
-      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
       PrinterPage.Header = 6350
@@ -1810,8 +1811,7 @@ object fmRequestManager: TfmRequestManager
       PrinterPage.PageSize.Y = 297000
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
-      ReportDocument.CreationDate = 43999.199541805550000000
-      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
+      ReportDocument.CreationDate = 44953.415664432870000000
       OptionsFormatting.SuppressBackgroundBitmaps = True
       OptionsFormatting.UseNativeStyles = True
       OptionsRefinements.TransparentGraphics = True

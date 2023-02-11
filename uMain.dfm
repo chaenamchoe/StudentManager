@@ -1468,6 +1468,10 @@ object fmMain: TfmMain
       object N47: TMenuItem
         Caption = '-'
       end
+      object N11: TMenuItem
+        Caption = #50896#44201#51648#50896#50836#52397
+        OnClick = N11Click
+      end
       object N1: TMenuItem
         Caption = #46020#50880#47568
         ShortCut = 112

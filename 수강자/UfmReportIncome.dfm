@@ -404,17 +404,24 @@ object fmReportIncome: TfmReportIncome
       object gridRequestL_YEAR: TcxGridDBColumn
         Caption = #45380#46020
         DataBinding.FieldName = 'L_YEAR'
+        Visible = False
         HeaderAlignmentHorz = taCenter
         Options.CellMerging = True
         Width = 56
       end
+      object gridRequestL_IDX: TcxGridDBColumn
+        Caption = #44053#51340'ID'
+        DataBinding.FieldName = 'L_IDX'
+        Visible = False
+        GroupIndex = 0
+        Width = 67
+      end
       object gridRequestL_STEP: TcxGridDBColumn
         Caption = #48516#44592
         DataBinding.FieldName = 'L_STEP'
-        GroupIndex = 0
         HeaderAlignmentHorz = taCenter
         Options.CellMerging = True
-        Width = 52
+        Width = 20
       end
       object gridRequestL_NAME: TcxGridDBColumn
         Caption = #44053#51340#47749
@@ -603,6 +610,10 @@ object fmReportIncome: TfmReportIncome
           item
             Description = #52852#46300
             Value = 3
+          end
+          item
+            Description = #51060#52404
+            Value = 4
           end>
         Visible = False
         HeaderAlignmentHorz = taCenter
@@ -726,11 +737,6 @@ object fmReportIncome: TfmReportIncome
       end
       object gridRequestPAYBACK_BANKID: TcxGridDBColumn
         DataBinding.FieldName = 'PAYBACK_BANKID'
-        Visible = False
-        VisibleForCustomization = False
-      end
-      object gridRequestL_IDX: TcxGridDBColumn
-        DataBinding.FieldName = 'L_IDX'
         Visible = False
         VisibleForCustomization = False
       end
@@ -1123,6 +1129,7 @@ object fmReportIncome: TfmReportIncome
       Component = cxGrid1
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
+      PrinterPage.GrayShading = True
       PrinterPage.Header = 6350
       PrinterPage.Margins.Bottom = 12700
       PrinterPage.Margins.Left = 12700
@@ -1143,7 +1150,7 @@ object fmReportIncome: TfmReportIncome
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
       ReportDocument.Caption = #48372#44256#49436
-      ReportDocument.CreationDate = 42568.199407361110000000
+      ReportDocument.CreationDate = 44953.487766527770000000
       ReportTitle.AdjustOnReportScale = True
       ReportTitle.Font.Charset = DEFAULT_CHARSET
       ReportTitle.Font.Color = clBlack
