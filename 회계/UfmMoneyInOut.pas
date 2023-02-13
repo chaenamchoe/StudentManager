@@ -491,7 +491,6 @@ begin
     fmMoneyBackReport2.edtYear.Text := IntToStr(YearOf(Date));
     fmMoneyBackReport2.edtBalDate.Date := Date;
     fmMoneyBackReport2.edtOutDate.Date := Date;
-    fmMoneyBackReport2.edtRegDate1.Date := Date;
     fmMoneyBackReport2.edtRegDate2.Date := Date;
     fmMoneyBackReport2.edtAmount.EditValue := gridMoneyInoutIO_OUT.EditValue;
 

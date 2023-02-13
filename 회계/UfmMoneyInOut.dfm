@@ -442,6 +442,7 @@ object fmMoneyInOut: TfmMoneyInOut
     object dxComponentPrinter1Link1: TdxGridReportLink
       Active = True
       Component = cxGrid1
+      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
       PrinterPage.Header = 6350
@@ -459,13 +460,14 @@ object fmMoneyInOut: TfmMoneyInOut
       PrinterPage.ScaleFactor = 95
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
-      ReportDocument.CreationDate = 44968.146312476850000000
+      ReportDocument.CreationDate = 44970.664968657410000000
       ReportTitle.Font.Charset = ANSI_CHARSET
       ReportTitle.Font.Color = clBlack
       ReportTitle.Font.Height = -19
       ReportTitle.Font.Name = #44404#47548
       ReportTitle.Font.Style = [fsBold]
       ReportTitle.Text = #49688#44053#51088' '#47532#49828#53944
+      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
       OptionsOnEveryPage.Footers = False
       OptionsOnEveryPage.Caption = False
       OptionsOnEveryPage.FilterBar = False

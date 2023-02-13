@@ -28,7 +28,7 @@ object fmMoneyBackReport2: TfmMoneyBackReport2
       Left = 4
       Top = 4
       Width = 305
-      Height = 161
+      Height = 141
       Align = alTop
       Caption = #51648#52636#44208#51032
       TabOrder = 0
@@ -53,23 +53,16 @@ object fmMoneyBackReport2: TfmMoneyBackReport2
         Height = 13
         Caption = #48152#54872#51068#51088':'
       end
-      object Label4: TLabel
-        Left = 19
-        Top = 90
-        Width = 95
-        Height = 13
-        Caption = #54788#44552#52636#45225#48512#44592#51116':'
-      end
       object Label5: TLabel
         Left = 19
-        Top = 112
+        Top = 90
         Width = 95
         Height = 13
         Caption = #51648#52636#45236#50669#48512#44592#51116':'
       end
       object Label6: TLabel
         Left = 58
-        Top = 134
+        Top = 112
         Width = 56
         Height = 13
         Caption = #48152#54872#44552#50529':'
@@ -98,39 +91,33 @@ object fmMoneyBackReport2: TfmMoneyBackReport2
         TabOrder = 2
         Width = 121
       end
-      object edtRegDate1: TcxDateEdit
-        Left = 119
-        Top = 87
-        Properties.OnEditValueChanged = edtRegDate1PropertiesEditValueChanged
-        TabOrder = 3
-        Width = 121
-      end
       object edtRegDate2: TcxDateEdit
         Left = 119
-        Top = 109
+        Top = 87
         Properties.OnEditValueChanged = edtRegDate2PropertiesEditValueChanged
-        TabOrder = 4
+        TabOrder = 3
         Width = 121
       end
       object edtAmount: TcxCurrencyEdit
         Left = 119
-        Top = 131
+        Top = 109
         Properties.AssignedValues.DisplayFormat = True
         Properties.UseThousandSeparator = True
         Properties.OnEditValueChanged = edtAmountPropertiesEditValueChanged
-        TabOrder = 5
+        TabOrder = 4
         Width = 121
       end
     end
     object GroupBox2: TGroupBox
       AlignWithMargins = True
       Left = 4
-      Top = 171
+      Top = 151
       Width = 305
       Height = 160
       Align = alTop
       Caption = #49888#52397#51064
       TabOrder = 1
+      ExplicitTop = 171
       object Label7: TLabel
         Left = 33
         Top = 89
@@ -235,12 +222,13 @@ object fmMoneyBackReport2: TfmMoneyBackReport2
     object GroupBox3: TGroupBox
       AlignWithMargins = True
       Left = 4
-      Top = 337
+      Top = 317
       Width = 305
       Height = 176
       Align = alTop
       Caption = #48152#54872#45236#50669
       TabOrder = 2
+      ExplicitTop = 337
       object Label55: TLabel
         Left = 32
         Top = 20
@@ -430,18 +418,18 @@ object fmMoneyBackReport2: TfmMoneyBackReport2
         Color = clWhite
         ParentBackground = False
         TabOrder = 0
-        object Shape2: TShape
-          Left = 6
-          Top = 112
-          Width = 672
-          Height = 337
-          Pen.Width = 2
-        end
         object Shape1: TShape
           Left = 6
           Top = 488
           Width = 672
           Height = 468
+          Pen.Width = 2
+        end
+        object Shape2: TShape
+          Left = 6
+          Top = 112
+          Width = 672
+          Height = 337
           Pen.Width = 2
         end
         object Label14: TLabel
@@ -552,22 +540,9 @@ object fmMoneyBackReport2: TfmMoneyBackReport2
           Font.Style = []
           ParentFont = False
         end
-        object Label22: TLabel
-          Left = 22
-          Top = 704
-          Width = 112
-          Height = 16
-          Caption = #54788#44552#52636#45225#48512#44592#51116
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
         object Label23: TLabel
           Left = 14
-          Top = 744
+          Top = 703
           Width = 128
           Height = 16
           Caption = #49688#44053#47308#49688#45225#48512#44592#51116
@@ -658,7 +633,7 @@ object fmMoneyBackReport2: TfmMoneyBackReport2
           Left = 619
           Top = 613
           Width = 1
-          Height = 160
+          Height = 119
           Brush.Color = clBlack
         end
         object Label29: TLabel
@@ -687,22 +662,9 @@ object fmMoneyBackReport2: TfmMoneyBackReport2
           Font.Style = []
           ParentFont = False
         end
-        object Label31: TLabel
-          Left = 639
-          Top = 704
-          Width = 26
-          Height = 16
-          Caption = '('#51064')'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
         object Label32: TLabel
           Left = 639
-          Top = 744
+          Top = 703
           Width = 26
           Height = 16
           Caption = '('#51064')'
@@ -715,17 +677,10 @@ object fmMoneyBackReport2: TfmMoneyBackReport2
         end
         object Shape14: TShape
           Left = 183
-          Top = 791
+          Top = 770
           Width = 450
           Height = 49
           Pen.Width = 2
-        end
-        object Shape15: TShape
-          Left = 6
-          Top = 772
-          Width = 672
-          Height = 1
-          Brush.Color = clBlack
         end
         object Shape16: TShape
           Left = 6
@@ -829,24 +784,9 @@ object fmMoneyBackReport2: TfmMoneyBackReport2
           Font.Style = []
           ParentFont = False
         end
-        object lblRegDate1: TLabel
-          Left = 183
-          Top = 704
-          Width = 410
-          Height = 16
-          Alignment = taCenter
-          AutoSize = False
-          Caption = '2015. 03. 05('#54868')'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
         object lblRegDate2: TLabel
           Left = 183
-          Top = 744
+          Top = 703
           Width = 410
           Height = 16
           Alignment = taCenter
@@ -861,7 +801,7 @@ object fmMoneyBackReport2: TfmMoneyBackReport2
         end
         object lblAmountText: TLabel
           Left = 200
-          Top = 805
+          Top = 784
           Width = 410
           Height = 22
           Alignment = taCenter
@@ -876,7 +816,7 @@ object fmMoneyBackReport2: TfmMoneyBackReport2
         end
         object lblAmountNum: TLabel
           Left = 202
-          Top = 845
+          Top = 824
           Width = 410
           Height = 16
           Alignment = taCenter
@@ -1342,7 +1282,7 @@ object fmMoneyBackReport2: TfmMoneyBackReport2
         end
         object Label13: TLabel
           Left = 32
-          Top = 807
+          Top = 786
           Width = 88
           Height = 16
           Caption = #48152'    '#54872'    '#44552
@@ -1393,7 +1333,7 @@ object fmMoneyBackReport2: TfmMoneyBackReport2
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
       ReportDocument.Caption = #51648#52636#44208#51032#49436
-      ReportDocument.CreationDate = 44968.140408148150000000
+      ReportDocument.CreationDate = 44970.662111817130000000
       BuiltInReportLink = True
       HiddenComponents = {}
       ExcludedComponents = {}

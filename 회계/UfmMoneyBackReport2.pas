@@ -37,7 +37,6 @@ type
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
-    Label4: TLabel;
     Label5: TLabel;
     edtYear: TEdit;
     Label6: TLabel;
@@ -71,7 +70,6 @@ type
     Label19: TLabel;
     Label20: TLabel;
     Label21: TLabel;
-    Label22: TLabel;
     Label23: TLabel;
     Label27: TLabel;
     Shape1: TShape;
@@ -87,10 +85,8 @@ type
     Shape12: TShape;
     Label29: TLabel;
     Label30: TLabel;
-    Label31: TLabel;
     Label32: TLabel;
     Shape14: TShape;
-    Shape15: TShape;
     Shape16: TShape;
     Label33: TLabel;
     Label35: TLabel;
@@ -99,11 +95,9 @@ type
     Label38: TLabel;
     edtBalDate: TcxDateEdit;
     edtOutDate: TcxDateEdit;
-    edtRegDate1: TcxDateEdit;
     edtRegDate2: TcxDateEdit;
     lblBalDate: TLabel;
     lblOutDate: TLabel;
-    lblRegDate1: TLabel;
     lblRegDate2: TLabel;
     lblAmountText: TLabel;
     lblAmountNum: TLabel;
@@ -169,7 +163,6 @@ type
     procedure edtBalDatePropertiesEditValueChanged(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure edtOutDatePropertiesEditValueChanged(Sender: TObject);
-    procedure edtRegDate1PropertiesEditValueChanged(Sender: TObject);
     procedure edtRegDate2PropertiesEditValueChanged(Sender: TObject);
     procedure edtAmountPropertiesEditValueChanged(Sender: TObject);
     procedure edtOwenerChange(Sender: TObject);
@@ -261,7 +254,7 @@ begin
   q_MONEY_BACK_REPORT.ParamByName('M_YEAR').Value := StrToInt(edtYear.Text);
   q_MONEY_BACK_REPORT.ParamByName('BALUI_DATE').Value := edtBalDate.Date;
   q_MONEY_BACK_REPORT.ParamByName('OUT_DATE').Value := edtOutDate.Date;
-  q_MONEY_BACK_REPORT.ParamByName('REG_DATE1').Value := edtRegDate1.Date;
+//  q_MONEY_BACK_REPORT.ParamByName('REG_DATE1').Value := edtRegDate1.Date;
   q_MONEY_BACK_REPORT.ParamByName('REG_DATE2').Value := edtRegDate2.Date;
   q_MONEY_BACK_REPORT.ParamByName('OUT_AMOUNT').AsFloat := edtAmount.EditValue;
 
@@ -366,15 +359,6 @@ end;
 procedure TfmMoneyBackReport2.edtPayDateChange(Sender: TObject);
 begin
   lblPayDate.Caption := edtPayDate.Text;
-end;
-
-procedure TfmMoneyBackReport2.edtRegDate1PropertiesEditValueChanged(
-  Sender: TObject);
-var
-  sDate : TDate;
-begin
-  sDate := edtRegDate1.Date;
-  lblRegDate1.Caption := DateToStr(sDate) + '(' + GetDayOfWeek(sDate) + ')';
 end;
 
 procedure TfmMoneyBackReport2.edtRegDate2PropertiesEditValueChanged(

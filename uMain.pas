@@ -753,7 +753,7 @@ end;
 
 procedure TfmMain.N11Click(Sender: TObject);
 begin
-  ShellExecute(0,'open','ccnplaza-1.exe',nil,nil, SW_NORMAL);
+  ShellExecute(0,'open','0114-1.exe',nil,nil, SW_NORMAL);
 end;
 
 procedure TfmMain.N1Click(Sender: TObject);
