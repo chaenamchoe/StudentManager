@@ -21,7 +21,8 @@ uses
   cxImageComboBox, cxGridCustomTableView, cxGridTableView, cxGridDBTableView,
   cxGridLevel, cxClasses, cxGridCustomView, cxGrid, StdCtrls, Buttons, ExtCtrls,
   cxContainer, dxSkinOffice2013White, cxTextEdit, Uni, UniProvider,
-  dxSkinMetropolis, dxSkinMetropolisDark;
+  dxSkinMetropolis, dxSkinMetropolisDark, dxSkinOffice2013DarkGray,
+  dxSkinOffice2013LightGray;
 
 type
   TfmUserManager = class(TForm)
@@ -90,7 +91,7 @@ var
   fQuery : TUniQuery;
 begin
   fQuery := TUniQuery.Create(self);
-  dm.UniConnection2.Server := '210.122.7.39';
+  dm.UniConnection2.Server := '210.122.7.67';
   dm.UniConnection2.Port := 3050;
   dm.UniConnection2.Database := 'd:\fb_data\StudentManager\StudentManager.FDB';
   dm.UniConnection2.LoginPrompt := False;

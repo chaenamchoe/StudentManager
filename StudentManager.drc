@@ -10391,10 +10391,8 @@ END
 /* 회계\UfmExpenseBudgetEdit2.dfm */
 /* 회계\UfmExpenseBudgetEdit.dfm */
 /* 회계\UfmExpenseBudget.dfm */
-/* 회계\UfmMoneyInOutEdit.dfm */
-/* 회계\UfmMoneyInOutEdit2.dfm */
-/* 회계\UfmMoneyOutReport.dfm */
-/* 회계\UfmMoneyBackReport.dfm */
+/* 회계\UfmMoneyBackReport2.dfm */
+/* 회계\UfmMoneyInoutMove.dfm */
 /* C:\DelphiComponents\Devexpress14.1.2\Library\Sources\cxScheduler.res */
 /* C:\DelphiComponents\Devexpress14.1.2\Library\Sources\cxSchedulerTaskDependencyEditor.dfm */
 /* C:\DelphiComponents\Devexpress14.1.2\Library\Sources\cxShellBrowser.dfm */
@@ -10411,9 +10409,11 @@ END
 /* C:\DelphiComponents\Devexpress14.1.2\Library\Sources\dxPScxSchedulerLnk.dfm */
 /* C:\DelphiComponents\Devexpress14.1.2\Library\Sources\dxPScxSchedulerLnk.res */
 /* 회계\UfmMoneyInReport.dfm */
-/* 회계\UfmMoneyInoutMove.dfm */
-/* 회계\UfmMoneyBackReport2.dfm */
-/* D:\Delphi2010\04_강좌관리\StudentManager\CenterManager\회계\UfmMoneyInOut.dfm */
+/* 회계\UfmMoneyBackReport.dfm */
+/* 회계\UfmMoneyOutReport.dfm */
+/* 회계\UfmMoneyInOutEdit2.dfm */
+/* 회계\UfmMoneyInOutEdit.dfm */
+/* 회계\UfmMoneyInOut.dfm */
 /* 회계\UfmMoneyByItem.dfm */
 /* 회계\UfmAccountCompare.dfm */
 /* 보고서\UfmLecturePivot.dfm */

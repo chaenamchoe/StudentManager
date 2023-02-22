@@ -1216,6 +1216,7 @@ object fmLogin: TfmLogin
               BF07A0FBFBF0BB0BFB07D0BFBFB0BB0FBF07A00000000BB0000DDADADADA0BB0
               DADAADADADADA0000DADDADADADAD0110ADAADADADADAD00ADAD}
             TabOrder = 6
+            Visible = False
             OnClick = btnAddNewClick
           end
         end
