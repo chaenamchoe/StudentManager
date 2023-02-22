@@ -10,7 +10,7 @@ object dm: Tdm
   object UniConnection1: TUniConnection
     ProviderName = 'InterBase'
     Port = 3050
-    Database = 'D:\fb_data\StudentManager\'#51032#51221#48512#49884'\'#49888#44257'1'#46041'\uijungbu.FDB'
+    Database = 'D:\fb_data\StudentManager\'#51032#51221#48512#49884'\'#49569#49328'2'#46041'\uijungbu.FDB'
     Username = 'sysdba'
     Server = '210.122.7.67'
     Connected = True
@@ -4316,5 +4316,200 @@ object dm: Tdm
         Size = 17
       end>
     CommandStoredProcName = 'CASHBILL_IU'
+  end
+  object EMP_ATTENDING_INS: TUniStoredProc
+    StoredProcName = 'EMP_ATTENDING_INS'
+    Connection = UniConnection1
+    Left = 216
+    Top = 648
+    ParamData = <
+      item
+        DataType = ftDate
+        Name = 'WDATE'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftTime
+        Name = 'IN_TIME'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftTime
+        Name = 'OUT_TIME'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'W_KIND'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'W_REASON'
+        ParamType = ptInput
+        Size = 200
+      end>
+    CommandStoredProcName = 'EMP_ATTENDING_INS'
+  end
+  object EMP_ATTENDING_SEL: TUniStoredProc
+    StoredProcName = 'EMP_ATTENDING_SEL'
+    Connection = UniConnection1
+    Left = 344
+    Top = 624
+    ParamData = <
+      item
+        DataType = ftDate
+        Name = 'SDATE'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftDate
+        Name = 'EDATE'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'ID'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftDate
+        Name = 'WDATE'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftTime
+        Name = 'IN_TIME'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftTime
+        Name = 'OUT_TIME'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'W_KIND'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftString
+        Name = 'W_REASON'
+        ParamType = ptOutput
+        Size = 200
+      end>
+    CommandStoredProcName = 'EMP_ATTENDING_SEL'
+    object EMP_ATTENDING_SELID: TIntegerField
+      FieldName = 'ID'
+    end
+    object EMP_ATTENDING_SELWDATE: TDateField
+      FieldName = 'WDATE'
+    end
+    object EMP_ATTENDING_SELIN_TIME: TTimeField
+      FieldName = 'IN_TIME'
+    end
+    object EMP_ATTENDING_SELOUT_TIME: TTimeField
+      FieldName = 'OUT_TIME'
+    end
+    object EMP_ATTENDING_SELW_KIND: TIntegerField
+      FieldName = 'W_KIND'
+    end
+    object EMP_ATTENDING_SELW_REASON: TStringField
+      FieldName = 'W_REASON'
+      Size = 200
+    end
+  end
+  object ds_EMP_ATTENDING_SEL: TDataSource
+    DataSet = EMP_ATTENDING_SEL
+    Left = 344
+    Top = 672
+  end
+  object EMP_ATTENDING_UPD: TUniStoredProc
+    StoredProcName = 'EMP_ATTENDING_UPD'
+    Connection = UniConnection1
+    Left = 216
+    Top = 696
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'ID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftTime
+        Name = 'IN_TIME'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftTime
+        Name = 'OUT_TIME'
+        ParamType = ptInput
+      end>
+    CommandStoredProcName = 'EMP_ATTENDING_UPD'
+  end
+  object EMP_ATTENDING_SEL_ID: TUniStoredProc
+    StoredProcName = 'EMP_ATTENDING_SEL_ID'
+    Connection = UniConnection1
+    Left = 448
+    Top = 648
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'SID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftDate
+        Name = 'WDATE'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftTime
+        Name = 'IN_TIME'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftTime
+        Name = 'OUT_TIME'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'W_KIND'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftString
+        Name = 'W_REASON'
+        ParamType = ptOutput
+        Size = 200
+      end>
+    CommandStoredProcName = 'EMP_ATTENDING_SEL_ID'
+    object EMP_ATTENDING_SEL_IDWDATE: TDateField
+      FieldName = 'WDATE'
+    end
+    object EMP_ATTENDING_SEL_IDIN_TIME: TTimeField
+      FieldName = 'IN_TIME'
+    end
+    object EMP_ATTENDING_SEL_IDOUT_TIME: TTimeField
+      FieldName = 'OUT_TIME'
+    end
+    object EMP_ATTENDING_SEL_IDW_KIND: TIntegerField
+      FieldName = 'W_KIND'
+    end
+    object EMP_ATTENDING_SEL_IDW_REASON: TStringField
+      FieldName = 'W_REASON'
+      Size = 200
+    end
+  end
+  object ds_EMP_ATTENDING_SEL_ID: TDataSource
+    DataSet = EMP_ATTENDING_SEL_ID
+    Left = 448
+    Top = 696
+  end
+  object UniQuery1: TUniQuery
+    Connection = UniConnection1
+    Left = 448
+    Top = 600
   end
 end

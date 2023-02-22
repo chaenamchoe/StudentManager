@@ -47,6 +47,7 @@ var
     AUTO_MONEY_ADD : boolean;
     CASH_RECEIPT_CONTACTS : string;
     MONEY_BACK_REPORT_WAY : Integer;
+    INSERT_ATTEND_DATA : Boolean;
 
     CERTKEY, USER_ID, USER_PASS, BUSINESS_ID : string;
 implementation

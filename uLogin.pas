@@ -26,7 +26,7 @@ uses
   IdMessageClient, IdSMTPBase, IdIOHandler, IdIOHandlerSocket, IdIOHandlerStack,
   IdSSL, IdSSLOpenSSL, dxSkinMetropolis, dxSkinMetropolisDark,
   dxSkinOffice2013DarkGray, dxSkinOffice2013LightGray, dxBarBuiltInMenu,
-  Menus, cxButtons, IniFiles, Gauges, BMDThread, IdHTTP;
+  Menus, cxButtons, IniFiles, Gauges, BMDThread, IdHTTP, cxCheckBox;
 
 type
 
@@ -111,6 +111,7 @@ type
     d_UPDATE_FILE_SEL: TUniDataSource;
     lblUpdateMessage: TLabel;
     cxButton1: TcxButton;
+    chkAttend: TcxCheckBox;
     procedure btnLocalOKClick(Sender: TObject);
     procedure btnRegistProgramClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
@@ -437,6 +438,10 @@ begin
         FIni.WriteString('Login', 'Login PW', '');
         FIni.WriteString('Login', 'Save Pass', '0');
       end;
+      if chkAttend.Checked then
+        INSERT_ATTEND_DATA := True
+      else
+        INSERT_ATTEND_DATA := False;
       ModalResult := mrOk;
     end else begin
       ShowMessage('비승인된 사용자입니다.' + #13#10 +

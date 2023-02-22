@@ -345,6 +345,12 @@
 			<DCCReference Include="회계\UfmMoneyBackReport2.pas">
 				<Form>fmMoneyBackReport2</Form>
 			</DCCReference>
+			<DCCReference Include="인사급여\UfmEmpList.pas">
+				<Form>fmEmpList</Form>
+			</DCCReference>
+			<DCCReference Include="인사급여\UfmEmpAttend.pas">
+				<Form>fmEmpAttend</Form>
+			</DCCReference>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>

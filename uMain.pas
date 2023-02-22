@@ -22,7 +22,8 @@ uses
   cxLookAndFeels, cxLookAndFeelPainters, dxSkinsdxStatusBarPainter, dxStatusBar,
   dxSkinOffice2013White, cxContainer, cxEdit, cxImage, cxCalendar, dxPSEngn,
   dxSkinMetropolis, dxSkinMetropolisDark, dxSkinOffice2013DarkGray,
-  dxSkinOffice2013LightGray, dxBarBuiltInMenu, cxClasses, IniFiles, BMDThread;
+  dxSkinOffice2013LightGray, dxBarBuiltInMenu, cxClasses, IniFiles, BMDThread,
+  MemDS;
 
 type
   TfmMain = class(TForm)
@@ -187,6 +188,11 @@ type
     N54: TMenuItem;
     BMDThread1: TBMDThread;
     N11: TMenuItem;
+    N55: TMenuItem;
+    N56: TMenuItem;
+    N57: TMenuItem;
+    N58: TMenuItem;
+    EMP_ATTENDING_INS: TUniStoredProc;
     procedure FormCreate(Sender: TObject);
     procedure ActionLectureRegistExecute(Sender: TObject);
     procedure ActionTeacherViewExecute(Sender: TObject);
@@ -252,6 +258,8 @@ type
     procedure BMDThread1Execute(Sender: TObject; Thread: TBMDExecuteThread;
       var Data: Pointer);
     procedure N11Click(Sender: TObject);
+    procedure N56Click(Sender: TObject);
+    procedure N57Click(Sender: TObject);
   private
     procedure CloseAllWindows;
     { Private declarations }
@@ -744,6 +752,7 @@ begin
   AUTO_MONEY_ADD := auto_money = 1;
   CASH_RECEIPT_CONTACTS := dm.q_basic_valueCASH_RECEIPT_CONTACTS.AsString;
   MONEY_BACK_REPORT_WAY := dm.q_basic_valueMONEY_BACK_REPORT_WAY.AsInteger;
+
 end;
 
 procedure TfmMain.mnuCloseWindowClick(Sender: TObject);
@@ -797,6 +806,20 @@ begin
   finally
     fmSMSSetting.Free;
   end;
+end;
+
+procedure TfmMain.N56Click(Sender: TObject);
+begin
+  if SDI_Mode.Checked then
+    CloseAllWindows;
+  CreateChild('TfmEmpList', '流盔包府');
+end;
+
+procedure TfmMain.N57Click(Sender: TObject);
+begin
+  if SDI_Mode.Checked then
+    CloseAllWindows;
+  CreateChild('TfmEmpAttend', '辟公惑炔何');
 end;
 
 procedure TfmMain.N_MultiwindowClick(Sender: TObject);

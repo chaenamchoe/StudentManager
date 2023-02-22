@@ -3,26 +3,26 @@ object fmLogin: TfmLogin
   Top = 0
   BorderStyle = bsDialog
   Caption = #49324#50857#51088' '#47196#44536#51064
-  ClientHeight = 303
+  ClientHeight = 327
   ClientWidth = 359
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -13
-  Font.Name = #44404#47548
+  Font.Name = #45208#45588#44256#46357
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
   OnClose = FormClose
   OnShow = FormShow
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 15
   object pnl1: TPanel
     AlignWithMargins = True
     Left = 8
     Top = 10
     Width = 343
-    Height = 285
+    Height = 309
     Margins.Left = 8
     Margins.Top = 10
     Margins.Right = 8
@@ -32,6 +32,7 @@ object fmLogin: TfmLogin
     BevelOuter = bvLowered
     ParentBackground = False
     TabOrder = 0
+    ExplicitHeight = 285
     object Image1: TImage
       Left = 206
       Top = 15
@@ -924,7 +925,7 @@ object fmLogin: TfmLogin
       Left = 27
       Top = 49
       Width = 4
-      Height = 13
+      Height = 15
       IsControl = True
     end
     object lblVersion: TLabel
@@ -979,7 +980,7 @@ object fmLogin: TfmLogin
       LookAndFeel.NativeStyle = False
       ClientRectBottom = 127
       ClientRectRight = 328
-      ClientRectTop = 24
+      ClientRectTop = 26
       object cxTabSheet2: TcxTabSheet
         Caption = #46321#47197
         ImageIndex = 1
@@ -994,14 +995,14 @@ object fmLogin: TfmLogin
             Left = 12
             Top = 19
             Width = 277
-            Height = 26
+            Height = 32
             Alignment = taCenter
             AutoSize = False
             Caption = #54532#47196#44536#47016#51060' '#46321#47197#46104#51648' '#50506#50520#49845#45768#45796'.'#13#10#54532#47196#44536#47016' '#46321#47197#51012' '#54616#49464#50836'.'
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clBlue
             Font.Height = -13
-            Font.Name = #44404#47548
+            Font.Name = #45208#45588#44256#46357
             Font.Style = []
             ParentFont = False
           end
@@ -1066,22 +1067,22 @@ object fmLogin: TfmLogin
           object Label1: TLabel
             Left = 27
             Top = 17
-            Width = 55
-            Height = 13
+            Width = 52
+            Height = 15
             Caption = #47196#44536#51064'ID:'
           end
           object Label2: TLabel
             Left = 26
             Top = 41
-            Width = 56
-            Height = 13
+            Width = 52
+            Height = 15
             Caption = #48708#48128#48264#54840':'
           end
           object edtPassword: TEdit
             Left = 86
             Top = 38
             Width = 112
-            Height = 21
+            Height = 23
             ImeName = 'Microsoft IME 2010'
             PasswordChar = '*'
             TabOrder = 1
@@ -1180,7 +1181,7 @@ object fmLogin: TfmLogin
             Left = 86
             Top = 14
             Width = 112
-            Height = 21
+            Height = 23
             ImeName = 'Microsoft IME 2010'
             TabOrder = 0
           end
@@ -1235,13 +1236,13 @@ object fmLogin: TfmLogin
           object lblUpdateMessage: TLabel
             Left = 22
             Top = 21
-            Width = 263
-            Height = 26
+            Width = 244
+            Height = 30
             Caption = #50629#45936#51060#53944' '#48260#51204#51060' '#51080#49845#45768#45796'. '#13#10#54028#51068#45796#50868#47196#46300#44032' '#50756#47308#46104#47732' '#49444#52824#47484' '#51652#54665#54633#45768#45796'.'
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clBlue
             Font.Height = -13
-            Font.Name = #44404#47548
+            Font.Name = #45208#45588#44256#46357
             Font.Style = []
             ParentFont = False
           end
@@ -1293,6 +1294,17 @@ object fmLogin: TfmLogin
           end
         end
       end
+    end
+    object chkAttend: TcxCheckBox
+      Left = 97
+      Top = 267
+      Caption = #52636#44540#48512#51088#46041#46321#47197
+      Style.LookAndFeel.SkinName = 'DevExpressStyle'
+      StyleDisabled.LookAndFeel.SkinName = 'DevExpressStyle'
+      StyleFocused.LookAndFeel.SkinName = 'DevExpressStyle'
+      StyleHot.LookAndFeel.SkinName = 'DevExpressStyle'
+      TabOrder = 1
+      Width = 121
     end
   end
   object InterBaseUniProvider1: TInterBaseUniProvider

@@ -106,7 +106,9 @@ uses
   UfmAddTempTel in 'sms\UfmAddTempTel.pas' {fmAddTempTel},
   UfmRegistedCashbill in '수강자\UfmRegistedCashbill.pas' {fmRegistedCashbill},
   UfmLectureOnline in '강좌\UfmLectureOnline.pas' {fmLectureOnline},
-  UfmMoneyBackReport2 in '회계\UfmMoneyBackReport2.pas' {fmMoneyBackReport2};
+  UfmMoneyBackReport2 in '회계\UfmMoneyBackReport2.pas' {fmMoneyBackReport2},
+  UfmEmpList in '인사급여\UfmEmpList.pas' {fmEmpList},
+  UfmEmpAttend in '인사급여\UfmEmpAttend.pas' {fmEmpAttend};
 
 {$R *.res}
 

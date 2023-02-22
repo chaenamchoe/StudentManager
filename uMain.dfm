@@ -7,8 +7,8 @@ object fmMain: TfmMain
   Color = clAppWorkSpace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -13
-  Font.Name = #44404#47548
+  Font.Height = -15
+  Font.Name = #45208#45588#44256#46357
   Font.Style = []
   FormStyle = fsMDIForm
   Icon.Data = {
@@ -137,12 +137,12 @@ object fmMain: TfmMain
   OnCreate = FormCreate
   OnShow = FormShow
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 17
   object lblTimer: TLabel
-    Left = 25
+    Left = 23
     Top = 45
-    Width = 7
-    Height = 13
+    Width = 9
+    Height = 17
     Alignment = taRightJustify
     Caption = '0'
     Visible = False
@@ -1386,6 +1386,20 @@ object fmMain: TfmMain
       end
       object N24: TMenuItem
         Action = ActionAccountCompare
+      end
+    end
+    object N55: TMenuItem
+      Caption = #51064#49324#44288#47532
+      object N56: TMenuItem
+        Caption = #51649#50896#46321#47197
+        OnClick = N56Click
+      end
+      object N57: TMenuItem
+        Caption = #52636'/'#53748#44540#44288#47532
+        OnClick = N57Click
+      end
+      object N58: TMenuItem
+        Caption = #44553#50668#44288#47532
       end
     end
     object mnuDong: TMenuItem
@@ -4437,5 +4451,39 @@ object fmMain: TfmMain
     OnExecute = BMDThread1Execute
     Left = 88
     Top = 232
+  end
+  object EMP_ATTENDING_INS: TUniStoredProc
+    StoredProcName = 'EMP_ATTENDING_INS'
+    Connection = dm.UniConnection1
+    Left = 456
+    Top = 384
+    ParamData = <
+      item
+        DataType = ftDate
+        Name = 'WDATE'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftTime
+        Name = 'IN_TIME'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftTime
+        Name = 'OUT_TIME'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'W_KIND'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'W_REASON'
+        ParamType = ptInput
+        Size = 200
+      end>
+    CommandStoredProcName = 'EMP_ATTENDING_INS'
   end
 end

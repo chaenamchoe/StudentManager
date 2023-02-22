@@ -530,6 +530,24 @@ type
     q_REQUEST_VIEWOUT_WHEN2: TSmallintField;
     q_REQUEST_VIEWOUT_AMOUNT2: TFloatField;
     q_basic_valueMONEY_BACK_REPORT_WAY: TSmallintField;
+    EMP_ATTENDING_INS: TUniStoredProc;
+    EMP_ATTENDING_SEL: TUniStoredProc;
+    ds_EMP_ATTENDING_SEL: TDataSource;
+    EMP_ATTENDING_SELID: TIntegerField;
+    EMP_ATTENDING_SELWDATE: TDateField;
+    EMP_ATTENDING_SELIN_TIME: TTimeField;
+    EMP_ATTENDING_SELOUT_TIME: TTimeField;
+    EMP_ATTENDING_SELW_KIND: TIntegerField;
+    EMP_ATTENDING_SELW_REASON: TStringField;
+    EMP_ATTENDING_UPD: TUniStoredProc;
+    EMP_ATTENDING_SEL_ID: TUniStoredProc;
+    ds_EMP_ATTENDING_SEL_ID: TDataSource;
+    EMP_ATTENDING_SEL_IDWDATE: TDateField;
+    EMP_ATTENDING_SEL_IDIN_TIME: TTimeField;
+    EMP_ATTENDING_SEL_IDOUT_TIME: TTimeField;
+    EMP_ATTENDING_SEL_IDW_KIND: TIntegerField;
+    EMP_ATTENDING_SEL_IDW_REASON: TStringField;
+    UniQuery1: TUniQuery;
     procedure q_CLASSROOMNewRecord(DataSet: TDataSet);
     procedure q_LECTURENewRecord(DataSet: TDataSet);
     procedure t_LOGIN_USERNewRecord(DataSet: TDataSet);
@@ -573,6 +591,8 @@ type
     procedure InsertCashBill(C_KIND : Integer; S_TEL, MEMBER_ID, REF_UID: string; AMOUNT : Double);
     function RegistCashbillCancel(REF_UID: string): Integer;
     function RegistCashbillCancelPartial(REF_UID: string; AMOUNT: Double): Integer;
+    procedure InsertEmpAttending;
+    procedure InsertEmpLeaving(id : Integer);
 
   end;
 
@@ -596,6 +616,7 @@ begin
     UniConnection1.Password := 'masterkey';
     UniConnection1.Username := 'sysdba';
     UniConnection1.Connected := True;
+
   except on E: Exception do
     ShowMessage(e.Message);
   end;
@@ -626,6 +647,8 @@ begin
     q_TEACHER_LOOK.Active := True;
     q_LECTURE_look.Active := True;
     SMS_USER_SEL.Active := True;
+    if INSERT_ATTEND_DATA = True then
+      InsertEmpAttending;
   except on E: Exception do
     ShowMessage(e.Message);
   end;
@@ -1100,5 +1123,27 @@ begin
   end;
 end;
 
+procedure Tdm.InsertEmpAttending;
+begin
+  EMP_ATTENDING_INS.ParamByName('WDATE').Value := Date;
+  EMP_ATTENDING_INS.ParamByName('IN_TIME').Value := Now;
+  EMP_ATTENDING_INS.ParamByName('OUT_TIME').Clear;
+  EMP_ATTENDING_INS.ParamByName('W_KIND').Value := 0;
+  EMP_ATTENDING_INS.ParamByName('W_REASON').Value := '';
+  EMP_ATTENDING_INS.ExecProc;
+  EMP_ATTENDING_SEL.ParamByName('SDATE').Value := Date;
+  EMP_ATTENDING_SEL.ParamByName('EDATE').Value := Date;
+  EMP_ATTENDING_SEL.Open;
+  ds_EMP_ATTENDING_SEL.DataSet.Refresh;
+end;
+
+procedure Tdm.InsertEmpLeaving(id : Integer);
+begin
+  UniQuery1.SQL.Clear;
+  UniQuery1.SQL.Add('update emp_attending set out_time = :out_time where (id = :id);');
+  UniQuery1.ParamByName('out_time').Value := Now;
+  UniQuery1.ParamByName('id').Value := id;
+  UniQuery1.ExecSQL;
+end;
 
 end.
