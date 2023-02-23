@@ -108,7 +108,9 @@ uses
   UfmLectureOnline in '강좌\UfmLectureOnline.pas' {fmLectureOnline},
   UfmMoneyBackReport2 in '회계\UfmMoneyBackReport2.pas' {fmMoneyBackReport2},
   UfmEmpList in '인사급여\UfmEmpList.pas' {fmEmpList},
-  UfmEmpAttend in '인사급여\UfmEmpAttend.pas' {fmEmpAttend};
+  UfmEmpAttend in '인사급여\UfmEmpAttend.pas' {fmEmpAttend},
+  UfmEmpPayroll in '인사급여\UfmEmpPayroll.pas' {fmEmpPayroll},
+  UfmCalcDesc in '인사급여\UfmCalcDesc.pas' {fmCalcDesc};
 
 {$R *.res}
 
@@ -123,6 +125,7 @@ begin
     if fmLogin.ModalResult = mrOk then begin
       Application.CreateForm(TfmMain, fmMain);
   Application.CreateForm(Tdm, dm);
+  Application.CreateForm(TfmCalcDesc, fmCalcDesc);
   Application.Run;
     end else begin
       fmLogin.Hide;

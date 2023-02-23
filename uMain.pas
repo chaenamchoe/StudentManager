@@ -260,6 +260,7 @@ type
     procedure N11Click(Sender: TObject);
     procedure N56Click(Sender: TObject);
     procedure N57Click(Sender: TObject);
+    procedure N58Click(Sender: TObject);
   private
     procedure CloseAllWindows;
     { Private declarations }
@@ -752,7 +753,6 @@ begin
   AUTO_MONEY_ADD := auto_money = 1;
   CASH_RECEIPT_CONTACTS := dm.q_basic_valueCASH_RECEIPT_CONTACTS.AsString;
   MONEY_BACK_REPORT_WAY := dm.q_basic_valueMONEY_BACK_REPORT_WAY.AsInteger;
-
 end;
 
 procedure TfmMain.mnuCloseWindowClick(Sender: TObject);
@@ -820,6 +820,13 @@ begin
   if SDI_Mode.Checked then
     CloseAllWindows;
   CreateChild('TfmEmpAttend', '근무상황부');
+end;
+
+procedure TfmMain.N58Click(Sender: TObject);
+begin
+  if SDI_Mode.Checked then
+    CloseAllWindows;
+  CreateChild('TfmEmpPayroll', '급여관리');
 end;
 
 procedure TfmMain.N_MultiwindowClick(Sender: TObject);

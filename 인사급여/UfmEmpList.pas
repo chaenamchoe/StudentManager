@@ -84,6 +84,7 @@ type
     EMP_BASIC_DEL: TUniStoredProc;
     btnDelete: TcxButton;
     Label3: TLabel;
+    Label12: TLabel;
     procedure btnAddClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure btnRetrieveClick(Sender: TObject);

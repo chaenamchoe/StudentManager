@@ -24,8 +24,6 @@ object fmEmpList: TfmEmpList
     Height = 33
     Align = alTop
     TabOrder = 0
-    ExplicitTop = 8
-    ExplicitWidth = 1269
     object btnRetrieve: TcxButton
       Left = 104
       Top = 4
@@ -133,7 +131,6 @@ object fmEmpList: TfmEmpList
     Align = alClient
     TabOrder = 1
     LookAndFeel.SkinName = 'Black'
-    ExplicitWidth = 945
     object gridEmp: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       Navigator.Buttons.First.Visible = False
@@ -229,13 +226,14 @@ object fmEmpList: TfmEmpList
     Height = 690
     Align = alRight
     TabOrder = 2
-    ExplicitLeft = 976
     object Label3: TLabel
       Left = 22
       Top = 389
-      Width = 249
-      Height = 85
-      Caption = #46321#47197#48169#48277':'#13#10#54596#50836#54620' '#54637#47785#51012' '#51077#47141#54620' '#54980' '#46321#47197#48260#53948' '#53364#47533'.'#13#10#13#10#49688#51221#48169#48277':'#13#10#49688#51221#54624' '#45236#50857#51012' '#51077#47141#54620' '#54980' '#49688#51221#48260#53948' '#53364#47533'.'
+      Width = 253
+      Height = 136
+      Caption = 
+        #46321#47197#48169#48277':'#13#10#54596#50836#54620' '#54637#47785#51012' '#51077#47141#54620' '#54980' '#46321#47197#48260#53948' '#53364#47533'.'#13#10#13#10#49688#51221#48169#48277':'#13#10#49688#51221#54624' '#45236#50857#51012' '#51077#47141#54620' '#54980' '#49688#51221#48260#53948' '#53364#47533'.'#13#10 +
+        #13#10#48512#50577#44032#51313#49688': '#48376#51064' '#54252#54632#51004#47196' '#51077#47141#13#10#50696': '#48512#50577#44032#51313#51060' '#50630#51012' '#44221#50864' '#48376#51064' 1'#47196' '#51077#47141'.'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = cl3DDkShadow
       Font.Height = -15
@@ -321,6 +319,13 @@ object fmEmpList: TfmEmpList
         Height = 17
         Caption = #44228#49328#49884#44036
       end
+      object Label12: TLabel
+        Left = 151
+        Top = 219
+        Width = 66
+        Height = 17
+        Caption = '('#48376#51064#54252#54632')'
+      end
       object E_NAME: TEdit
         Left = 93
         Top = 29
@@ -385,7 +390,7 @@ object fmEmpList: TfmEmpList
         Properties.UseLeftAlignmentOnEditing = False
         Properties.UseThousandSeparator = True
         TabOrder = 7
-        Width = 100
+        Width = 52
       end
       object FAMILY_PRICE: TcxCurrencyEdit
         Left = 93
@@ -405,7 +410,7 @@ object fmEmpList: TfmEmpList
         Properties.UseLeftAlignmentOnEditing = False
         Properties.UseThousandSeparator = True
         TabOrder = 9
-        Width = 100
+        Width = 52
       end
       object btnAdd: TcxButton
         Left = 83

@@ -29,26 +29,15 @@ object fmEmpAttend: TfmEmpAttend
       Top = 6
       Width = 61
       Height = 17
-      Caption = #51312#54924#44592#44036':'
-    end
-    object sdate: TcxDateEdit
-      Left = 83
-      Top = 3
-      TabOrder = 0
-      Width = 121
-    end
-    object edate: TcxDateEdit
-      Left = 204
-      Top = 3
-      TabOrder = 1
-      Width = 121
+      Caption = #51312#54924#45380#50900':'
     end
     object btnRetrieve: TcxButton
-      Left = 329
+      Left = 226
       Top = 3
-      Width = 34
+      Width = 71
       Height = 25
       Hint = #51312#54924
+      Caption = #51312#54924
       LookAndFeel.NativeStyle = False
       LookAndFeel.SkinName = 'DevExpressStyle'
       OptionsImage.Glyph.Data = {
@@ -88,7 +77,7 @@ object fmEmpAttend: TfmEmpAttend
         0000000000000000000100000001000000000000000000000000}
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 2
+      TabOrder = 0
       OnClick = btnRetrieveClick
     end
     object btnOut: TcxButton
@@ -137,60 +126,25 @@ object fmEmpAttend: TfmEmpAttend
         60CD6C543F8B16110D2200000003000000010000000000000000}
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 3
+      TabOrder = 1
       OnClick = btnOutClick
     end
     object btnEdit: TcxButton
-      Left = 503
+      Left = 592
       Top = 3
-      Width = 61
+      Width = 129
       Height = 25
       Hint = #49440#53469#44053#51340#49688#51221
-      Caption = #49688#51221
+      Caption = #44540#47924#49345#54889#48512#52636#47141
       LookAndFeel.NativeStyle = False
       LookAndFeel.SkinName = 'DevExpressStyle'
-      OptionsImage.Glyph.Data = {
-        36040000424D3604000000000000360000002800000010000000100000000100
-        2000000000000004000000000000000000000000000000000000000000000000
-        00000000000000000000000000000000001F421C11FF30140DEC190A06B30304
-        075F0000001B0000000500000000000000000000000000000000000000000000
-        00000000000000000000000000000000001E663C2BE7B9C7D2FF7889A2FF2441
-        82FF051033AF0000002100000005000000000000000000000000000000000000
-        0002000000090000000E0000000F0000002041261BAE879AB2FFC8E3F5FF1F66
-        B6FF2B6BA8FF051236AD0000001F000000040000000000000000000000000000
-        00088C6657C0C38C7AFFC38C79FFCBA395FFA89894FF488BC3FFDEFEFDFF51B4
-        E3FF1F68B7FF3173AEFF061538AA0000001C0000000400000000000000000000
-        000CC5917EFFFDFBFAFFFCF8F6FFFAF7F5FFECEAE9FF7CA3BFFF479FD2FFDEFE
-        FDFF59BFE9FF216BB9FF367BB3FF07173AA70000001A00000004000000000000
-        000CC79481FFFEFBFAFFF9F0EAFFF8F0EAFFF7F0EBFFE8E4E1FF7EA4BFFF4BA5
-        D5FFDEFEFDFF61CAEFFF246FBCFF3B83B9FF081A3DA300000018000000000000
-        000BC99786FFFEFCFBFFF9F2EDFFF9F2EDFFF9F0EBFFF8F2EDFFEBE7E5FF82A7
-        C2FF4EAAD7FFDEFEFDFF68D4F4FF2875BEFF3F8BBEFF091B3F9E000000000000
-        000ACB9C8BFFFEFDFCFFFAF3EFFFFAF4EEFFFAF3EEFFFAF1ECFFF8F2EEFFEDE9
-        E7FF85ABC7FF51AEDAFFDEFEFDFF6EDDF8FF2C7BC2FF18448BFF000000000000
-        0009CFA08DFFFEFEFDFFFBF5F1FFFBF5F0FFFBF4F0FFFAF3EFFFFAF3EFFFF8F4
-        EFFFEFECE9FF89AECAFF54B1DCFFDEFEFDFF4FA6D4FF102C4E93000000000000
-        0009D0A393FFFEFEFDFFFAF5F3FFFBF6F2FFFBF5F1FFFBF5F0FFFBF5F0FFFAF4
-        EFFFFAF6F1FFF3EFEDFF83A0B8FF357FBCFF173A598F0000000C000000000000
-        0008D3A897FFFEFEFEFFFBF6F4FFFBF6F4FFFCF6F3FFFCF6F3FFFCF4F2FFFBF5
-        F1FFFBF5F0FFFAF6F3FFE2CCC4FF000000160000000600000001000000000000
-        0007D3AB9AFFFFFEFEFFFCF8F6FFFCF7F5FFFCF7F5FFFBF6F4FFFBF6F4FFFCF6
-        F3FFFCF6F2FFFBF6F1FFD1A494FF0000000C0000000000000000000000000000
-        0006D8AE9DFFFFFFFEFFFDF9F7FFFDF9F7FFFCF8F7FFFCF8F6FFFCF7F5FFFBF7
-        F5FFFBF7F4FFFCF7F3FFD3A897FF0000000B0000000000000000000000000000
-        0006D8B0A0FFFFFFFFFFFDFAF9FFFDFAF8FFFDFAF8FFFDF9F7FFFCF8F7FFFBF8
-        F6FFFBF7F6FFFCF7F5FFD4AC9BFF0000000A0000000000000000000000000000
-        0005D9B3A3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFEFEFFFEFEFEFFFFFE
-        FEFFFEFEFEFFFEFEFEFFD7AE9EFF000000090000000000000000000000000000
-        0003A3867AC0DBB5A5FFDAB5A4FFDAB5A4FFDAB4A4FFD9B3A3FFD9B3A3FFD9B3
-        A2FFD9B2A2FFD8B2A2FFA08377C2000000060000000000000000}
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 4
+      TabOrder = 2
       OnClick = btnEditClick
     end
     object btnDelete: TcxButton
-      Left = 565
+      Left = 503
       Top = 3
       Width = 61
       Height = 25
@@ -235,12 +189,12 @@ object fmEmpAttend: TfmEmpAttend
         2FC72121218D1010104600000000000000000000000000000000}
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 5
+      TabOrder = 3
       OnClick = btnDeleteClick
     end
-    object btnIn: TcxButton
-      Left = 374
-      Top = 1
+    object btnIn2: TcxButton
+      Left = 379
+      Top = 3
       Width = 61
       Height = 25
       Hint = #49888#44508#44053#51340#46321#47197
@@ -284,21 +238,96 @@ object fmEmpAttend: TfmEmpAttend
         60CD6C543F8B16110D2200000003000000010000000000000000}
       ParentShowHint = False
       ShowHint = True
+      TabOrder = 4
+      OnClick = btnIn2Click
+    end
+    object spYear: TcxSpinEdit
+      Left = 83
+      Top = 3
+      Properties.Alignment.Horz = taCenter
+      TabOrder = 5
+      Width = 78
+    end
+    object icbMonth: TcxImageComboBox
+      Left = 160
+      Top = 3
+      Properties.Alignment.Horz = taCenter
+      Properties.Items = <
+        item
+          Description = '1'#50900
+          ImageIndex = 0
+          Value = 1
+        end
+        item
+          Description = '2'#50900
+          Value = 2
+        end
+        item
+          Description = '3'#50900
+          Value = 3
+        end
+        item
+          Description = '4'#50900
+          Value = 4
+        end
+        item
+          Description = '5'#50900
+          Value = 5
+        end
+        item
+          Description = '6'#50900
+          Value = 6
+        end
+        item
+          Description = '7'#50900
+          Value = 7
+        end
+        item
+          Description = '8'#50900
+          Value = 8
+        end
+        item
+          Description = '9'#50900
+          Value = 9
+        end
+        item
+          Description = '10'#50900
+          Value = 10
+        end
+        item
+          Description = '11'#50900
+          Value = 11
+        end
+        item
+          Description = '12'#50900
+          Value = 12
+        end>
       TabOrder = 6
-      OnClick = btnInClick
+      Width = 65
+    end
+    object btnExtReport: TcxButton
+      Left = 727
+      Top = 3
+      Width = 162
+      Height = 25
+      Hint = #49440#53469#44053#51340#49688#51221
+      Caption = #49884#44036#50808#44540#47924#49345#54889#48512#52636#47141
+      LookAndFeel.NativeStyle = False
+      LookAndFeel.SkinName = 'DevExpressStyle'
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 7
+      OnClick = btnExtReportClick
     end
   end
   object cxGrid1: TcxGrid
     Left = 0
     Top = 32
-    Width = 736
+    Width = 776
     Height = 675
     Align = alClient
     TabOrder = 1
     LookAndFeel.SkinName = 'Black'
-    ExplicitTop = 33
-    ExplicitWidth = 657
-    ExplicitHeight = 674
     object gridAttend: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       Navigator.Buttons.First.Visible = False
@@ -317,10 +346,23 @@ object fmEmpAttend: TfmEmpAttend
       Navigator.Buttons.SaveBookmark.Visible = False
       Navigator.Buttons.GotoBookmark.Visible = False
       Navigator.Buttons.Filter.Visible = False
+      Navigator.InfoPanel.DisplayMask = '[RecordIndex] / [RecordCount]'
+      Navigator.InfoPanel.Visible = True
+      Navigator.Visible = True
       OnFocusedRecordChanged = gridAttendFocusedRecordChanged
       DataController.DataSource = ds_EMP_ATTENDING_SEL
       DataController.Summary.DefaultGroupSummaryItems = <>
-      DataController.Summary.FooterSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <
+        item
+          Format = '#,0'
+          Kind = skCount
+          Column = gridAttendWDATE
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridAttendW_HOUR
+        end>
       DataController.Summary.SummaryGroups = <>
       OptionsBehavior.CellHints = True
       OptionsCustomize.ColumnsQuickCustomization = True
@@ -329,6 +371,7 @@ object fmEmpAttend: TfmEmpAttend
       OptionsView.CellEndEllipsis = True
       OptionsView.CellAutoHeight = True
       OptionsView.ColumnAutoWidth = True
+      OptionsView.Footer = True
       OptionsView.GroupByBox = False
       OptionsView.Indicator = True
       object gridAttendID: TcxGridDBColumn
@@ -447,50 +490,64 @@ object fmEmpAttend: TfmEmpAttend
     end
   end
   object Panel2: TPanel
-    Left = 736
+    Left = 776
     Top = 32
-    Width = 358
+    Width = 318
     Height = 675
     Align = alRight
     TabOrder = 2
     object GroupBox1: TGroupBox
-      Left = 16
+      Left = 6
       Top = 6
-      Width = 329
-      Height = 267
-      Caption = #51088#47308#49688#51221
+      Width = 305
+      Height = 339
+      Caption = #51088#47308' '#46321#47197'/'#49688#51221
       TabOrder = 0
       object Label2: TLabel
-        Left = 32
-        Top = 88
+        Left = 16
+        Top = 141
         Width = 28
         Height = 17
         Caption = #44396#48516
       end
       object Label3: TLabel
-        Left = 32
-        Top = 32
+        Left = 14
+        Top = 59
         Width = 28
         Height = 17
         Caption = #52636#44540
       end
       object Label4: TLabel
-        Left = 32
-        Top = 59
+        Left = 16
+        Top = 86
         Width = 28
         Height = 17
         Caption = #53748#44540
       end
       object Label5: TLabel
-        Left = 32
-        Top = 120
+        Left = 16
+        Top = 168
         Width = 28
         Height = 17
         Caption = #49324#50976
       end
+      object Label6: TLabel
+        Left = 14
+        Top = 32
+        Width = 28
+        Height = 17
+        Caption = #45216#51676
+      end
+      object Label7: TLabel
+        Left = 16
+        Top = 113
+        Width = 28
+        Height = 17
+        Caption = #49884#44036
+      end
       object icbKind: TcxImageComboBox
-        Left = 72
-        Top = 84
+        Left = 56
+        Top = 137
         EditValue = 0
         Properties.Items = <
           item
@@ -518,39 +575,41 @@ object fmEmpAttend: TfmEmpAttend
             Description = #51312#53748
             Value = 5
           end>
-        TabOrder = 0
-        Width = 121
+        TabOrder = 4
+        Width = 113
       end
       object in_time: TcxTimeEdit
-        Left = 72
-        Top = 29
-        EditValue = 0
+        Left = 56
+        Top = 56
+        EditValue = 0d
         Properties.TimeFormat = tfHourMin
+        Properties.OnEditValueChanged = in_timePropertiesEditValueChanged
         TabOrder = 1
         Width = 73
       end
       object out_time: TcxTimeEdit
-        Left = 72
-        Top = 56
+        Left = 56
+        Top = 83
         EditValue = 0d
         Properties.TimeFormat = tfHourMin
+        Properties.OnEditValueChanged = out_timePropertiesEditValueChanged
         TabOrder = 2
         Width = 73
       end
       object Memo1: TMemo
-        Left = 72
-        Top = 112
+        Left = 56
+        Top = 165
         Width = 233
         Height = 73
-        TabOrder = 3
+        TabOrder = 5
       end
       object btnSave: TcxButton
-        Left = 73
-        Top = 202
-        Width = 72
+        Left = 160
+        Top = 253
+        Width = 97
         Height = 25
         Hint = #48264#54840#48320#44221#51200#51109
-        Caption = #51200#51109
+        Caption = #48320#44221#51200#51109
         LookAndFeel.NativeStyle = False
         LookAndFeel.SkinName = 'DevExpressStyle'
         OptionsImage.Glyph.Data = {
@@ -590,8 +649,126 @@ object fmEmpAttend: TfmEmpAttend
           0005000000050000000500000006000000060000000400000001}
         ParentShowHint = False
         ShowHint = True
-        TabOrder = 4
+        TabOrder = 7
         OnClick = btnSaveClick
+      end
+      object wdate: TcxDateEdit
+        Left = 56
+        Top = 29
+        Properties.OnCloseUp = wdatePropertiesCloseUp
+        TabOrder = 0
+        Width = 113
+      end
+      object btnNew: TcxButton
+        Left = 60
+        Top = 253
+        Width = 94
+        Height = 25
+        Hint = #49888#44508#44053#51340#46321#47197
+        Caption = #49888#44508#46321#47197
+        LookAndFeel.NativeStyle = False
+        LookAndFeel.SkinName = 'DevExpressStyle'
+        OptionsImage.Glyph.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000000000000000000000000000000000000000000000000
+          0000000000020000000A170D0738542D1894814626D193502AEA924F2AE87F45
+          25D0522C17931209053000000009000000010000000000000000000000000000
+          00030201011159311B97A96239FAC58957FFD6A36DFFDDAF75FFDDAF74FFD6A4
+          6BFFC58956FFA46137F53C2112730000000F0000000300000000000000020201
+          0110744226B9BC7C4DFFDDAE77FFDEB076FFE2B782FFE3BB87FFE3BC86FFE1B7
+          82FFDEAF74FFDBAB72FFBD7E4EFF6F3E24B50000001000000002000000085C36
+          2095BE8053FFE0B37CFFDFB076FFDEB177FFB78254FFAA7144FFAB7245FFBC88
+          59FFDFB279FFDFB277FFDEB077FFC08253FF55321D920000000A190F0932B070
+          47FADFB27DFFDFB27AFFE0B37BFFE0B57DFFA56B3FFFF5EFEAFFF8F3EEFFAB72
+          45FFE2B67EFFE0B47CFFE0B47BFFDEB079FFB3734AFB130B072F613C2795CD9B
+          6FFFE2B780FFE5BD89FFE7C291FFE8C393FFA56B3FFFF1E6DEFFF9F5F1FFAA71
+          44FFE8C494FFE8C393FFE5BF8CFFE1B77FFFD09C6EFF5434218B935E3DD2DCB3
+          83FFE3B781FFBA8659FFA97043FFAB7245FFAC7346FFF5EDE6FFFAF6F3FFAD75
+          47FFB0784AFFB17A4BFFC29162FFE4B983FFDEB17EFF8E5B3BD0B0744CF2E3BF
+          8FFFE4BB84FFA56B3FFFF3EBE6FFFAF6F3FFF6EFE8FFF7F0EAFFFBF7F5FFFAF7
+          F4FFFAF7F3FFFAF6F2FFAB7245FFE5BD87FFE5BE8BFFAB714CEEAE764FECE9C9
+          A0FFE5BE89FFA56B3FFFE0D2CAFFE1D3CCFFE3D5CFFFF2EAE4FFF8F3EFFFEADF
+          D9FFE6DAD4FFE9DED9FFAA7144FFE7C08CFFEACA9DFFAE764FEE9A6A49D0E9CD
+          ACFFEAC796FFB78456FFA56B3FFFA56B3FFFA56B3FFFF1EAE5FFFAF6F3FFA56B
+          3FFFA56B3FFFA56B3FFFB78457FFEACA99FFEBD1ADFF996A49D46E4E3697DDBB
+          9DFFEED3A9FFEECFA2FFEED2A5FFF0D6A9FFA56B3FFFF0EAE7FFFDFCFBFFA56B
+          3FFFF1D6AAFFF0D5A8FFEED2A5FFEFD4A7FFE0C2A2FF6246318F1C140E2BC794
+          6CFCF5E8CCFFEFD6ABFFF1D8AEFFF2DAB0FFA56B3FFFDECFC9FFDFD1CBFFA56B
+          3FFFF3DCB2FFF1DBB0FFF1D8ADFFF7EACDFFC69470FA1A120D2E000000036F52
+          3C92D7B08CFFF8EFD3FFF3E0B9FFF3DFB7FFB98A5FFFA56B3FFFA56B3FFFBA8A
+          5FFFF4E1B9FFF4E2BDFFFAF1D5FFD9B390FF664B368C00000006000000010202
+          0107906C4EB8D9B38FFFF7EDD3FFF8EED0FFF7EBC9FFF6E8C4FFF6E8C5FFF7EC
+          CAFFF8EED0FFF4E8CDFFD7AF8BFF88664AB30202010B00000001000000000000
+          00010202010770543F8FCFA078FCE2C4A2FFEBD7B8FFF4E9CDFFF4EACEFFECD8
+          B9FFE3C5A3FFC59973F24C392A67000000060000000100000000000000000000
+          000000000001000000022019122C6C543E89A47E5FCCC59770F1C19570EEA47E
+          60CD6C543F8B16110D2200000003000000010000000000000000}
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 6
+        OnClick = btnNewClick
+      end
+      object w_hour: TcxSpinEdit
+        Left = 56
+        Top = 110
+        TabOrder = 3
+        Width = 73
+      end
+      object w_week: TcxImageComboBox
+        Left = 168
+        Top = 29
+        Properties.Items = <
+          item
+            Description = #51068
+            ImageIndex = 0
+            Value = 1
+          end
+          item
+            Description = #50900
+            Value = 2
+          end
+          item
+            Description = #54868
+            Value = 3
+          end
+          item
+            Description = #49688
+            Value = 4
+          end
+          item
+            Description = #47785
+            Value = 5
+          end
+          item
+            Description = #44552
+            Value = 6
+          end
+          item
+            Description = #53664
+            Value = 7
+          end>
+        TabOrder = 8
+        Width = 50
+      end
+      object btnDefault: TcxButton
+        Left = 172
+        Top = 70
+        Width = 93
+        Height = 51
+        Hint = #49440#53469#44053#51340#49688#51221
+        Caption = #51221#49345#44540#47924
+        Colors.Default = clGreen
+        Colors.DefaultText = clWhite
+        Colors.Normal = clGreen
+        Colors.NormalText = clWhite
+        Colors.Hot = clRed
+        Colors.HotText = clWhite
+        LookAndFeel.NativeStyle = False
+        LookAndFeel.SkinName = ''
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 9
+        OnClick = btnDefaultClick
       end
     end
   end
@@ -602,13 +779,13 @@ object fmEmpAttend: TfmEmpAttend
     Top = 224
     ParamData = <
       item
-        DataType = ftDate
-        Name = 'SDATE'
+        DataType = ftInteger
+        Name = 'WYEAR'
         ParamType = ptInput
       end
       item
-        DataType = ftDate
-        Name = 'EDATE'
+        DataType = ftInteger
+        Name = 'WMONTH'
         ParamType = ptInput
       end
       item
@@ -708,12 +885,17 @@ object fmEmpAttend: TfmEmpAttend
   object EMP_ATTENDING_UPD_ALL: TUniStoredProc
     StoredProcName = 'EMP_ATTENDING_UPD_ALL'
     Connection = dm.UniConnection1
-    Left = 856
-    Top = 320
+    Left = 616
+    Top = 120
     ParamData = <
       item
         DataType = ftInteger
         Name = 'ID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftDate
+        Name = 'WDATE'
         ParamType = ptInput
       end
       item
@@ -785,7 +967,1222 @@ object fmEmpAttend: TfmEmpAttend
         DataType = ftInteger
         Name = 'W_WEEK'
         ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'W_HOUR'
+        ParamType = ptInput
       end>
     CommandStoredProcName = 'EMP_ATTENDING_INS'
+  end
+  object frxReport1: TfrxReport
+    Version = '5.1.9'
+    DataSet = frxDBDataset1
+    DataSetName = 'frxDBDataset1'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 44980.713769259260000000
+    ReportOptions.LastChange = 44980.713769259260000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 616
+    Top = 216
+    Datasets = <
+      item
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+      end>
+    Variables = <>
+    Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      object Memo1: TfrxMemoView
+        Left = 3.779530000000000000
+        Top = 60.472480000000000000
+        Width = 710.551640000000000000
+        Height = 26.456710000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -21
+        Font.Name = #48148#53461#52404
+        Font.Style = [fsBold]
+        Frame.Style = fsDouble
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #49884#44036#50808#44540#47924' '#49345#54889#54364'([frxDBDataset1."year_month"])')
+        ParentFont = False
+        VAlign = vaCenter
+      end
+      object Memo2: TfrxMemoView
+        Left = 10.795300000000000000
+        Top = 127.385900000000000000
+        Width = 64.252010000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #49548' '#49549' :')
+        ParentFont = False
+        VAlign = vaCenter
+      end
+      object Memo3: TfrxMemoView
+        Left = 260.787570000000000000
+        Top = 127.385900000000000000
+        Width = 64.252010000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51649' '#44553' :')
+        ParentFont = False
+        VAlign = vaCenter
+      end
+      object Memo4: TfrxMemoView
+        Left = 501.220780000000000000
+        Top = 127.385900000000000000
+        Width = 64.252010000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #49457' '#47749' :')
+        ParentFont = False
+        VAlign = vaCenter
+      end
+      object Memo5: TfrxMemoView
+        Left = 64.252010000000000000
+        Top = 158.740260000000000000
+        Width = 41.574830000000000000
+        Height = 22.677180000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44396#48516)
+        ParentFont = False
+        VAlign = vaCenter
+      end
+      object Memo6: TfrxMemoView
+        Left = 7.559060000000000000
+        Top = 196.535560000000000000
+        Width = 52.913420000000000000
+        Height = 22.677180000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #45380#50900#51068)
+        ParentFont = False
+        VAlign = vaCenter
+      end
+      object Memo7: TfrxMemoView
+        Left = 162.519790000000000000
+        Top = 158.740260000000000000
+        Width = 41.574830000000000000
+        Height = 22.677180000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #49884#44036)
+        ParentFont = False
+        VAlign = vaCenter
+      end
+      object Memo8: TfrxMemoView
+        Left = 120.944960000000000000
+        Top = 196.535560000000000000
+        Width = 56.692950000000000000
+        Height = 22.677180000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #49884' '#51089)
+        ParentFont = False
+        VAlign = vaCenter
+      end
+      object Memo9: TfrxMemoView
+        Left = 200.315090000000000000
+        Top = 196.535560000000000000
+        Width = 52.913420000000000000
+        Height = 22.677180000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51333' '#47308)
+        ParentFont = False
+        VAlign = vaCenter
+      end
+      object Memo10: TfrxMemoView
+        Left = 276.464750000000000000
+        Top = 177.637910000000000000
+        Width = 56.692950000000000000
+        Height = 22.677180000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #52509#49884#44036)
+        ParentFont = False
+        VAlign = vaCenter
+      end
+      object Memo11: TfrxMemoView
+        Left = 400.630180000000000000
+        Top = 177.637910000000000000
+        Width = 86.929190000000000000
+        Height = 22.677180000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #49324'    '#50976)
+        ParentFont = False
+        VAlign = vaCenter
+      end
+      object Memo12: TfrxMemoView
+        Left = 614.622450000000000000
+        Top = 158.740260000000000000
+        Width = 56.692950000000000000
+        Height = 22.677180000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44208'  '#51116)
+        ParentFont = False
+        VAlign = vaCenter
+      end
+      object Memo13: TfrxMemoView
+        Left = 579.047620000000000000
+        Top = 196.535560000000000000
+        Width = 56.692950000000000000
+        Height = 22.677180000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44540#47924#51088)
+        ParentFont = False
+        VAlign = vaCenter
+      end
+      object Memo14: TfrxMemoView
+        Left = 654.417750000000000000
+        Top = 196.535560000000000000
+        Width = 52.913420000000000000
+        Height = 22.677180000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #54924'  '#51109)
+        ParentFont = False
+        VAlign = vaCenter
+      end
+      object Line1: TfrxLineView
+        Top = 226.771800000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line2: TfrxLineView
+        Left = 113.385900000000000000
+        Top = 188.976500000000000000
+        Width = 151.181200000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line3: TfrxLineView
+        Left = 566.929500000000000000
+        Top = 188.976500000000000000
+        Width = 151.181200000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line4: TfrxLineView
+        Top = 283.362400000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line5: TfrxLineView
+        Top = 339.953000000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line6: TfrxLineView
+        Top = 396.850650000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line7: TfrxLineView
+        Top = 453.543600000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line8: TfrxLineView
+        Top = 510.236550000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line9: TfrxLineView
+        Top = 566.929500000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line10: TfrxLineView
+        Top = 623.622450000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line11: TfrxLineView
+        Top = 680.315400000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line12: TfrxLineView
+        Top = 737.008350000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line13: TfrxLineView
+        Top = 793.701300000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line15: TfrxLineView
+        Left = 113.385900000000000000
+        Top = 151.181200000000000000
+        Height = 699.213050000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Line14: TfrxLineView
+        Left = 264.567100000000000000
+        Top = 151.181200000000000000
+        Height = 642.520100000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Line16: TfrxLineView
+        Left = 188.976500000000000000
+        Top = 188.976500000000000000
+        Height = 604.724800000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Line17: TfrxLineView
+        Left = 340.157700000000000000
+        Top = 151.181200000000000000
+        Height = 642.520100000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Line18: TfrxLineView
+        Left = 566.929500000000000000
+        Top = 151.181200000000000000
+        Height = 642.520100000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Line19: TfrxLineView
+        Left = 642.520100000000000000
+        Top = 188.976500000000000000
+        Height = 604.724800000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Shape1: TfrxShapeView
+        Top = 151.181200000000000000
+        Width = 718.110700000000000000
+        Height = 699.213050000000000000
+        Frame.Width = 2.000000000000000000
+      end
+      object frxDBDataset1assoc: TfrxMemoView
+        Left = 79.370130000000000000
+        Top = 127.504020000000000000
+        Width = 177.637910000000000000
+        Height = 18.897650000000000000
+        DataField = 'assoc'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          '[frxDBDataset1."assoc"]')
+        ParentFont = False
+      end
+      object frxDBDataset1jikgub: TfrxMemoView
+        Left = 328.819110000000000000
+        Top = 127.504020000000000000
+        Width = 158.740260000000000000
+        Height = 18.897650000000000000
+        DataField = 'jikgub'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          '[frxDBDataset1."jikgub"]')
+        ParentFont = False
+      end
+      object frxDBDataset1ename: TfrxMemoView
+        Left = 570.709030000000000000
+        Top = 127.504020000000000000
+        Width = 139.842610000000000000
+        Height = 18.897650000000000000
+        DataField = 'ename'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          '[frxDBDataset1."ename"]')
+        ParentFont = False
+      end
+      object frxDBDataset1wdate: TfrxMemoView
+        Left = 9.118120000000000000
+        Top = 245.669450000000000000
+        Width = 94.488250000000000000
+        Height = 18.897650000000000000
+        DataField = 'wdate'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."wdate"]')
+        ParentFont = False
+      end
+      object frxDBDataset1in_time: TfrxMemoView
+        Left = 120.944960000000000000
+        Top = 245.669450000000000000
+        Width = 56.692950000000000000
+        Height = 18.897650000000000000
+        DataField = 'in_time'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.FormatStr = 'hh:mm'
+        DisplayFormat.Kind = fkDateTime
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."in_time"]')
+        ParentFont = False
+      end
+      object frxDBDataset1out_time: TfrxMemoView
+        Left = 200.315090000000000000
+        Top = 245.669450000000000000
+        Width = 52.913420000000000000
+        Height = 18.897650000000000000
+        DataField = 'out_time'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.FormatStr = 'hh:mm'
+        DisplayFormat.Kind = fkDateTime
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."out_time"]')
+        ParentFont = False
+      end
+      object frxDBDataset1w_hour: TfrxMemoView
+        Left = 275.905690000000000000
+        Top = 245.669450000000000000
+        Width = 49.133890000000000000
+        Height = 18.897650000000000000
+        DataField = 'w_hour'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."w_hour"]')
+        ParentFont = False
+      end
+      object frxDBDataset1w_reason: TfrxMemoView
+        Left = 351.275820000000000000
+        Top = 235.330860000000000000
+        Width = 207.874150000000000000
+        Height = 37.795300000000000000
+        DataField = 'w_reason'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          '[frxDBDataset1."w_reason"]')
+        ParentFont = False
+        VAlign = vaCenter
+      end
+      object frxDBDataset1wdate2: TfrxMemoView
+        Left = 9.118120000000000000
+        Top = 306.141930000000000000
+        Width = 94.488250000000000000
+        Height = 18.897650000000000000
+        DataField = 'wdate2'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."wdate2"]')
+        ParentFont = False
+      end
+      object frxDBDataset1in_time2: TfrxMemoView
+        Left = 120.944960000000000000
+        Top = 302.362400000000000000
+        Width = 60.472480000000000000
+        Height = 18.897650000000000000
+        DataField = 'in_time2'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.FormatStr = 'hh:mm'
+        DisplayFormat.Kind = fkDateTime
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."in_time2"]')
+        ParentFont = False
+      end
+      object frxDBDataset1out_time2: TfrxMemoView
+        Left = 196.535560000000000000
+        Top = 302.362400000000000000
+        Width = 60.472480000000000000
+        Height = 18.897650000000000000
+        DataField = 'out_time2'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.FormatStr = 'hh:mm'
+        DisplayFormat.Kind = fkDateTime
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."out_time2"]')
+        ParentFont = False
+      end
+      object frxDBDataset1w_hour2: TfrxMemoView
+        Left = 272.126160000000000000
+        Top = 302.362400000000000000
+        Width = 60.472480000000000000
+        Height = 18.897650000000000000
+        DataField = 'w_hour2'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."w_hour2"]')
+        ParentFont = False
+      end
+      object frxDBDataset1w_reason2: TfrxMemoView
+        Left = 351.496290000000000000
+        Top = 291.023810000000000000
+        Width = 207.874150000000000000
+        Height = 41.574830000000000000
+        DataField = 'w_reason2'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          '[frxDBDataset1."w_reason2"]')
+        ParentFont = False
+        VAlign = vaCenter
+      end
+      object frxDBDataset1wdate3: TfrxMemoView
+        Left = 5.338590000000000000
+        Top = 359.055350000000000000
+        Width = 94.488250000000000000
+        Height = 18.897650000000000000
+        DataField = 'wdate3'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."wdate3"]')
+        ParentFont = False
+      end
+      object frxDBDataset1in_time3: TfrxMemoView
+        Left = 120.944960000000000000
+        Top = 359.055350000000000000
+        Width = 60.472480000000000000
+        Height = 18.897650000000000000
+        DataField = 'in_time3'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.FormatStr = 'hh:mm'
+        DisplayFormat.Kind = fkDateTime
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."in_time3"]')
+        ParentFont = False
+      end
+      object frxDBDataset1out_time3: TfrxMemoView
+        Left = 196.535560000000000000
+        Top = 359.055350000000000000
+        Width = 60.472480000000000000
+        Height = 18.897650000000000000
+        DataField = 'out_time3'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.FormatStr = 'hh:mm'
+        DisplayFormat.Kind = fkDateTime
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."out_time3"]')
+        ParentFont = False
+      end
+      object frxDBDataset1w_hour3: TfrxMemoView
+        Left = 272.126160000000000000
+        Top = 359.055350000000000000
+        Width = 60.472480000000000000
+        Height = 18.897650000000000000
+        DataField = 'w_hour3'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."w_hour3"]')
+        ParentFont = False
+      end
+      object frxDBDataset1w_reason3: TfrxMemoView
+        Left = 351.496290000000000000
+        Top = 347.716760000000000000
+        Width = 207.874150000000000000
+        Height = 37.795300000000000000
+        DataField = 'w_reason3'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          '[frxDBDataset1."w_reason3"]')
+        ParentFont = False
+        VAlign = vaCenter
+      end
+      object frxDBDataset1wdate4: TfrxMemoView
+        Left = 9.118120000000000000
+        Top = 419.527830000000000000
+        Width = 94.488250000000000000
+        Height = 18.897650000000000000
+        DataField = 'wdate4'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."wdate4"]')
+        ParentFont = False
+      end
+      object frxDBDataset1in_time4: TfrxMemoView
+        Left = 120.944960000000000000
+        Top = 415.748300000000000000
+        Width = 56.692950000000000000
+        Height = 18.897650000000000000
+        DataField = 'in_time4'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.FormatStr = 'hh:mm'
+        DisplayFormat.Kind = fkDateTime
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."in_time4"]')
+        ParentFont = False
+      end
+      object frxDBDataset1out_time4: TfrxMemoView
+        Left = 192.756030000000000000
+        Top = 415.748300000000000000
+        Width = 64.252010000000000000
+        Height = 18.897650000000000000
+        DataField = 'out_time4'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.FormatStr = 'hh:mm'
+        DisplayFormat.Kind = fkDateTime
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."out_time4"]')
+        ParentFont = False
+      end
+      object frxDBDataset1w_hour4: TfrxMemoView
+        Left = 272.126160000000000000
+        Top = 419.527830000000000000
+        Width = 60.472480000000000000
+        Height = 18.897650000000000000
+        DataField = 'w_hour4'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."w_hour4"]')
+        ParentFont = False
+      end
+      object frxDBDataset1w_reason4: TfrxMemoView
+        Left = 347.716760000000000000
+        Top = 408.189240000000000000
+        Width = 207.874150000000000000
+        Height = 34.015770000000000000
+        DataField = 'w_reason4'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          '[frxDBDataset1."w_reason4"]')
+        ParentFont = False
+        VAlign = vaCenter
+      end
+      object frxDBDataset1wdate5: TfrxMemoView
+        Left = 9.118120000000000000
+        Top = 472.441250000000000000
+        Width = 94.488250000000000000
+        Height = 18.897650000000000000
+        DataField = 'wdate5'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."wdate5"]')
+        ParentFont = False
+      end
+      object frxDBDataset1in_time5: TfrxMemoView
+        Left = 120.944960000000000000
+        Top = 472.441250000000000000
+        Width = 60.472480000000000000
+        Height = 18.897650000000000000
+        DataField = 'in_time5'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.FormatStr = 'hh:mm'
+        DisplayFormat.Kind = fkDateTime
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."in_time5"]')
+        ParentFont = False
+      end
+      object frxDBDataset1out_time5: TfrxMemoView
+        Left = 196.535560000000000000
+        Top = 472.441250000000000000
+        Width = 60.472480000000000000
+        Height = 18.897650000000000000
+        DataField = 'out_time5'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.FormatStr = 'hh:mm'
+        DisplayFormat.Kind = fkDateTime
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."out_time5"]')
+        ParentFont = False
+      end
+      object frxDBDataset1w_hour5: TfrxMemoView
+        Left = 272.126160000000000000
+        Top = 472.441250000000000000
+        Width = 60.472480000000000000
+        Height = 18.897650000000000000
+        DataField = 'w_hour5'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."w_hour5"]')
+        ParentFont = False
+      end
+      object frxDBDataset1w_reason5: TfrxMemoView
+        Left = 351.496290000000000000
+        Top = 462.882190000000000000
+        Width = 204.094620000000000000
+        Height = 41.574830000000000000
+        DataField = 'w_reason5'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          '[frxDBDataset1."w_reason5"]')
+        ParentFont = False
+        VAlign = vaCenter
+      end
+      object Line20: TfrxLineView
+        Top = 151.181200000000000000
+        Height = 506.457020000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Line21: TfrxLineView
+        Top = 151.181200000000000000
+        Width = 113.385900000000000000
+        Height = 75.590600000000000000
+        Color = clBlack
+        Diagonal = True
+      end
+      object Line22: TfrxLineView
+        Left = 188.976500000000000000
+        Top = 88.488250000000000000
+        Width = 340.157700000000000000
+        Color = clBlack
+        Frame.Style = fsDouble
+        Frame.Typ = [ftTop]
+      end
+      object Memo15: TfrxMemoView
+        Left = 34.015770000000000000
+        Top = 808.819420000000000000
+        Width = 56.692950000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          #44208' '#49328)
+        ParentFont = False
+      end
+      object Memo16: TfrxMemoView
+        Left = 143.622140000000000000
+        Top = 808.819420000000000000
+        Width = 173.858380000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          #52509' '#49884#44036#50808#44540#47924' '#49884#44036' :')
+        ParentFont = False
+      end
+      object frxDBDataset1total_hour: TfrxMemoView
+        Left = 332.598640000000000000
+        Top = 808.819420000000000000
+        Width = 124.724490000000000000
+        Height = 18.897650000000000000
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          '[frxDBDataset1."total_hour"]'#49884#44036)
+        ParentFont = False
+      end
+      object Memo17: TfrxMemoView
+        Left = 30.236240000000000000
+        Top = 922.205320000000000000
+        Width = 294.803340000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = #48148#53461#52404
+        Font.Style = [fsBold]
+        Memo.UTF8W = (
+          #44540#47924#51088': [frxDBDataset1."ename"] ('#51064')  ')
+        ParentFont = False
+      end
+      object Memo18: TfrxMemoView
+        Left = 343.937230000000000000
+        Top = 922.205320000000000000
+        Width = 347.716760000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = #48148#53461#52404
+        Font.Style = [fsBold]
+        Memo.UTF8W = (
+          #54869#51064#51088' : '#51452#48124#51088#52824#54924#51109'  [frxDBDataset1."confirmer"] ('#51064')')
+        ParentFont = False
+      end
+    end
+  end
+  object frxDBDataset1: TfrxDBDataset
+    UserName = 'frxDBDataset1'
+    CloseDataSource = False
+    FieldAliases.Strings = (
+      'RecId=RecId'
+      'assoc=assoc'
+      'jikgub=jikgub'
+      'ename=ename'
+      'wdate=wdate'
+      'in_time=in_time'
+      'out_time=out_time'
+      'w_hour=w_hour'
+      'w_reason=w_reason'
+      'total_hour=total_hour'
+      'confirmer=confirmer'
+      'year_month=year_month'
+      'wdate2=wdate2'
+      'in_time2=in_time2'
+      'out_time2=out_time2'
+      'w_hour2=w_hour2'
+      'w_reason2=w_reason2'
+      'wdate3=wdate3'
+      'in_time3=in_time3'
+      'out_time3=out_time3'
+      'w_hour3=w_hour3'
+      'w_reason3=w_reason3'
+      'wdate4=wdate4'
+      'in_time4=in_time4'
+      'out_time4=out_time4'
+      'w_hour4=w_hour4'
+      'w_reason4=w_reason4'
+      'wdate5=wdate5'
+      'in_time5=in_time5'
+      'out_time5=out_time5'
+      'w_hour5=w_hour5'
+      'w_reason5=w_reason5')
+    DataSet = dxMemData1
+    BCDToCurrency = False
+    Left = 616
+    Top = 264
+  end
+  object dxMemData1: TdxMemData
+    Indexes = <>
+    SortOptions = []
+    Left = 616
+    Top = 312
+    object dxMemData1assoc: TStringField
+      FieldName = 'assoc'
+      Size = 30
+    end
+    object dxMemData1jikgub: TStringField
+      FieldName = 'jikgub'
+    end
+    object dxMemData1ename: TStringField
+      FieldName = 'ename'
+    end
+    object dxMemData1wdate: TDateField
+      FieldName = 'wdate'
+    end
+    object dxMemData1in_time: TTimeField
+      FieldName = 'in_time'
+    end
+    object dxMemData1out_time: TTimeField
+      FieldName = 'out_time'
+    end
+    object dxMemData1w_hour: TIntegerField
+      FieldName = 'w_hour'
+    end
+    object dxMemData1w_reason: TStringField
+      FieldName = 'w_reason'
+      Size = 100
+    end
+    object dxMemData1total_hour: TIntegerField
+      FieldName = 'total_hour'
+    end
+    object dxMemData1confirmer: TStringField
+      FieldName = 'confirmer'
+    end
+    object dxMemData1year_month: TStringField
+      FieldName = 'year_month'
+      Size = 10
+    end
+    object dxMemData1wdate2: TDateField
+      FieldName = 'wdate2'
+    end
+    object dxMemData1in_time2: TTimeField
+      FieldName = 'in_time2'
+    end
+    object dxMemData1out_time2: TTimeField
+      FieldName = 'out_time2'
+    end
+    object dxMemData1w_hour2: TIntegerField
+      FieldName = 'w_hour2'
+    end
+    object dxMemData1w_reason2: TStringField
+      FieldName = 'w_reason2'
+      Size = 100
+    end
+    object dxMemData1wdate3: TDateField
+      FieldName = 'wdate3'
+    end
+    object dxMemData1in_time3: TTimeField
+      FieldName = 'in_time3'
+    end
+    object dxMemData1out_time3: TTimeField
+      FieldName = 'out_time3'
+    end
+    object dxMemData1w_hour3: TIntegerField
+      FieldName = 'w_hour3'
+    end
+    object dxMemData1w_reason3: TStringField
+      FieldName = 'w_reason3'
+      Size = 100
+    end
+    object dxMemData1wdate4: TDateField
+      FieldName = 'wdate4'
+    end
+    object dxMemData1in_time4: TTimeField
+      FieldName = 'in_time4'
+    end
+    object dxMemData1out_time4: TTimeField
+      FieldName = 'out_time4'
+    end
+    object dxMemData1w_hour4: TIntegerField
+      FieldName = 'w_hour4'
+    end
+    object dxMemData1w_reason4: TStringField
+      FieldName = 'w_reason4'
+      Size = 100
+    end
+    object dxMemData1wdate5: TDateField
+      FieldName = 'wdate5'
+    end
+    object dxMemData1in_time5: TTimeField
+      FieldName = 'in_time5'
+    end
+    object dxMemData1out_time5: TTimeField
+      FieldName = 'out_time5'
+    end
+    object dxMemData1w_hour5: TIntegerField
+      FieldName = 'w_hour5'
+    end
+    object dxMemData1w_reason5: TStringField
+      FieldName = 'w_reason5'
+      Size = 100
+    end
+  end
+  object frxReport2: TfrxReport
+    Version = '5.1.9'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 44980.823023020840000000
+    ReportOptions.LastChange = 44980.823023020840000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 472
+    Top = 216
+    Datasets = <>
+    Variables = <>
+    Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      object Memo1: TfrxMemoView
+        Left = 79.370130000000000000
+        Top = 68.031540000000000000
+        Width = 574.488560000000000000
+        Height = 34.015770000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -21
+        Font.Name = #47569#51008' '#44256#46357
+        Font.Style = [fsBold]
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '2023'#45380' 1'#50900' '#49569#49328'2'#46041' '#51452#48124#51088#52824#54924' '#51088#52824#49324#47924#50896' '#44540#47924#49345#54889#48512)
+        ParentFont = False
+      end
+    end
+  end
+  object frxDBDataset2: TfrxDBDataset
+    UserName = 'frxDBDataset2'
+    CloseDataSource = False
+    BCDToCurrency = False
+    Left = 472
+    Top = 264
   end
 end

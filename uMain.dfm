@@ -1400,6 +1400,7 @@ object fmMain: TfmMain
       end
       object N58: TMenuItem
         Caption = #44553#50668#44288#47532
+        OnClick = N58Click
       end
     end
     object mnuDong: TMenuItem
