@@ -357,6 +357,9 @@
 			<DCCReference Include="인사급여\UfmCalcDesc.pas">
 				<Form>fmCalcDesc</Form>
 			</DCCReference>
+			<DCCReference Include="인사급여\UfmExtraPrice.pas">
+				<Form>fmExtraPrice</Form>
+			</DCCReference>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>

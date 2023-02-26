@@ -213,7 +213,7 @@ object fmEmpPayroll: TfmEmpPayroll
       OnClick = btnRecalcClick
     end
     object btnPrint: TcxButton
-      Left = 733
+      Left = 925
       Top = 3
       Width = 140
       Height = 25
@@ -262,7 +262,7 @@ object fmEmpPayroll: TfmEmpPayroll
       OnClick = btnPrintClick
     end
     object btnCalcDesc: TcxButton
-      Left = 595
+      Left = 827
       Top = 3
       Width = 97
       Height = 25
@@ -323,6 +323,19 @@ object fmEmpPayroll: TfmEmpPayroll
       TabOrder = 7
       OnClick = btnDeleteClick
     end
+    object btnExtraPrice: TcxButton
+      Left = 591
+      Top = 3
+      Width = 114
+      Height = 25
+      Caption = #52628#44032' '#51076#44552'/'#44277#51228
+      LookAndFeel.NativeStyle = False
+      LookAndFeel.SkinName = 'DevExpressStyle'
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 8
+      OnClick = btnExtraPriceClick
+    end
   end
   object cxGrid1: TcxGrid
     Left = 0
@@ -332,8 +345,6 @@ object fmEmpPayroll: TfmEmpPayroll
     Align = alClient
     TabOrder = 1
     LookAndFeel.SkinName = 'Black'
-    ExplicitTop = 33
-    ExplicitHeight = 664
     object gridPayroll: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       Navigator.Buttons.First.Visible = False
@@ -466,6 +477,13 @@ object fmEmpPayroll: TfmEmpPayroll
         Properties.UseThousandSeparator = True
         Visible = False
       end
+      object gridPayrollEXTRA_PRICE: TcxGridDBColumn
+        Caption = #47749#51208#55092#44032#48708
+        DataBinding.FieldName = 'EXTRA_PRICE'
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = ',0;-,0'
+        HeaderAlignmentHorz = taCenter
+      end
       object gridPayrollTOTAL_PRICE: TcxGridDBColumn
         Caption = #52509#50529
         DataBinding.FieldName = 'TOTAL_PRICE'
@@ -527,6 +545,42 @@ object fmEmpPayroll: TfmEmpPayroll
         Caption = #44032#51313#49688#45817' '#49328#52636#49885
         DataBinding.FieldName = 'CALC_NOTICE4'
         Width = 185
+      end
+      object gridPayrollETC1_NAME: TcxGridDBColumn
+        DataBinding.FieldName = 'ETC1_NAME'
+        Visible = False
+      end
+      object gridPayrollETC1_PRICE: TcxGridDBColumn
+        DataBinding.FieldName = 'ETC1_PRICE'
+        Visible = False
+      end
+      object gridPayrollETC2_NAME: TcxGridDBColumn
+        DataBinding.FieldName = 'ETC2_NAME'
+        Visible = False
+      end
+      object gridPayrollETC2_PRICE: TcxGridDBColumn
+        DataBinding.FieldName = 'ETC2_PRICE'
+        Visible = False
+      end
+      object gridPayrollYUNGUM: TcxGridDBColumn
+        DataBinding.FieldName = 'YUNGUM'
+        Visible = False
+      end
+      object gridPayrollGOYONG_BOHUM: TcxGridDBColumn
+        DataBinding.FieldName = 'GOYONG_BOHUM'
+        Visible = False
+      end
+      object gridPayrollGUNGANG_BOHUM: TcxGridDBColumn
+        DataBinding.FieldName = 'GUNGANG_BOHUM'
+        Visible = False
+      end
+      object gridPayrollYOYANG_BOHUM: TcxGridDBColumn
+        DataBinding.FieldName = 'YOYANG_BOHUM'
+        Visible = False
+      end
+      object gridPayrollSANJAE_BOHUM: TcxGridDBColumn
+        DataBinding.FieldName = 'SANJAE_BOHUM'
+        Visible = False
       end
     end
     object cxGrid1Level1: TcxGridLevel
@@ -754,6 +808,58 @@ object fmEmpPayroll: TfmEmpPayroll
         DataType = ftInteger
         Name = 'JUMINSE'
         ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'EXTRA_PRICE'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftString
+        Name = 'ETC1_NAME'
+        ParamType = ptOutput
+        Size = 30
+      end
+      item
+        DataType = ftInteger
+        Name = 'ETC1_PRICE'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftString
+        Name = 'ETC2_NAME'
+        ParamType = ptOutput
+        Size = 30
+      end
+      item
+        DataType = ftInteger
+        Name = 'ETC2_PRICE'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'YUNGUM'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'GOYONG_BOHUM'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'GUNGANG_BOHUM'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'YOYANG_BOHUM'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'SANJAE_BOHUM'
+        ParamType = ptOutput
       end>
     CommandStoredProcName = 'EMP_PAYROLL_SEL'
     object EMP_PAYROLL_SELID: TIntegerField
@@ -832,6 +938,38 @@ object fmEmpPayroll: TfmEmpPayroll
     end
     object EMP_PAYROLL_SELJUMINSE: TIntegerField
       FieldName = 'JUMINSE'
+    end
+    object EMP_PAYROLL_SELEXTRA_PRICE: TIntegerField
+      FieldName = 'EXTRA_PRICE'
+    end
+    object EMP_PAYROLL_SELETC1_NAME: TStringField
+      FieldName = 'ETC1_NAME'
+      Size = 30
+    end
+    object EMP_PAYROLL_SELETC1_PRICE: TIntegerField
+      FieldName = 'ETC1_PRICE'
+    end
+    object EMP_PAYROLL_SELETC2_NAME: TStringField
+      FieldName = 'ETC2_NAME'
+      Size = 30
+    end
+    object EMP_PAYROLL_SELETC2_PRICE: TIntegerField
+      FieldName = 'ETC2_PRICE'
+    end
+    object EMP_PAYROLL_SELYUNGUM: TIntegerField
+      FieldName = 'YUNGUM'
+    end
+    object EMP_PAYROLL_SELGOYONG_BOHUM: TIntegerField
+      FieldName = 'GOYONG_BOHUM'
+    end
+    object EMP_PAYROLL_SELGUNGANG_BOHUM: TIntegerField
+      FieldName = 'GUNGANG_BOHUM'
+    end
+    object EMP_PAYROLL_SELYOYANG_BOHUM: TIntegerField
+      FieldName = 'YOYANG_BOHUM'
+    end
+    object EMP_PAYROLL_SELSANJAE_BOHUM: TIntegerField
+      FieldName = 'SANJAE_BOHUM'
     end
   end
   object ds_EMP_PAYROLL_SEL: TDataSource
@@ -972,6 +1110,58 @@ object fmEmpPayroll: TfmEmpPayroll
       item
         DataType = ftInteger
         Name = 'JUMINSE'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'EXTRA_PRICE'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'ETC1_NAME'
+        ParamType = ptInput
+        Size = 30
+      end
+      item
+        DataType = ftInteger
+        Name = 'ETC1_PRICE'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'ETC2_NAME'
+        ParamType = ptInput
+        Size = 30
+      end
+      item
+        DataType = ftInteger
+        Name = 'ETC2_PRICE'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'YUNGUM'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'GOYONG_BOHUM'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'GUNGANG_BOHUM'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'YOYANG_BOHUM'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'SANJAE_BOHUM'
         ParamType = ptInput
       end>
     CommandStoredProcName = 'EMP_PAYROLL_INS'
@@ -1402,6 +1592,58 @@ object fmEmpPayroll: TfmEmpPayroll
         DataType = ftInteger
         Name = 'JUMINSE'
         ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'EXTRA_PRICE'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'ETC1_NAME'
+        ParamType = ptInput
+        Size = 30
+      end
+      item
+        DataType = ftInteger
+        Name = 'ETC1_PRICE'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'ETC2_NAME'
+        ParamType = ptInput
+        Size = 30
+      end
+      item
+        DataType = ftInteger
+        Name = 'ETC2_PRICE'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'YUNGUM'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'GOYONG_BOHUM'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'GUNGANG_BOHUM'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'YOYANG_BOHUM'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'SANJAE_BOHUM'
+        ParamType = ptInput
       end>
     CommandStoredProcName = 'EMP_PAYROLL_UPD'
   end
@@ -1416,7 +1658,7 @@ object fmEmpPayroll: TfmEmpPayroll
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 44980.432926805560000000
-    ReportOptions.LastChange = 44980.559141516210000000
+    ReportOptions.LastChange = 44983.220412696760000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -1667,7 +1909,7 @@ object fmEmpPayroll: TfmEmpPayroll
         Frame.Typ = [ftTop]
       end
       object Line14: TfrxLineView
-        Top = 510.520100000000000000
+        Top = 513.520100000000000000
         Width = 718.110700000000000000
         Color = clBlack
         Frame.Typ = [ftTop]
@@ -1818,7 +2060,7 @@ object fmEmpPayroll: TfmEmpPayroll
         Font.Style = []
         HAlign = haCenter
         Memo.UTF8W = (
-          #51077#44552' '#54637#47785)
+          #51076#44552' '#54637#47785)
         ParentFont = False
       end
       object Memo11: TfrxMemoView
@@ -1891,12 +2133,12 @@ object fmEmpPayroll: TfmEmpPayroll
         Font.Style = []
         HAlign = haCenter
         Memo.UTF8W = (
-          #49884#44036#50808#49688#45817)
+          #44032#51313#49688#45817)
         ParentFont = False
       end
       object Memo16: TfrxMemoView
         Left = 32.913420000000000000
-        Top = 327.086890000000000000
+        Top = 361.086890000000000000
         Width = 86.929190000000000000
         Height = 18.897650000000000000
         Font.Charset = DEFAULT_CHARSET
@@ -2031,7 +2273,7 @@ object fmEmpPayroll: TfmEmpPayroll
       end
       object Memo25: TfrxMemoView
         Left = 393.527830000000000000
-        Top = 517.858690000000000000
+        Top = 520.858690000000000000
         Width = 86.929190000000000000
         Height = 18.897650000000000000
         Font.Charset = DEFAULT_CHARSET
@@ -2061,7 +2303,7 @@ object fmEmpPayroll: TfmEmpPayroll
       object Line25: TfrxLineView
         Left = 151.078850000000000000
         Top = 220.362400000000000000
-        Height = 291.023810000000000000
+        Height = 294.047244094488200000
         Color = clBlack
         Frame.Typ = [ftLeft]
       end
@@ -2088,14 +2330,14 @@ object fmEmpPayroll: TfmEmpPayroll
       end
       object frxDBDataset1ext_price: TfrxMemoView
         Left = 196.535560000000000000
-        Top = 295.291590000000000000
+        Top = 328.307360000000000000
         Width = 128.504020000000000000
         Height = 18.897650000000000000
         DataField = 'ext_price'
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
         DisplayFormat.ThousandSeparator = ','
-        DisplayFormat.FormatStr = '#,0'
+        DisplayFormat.FormatStr = '#,#'
         DisplayFormat.Kind = fkNumeric
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
@@ -2109,14 +2351,14 @@ object fmEmpPayroll: TfmEmpPayroll
       end
       object frxDBDataset1bonus: TfrxMemoView
         Left = 200.315090000000000000
-        Top = 327.086890000000000000
+        Top = 361.086890000000000000
         Width = 124.724490000000000000
         Height = 18.897650000000000000
         DataField = 'bonus'
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
         DisplayFormat.ThousandSeparator = ','
-        DisplayFormat.FormatStr = '#,0'
+        DisplayFormat.FormatStr = '#,#'
         DisplayFormat.Kind = fkNumeric
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
@@ -2131,7 +2373,7 @@ object fmEmpPayroll: TfmEmpPayroll
       object frxDBDataset1sodukse: TfrxMemoView
         Left = 555.590910000000000000
         Top = 262.496290000000000000
-        Width = 124.724490000000000000
+        Width = 143.622140000000000000
         Height = 18.897650000000000000
         DataField = 'sodukse'
         DataSet = frxDBDataset1
@@ -2152,7 +2394,7 @@ object fmEmpPayroll: TfmEmpPayroll
       object frxDBDataset1juminse: TfrxMemoView
         Left = 555.590910000000000000
         Top = 295.291590000000000000
-        Width = 124.724490000000000000
+        Width = 143.622140000000000000
         Height = 18.897650000000000000
         DataField = 'juminse'
         DataSet = frxDBDataset1
@@ -2173,13 +2415,13 @@ object fmEmpPayroll: TfmEmpPayroll
       object frxDBDataset1gongje_total: TfrxMemoView
         Left = 555.590910000000000000
         Top = 488.063390000000000000
-        Width = 124.724490000000000000
+        Width = 143.622140000000000000
         Height = 18.897650000000000000
         DataField = 'gongje_total'
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
         DisplayFormat.ThousandSeparator = ','
-        DisplayFormat.FormatStr = '#,0'
+        DisplayFormat.FormatStr = '#,#'
         DisplayFormat.Kind = fkNumeric
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
@@ -2193,14 +2435,14 @@ object fmEmpPayroll: TfmEmpPayroll
       end
       object frxDBDataset1net_price: TfrxMemoView
         Left = 555.590910000000000000
-        Top = 517.858690000000000000
-        Width = 124.724490000000000000
+        Top = 520.858690000000000000
+        Width = 143.622140000000000000
         Height = 18.897650000000000000
         DataField = 'net_price'
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
         DisplayFormat.ThousandSeparator = ','
-        DisplayFormat.FormatStr = '#,0'
+        DisplayFormat.FormatStr = '#,#'
         DisplayFormat.Kind = fkNumeric
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
@@ -2655,13 +2897,13 @@ object fmEmpPayroll: TfmEmpPayroll
       object Memo42: TfrxMemoView
         Left = 577.827150000000000000
         Top = 691.653990000000000000
-        Width = 128.504020000000000000
+        Width = 120.944960000000000000
         Height = 18.897650000000000000
         DataField = 'basic_price'
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
         DisplayFormat.ThousandSeparator = ','
-        DisplayFormat.FormatStr = '#,0'
+        DisplayFormat.FormatStr = '#,#'
         DisplayFormat.Kind = fkNumeric
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
@@ -2676,13 +2918,13 @@ object fmEmpPayroll: TfmEmpPayroll
       object Memo43: TfrxMemoView
         Left = 578.268090000000000000
         Top = 721.890230000000000000
-        Width = 128.504020000000000000
+        Width = 120.944960000000000000
         Height = 18.897650000000000000
         DataField = 'ext_price'
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
         DisplayFormat.ThousandSeparator = ','
-        DisplayFormat.FormatStr = '#,0'
+        DisplayFormat.FormatStr = '#,#'
         DisplayFormat.Kind = fkNumeric
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
@@ -2697,13 +2939,13 @@ object fmEmpPayroll: TfmEmpPayroll
       object Memo44: TfrxMemoView
         Left = 582.047620000000000000
         Top = 753.906000000000000000
-        Width = 124.724490000000000000
+        Width = 117.165430000000000000
         Height = 18.897650000000000000
         DataField = 'bonus'
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
         DisplayFormat.ThousandSeparator = ','
-        DisplayFormat.FormatStr = '#,0'
+        DisplayFormat.FormatStr = '#,#'
         DisplayFormat.Kind = fkNumeric
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
@@ -2718,12 +2960,12 @@ object fmEmpPayroll: TfmEmpPayroll
       object frxDBDataset1family_price: TfrxMemoView
         Left = 582.047620000000000000
         Top = 785.142240000000000000
-        Width = 124.724490000000000000
+        Width = 117.165430000000000000
         Height = 18.897650000000000000
         DataField = 'family_price'
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
-        DisplayFormat.FormatStr = '#,0'
+        DisplayFormat.FormatStr = '#,#'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -16
@@ -2748,11 +2990,302 @@ object fmEmpPayroll: TfmEmpPayroll
           #8251#54644#45817' '#49324#50629#51109' '#49345#54889#50640' '#46384#46972' '#44592#51116#44032' '#54596#50836#50630#45716' '#54637#47785#51060' '#51080#51012' '#49688' '#51080#49845#45768#45796'.')
         ParentFont = False
       end
+      object frxDBDataset1etc1_name: TfrxMemoView
+        Left = 3.779530000000000000
+        Top = 394.834880000000000000
+        Width = 139.842610000000000000
+        Height = 18.897650000000000000
+        DataField = 'etc1_name'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."etc1_name"]')
+        ParentFont = False
+      end
+      object frxDBDataset1etc2_name: TfrxMemoView
+        Left = 3.779530000000000000
+        Top = 427.071120000000000000
+        Width = 139.842610000000000000
+        Height = 18.897650000000000000
+        DataField = 'etc2_name'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."etc2_name"]')
+        ParentFont = False
+      end
+      object frxDBDataset1etc1_price: TfrxMemoView
+        Left = 196.535560000000000000
+        Top = 395.834880000000000000
+        Width = 128.504020000000000000
+        Height = 18.897650000000000000
+        DataField = 'etc1_price'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.ThousandSeparator = ','
+        DisplayFormat.FormatStr = '#,#'
+        DisplayFormat.Kind = fkNumeric
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          '[frxDBDataset1."etc1_price"]')
+        ParentFont = False
+      end
+      object frxDBDataset1etc2_price: TfrxMemoView
+        Left = 192.756030000000000000
+        Top = 427.071120000000000000
+        Width = 132.283550000000000000
+        Height = 18.897650000000000000
+        DataField = 'etc2_price'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.ThousandSeparator = ','
+        DisplayFormat.FormatStr = '#,#'
+        DisplayFormat.Kind = fkNumeric
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          '[frxDBDataset1."etc2_price"]')
+        ParentFont = False
+      end
+      object frxDBDataset1yungum: TfrxMemoView
+        Left = 551.811380000000000000
+        Top = 328.819110000000000000
+        Width = 147.401670000000000000
+        Height = 18.897650000000000000
+        DataField = 'yungum'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.ThousandSeparator = ','
+        DisplayFormat.FormatStr = '#,#'
+        DisplayFormat.Kind = fkNumeric
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          '[frxDBDataset1."yungum"]')
+        ParentFont = False
+      end
+      object frxDBDataset1goyong: TfrxMemoView
+        Left = 551.811380000000000000
+        Top = 359.055350000000000000
+        Width = 147.401670000000000000
+        Height = 18.897650000000000000
+        DataField = 'goyong'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.ThousandSeparator = ','
+        DisplayFormat.FormatStr = '#,#'
+        DisplayFormat.Kind = fkNumeric
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          '[frxDBDataset1."goyong"]')
+        ParentFont = False
+      end
+      object frxDBDataset1gungang: TfrxMemoView
+        Left = 551.811380000000000000
+        Top = 393.677490000000000000
+        Width = 147.401670000000000000
+        Height = 18.897650000000000000
+        DataField = 'gungang'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.ThousandSeparator = ','
+        DisplayFormat.FormatStr = '#,#'
+        DisplayFormat.Kind = fkNumeric
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          '[frxDBDataset1."gungang"]')
+        ParentFont = False
+      end
+      object frxDBDataset1yoyang: TfrxMemoView
+        Left = 548.031850000000000000
+        Top = 426.472790000000000000
+        Width = 151.181200000000000000
+        Height = 18.897650000000000000
+        DataField = 'yoyang'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.ThousandSeparator = ','
+        DisplayFormat.FormatStr = '#,#'
+        DisplayFormat.Kind = fkNumeric
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          '[frxDBDataset1."yoyang"]')
+        ParentFont = False
+      end
+      object frxDBDataset1sanjae: TfrxMemoView
+        Left = 551.811380000000000000
+        Top = 458.268090000000000000
+        Width = 147.401670000000000000
+        Height = 18.897650000000000000
+        DataField = 'sanjae'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.ThousandSeparator = ','
+        DisplayFormat.FormatStr = '#,#'
+        DisplayFormat.Kind = fkNumeric
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          '[frxDBDataset1."sanjae"]')
+        ParentFont = False
+      end
+      object Memo46: TfrxMemoView
+        Left = 30.236240000000000000
+        Top = 328.819110000000000000
+        Width = 86.929190000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #49884#44036#50808#49688#45817)
+        ParentFont = False
+      end
+      object frxDBDataset1family_price1: TfrxMemoView
+        Left = 192.756030000000000000
+        Top = 294.803340000000000000
+        Width = 132.283550000000000000
+        Height = 18.897650000000000000
+        DataField = 'family_price'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.ThousandSeparator = ','
+        DisplayFormat.FormatStr = '#'
+        DisplayFormat.Kind = fkNumeric
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          '[frxDBDataset1."family_price"]')
+        ParentFont = False
+      end
+      object Memo47: TfrxMemoView
+        Left = 30.236240000000000000
+        Top = 488.063390000000000000
+        Width = 86.929190000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51648#44553#50529' '#44228)
+        ParentFont = False
+      end
+      object frxDBDataset1jigub_total: TfrxMemoView
+        Left = 192.756030000000000000
+        Top = 488.063390000000000000
+        Width = 132.283550000000000000
+        Height = 18.897650000000000000
+        DataField = 'jigub_total'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.ThousandSeparator = ','
+        DisplayFormat.FormatStr = '#,#'
+        DisplayFormat.Kind = fkNumeric
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          '[frxDBDataset1."jigub_total"]')
+        ParentFont = False
+      end
       object Shape1: TfrxShapeView
         Top = 7.559060000000000000
         Width = 718.110700000000000000
         Height = 967.559680000000000000
         Frame.Width = 2.000000000000000000
+      end
+      object frxDBDataset1busu: TfrxMemoView
+        Left = 105.826840000000000000
+        Top = 132.283550000000000000
+        Width = 185.196970000000000000
+        Height = 18.897650000000000000
+        DataField = 'busu'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."busu"]')
+        ParentFont = False
+      end
+      object frxDBDataset1jikgub: TfrxMemoView
+        Left = 476.220780000000000000
+        Top = 132.283550000000000000
+        Width = 211.653680000000000000
+        Height = 18.897650000000000000
+        DataField = 'jikgub'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."jikgub"]')
+        ParentFont = False
       end
     end
   end
@@ -2835,6 +3368,35 @@ object fmEmpPayroll: TfmEmpPayroll
     end
     object dxMemData1family_price: TIntegerField
       FieldName = 'family_price'
+    end
+    object dxMemData1etc1_price: TIntegerField
+      FieldName = 'etc1_price'
+    end
+    object dxMemData1etc1_name: TStringField
+      FieldName = 'etc1_name'
+      Size = 30
+    end
+    object dxMemData1etc2_price: TIntegerField
+      FieldName = 'etc2_price'
+    end
+    object dxMemData1etc2_name: TStringField
+      FieldName = 'etc2_name'
+      Size = 30
+    end
+    object dxMemData1yungum: TIntegerField
+      FieldName = 'yungum'
+    end
+    object dxMemData1goyong: TIntegerField
+      FieldName = 'goyong'
+    end
+    object dxMemData1gungang: TIntegerField
+      FieldName = 'gungang'
+    end
+    object dxMemData1yoyang: TIntegerField
+      FieldName = 'yoyang'
+    end
+    object dxMemData1sanjae: TIntegerField
+      FieldName = 'sanjae'
     end
   end
   object EMP_TAX_TABLE_SEL: TUniStoredProc
@@ -2999,7 +3561,16 @@ object fmEmpPayroll: TfmEmpPayroll
       'calc_note3=calc_note3'
       'calc_note4=calc_note4'
       'calc_note5=calc_note5'
-      'family_price=family_price')
+      'family_price=family_price'
+      'etc1_price=etc1_price'
+      'etc1_name=etc1_name'
+      'etc2_price=etc2_price'
+      'etc2_name=etc2_name'
+      'yungum=yungum'
+      'goyong=goyong'
+      'gungang=gungang'
+      'yoyang=yoyang'
+      'sanjae=sanjae')
     DataSet = dxMemData1
     BCDToCurrency = False
     Left = 888

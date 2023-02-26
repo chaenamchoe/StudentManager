@@ -110,7 +110,8 @@ uses
   UfmEmpList in '인사급여\UfmEmpList.pas' {fmEmpList},
   UfmEmpAttend in '인사급여\UfmEmpAttend.pas' {fmEmpAttend},
   UfmEmpPayroll in '인사급여\UfmEmpPayroll.pas' {fmEmpPayroll},
-  UfmCalcDesc in '인사급여\UfmCalcDesc.pas' {fmCalcDesc};
+  UfmCalcDesc in '인사급여\UfmCalcDesc.pas' {fmCalcDesc},
+  UfmExtraPrice in '인사급여\UfmExtraPrice.pas' {fmExtraPrice};
 
 {$R *.res}
 
@@ -126,6 +127,7 @@ begin
       Application.CreateForm(TfmMain, fmMain);
   Application.CreateForm(Tdm, dm);
   Application.CreateForm(TfmCalcDesc, fmCalcDesc);
+  Application.CreateForm(TfmExtraPrice, fmExtraPrice);
   Application.Run;
     end else begin
       fmLogin.Hide;

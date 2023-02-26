@@ -548,6 +548,8 @@ type
     EMP_ATTENDING_SEL_IDW_KIND: TIntegerField;
     EMP_ATTENDING_SEL_IDW_REASON: TStringField;
     UniQuery1: TUniQuery;
+    q_basic_valueCENTER_CHIEF_NAME: TStringField;
+    EMP_ATTENDING_IU: TUniStoredProc;
     procedure q_CLASSROOMNewRecord(DataSet: TDataSet);
     procedure q_LECTURENewRecord(DataSet: TDataSet);
     procedure t_LOGIN_USERNewRecord(DataSet: TDataSet);
@@ -639,7 +641,8 @@ begin
     t_acc_detaillook.Active := True;
     t_TIME_START.Active := True;
     t_TIME_END.Active := True;
-    q_basic_value.Active := True;
+    q_basic_value.Open;
+    d_basic_value.DataSet.Refresh;
     t_classroom_look.Active := True;
     t_lecture_list.Active := True;
     q_CLASSROOM.ParamByName('dong_id').AsString := LoginUserDong;
@@ -1125,16 +1128,15 @@ end;
 
 procedure Tdm.InsertEmpAttending;
 begin
-  EMP_ATTENDING_INS.ParamByName('WDATE').Value := Date;
-  EMP_ATTENDING_INS.ParamByName('IN_TIME').Value := Now;
-  EMP_ATTENDING_INS.ParamByName('OUT_TIME').Clear;
-  EMP_ATTENDING_INS.ParamByName('W_KIND').Value := 0;
-  EMP_ATTENDING_INS.ParamByName('W_REASON').Value := '';
-  EMP_ATTENDING_INS.ExecProc;
-  EMP_ATTENDING_SEL.ParamByName('SDATE').Value := Date;
-  EMP_ATTENDING_SEL.ParamByName('EDATE').Value := Date;
-  EMP_ATTENDING_SEL.Open;
-  ds_EMP_ATTENDING_SEL.DataSet.Refresh;
+  EMP_ATTENDING_IU.ParamByName('E_ID').Value := 1;
+  EMP_ATTENDING_IU.ParamByName('WDATE').Value := Date;
+  EMP_ATTENDING_IU.ParamByName('IN_TIME').Value := Now;
+  EMP_ATTENDING_IU.ParamByName('OUT_TIME').Clear;
+  EMP_ATTENDING_IU.ParamByName('W_KIND').Value := -1;
+  EMP_ATTENDING_IU.ParamByName('W_REASON').Value := '';
+  EMP_ATTENDING_IU.ParamByName('W_WEEK').Value := DayOfWeek(Date);
+  EMP_ATTENDING_IU.ParamByName('W_HOUR').Value := 0;
+  EMP_ATTENDING_IU.ExecProc;
 end;
 
 procedure Tdm.InsertEmpLeaving(id : Integer);

@@ -21,12 +21,14 @@ var
     LoginUserPass : string;
     LoginUserName : String;   //UserName
     LoginUserDong : String;   //dong_id
+    CenterChiefName : string;
     LoginUserDongNumber : Integer;   //dong_number 1~14...
     LoginUserKind : Integer;  //0=사용자, 1=관리자
     LoginUserCityName : string;
     LoginUserDongName : string;
     LoginUserTel : string;
     LoginUserEmail : string;
+    LoginUserJikgub : string;
     DBFilename : string;      //사용자별 데이터베이스파일명
     DBServerIP : string;      //시군별 서버IP
     DBServerPort : integer;   //나중에 시군별 서버를 별도로 하기위한...

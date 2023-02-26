@@ -4449,7 +4449,6 @@ object fmMain: TfmMain
   end
   object BMDThread1: TBMDThread
     UpdateEnabled = False
-    OnExecute = BMDThread1Execute
     Left = 88
     Top = 232
   end

@@ -185,6 +185,36 @@ type
     dxMemData1family_price: TIntegerField;
     btnCalcDesc: TcxButton;
     btnDelete: TcxButton;
+    EMP_PAYROLL_SELEXTRA_PRICE: TIntegerField;
+    gridPayrollEXTRA_PRICE: TcxGridDBColumn;
+    btnExtraPrice: TcxButton;
+    EMP_PAYROLL_SELETC1_NAME: TStringField;
+    EMP_PAYROLL_SELETC1_PRICE: TIntegerField;
+    EMP_PAYROLL_SELETC2_NAME: TStringField;
+    EMP_PAYROLL_SELETC2_PRICE: TIntegerField;
+    EMP_PAYROLL_SELYUNGUM: TIntegerField;
+    EMP_PAYROLL_SELGOYONG_BOHUM: TIntegerField;
+    EMP_PAYROLL_SELGUNGANG_BOHUM: TIntegerField;
+    EMP_PAYROLL_SELYOYANG_BOHUM: TIntegerField;
+    EMP_PAYROLL_SELSANJAE_BOHUM: TIntegerField;
+    gridPayrollETC1_NAME: TcxGridDBColumn;
+    gridPayrollETC1_PRICE: TcxGridDBColumn;
+    gridPayrollETC2_NAME: TcxGridDBColumn;
+    gridPayrollETC2_PRICE: TcxGridDBColumn;
+    gridPayrollYUNGUM: TcxGridDBColumn;
+    gridPayrollGOYONG_BOHUM: TcxGridDBColumn;
+    gridPayrollGUNGANG_BOHUM: TcxGridDBColumn;
+    gridPayrollYOYANG_BOHUM: TcxGridDBColumn;
+    gridPayrollSANJAE_BOHUM: TcxGridDBColumn;
+    dxMemData1etc1_price: TIntegerField;
+    dxMemData1etc1_name: TStringField;
+    dxMemData1etc2_price: TIntegerField;
+    dxMemData1etc2_name: TStringField;
+    dxMemData1yungum: TIntegerField;
+    dxMemData1goyong: TIntegerField;
+    dxMemData1gungang: TIntegerField;
+    dxMemData1yoyang: TIntegerField;
+    dxMemData1sanjae: TIntegerField;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
     procedure btnRetrieveClick(Sender: TObject);
@@ -193,6 +223,7 @@ type
     procedure btnPrintClick(Sender: TObject);
     procedure btnCalcDescClick(Sender: TObject);
     procedure btnDeleteClick(Sender: TObject);
+    procedure btnExtraPriceClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -205,7 +236,7 @@ var
 implementation
 
 uses
-  GlobalVar, Udm, UfmCalcDesc;
+  GlobalVar, Udm, UfmCalcDesc, UfmExtraPrice;
 
 {$R *.dfm}
 
@@ -307,6 +338,15 @@ begin
   EMP_PAYROLL_INS.ParamByName('JUMINSE').Value := JUMIN;
   EMP_PAYROLL_INS.ParamByName('GONGJE_PRICE').Value := SODUK + JUMIN;
   EMP_PAYROLL_INS.ParamByName('YOUNGSU_PRICE').Value := TOTAL_AMOUNT - (SODUK + JUMIN);
+  EMP_PAYROLL_INS.ParamByName('ETC1_NAME').Value := '';
+  EMP_PAYROLL_INS.ParamByName('ETC2_NAME').Value := '';
+  EMP_PAYROLL_INS.ParamByName('ETC1_PRICE').Value := 0;
+  EMP_PAYROLL_INS.ParamByName('ETC2_PRICE').Value := 0;
+  EMP_PAYROLL_INS.ParamByName('YUNGUM').Value := 0;
+  EMP_PAYROLL_INS.ParamByName('GOYONG_BOHUM').Value := 0;
+  EMP_PAYROLL_INS.ParamByName('GUNGANG_BOHUM').Value := 0;
+  EMP_PAYROLL_INS.ParamByName('YOYANG_BOHUM').Value := 0;
+  EMP_PAYROLL_INS.ParamByName('SANJAE_BOHUM').Value := 0;
   EMP_PAYROLL_INS.ParamByName('CALC_NOTICE1').Value := '';
   EMP_PAYROLL_INS.ParamByName('CALC_NOTICE2').Value := '';
   EMP_PAYROLL_INS.ParamByName('CALC_NOTICE3').Value := '';
@@ -385,6 +425,8 @@ begin
   dxMemData1.Close;
   dxMemData1.Open;
   dxMemData1.Append;
+  dxMemData1busu.Value := LoginUserDongName;
+  dxMemData1jikgub.Value := LoginUserJikgub;
   dxMemData1year_month.Value := gridPayrollWMONTH.EditValue;
   dxMemData1jigubil.Value := Date;
   dxMemData1ename.Value := gridPayroll.DataController.GetDisplayText(gridPayroll.DataController.GetFocusedRecordIndex,
@@ -392,16 +434,26 @@ begin
   dxMemData1ebirth.Value := DateToStr(EMP_BASIC_SELE_BIRTH.Value);
   dxMemData1basic_price.Value := gridPayrollBASIC_PRICE.EditValue;
   dxMemData1ext_price.Value := gridPayrollEXTEND_PRICE.EditValue;
-  dxMemData1bonus.Value := 0;
+  dxMemData1bonus.Value := gridPayrollEXTRA_PRICE.EditValue;
   dxMemData1jigub_total.Value := gridPayrollTOTAL_PRICE.EditValue;
   dxMemData1sodukse.Value := gridPayrollSODUKSE.EditValue;
   dxMemData1juminse.Value := gridPayrollJUMINSE.EditValue;
+  dxMemData1jigub_total.Value := gridPayrollTOTAL_PRICE.EditValue;
   dxMemData1gongje_total.Value := gridPayrollGONGJE_PRICE.EditValue;
   dxMemData1net_price.Value := gridPayrollYOUNGSU_PRICE.EditValue;
   dxMemData1ext_hours.Value := gridPayrollEXTEND_HOURS.EditValue;
   dxMemData1yunga_days.Value := 0;
   dxMemData1jotoi_hours.Value := 0;
   dxMemData1family_price.Value := gridPayrollFAMILY_PRICE.EditValue;
+  dxMemData1etc1_name.Value := gridPayrollETC1_NAME.EditValue;
+  dxMemData1etc1_price.Value := gridPayrollETC1_PRICE.EditValue;
+  dxMemData1etc2_name.Value := gridPayrollETC2_NAME.EditValue;
+  dxMemData1etc2_price.Value := gridPayrollETC2_PRICE.EditValue;
+  dxMemData1yungum.Value := gridPayrollYUNGUM.EditValue;
+  dxMemData1goyong.Value := gridPayrollGOYONG_BOHUM.EditValue;
+  dxMemData1gungang.Value := gridPayrollGUNGANG_BOHUM.EditValue;
+  dxMemData1yoyang.Value := gridPayrollYOYANG_BOHUM.EditValue;
+  dxMemData1sanjae.Value := gridPayrollSANJAE_BOHUM.EditValue;
   dxMemData1calc_note1.Value := VarToStrDef(gridPayrollCALC_NOTICE1.EditValue, '');
   dxMemData1calc_note2.Value := VarToStrDef(gridPayrollCALC_NOTICE2.EditValue, '');
   dxMemData1calc_note3.Value := VarToStrDef(gridPayrollCALC_NOTICE3.EditValue, '');
@@ -414,8 +466,9 @@ end;
 procedure TfmEmpPayroll.btnRecalcClick(Sender: TObject);
 var
   i, cnt, e_id, toprow, rowid : Integer;
-  work_days, work_hours, ext_hours, ext_days, ext_price, family_cnt : Integer;
-  TOTAL_AMOUNT, SODUK_FEE, SODUK, JUMIN_FEE, JUMIN, NET_AMOUNT : Integer;
+  work_days, work_hours, ext_hours, ext_days, ext_price, family_cnt, family_price : Integer;
+  TOTAL_AMOUNT, TOTAL_GONGJE, SODUK_FEE, SODUK, JUMIN_FEE, JUMIN, NET_AMOUNT, BASIC_PRICE : Integer;
+  EXTRA_PRICE, YUNGUM, GOYONG, GUNGANG, YOYANG, SANJAE, ETC1_PRICE, ETC2_PRICE : Integer;
 begin
   rowid := gridPayrollID.EditValue;
   toprow := gridPayroll.Controller.TopRowIndex;
@@ -449,11 +502,21 @@ begin
     ext_price := 0;
   end;
   //total and suduk jumin
-  TOTAL_AMOUNT := EMP_BASIC_SELMONTH_PRICE.Value + ext_price;
+  if VarIsNull(gridPayrollEXTRA_PRICE.EditValue) then EXTRA_PRICE := 0
+  else EXTRA_PRICE := gridPayrollEXTRA_PRICE.EditValue;
+  if VarIsNull(gridPayrollETC1_PRICE.EditValue) then ETC1_PRICE := 0
+  else  ETC1_PRICE := gridPayrollETC1_PRICE.EditValue;
+  if VarIsNull(gridPayrollETC2_PRICE.EditValue) then ETC2_PRICE := 0
+  else  ETC2_PRICE := gridPayrollETC2_PRICE.EditValue;
+
+  BASIC_PRICE := EMP_BASIC_SELMONTH_PRICE.Value;
+  family_cnt := EMP_BASIC_SELFAMILY_CNT.Value;
+  family_price := EMP_BASIC_SELFAMILY_PRICE.Value * family_cnt;
+  TOTAL_AMOUNT := BASIC_PRICE + ext_price + family_price + EXTRA_PRICE + ETC1_PRICE + ETC2_PRICE;
+
   EMP_TAX_TABLE_SEL.ParamByName('IN_PRICE').Value := TOTAL_AMOUNT;
   EMP_TAX_TABLE_SEL.Open;
   ds_EMP_TAX_TABLE_SEL.DataSet.Refresh;
-  family_cnt := EMP_BASIC_SELFAMILY_CNT.Value;
   case family_cnt of
     0, 1: SODUK := EMP_TAX_TABLE_SELFAMILY1.Value;
     2: SODUK := EMP_TAX_TABLE_SELFAMILY2.Value;
@@ -469,6 +532,12 @@ begin
   end;
   JUMIN_FEE := Trunc(SODUK * 0.1);
   JUMIN     := Trunc(JUMIN_FEE * 0.1) * 10;
+  YUNGUM := gridPayrollYUNGUM.EditValue;
+  GOYONG := gridPayrollGOYONG_BOHUM.EditValue;
+  GUNGANG := gridPayrollGUNGANG_BOHUM.EditValue;
+  YOYANG := gridPayrollYOYANG_BOHUM.EditValue;
+  SANJAE := gridPayrollSANJAE_BOHUM.EditValue;
+  TOTAL_GONGJE := SODUK + JUMIN + YUNGUM + GOYONG + GUNGANG + YOYANG + SANJAE;
 
   EMP_PAYROLL_UPD.ParamByName('ID').Value := rowid;
   EMP_PAYROLL_UPD.ParamByName('WYEAR').Value := gridPayrollWYEAR.EditValue;
@@ -479,21 +548,31 @@ begin
   EMP_PAYROLL_UPD.ParamByName('EXTEND_HOURS').Value := ext_hours;
   EMP_PAYROLL_UPD.ParamByName('HOLIDAY_HOURS').Value := 0;
   EMP_PAYROLL_UPD.ParamByName('NIGHT_HOURS').Value := 0;
-  EMP_PAYROLL_UPD.ParamByName('BASIC_PRICE').Value := TOTAL_AMOUNT;
-  EMP_PAYROLL_UPD.ParamByName('FAMILY_PRICE').Value := 0;
+  EMP_PAYROLL_UPD.ParamByName('BASIC_PRICE').Value := BASIC_PRICE;
+  EMP_PAYROLL_UPD.ParamByName('FAMILY_PRICE').Value := family_price;
   EMP_PAYROLL_UPD.ParamByName('EXTEND_PRICE').Value := ext_price;
   EMP_PAYROLL_UPD.ParamByName('HOLIDAY_PRICE').Value := 0;
   EMP_PAYROLL_UPD.ParamByName('NIGHT_PRICE').Value := 0;
-  EMP_PAYROLL_UPD.ParamByName('CASH_PRICE').Value := TOTAL_AMOUNT;
-  EMP_PAYROLL_UPD.ParamByName('TOTAL_PRICE').Value := TOTAL_AMOUNT;
   EMP_PAYROLL_UPD.ParamByName('SODUKSE').Value := SODUK;
   EMP_PAYROLL_UPD.ParamByName('JUMINSE').Value := JUMIN;
-  EMP_PAYROLL_UPD.ParamByName('GONGJE_PRICE').Value := SODUK + JUMIN;
-  EMP_PAYROLL_UPD.ParamByName('YOUNGSU_PRICE').Value := TOTAL_AMOUNT - (SODUK + JUMIN);
+  EMP_PAYROLL_UPD.ParamByName('EXTRA_PRICE').Value := EXTRA_PRICE;
+  EMP_PAYROLL_UPD.ParamByName('ETC1_NAME').Value := '';
+  EMP_PAYROLL_UPD.ParamByName('ETC2_NAME').Value := '';
+  EMP_PAYROLL_UPD.ParamByName('ETC1_PRICE').Value := 0;
+  EMP_PAYROLL_UPD.ParamByName('ETC2_PRICE').Value := 0;
+  EMP_PAYROLL_UPD.ParamByName('YUNGUM').Value := 0;
+  EMP_PAYROLL_UPD.ParamByName('GOYONG_BOHUM').Value := 0;
+  EMP_PAYROLL_UPD.ParamByName('GUNGANG_BOHUM').Value := 0;
+  EMP_PAYROLL_UPD.ParamByName('YOYANG_BOHUM').Value := 0;
+  EMP_PAYROLL_UPD.ParamByName('SANJAE_BOHUM').Value := 0;
   EMP_PAYROLL_UPD.ParamByName('CALC_NOTICE1').Value := '';
   EMP_PAYROLL_UPD.ParamByName('CALC_NOTICE2').Value := '';
   EMP_PAYROLL_UPD.ParamByName('CALC_NOTICE3').Value := '';
   EMP_PAYROLL_UPD.ParamByName('CALC_NOTICE4').Value := '';
+  EMP_PAYROLL_UPD.ParamByName('CASH_PRICE').Value := TOTAL_AMOUNT;
+  EMP_PAYROLL_UPD.ParamByName('TOTAL_PRICE').Value := TOTAL_AMOUNT;
+  EMP_PAYROLL_UPD.ParamByName('GONGJE_PRICE').Value := TOTAL_GONGJE;
+  EMP_PAYROLL_UPD.ParamByName('YOUNGSU_PRICE').Value := TOTAL_AMOUNT - TOTAL_GONGJE;
   EMP_PAYROLL_UPD.ExecProc;
   ds_EMP_PAYROLL_SEL.DataSet.Refresh;
   ds_EMP_PAYROLL_SEL.DataSet.Locate('ID', rowid, []);
@@ -506,6 +585,92 @@ begin
   EMP_PAYROLL_SEL.ParamByName('CYEAR').Value := spYear.EditValue;
   EMP_PAYROLL_SEL.Open;
   ds_EMP_PAYROLL_SEL.DataSet.Refresh;
+end;
+
+procedure TfmEmpPayroll.btnExtraPriceClick(Sender: TObject);
+var
+  extra_price, etc1, etc2, yungum, goyong, gungang, yoyang, sanjae : Integer;
+  etc1_name, etc2_name : string;
+  rowid, toprow : Integer;
+begin
+  gridPayroll.DataController.SaveBookmark;
+  toprow := gridPayroll.Controller.TopRowIndex;
+  rowid := gridPayrollID.EditValue;
+  fmExtraPrice := TfmExtraPrice.Create(Self);
+  try
+    fmExtraPrice.ETC1_NAME.Text := VarToStrDef(gridPayrollETC1_NAME.EditValue, '');
+    fmExtraPrice.ETC2_NAME.Text := VarToStrDef(gridPayrollETC2_NAME.EditValue, '');
+    if VarIsNull(gridPayrollEXTRA_PRICE.EditValue) then fmExtraPrice.EXTRA_PRICE.EditValue := 0
+    else fmExtraPrice.EXTRA_PRICE.EditValue := gridPayrollEXTRA_PRICE.EditValue;
+
+    if VarIsNull(gridPayrollETC1_PRICE.EditValue) then fmExtraPrice.ETC1_PRICE.EditValue := 0
+    else fmExtraPrice.ETC1_PRICE.EditValue := gridPayrollETC1_PRICE.EditValue;
+
+    if VarIsNull(gridPayrollETC2_PRICE.EditValue) then fmExtraPrice.ETC2_PRICE.EditValue := 0
+    else fmExtraPrice.ETC2_PRICE.EditValue := gridPayrollETC2_PRICE.EditValue;
+
+    if VarIsNull(gridPayrollYUNGUM.EditValue) then fmExtraPrice.YUNGUM.EditValue := 0
+    else fmExtraPrice.YUNGUM.EditValue := gridPayrollYUNGUM.EditValue;
+
+    if VarIsNull(gridPayrollGOYONG_BOHUM.EditValue) then fmExtraPrice.GOYONG_BOHUM.EditValue := 0
+    else fmExtraPrice.GOYONG_BOHUM.EditValue := gridPayrollGOYONG_BOHUM.EditValue;
+
+    if VarIsNull(gridPayrollGUNGANG_BOHUM.EditValue) then fmExtraPrice.GUNGANG_BOHUM.EditValue := 0
+    else fmExtraPrice.GUNGANG_BOHUM.EditValue := gridPayrollGUNGANG_BOHUM.EditValue;
+
+    if VarIsNull(gridPayrollYOYANG_BOHUM.EditValue) then fmExtraPrice.YOYANG_BOHUM.EditValue := 0
+    else fmExtraPrice.YOYANG_BOHUM.EditValue := gridPayrollYOYANG_BOHUM.EditValue;
+
+    if VarIsNull(gridPayrollSANJAE_BOHUM.EditValue) then fmExtraPrice.SANJAE_BOHUM.EditValue := 0
+    else fmExtraPrice.SANJAE_BOHUM.EditValue := gridPayrollSANJAE_BOHUM.EditValue;
+
+    fmExtraPrice.ShowModal;
+    if fmExtraPrice.ModalResult = mrOk then begin
+      extra_price := fmExtraPrice.EXTRA_PRICE.EditValue;
+      etc1 := fmExtraPrice.ETC1_PRICE.EditValue;
+      etc2 := fmExtraPrice.ETC2_PRICE.EditValue;
+      yungum := fmExtraPrice.YUNGUM.EditValue;
+      goyong := fmExtraPrice.GOYONG_BOHUM.EditValue;
+      gungang := fmExtraPrice.GUNGANG_BOHUM.EditValue;
+      yoyang := fmExtraPrice.YOYANG_BOHUM.EditValue;
+      sanjae := fmExtraPrice.SANJAE_BOHUM.EditValue;
+      if etc1 > 0 then etc1_name := fmExtraPrice.ETC1_NAME.Text else etc1_name := '';
+      if etc2 > 0 then etc2_name := fmExtraPrice.ETC2_NAME.Text else etc2_name := '';
+
+      UniQuery1.SQL.Clear;
+      UniQuery1.SQL.Add('update emp_payroll set ');
+      UniQuery1.SQL.Add('extra_price = :extra_price, ');
+      UniQuery1.SQL.Add('etc1_price = :etc1_price, ');
+      UniQuery1.SQL.Add('etc1_name = :etc1_name, ');
+      UniQuery1.SQL.Add('etc2_price = :etc2_price, ');
+      UniQuery1.SQL.Add('etc2_name = :etc2_name, ');
+      UniQuery1.SQL.Add('yungum = :yungum, ');
+      UniQuery1.SQL.Add('goyong_bohum = :goyong, ');
+      UniQuery1.SQL.Add('gungang_bohum = :gungang, ');
+      UniQuery1.SQL.Add('yoyang_bohum = :yoyang, ');
+      UniQuery1.SQL.Add('sanjae_bohum = :sanjae ');
+      UniQuery1.SQL.Add('where id = :id; ');
+      UniQuery1.ParamByName('id').Value := rowid;
+      UniQuery1.ParamByName('extra_price').Value := extra_price;
+      UniQuery1.ParamByName('etc1_price').Value := etc1;
+      UniQuery1.ParamByName('etc1_name').Value := etc1_name;
+      UniQuery1.ParamByName('etc2_price').Value := etc2;
+      UniQuery1.ParamByName('etc2_name').Value := etc2_name;
+      UniQuery1.ParamByName('yungum').Value := yungum;
+      UniQuery1.ParamByName('goyong').Value := goyong;
+      UniQuery1.ParamByName('gungang').Value := gungang;
+      UniQuery1.ParamByName('yoyang').Value := yoyang;
+      UniQuery1.ParamByName('sanjae').Value := sanjae;
+      UniQuery1.ExecSQL;
+      ds_EMP_PAYROLL_SEL.DataSet.Refresh;
+      ds_EMP_PAYROLL_SEL.DataSet.Locate('ID', rowid, []);
+      gridPayroll.DataController.GotoBookmark;
+      gridPayroll.Controller.TopRowIndex := toprow;
+      btnRecalc.Click;
+    end;
+  finally
+    fmExtraPrice.Free;
+  end;
 end;
 
 procedure TfmEmpPayroll.FormClose(Sender: TObject; var Action: TCloseAction);

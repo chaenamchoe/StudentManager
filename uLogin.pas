@@ -84,8 +84,6 @@ type
     q_userCITY_IMAGE: TBlobField;
     edtLoginID: TEdit;
     cxTabSheet3: TcxTabSheet;
-    chkSaveID: TCheckBox;
-    chkSavePass: TCheckBox;
     btnAddNew: TBitBtn;
     q_userCAN_UPDATE: TSmallintField;
     q_userDB_LOCATION: TSmallintField;
@@ -112,6 +110,8 @@ type
     lblUpdateMessage: TLabel;
     cxButton1: TcxButton;
     chkAttend: TcxCheckBox;
+    chkSaveID: TcxCheckBox;
+    chkSavePass: TcxCheckBox;
     procedure btnLocalOKClick(Sender: TObject);
     procedure btnRegistProgramClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
@@ -341,46 +341,46 @@ begin
 end;
 
 procedure TfmLogin.btnAddNewClick(Sender: TObject);
-var
-  fQuery : TUniQuery;
-  sender_email, receiver, subject, msg : string;
+//var
+//  fQuery : TUniQuery;
+//  sender_email, receiver, subject, msg : string;
 begin
-  fQuery := TUniQuery.Create(nil);
-  fmUserRegistration := TfmUserRegistration.Create(Self);
-  try
-    fmUserRegistration.ShowModal;
-    if fmUserRegistration.ModalResult = mrOk then begin
-      with fQuery do begin
-        Connection := UniConnection2;
-        SQL.Clear;
-        SQL.Add('INSERT INTO LOGIN_USER ');
-        SQL.Add('(ID, USER_NAME, LOGIN_ID, LOGIN_PASS, USER_KIND, ');
-        SQL.Add('CITY_NAME, DONG_NAME, USER_TEL, USER_EMAIL, REG_DATE, ');
-        SQL.Add('APPROVED, SYSTEM_ID)');
-        SQL.Add('VALUES ');
-        SQL.Add('(:ID, :USER_NAME, :LOGIN_ID, :LOGIN_PASS, :USER_KIND, ');
-        SQL.Add(':CITY_NAME, :DONG_NAME, :USER_TEL, :USER_EMAIL, :REG_DATE, ');
-        SQL.Add(':APPROVED, :SYSTEM_ID)');
-        Params.ParamByName('ID').AsString := FormatDateTime('yyyymmddhhnnsszzz', now);
-        Params.ParamByName('USER_NAME').AsString := fmUserRegistration.editUsername.Text;
-        Params.ParamByName('LOGIN_ID').AsString := fmUserRegistration.edtLoginID.Text;
-        Params.ParamByName('LOGIN_PASS').AsString := fmUserRegistration.edtLoginPass.Text;
-        Params.ParamByName('USER_KIND').AsInteger := 0;
-        Params.ParamByName('CITY_NAME').AsString := fmUserRegistration.edtCityName.Text;
-        Params.ParamByName('DONG_NAME').AsString := fmUserRegistration.edtDongName.Text;
-        Params.ParamByName('USER_TEL').AsString := fmUserRegistration.edtUserTel.Text;
-        Params.ParamByName('USER_EMAIL').AsString := fmUserRegistration.edtUserEmail.Text;
-        Params.ParamByName('REG_DATE').AsString := DateTimeToStr(Date);
-        Params.ParamByName('APPROVED').AsInteger := 0;
-        Params.ParamByName('SYSTEM_ID').AsString := HDDID;
-        Execute;
-      end;
-      LabelMessage.Caption := '사용자 등록이 완료되었습니다.' + #13#10 + '사용자 승인이 되면 알려드립니다.';
-    end;
-  finally
-    fQuery.Free;
-    fmUserRegistration.Free;
-  end;
+//  fQuery := TUniQuery.Create(nil);
+//  fmUserRegistration := TfmUserRegistration.Create(Self);
+//  try
+//    fmUserRegistration.ShowModal;
+//    if fmUserRegistration.ModalResult = mrOk then begin
+//      with fQuery do begin
+//        Connection := UniConnection2;
+//        SQL.Clear;
+//        SQL.Add('INSERT INTO LOGIN_USER ');
+//        SQL.Add('(ID, USER_NAME, LOGIN_ID, LOGIN_PASS, USER_KIND, ');
+//        SQL.Add('CITY_NAME, DONG_NAME, USER_TEL, USER_EMAIL, REG_DATE, ');
+//        SQL.Add('APPROVED, SYSTEM_ID)');
+//        SQL.Add('VALUES ');
+//        SQL.Add('(:ID, :USER_NAME, :LOGIN_ID, :LOGIN_PASS, :USER_KIND, ');
+//        SQL.Add(':CITY_NAME, :DONG_NAME, :USER_TEL, :USER_EMAIL, :REG_DATE, ');
+//        SQL.Add(':APPROVED, :SYSTEM_ID)');
+//        Params.ParamByName('ID').AsString := FormatDateTime('yyyymmddhhnnsszzz', now);
+//        Params.ParamByName('USER_NAME').AsString := fmUserRegistration.editUsername.Text;
+//        Params.ParamByName('LOGIN_ID').AsString := fmUserRegistration.edtLoginID.Text;
+//        Params.ParamByName('LOGIN_PASS').AsString := fmUserRegistration.edtLoginPass.Text;
+//        Params.ParamByName('USER_KIND').AsInteger := 0;
+//        Params.ParamByName('CITY_NAME').AsString := fmUserRegistration.edtCityName.Text;
+//        Params.ParamByName('DONG_NAME').AsString := fmUserRegistration.edtDongName.Text;
+//        Params.ParamByName('USER_TEL').AsString := fmUserRegistration.edtUserTel.Text;
+//        Params.ParamByName('USER_EMAIL').AsString := fmUserRegistration.edtUserEmail.Text;
+//        Params.ParamByName('REG_DATE').AsString := DateTimeToStr(Date);
+//        Params.ParamByName('APPROVED').AsInteger := 0;
+//        Params.ParamByName('SYSTEM_ID').AsString := HDDID;
+//        Execute;
+//      end;
+//      LabelMessage.Caption := '사용자 등록이 완료되었습니다.' + #13#10 + '사용자 승인이 되면 알려드립니다.';
+//    end;
+//  finally
+//    fQuery.Free;
+//    fmUserRegistration.Free;
+//  end;
 end;
 
 procedure TfmLogin.btnCloseClick(Sender: TObject);

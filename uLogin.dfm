@@ -3,7 +3,7 @@ object fmLogin: TfmLogin
   Top = 0
   BorderStyle = bsDialog
   Caption = #49324#50857#51088' '#47196#44536#51064
-  ClientHeight = 327
+  ClientHeight = 314
   ClientWidth = 359
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -22,7 +22,7 @@ object fmLogin: TfmLogin
     Left = 8
     Top = 10
     Width = 343
-    Height = 309
+    Height = 296
     Margins.Left = 8
     Margins.Top = 10
     Margins.Right = 8
@@ -32,7 +32,7 @@ object fmLogin: TfmLogin
     BevelOuter = bvLowered
     ParentBackground = False
     TabOrder = 0
-    ExplicitHeight = 285
+    ExplicitHeight = 309
     object Image1: TImage
       Left = 206
       Top = 15
@@ -973,17 +973,18 @@ object fmLogin: TfmLogin
       Left = 5
       Top = 134
       Width = 328
-      Height = 127
+      Height = 155
       TabOrder = 0
       Properties.ActivePage = cxTabSheet1
       Properties.CustomButtons.Buttons = <>
       LookAndFeel.NativeStyle = False
-      ClientRectBottom = 127
+      ClientRectBottom = 155
       ClientRectRight = 328
       ClientRectTop = 26
       object cxTabSheet2: TcxTabSheet
         Caption = #46321#47197
         ImageIndex = 1
+        ExplicitHeight = 101
         object GroupBox1: TGroupBox
           Left = 15
           Top = 5
@@ -1057,11 +1058,12 @@ object fmLogin: TfmLogin
       object cxTabSheet1: TcxTabSheet
         Caption = 'login'
         ImageIndex = 0
+        ExplicitHeight = 101
         object grpLogin: TGroupBox
           Left = 15
           Top = 5
           Width = 300
-          Height = 92
+          Height = 121
           Caption = #47196#44536#51064
           TabOrder = 0
           object Label1: TLabel
@@ -1185,25 +1187,9 @@ object fmLogin: TfmLogin
             ImeName = 'Microsoft IME 2010'
             TabOrder = 0
           end
-          object chkSaveID: TCheckBox
-            Left = 18
-            Top = 65
-            Width = 64
-            Height = 17
-            Caption = 'ID'#51200#51109
-            TabOrder = 4
-          end
-          object chkSavePass: TCheckBox
-            Left = 85
-            Top = 64
-            Width = 102
-            Height = 17
-            Caption = #48708#48128#48264#54840#51200#51109
-            TabOrder = 5
-          end
           object btnAddNew: TBitBtn
-            Left = 201
-            Top = 62
+            Left = 285
+            Top = 67
             Width = 78
             Height = 25
             Caption = #46321#47197
@@ -1216,15 +1202,49 @@ object fmLogin: TfmLogin
               0F07A0F0F0F0FB0B8007D0BFBFB00F000007A0FBFBF0B0FBFB07D0BFBFB0B0BF
               BF07A0FBFBF0BB0BFB07D0BFBFB0BB0FBF07A00000000BB0000DDADADADA0BB0
               DADAADADADADA0000DADDADADADAD0110ADAADADADADAD00ADAD}
-            TabOrder = 6
+            TabOrder = 4
             Visible = False
             OnClick = btnAddNewClick
+          end
+          object chkAttend: TcxCheckBox
+            Left = 83
+            Top = 88
+            Caption = #52636#44540#48512#51088#46041#46321#47197
+            Style.LookAndFeel.SkinName = 'DevExpressStyle'
+            StyleDisabled.LookAndFeel.SkinName = 'DevExpressStyle'
+            StyleFocused.LookAndFeel.SkinName = 'DevExpressStyle'
+            StyleHot.LookAndFeel.SkinName = 'DevExpressStyle'
+            TabOrder = 5
+            Width = 112
+          end
+          object chkSaveID: TcxCheckBox
+            Left = 83
+            Top = 65
+            Caption = 'ID'#51200#51109
+            Style.LookAndFeel.SkinName = 'DevExpressStyle'
+            StyleDisabled.LookAndFeel.SkinName = 'DevExpressStyle'
+            StyleFocused.LookAndFeel.SkinName = 'DevExpressStyle'
+            StyleHot.LookAndFeel.SkinName = 'DevExpressStyle'
+            TabOrder = 6
+            Width = 65
+          end
+          object chkSavePass: TcxCheckBox
+            Left = 154
+            Top = 65
+            Caption = #48708#48128#48264#54840#51200#51109
+            Style.LookAndFeel.SkinName = 'DevExpressStyle'
+            StyleDisabled.LookAndFeel.SkinName = 'DevExpressStyle'
+            StyleFocused.LookAndFeel.SkinName = 'DevExpressStyle'
+            StyleHot.LookAndFeel.SkinName = 'DevExpressStyle'
+            TabOrder = 7
+            Width = 100
           end
         end
       end
       object cxTabSheet3: TcxTabSheet
         Caption = #50629#45936#51060#53944
         ImageIndex = 2
+        ExplicitHeight = 101
         object GroupBox2: TGroupBox
           AlignWithMargins = True
           Left = 14
@@ -1294,17 +1314,6 @@ object fmLogin: TfmLogin
           end
         end
       end
-    end
-    object chkAttend: TcxCheckBox
-      Left = 97
-      Top = 267
-      Caption = #52636#44540#48512#51088#46041#46321#47197
-      Style.LookAndFeel.SkinName = 'DevExpressStyle'
-      StyleDisabled.LookAndFeel.SkinName = 'DevExpressStyle'
-      StyleFocused.LookAndFeel.SkinName = 'DevExpressStyle'
-      StyleHot.LookAndFeel.SkinName = 'DevExpressStyle'
-      TabOrder = 1
-      Width = 121
     end
   end
   object InterBaseUniProvider1: TInterBaseUniProvider

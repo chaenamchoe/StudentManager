@@ -118,6 +118,26 @@ type
     dxMemData1w_reason5: TStringField;
     frxReport2: TfrxReport;
     frxDBDataset2: TfrxDBDataset;
+    dxMemData2: TdxMemData;
+    dxMemData2center_name: TStringField;
+    dxMemData2year_month: TStringField;
+    dxMemData2emp_name: TStringField;
+    dxMemData2confirmer: TStringField;
+    dxMemData2w_period: TStringField;
+    dxMemData2kyulgun: TIntegerField;
+    dxMemData2yunga: TIntegerField;
+    dxMemData2jigak: TIntegerField;
+    dxMemData2jotoi: TIntegerField;
+    EMP_ATTENDING_KIND_SEL: TUniStoredProc;
+    ds_EMP_ATTENDING_KIND_SEL: TDataSource;
+    EMP_ATTENDING_KIND_SELKIND: TIntegerField;
+    EMP_ATTENDING_KIND_SELCNT: TIntegerField;
+    GroupBox2: TGroupBox;
+    cxGrid2: TcxGrid;
+    gridTotal: TcxGridDBTableView;
+    cxGrid2Level1: TcxGridLevel;
+    gridTotalKIND: TcxGridDBColumn;
+    gridTotalCNT: TcxGridDBColumn;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
     procedure btnRetrieveClick(Sender: TObject);
@@ -137,6 +157,8 @@ type
     procedure btnEditClick(Sender: TObject);
   private
     procedure EditData;
+    function GetDateStatus(date: TDateTime): string;
+    function CountDayByKind(kind: Integer): Integer;
     { Private declarations }
   public
     { Public declarations }
@@ -154,15 +176,36 @@ uses
 
 procedure TfmEmpAttend.btnOutClick(Sender: TObject);
 var
-  id, top_row : Integer;
+  id, top_row, kind_val, whour : Integer;
+  in_dtime, wdate : TDateTime;
+  otime, itime : TTime;
+  stime : string;
 begin
   id := gridAttendID.EditValue;
+  otime := Now;
+  stime := FormatDateTime('hh:mm', Now);
+  wdate := gridAttendWDATE.EditValue;
+  itime := gridAttendIN_TIME.EditValue;
+  in_dtime := EncodeDateTime(YearOf(wdate), MonthOf(wdate), DayOf(wdate), HourOf(itime), MinuteOf(itime), SecondOf(itime), 0);
+  whour := HoursBetween(in_dtime, otime);
+  if whour = 8 then
+    kind_val := 0
+  else if whour > 8 then
+    kind_val := 4
+  else if whour < 8 then
+    kind_val := 5;
+//  out_timePropertiesEditValueChanged(Sender);
+//
+//  ShowMessage(IntToStr(whour));
   top_row := gridAttend.Controller.TopRowIndex;
   UniQuery1.SQL.Clear;
-  UniQuery1.SQL.Add('update emp_attending set out_time = :out_time where (id = :id);');
-  UniQuery1.ParamByName('out_time').Value := Now;
+  UniQuery1.SQL.Add('update emp_attending set out_time = :out_time, w_kind = :kind_val, w_hour = :w_hour where (id = :id);');
+  UniQuery1.ParamByName('out_time').Value := StrToTime(stime);
+  UniQuery1.ParamByName('kind_val').Value := kind_val;
+  UniQuery1.ParamByName('w_hour').Value := whour;
   UniQuery1.ParamByName('id').Value := id;
   UniQuery1.ExecSQL;
+
   ds_EMP_ATTENDING_SEL.DataSet.Refresh;
   EMP_ATTENDING_SEL.Locate('ID', id, []);
   gridAttend.Controller.TopRowIndex := top_row;
@@ -174,6 +217,11 @@ begin
   EMP_ATTENDING_SEL.ParamByName('WMONTH').Value := icbMonth.EditValue;
   EMP_ATTENDING_SEL.Open;
   ds_EMP_ATTENDING_SEL.DataSet.Refresh;
+
+  EMP_ATTENDING_KIND_SEL.ParamByName('WYEAR').Value := spYear.EditValue;
+  EMP_ATTENDING_KIND_SEL.ParamByName('WMONTH').Value := icbMonth.EditValue;
+  EMP_ATTENDING_KIND_SEL.Open;
+  ds_EMP_ATTENDING_KIND_SEL.DataSet.Refresh;
 end;
 
 procedure TfmEmpAttend.btnSaveClick(Sender: TObject);
@@ -203,13 +251,87 @@ begin
 end;
 
 procedure TfmEmpAttend.btnEditClick(Sender: TObject);
+var
+  i, days, FirstDayWeek, ndate : Integer;
+  start_date, CurrDate : TDate;
+  status : string;
 begin
+  Screen.Cursor := crHourGlass;
+  dxMemData2.Close;
+  dxMemData2.Open;
+  dxMemData2.Append;
+  dxMemData2center_name.Value := LoginUserDongName;
+  dxMemData2year_month.Value := IntToStr(spYear.EditValue) + '. ' + IntToStr(icbMonth.EditValue) + '월' ;
+  dxMemData2emp_name.Value := LoginUserName;
+  dxMemData2confirmer.Value := CenterChiefName;
+  dxMemData2w_period.Value := DateToStr(StartOfAMonth(YearOf(Date), MonthOf(Date))) + ' ~ ' +
+                              DateToStr(EndOfAMonth(YearOf(Date), MonthOf(Date)));
+  dxMemData2kyulgun.Value := CountDayByKind(7);
+  dxMemData2yunga.Value := CountDayByKind(1);
+  dxMemData2jigak.Value := CountDayByKind(6);
+  dxMemData2jotoi.Value := CountDayByKind(5);
+  dxMemData2.Post;
+
+  days := DaysInAMonth(spYear.EditValue, icbMonth.EditValue);
+  start_date := StartOfAMonth(spYear.EditValue, icbMonth.EditValue);
+  FirstDayWeek := DayOfWeek(START_DATE);
+  for i := 0 to 41 do begin
+    frxReport2.Variables['d'+IntToStr(i+1)] := #39+''+#39;
+    frxReport2.Variables['N'+IntToStr(i+1)] := #39+''+#39;
+  end;
+  CurrDate := start_date;
+  ndate := 1;
+  for i := FirstDayWeek to days + FirstDayWeek - 1 do begin
+    status := GetDateStatus(CurrDate);
+    frxReport2.Variables['d'+IntToStr(i)] := #39+IntToStr(icbMonth.EditValue)+ '/' + IntToStr(ndate)+#39;
+    frxReport2.Variables['N'+IntToStr(i)] := #39+status+#39;
+    CurrDate := IncDay(CurrDate, 1);
+    ndate := ndate + 1;
+  end;
   frxReport2.ShowReport;
+  Screen.Cursor := crArrow;
+end;
+
+function TfmEmpAttend.CountDayByKind(kind : Integer) : Integer;
+begin
+  if EMP_ATTENDING_KIND_SEL.Locate('KIND', kind, []) then begin
+    Result := EMP_ATTENDING_KIND_SELCNT.Value;
+  end else begin
+    Result := 0;
+  end;
+end;
+
+function TfmEmpAttend.GetDateStatus(date : TDateTime) : String;
+var
+  status : Integer;
+  st_str : string;
+begin
+  UniQuery1.SQL.Clear;
+  UniQuery1.SQL.Add('select w_kind as w_kind from emp_attending where wdate = :wdate;');
+  UniQuery1.ParamByName('wdate').Value := date;
+  UniQuery1.Open;
+  DataSource1.DataSet.Refresh;
+  if UniQuery1.RecordCount > 0 then begin
+    status := UniQuery1.FieldByName('w_kind').AsInteger;
+    case status of
+      0: st_str := '정상근무';
+      1: st_str := '연가';
+      2: st_str := '특별휴가';
+      3: st_str := '공가';
+      4: st_str := '시간수당' ;
+      5: st_str := '조퇴';
+      6: st_str := '지각';
+      7: st_str := '결근';
+    end;
+    Result := st_str;
+  end else begin
+    Result := '';
+  end;
 end;
 
 procedure TfmEmpAttend.btnExtReportClick(Sender: TObject);
 var
-  i, cnt, id : integer;
+  i, cnt, id, total_hour : integer;
   wdate : array[0..4] of TDate;
   in_time, out_time : array[0..4] of TTime;
   w_hour : array[0..4] of Integer;
@@ -231,12 +353,11 @@ begin
     w_reason[i] := gridAttendW_REASON.EditValue;
     gridAttend.DataController.GotoNext;
   end;
-  EMP_ATTENDING_SEL.Filtered := False;
   dxMemData1.Append;
   dxMemData1year_month.Value := IntToStr(spYear.EditValue) + '. ' + IntToStr(icbMonth.EditValue);
-  dxMemData1assoc.Value := '';
+  dxMemData1assoc.Value := LoginUserDongName;
   dxMemData1jikgub.Value := '자치사무원';
-  dxMemData1ename.Value := '';
+  dxMemData1ename.Value := LoginUserName;
 
   dxMemData1wdate.Value := wdate[0];
   dxMemData1in_time.Value := in_time[0];
@@ -271,10 +392,11 @@ begin
     dxMemData1w_hour5.Value := w_hour[4];
     dxMemData1w_reason5.Value := w_reason[4];
   end;
-
-  dxMemData1total_hour.Value := gridAttend.DataController.Summary.FooterSummaryValues[0];
-  dxMemData1confirmer.Value := '이 상 붕';
+  total_hour := gridAttend.DataController.Summary.FooterSummaryValues[1];
+  dxMemData1total_hour.Value := total_hour - (cnt * 8);
+  dxMemData1confirmer.Value := CenterChiefName;
   dxMemData1.Post;
+  EMP_ATTENDING_SEL.Filtered := False;
 
   frxReport1.ShowReport;
 
@@ -297,6 +419,7 @@ begin
       w_hour := HoursBetween(in_time.EditValue, out_time.EditValue)
     else
       w_hour := 0;
+    EMP_ATTENDING_INS.ParamByName('E_ID').Value := 1;
     EMP_ATTENDING_INS.ParamByName('WDATE').Value := wdate.Date;
     EMP_ATTENDING_INS.ParamByName('IN_TIME').Value := Now;
     EMP_ATTENDING_INS.ParamByName('OUT_TIME').Clear;
@@ -354,6 +477,7 @@ begin
       w_hour := HoursBetween(in_time.EditValue, out_time.EditValue)
     else
       w_hour := 0;
+    EMP_ATTENDING_INS.ParamByName('E_ID').Value := 1;
     EMP_ATTENDING_INS.ParamByName('WDATE').Value := Date;
     EMP_ATTENDING_INS.ParamByName('IN_TIME').Value := Now;
     EMP_ATTENDING_INS.ParamByName('OUT_TIME').Clear;

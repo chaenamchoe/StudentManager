@@ -255,8 +255,6 @@ type
     procedure ActionContactsExecute(Sender: TObject);
     procedure ActionCashbillExecute(Sender: TObject);
     procedure ActionRegistCashbillExecute(Sender: TObject);
-    procedure BMDThread1Execute(Sender: TObject; Thread: TBMDExecuteThread;
-      var Data: Pointer);
     procedure N11Click(Sender: TObject);
     procedure N56Click(Sender: TObject);
     procedure N57Click(Sender: TObject);
@@ -671,12 +669,6 @@ begin
   end;
 end;
 
-procedure TfmMain.BMDThread1Execute(Sender: TObject; Thread: TBMDExecuteThread;
-  var Data: Pointer);
-begin
-  dm.ActivateDatebase;
-end;
-
 procedure TfmMain.FormCreate(Sender: TObject);
 var
   FIni : TIniFile;
@@ -748,11 +740,13 @@ procedure TfmMain.FormShow(Sender: TObject);
 var
   auto_money : integer;
 begin
-  BMDThread1.Start;
+  dm.ActivateDatebase;
   auto_money := dm.q_basic_valueREGIST_MONEY_AUTOADD.AsInteger;
+  LoginUserJikgub := dm.q_basic_valueLECTURE_REPORT_JIGWI.AsString;
   AUTO_MONEY_ADD := auto_money = 1;
   CASH_RECEIPT_CONTACTS := dm.q_basic_valueCASH_RECEIPT_CONTACTS.AsString;
   MONEY_BACK_REPORT_WAY := dm.q_basic_valueMONEY_BACK_REPORT_WAY.AsInteger;
+  CenterChiefName := dm.q_basic_valueCENTER_CHIEF_NAME.AsString;
 end;
 
 procedure TfmMain.mnuCloseWindowClick(Sender: TObject);

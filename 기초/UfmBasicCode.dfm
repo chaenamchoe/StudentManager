@@ -8,7 +8,7 @@ object fmBasicCode: TfmBasicCode
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -13
-  Font.Name = #44404#47548
+  Font.Name = #45208#45588#44256#46357
   Font.Style = []
   FormStyle = fsMDIChild
   OldCreateOrder = False
@@ -16,7 +16,7 @@ object fmBasicCode: TfmBasicCode
   OnClose = FormClose
   OnShow = FormShow
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 15
   object Panel1: TPanel
     Left = 0
     Top = 0
@@ -744,59 +744,51 @@ object fmBasicCode: TfmBasicCode
     Height = 627
     Align = alClient
     TabOrder = 3
-    object Label4: TLabel
-      Left = 7
-      Top = 5
-      Width = 91
-      Height = 13
-      Caption = '['#44592#53440' '#44592#52488#44050']'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clBlue
-      Font.Height = -13
-      Font.Name = #44404#47548
-      Font.Style = [fsBold]
-      ParentFont = False
-    end
     object GroupBox1: TGroupBox
-      Left = 8
-      Top = 32
-      Width = 241
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 250
       Height = 124
+      Align = alTop
       Caption = #44053#49324#48372#51312#48708'('#49884#51648#50896')'
       TabOrder = 0
+      ExplicitLeft = 8
+      ExplicitTop = 32
+      ExplicitWidth = 241
       object Label7: TLabel
         Left = 19
         Top = 25
-        Width = 56
-        Height = 13
+        Width = 52
+        Height = 15
         Caption = #44256#51221#44552#50529':'
       end
       object Label11: TLabel
         Left = 19
         Top = 45
-        Width = 56
-        Height = 13
+        Width = 52
+        Height = 15
         Caption = #48708#50984#51201#50857':'
       end
       object Label6: TLabel
         Left = 166
         Top = 22
-        Width = 45
-        Height = 13
+        Width = 41
+        Height = 15
         Caption = #50896'/'#49884#44036
       end
       object Label12: TLabel
         Left = 166
         Top = 45
-        Width = 57
-        Height = 13
+        Width = 55
+        Height = 15
         Caption = '%/'#44053#51032#47308
       end
       object Label13: TLabel
         Left = 19
         Top = 67
-        Width = 56
-        Height = 13
+        Width = 52
+        Height = 15
         Caption = #51201#50857#48169#49885':'
       end
       object edtSIBI_PRICE: TcxCurrencyEdit
@@ -835,7 +827,7 @@ object fmBasicCode: TfmBasicCode
       end
       object btnSAVE_SIBI: TBitBtn
         Left = 83
-        Top = 91
+        Top = 87
         Width = 75
         Height = 25
         Caption = #51200#51109
@@ -864,45 +856,50 @@ object fmBasicCode: TfmBasicCode
       end
     end
     object GroupBox2: TGroupBox
-      Left = 8
-      Top = 166
-      Width = 241
+      AlignWithMargins = True
+      Left = 4
+      Top = 134
+      Width = 250
       Height = 124
+      Align = alTop
       Caption = #44053#49324#48708'('#44053#51032#49688#45817')'
       TabOrder = 1
+      ExplicitLeft = 8
+      ExplicitTop = 166
+      ExplicitWidth = 241
       object Label5: TLabel
         Left = 19
         Top = 25
-        Width = 56
-        Height = 13
+        Width = 52
+        Height = 15
         Caption = #44256#51221#44552#50529':'
       end
       object Label8: TLabel
         Left = 19
         Top = 45
-        Width = 56
-        Height = 13
+        Width = 52
+        Height = 15
         Caption = #48708#50984#51201#50857':'
       end
       object Label9: TLabel
         Left = 166
         Top = 22
-        Width = 45
-        Height = 13
+        Width = 41
+        Height = 15
         Caption = #50896'/'#49884#44036
       end
       object Label14: TLabel
         Left = 166
         Top = 45
-        Width = 57
-        Height = 13
+        Width = 55
+        Height = 15
         Caption = '%/'#44053#51032#47308
       end
       object Label15: TLabel
         Left = 19
         Top = 67
-        Width = 56
-        Height = 13
+        Width = 52
+        Height = 15
         Caption = #51201#50857#48169#49885':'
       end
       object edtLECTURE_PRICE: TcxCurrencyEdit
@@ -968,17 +965,19 @@ object fmBasicCode: TfmBasicCode
       end
     end
     object GroupBox3: TGroupBox
-      Left = 8
-      Top = 299
-      Width = 241
-      Height = 111
+      AlignWithMargins = True
+      Left = 4
+      Top = 264
+      Width = 250
+      Height = 105
+      Align = alTop
       Caption = #49688#44053#46321#47197'/'#54872#48520' '#52376#47532
       TabOrder = 2
       object Label21: TLabel
         Left = 24
         Top = 45
-        Width = 65
-        Height = 13
+        Width = 60
+        Height = 15
         Caption = #48152#54872#44208#51032#49436
       end
       object chkAutoMoney: TCheckBox
@@ -1030,31 +1029,40 @@ object fmBasicCode: TfmBasicCode
       end
     end
     object GroupBox4: TGroupBox
-      Left = 8
-      Top = 420
-      Width = 241
-      Height = 101
+      AlignWithMargins = True
+      Left = 4
+      Top = 375
+      Width = 250
+      Height = 126
+      Align = alTop
       Caption = #44053#49324#44368#50977#51068#51648' '#48372#44256#49436
       TabOrder = 3
       object Label16: TLabel
         Left = 13
         Top = 24
-        Width = 60
-        Height = 13
+        Width = 56
+        Height = 15
         Caption = #54869#51064#51088' '#51649':'
       end
       object Label17: TLabel
-        Left = 43
+        Left = 17
         Top = 47
-        Width = 30
-        Height = 13
-        Caption = #49457#47749':'
+        Width = 52
+        Height = 15
+        Caption = #45812#45817#51088#47749':'
+      end
+      object Label4: TLabel
+        Left = 17
+        Top = 71
+        Width = 52
+        Height = 15
+        Caption = #51088#52824#54924#51109':'
       end
       object edtJigwi: TEdit
         Left = 77
         Top = 20
         Width = 147
-        Height = 21
+        Height = 23
         ImeName = 'Microsoft IME 2010'
         TabOrder = 0
       end
@@ -1062,13 +1070,13 @@ object fmBasicCode: TfmBasicCode
         Left = 77
         Top = 44
         Width = 147
-        Height = 21
+        Height = 23
         ImeName = 'Microsoft IME 2010'
         TabOrder = 1
       end
       object btnReport: TBitBtn
         Left = 82
-        Top = 69
+        Top = 93
         Width = 75
         Height = 25
         Caption = #51200#51109
@@ -1084,26 +1092,37 @@ object fmBasicCode: TfmBasicCode
         TabOrder = 2
         OnClick = btnReportClick
       end
+      object edtChiefName: TEdit
+        Left = 77
+        Top = 68
+        Width = 147
+        Height = 23
+        ImeName = 'Microsoft IME 2010'
+        TabOrder = 3
+      end
     end
     object GroupBox5: TGroupBox
-      Left = 8
-      Top = 528
-      Width = 241
-      Height = 92
+      AlignWithMargins = True
+      Left = 4
+      Top = 507
+      Width = 250
+      Height = 87
+      Align = alTop
       Caption = #54788#44552#50689#49688#51613' '#48156#44553#51088' '#50672#46973#52376
       TabOrder = 4
+      ExplicitTop = 482
       object Label18: TLabel
         Left = 25
         Top = 28
-        Width = 43
-        Height = 13
+        Width = 40
+        Height = 15
         Caption = #50672#46973#52376':'
       end
       object edtContacts: TEdit
         Left = 77
         Top = 25
         Width = 147
-        Height = 21
+        Height = 23
         ImeName = 'Microsoft IME 2010'
         TabOrder = 0
       end

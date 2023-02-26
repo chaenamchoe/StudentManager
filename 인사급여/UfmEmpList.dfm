@@ -627,6 +627,11 @@ object fmEmpList: TfmEmpList
     Top = 288
     ParamData = <
       item
+        DataType = ftInteger
+        Name = 'ID'
+        ParamType = ptInput
+      end
+      item
         DataType = ftString
         Name = 'E_NAME'
         ParamType = ptInput

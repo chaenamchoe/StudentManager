@@ -113,7 +113,11 @@ uses
 
 
 procedure TfmEmpList.btnAddClick(Sender: TObject);
+var
+  id, cnt : Integer;
 begin
+  cnt := gridEmp.DataController.RecordCount;
+  EMP_BASIC_INS.ParamByName('ID').Value           := cnt + 1;
   EMP_BASIC_INS.ParamByName('E_NAME').Value       := E_NAME.Text;
   EMP_BASIC_INS.ParamByName('E_BIRTH').Value      := E_BIRTH.EditValue;
   EMP_BASIC_INS.ParamByName('START_DATE').Value   := START_DATE.EditValue;

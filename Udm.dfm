@@ -624,12 +624,19 @@ object dm: Tdm
       'SET'
       
         '  ID = :ID, CITY_BOJO_PRICE = :CITY_BOJO_PRICE, CITY_BOJO_PERCEN' +
-        'T = :CITY_BOJO_PERCENT, CITY_BOJO_KIND = :CITY_BOJO_KIND, LECTUR' +
-        'E_PRICE = :LECTURE_PRICE, LECTURE_PERCENT = :LECTURE_PERCENT, LE' +
-        'CTURE_KIND = :LECTURE_KIND, DONG_ID = :DONG_ID, REGIST_MONEY_AUT' +
-        'OADD = :REGIST_MONEY_AUTOADD, LECTURE_REPORT_JIGWI = :LECTURE_RE' +
-        'PORT_JIGWI, LECTURE_REPORT_NAME = :LECTURE_REPORT_NAME, CASH_REC' +
-        'EIPT_CONTACTS = :CASH_RECEIPT_CONTACTS'
+        'T = :CITY_BOJO_PERCENT, '
+      
+        '  CITY_BOJO_KIND = :CITY_BOJO_KIND, LECTURE_PRICE = :LECTURE_PRI' +
+        'CE, LECTURE_PERCENT = :LECTURE_PERCENT, '
+      
+        '  LECTURE_KIND = :LECTURE_KIND, DONG_ID = :DONG_ID, REGIST_MONEY' +
+        '_AUTOADD = :REGIST_MONEY_AUTOADD, '
+      
+        '  LECTURE_REPORT_JIGWI = :LECTURE_REPORT_JIGWI, LECTURE_REPORT_N' +
+        'AME = :LECTURE_REPORT_NAME, '
+      
+        '  CASH_RECEIPT_CONTACTS = :CASH_RECEIPT_CONTACTS, CENTER_CHIEF_N' +
+        'AME = :CENTER_CHIEF_NAME'
       'WHERE'
       '  ID = :Old_ID')
     SQLLock.Strings = (
@@ -697,6 +704,9 @@ object dm: Tdm
     end
     object q_basic_valueMONEY_BACK_REPORT_WAY: TSmallintField
       FieldName = 'MONEY_BACK_REPORT_WAY'
+    end
+    object q_basic_valueCENTER_CHIEF_NAME: TStringField
+      FieldName = 'CENTER_CHIEF_NAME'
     end
   end
   object d_basic_value: TDataSource
@@ -4324,6 +4334,11 @@ object dm: Tdm
     Top = 648
     ParamData = <
       item
+        DataType = ftInteger
+        Name = 'E_ID'
+        ParamType = ptInput
+      end
+      item
         DataType = ftDate
         Name = 'WDATE'
         ParamType = ptInput
@@ -4348,6 +4363,16 @@ object dm: Tdm
         Name = 'W_REASON'
         ParamType = ptInput
         Size = 200
+      end
+      item
+        DataType = ftInteger
+        Name = 'W_WEEK'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'W_HOUR'
+        ParamType = ptInput
       end>
     CommandStoredProcName = 'EMP_ATTENDING_INS'
   end
@@ -4511,5 +4536,54 @@ object dm: Tdm
     Connection = UniConnection1
     Left = 448
     Top = 600
+  end
+  object EMP_ATTENDING_IU: TUniStoredProc
+    StoredProcName = 'EMP_ATTENDING_IU'
+    Connection = UniConnection1
+    Left = 72
+    Top = 696
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'E_ID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftDate
+        Name = 'WDATE'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftTime
+        Name = 'IN_TIME'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftTime
+        Name = 'OUT_TIME'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'W_KIND'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'W_REASON'
+        ParamType = ptInput
+        Size = 200
+      end
+      item
+        DataType = ftInteger
+        Name = 'W_HOUR'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftSmallint
+        Name = 'W_WEEK'
+        ParamType = ptInput
+      end>
+    CommandStoredProcName = 'EMP_ATTENDING_IU'
   end
 end

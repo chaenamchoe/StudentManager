@@ -60,7 +60,6 @@ type
     Label3: TLabel;
     gridDongcodeColumn1: TcxGridDBColumn;
     Panel7: TPanel;
-    Label4: TLabel;
     Panel8: TPanel;
     Label10: TLabel;
     btnAddOut: TBitBtn;
@@ -131,6 +130,8 @@ type
     icbMoneyBackWay: TcxImageComboBox;
     btnSavePayback: TBitBtn;
     UniQuery1: TUniQuery;
+    Label4: TLabel;
+    edtChiefName: TEdit;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnAddRoomClick(Sender: TObject);
     procedure btnEditRoomClick(Sender: TObject);
@@ -201,6 +202,7 @@ begin
   auto_money := dm.q_basic_valueREGIST_MONEY_AUTOADD.AsInteger;
   edtJigwi.Text := dm.q_basic_valueLECTURE_REPORT_JIGWI.AsString;
   edtName.Text  := dm.q_basic_valueLECTURE_REPORT_NAME.AsString;
+  edtChiefName.Text  := dm.q_basic_valueCENTER_CHIEF_NAME.AsString;
   edtContacts.Text := dm.q_basic_valueCASH_RECEIPT_CONTACTS.AsString;
   MONEY_BACK_REPORT_WAY := dm.q_basic_valueMONEY_BACK_REPORT_WAY.AsInteger;
   icbMoneyBackWay.EditValue := MONEY_BACK_REPORT_WAY;
@@ -437,8 +439,10 @@ begin
   dm.q_basic_value.Edit;
   dm.q_basic_valueLECTURE_REPORT_JIGWI.AsString := edtJigwi.Text;
   dm.q_basic_valueLECTURE_REPORT_NAME.AsString := edtName.Text;
+  dm.q_basic_valueCENTER_CHIEF_NAME.AsString := edtChiefName.Text;
   dm.q_basic_value.Post;
   dm.d_basic_value.DataSet.Refresh;
+  CenterChiefName := edtChiefName.Text;
 end;
 
 procedure TfmBasicCode.btnSaveContactsClick(Sender: TObject);
