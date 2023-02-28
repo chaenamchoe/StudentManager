@@ -188,12 +188,12 @@ begin
   itime := gridAttendIN_TIME.EditValue;
   in_dtime := EncodeDateTime(YearOf(wdate), MonthOf(wdate), DayOf(wdate), HourOf(itime), MinuteOf(itime), SecondOf(itime), 0);
   whour := HoursBetween(in_dtime, otime);
-  if whour = 8 then
-    kind_val := 0
-  else if whour > 8 then
-    kind_val := 4
-  else if whour < 8 then
-    kind_val := 5;
+//  if whour = 8 then
+//    kind_val := 0
+//  else if whour > 8 then
+//    kind_val := 4
+//  else if whour < 8 then
+//    kind_val := 5;
 //  out_timePropertiesEditValueChanged(Sender);
 //
 //  ShowMessage(IntToStr(whour));
@@ -232,7 +232,7 @@ begin
   toprow := gridAttend.Controller.TopRowIndex;
   gridAttend.DataController.SaveBookmark;
   if not VarIsNull(out_time.EditValue) then
-    w_hour := HoursBetween(in_time.EditValue, out_time.EditValue)
+    w_hour := HoursBetween(in_time.EditValue, out_time.EditValue) - 1
   else
     w_hour := 0;
   EMP_ATTENDING_UPD_ALL.ParamByName('ID').Value := id;
@@ -436,8 +436,8 @@ end;
 procedure TfmEmpAttend.btnDefaultClick(Sender: TObject);
 begin
   in_time.EditValue := StrToTime('09:00');
-  out_time.EditValue := StrToTime('17:00');
-  w_hour.EditValue := 8;
+  out_time.EditValue := StrToTime('18:00');
+  w_hour.EditValue := 9;
   icbKind.EditValue := 0;
   btnSave.Click;
 end;
@@ -524,20 +524,13 @@ end;
 procedure TfmEmpAttend.in_timePropertiesEditValueChanged(Sender: TObject);
 begin
   if not VarIsNull(in_time.EditValue) and not VarIsNull(out_time.EditValue) then
-    w_hour.EditValue := HoursBetween(in_time.EditValue, out_time.EditValue);
+    w_hour.EditValue := HoursBetween(in_time.EditValue, out_time.EditValue) - 1;
 end;
 
 procedure TfmEmpAttend.out_timePropertiesEditValueChanged(Sender: TObject);
 begin
-  if not VarIsNull(out_time.EditValue) then begin
-    w_hour.EditValue := HoursBetween(in_time.EditValue, out_time.EditValue);
-    if w_hour.EditValue = 8 then
-      icbKind.EditValue := 0
-    else if w_hour.EditValue > 8 then
-      icbKind.EditValue := 4
-    else if w_hour.EditValue < 8 then
-      icbKind.EditValue := 5;
-  end;
+  if not VarIsNull(in_time.EditValue) and not VarIsNull(out_time.EditValue) then
+    w_hour.EditValue := HoursBetween(in_time.EditValue, out_time.EditValue) - 1;
 end;
 
 procedure TfmEmpAttend.wdatePropertiesCloseUp(Sender: TObject);

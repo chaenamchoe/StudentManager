@@ -189,10 +189,16 @@ object fmEmpList: TfmEmpList
       object gridEmpHOUR_PRICE: TcxGridDBColumn
         Caption = #44592#48376#49884#44036#44553
         DataBinding.FieldName = 'HOUR_PRICE'
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = ',0;-,0'
+        Properties.UseThousandSeparator = True
       end
       object gridEmpDAY_PRICE: TcxGridDBColumn
         Caption = #44592#48376#51068#44553
         DataBinding.FieldName = 'DAY_PRICE'
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = ',0;-,0'
+        Properties.UseThousandSeparator = True
       end
       object gridEmpMONTH_PRICE: TcxGridDBColumn
         Caption = #44592#48376#50900#44553
@@ -206,7 +212,7 @@ object fmEmpList: TfmEmpList
         DataBinding.FieldName = 'FAMILY_CNT'
       end
       object gridEmpFAMILY_PRICE: TcxGridDBColumn
-        Caption = '1'#51064#45817#51648#44553#50529
+        Caption = #44032#51313#49688#45817
         DataBinding.FieldName = 'FAMILY_PRICE'
         Width = 85
       end
@@ -229,11 +235,11 @@ object fmEmpList: TfmEmpList
     object Label3: TLabel
       Left = 22
       Top = 389
-      Width = 253
+      Width = 249
       Height = 136
       Caption = 
         #46321#47197#48169#48277':'#13#10#54596#50836#54620' '#54637#47785#51012' '#51077#47141#54620' '#54980' '#46321#47197#48260#53948' '#53364#47533'.'#13#10#13#10#49688#51221#48169#48277':'#13#10#49688#51221#54624' '#45236#50857#51012' '#51077#47141#54620' '#54980' '#49688#51221#48260#53948' '#53364#47533'.'#13#10 +
-        #13#10#48512#50577#44032#51313#49688': '#48376#51064' '#54252#54632#51004#47196' '#51077#47141#13#10#50696': '#48512#50577#44032#51313#51060' '#50630#51012' '#44221#50864' '#48376#51064' 1'#47196' '#51077#47141'.'
+        #13#10#48512#50577#44032#51313#49688': '#48376#51064' '#51228#50808#47196' '#51077#47141#13#10#50696': '#48512#50577#44032#51313#51060' '#50630#51012' '#44221#50864' 0'#51004#47196' '#51077#47141'.'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = cl3DDkShadow
       Font.Height = -15
@@ -306,11 +312,11 @@ object fmEmpList: TfmEmpList
         Caption = #48512#50577#44032#51313#49688
       end
       object Label10: TLabel
-        Left = 11
+        Left = 31
         Top = 246
-        Width = 79
+        Width = 56
         Height = 17
-        Caption = '1'#51064#45817#51648#44553#50529
+        Caption = #49688#45817#52509#50529
       end
       object Label11: TLabel
         Left = 31
@@ -324,7 +330,7 @@ object fmEmpList: TfmEmpList
         Top = 219
         Width = 66
         Height = 17
-        Caption = '('#48376#51064#54252#54632')'
+        Caption = '('#48376#51064#51228#50808')'
       end
       object E_NAME: TEdit
         Left = 93
@@ -339,6 +345,7 @@ object fmEmpList: TfmEmpList
         Width = 173
         Height = 25
         TabOrder = 1
+        Text = #51452#48124#51088#52824#54924#49892#47924#51204#48152
       end
       object E_BIRTH: TcxDateEdit
         Left = 93
@@ -355,6 +362,7 @@ object fmEmpList: TfmEmpList
       object HOUR_PRICE: TcxCurrencyEdit
         Left = 93
         Top = 135
+        EditValue = 0
         Properties.Alignment.Horz = taRightJustify
         Properties.DisplayFormat = ',0;-,0'
         Properties.UseLeftAlignmentOnEditing = False
@@ -364,7 +372,8 @@ object fmEmpList: TfmEmpList
       end
       object DAY_PRICE: TcxCurrencyEdit
         Left = 93
-        Top = 162
+        Top = 161
+        EditValue = 0
         Properties.Alignment.Horz = taRightJustify
         Properties.DisplayFormat = ',0;-,0'
         Properties.UseLeftAlignmentOnEditing = False
@@ -375,6 +384,7 @@ object fmEmpList: TfmEmpList
       object MONTH_PRICE: TcxCurrencyEdit
         Left = 93
         Top = 189
+        EditValue = 2211220
         Properties.Alignment.Horz = taRightJustify
         Properties.DisplayFormat = ',0;-,0'
         Properties.UseLeftAlignmentOnEditing = False
@@ -385,6 +395,7 @@ object fmEmpList: TfmEmpList
       object FAMILY_CNT: TcxCurrencyEdit
         Left = 93
         Top = 216
+        EditValue = 0
         Properties.Alignment.Horz = taCenter
         Properties.DisplayFormat = ',0;-,0'
         Properties.UseLeftAlignmentOnEditing = False
@@ -395,6 +406,7 @@ object fmEmpList: TfmEmpList
       object FAMILY_PRICE: TcxCurrencyEdit
         Left = 93
         Top = 243
+        EditValue = 0
         Properties.Alignment.Horz = taRightJustify
         Properties.DisplayFormat = ',0;-,0'
         Properties.UseLeftAlignmentOnEditing = False
@@ -405,6 +417,7 @@ object fmEmpList: TfmEmpList
       object FAMILY_HOUR: TcxCurrencyEdit
         Left = 93
         Top = 270
+        EditValue = 0
         Properties.Alignment.Horz = taCenter
         Properties.DisplayFormat = ',0;-,0'
         Properties.UseLeftAlignmentOnEditing = False
@@ -595,11 +608,9 @@ object fmEmpList: TfmEmpList
     end
     object EMP_BASIC_SELHOUR_PRICE: TIntegerField
       FieldName = 'HOUR_PRICE'
-      DisplayFormat = '#,0'
     end
     object EMP_BASIC_SELDAY_PRICE: TIntegerField
       FieldName = 'DAY_PRICE'
-      DisplayFormat = '#,0'
     end
     object EMP_BASIC_SELMONTH_PRICE: TIntegerField
       FieldName = 'MONTH_PRICE'
@@ -609,7 +620,6 @@ object fmEmpList: TfmEmpList
     end
     object EMP_BASIC_SELFAMILY_PRICE: TIntegerField
       FieldName = 'FAMILY_PRICE'
-      DisplayFormat = '#,0'
     end
     object EMP_BASIC_SELFAMILY_HOUR: TIntegerField
       FieldName = 'FAMILY_HOUR'

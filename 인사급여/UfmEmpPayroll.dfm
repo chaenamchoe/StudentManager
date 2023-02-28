@@ -3,7 +3,7 @@ object fmEmpPayroll: TfmEmpPayroll
   Top = 0
   Caption = #44553#50668#44288#47532
   ClientHeight = 697
-  ClientWidth = 1155
+  ClientWidth = 1172
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,7 +20,7 @@ object fmEmpPayroll: TfmEmpPayroll
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 1155
+    Width = 1172
     Height = 31
     Align = alTop
     TabOrder = 0
@@ -213,12 +213,12 @@ object fmEmpPayroll: TfmEmpPayroll
       OnClick = btnRecalcClick
     end
     object btnPrint: TcxButton
-      Left = 925
+      Left = 821
       Top = 3
-      Width = 140
+      Width = 108
       Height = 25
       Hint = #52636#47141
-      Caption = #51076#44552#47749#49464#49436#52636#47141
+      Caption = #51076#44552#47749#49464#49436
       LookAndFeel.NativeStyle = False
       LookAndFeel.SkinName = 'DevExpressStyle'
       OptionsImage.Glyph.Data = {
@@ -262,7 +262,7 @@ object fmEmpPayroll: TfmEmpPayroll
       OnClick = btnPrintClick
     end
     object btnCalcDesc: TcxButton
-      Left = 827
+      Left = 706
       Top = 3
       Width = 97
       Height = 25
@@ -336,11 +336,109 @@ object fmEmpPayroll: TfmEmpPayroll
       TabOrder = 8
       OnClick = btnExtraPriceClick
     end
+    object cxButton1: TcxButton
+      Left = 930
+      Top = 3
+      Width = 111
+      Height = 25
+      Hint = #52636#47141
+      Caption = #51648#52636#44208#51032#49436'1'
+      LookAndFeel.NativeStyle = False
+      LookAndFeel.SkinName = 'DevExpressStyle'
+      OptionsImage.Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000000000000000000000000000000000000000000000000
+        000000000000000000030000000C000000120000001400000014000000150000
+        0015000000140000000D00000003000000000000000000000000000000000000
+        00000000000000000009896256C2BD8A78FFBE8A78FFBD8A78FFBD8978FFBD89
+        78FFBE8978FF876356C30000000B000000000000000000000000000000030000
+        000E0000001500000021C08D7CFFF6EEE9FFF5EDE9FFF5EDE9FFF5ECE8FFF4EC
+        E8FFF5ECE7FFBF8D7BFF00000026000000180000000F000000040000000C7B50
+        42C5A76E5BFF9F6755FFC2917FFFF7F0ECFFE2B47DFFE2B37AFFE1B077FFE0AE
+        72FFF6EEEAFFC2907FFF845545FF895847FF613E32C70000000E00000011BB7E
+        6BFFECD9CCFFE3CEBEFFC59483FFF9F2F0FFE4B984FFE3B781FFE3B47CFFE0B1
+        76FFF7F0EDFFC59483FFE0CBBCFFEBD8CBFFB67763FF0000001400000010BE85
+        71FFF1E5DAFFECDBD0FF7A4835FF7A4835FF7A4835FF7A4835FF7A4835FF7A48
+        35FF7A4835FF7A4835FFEBDBCFFFF1E2D8FFB97C69FF000000130000000EC28B
+        78FFF5EEE7FFF2E7DDFFF2E7DEFFF3E7DEFFF2E5DEFFF3E5DEFFF2E7DDFFF2E7
+        DDFFF2E7DEFFF2E7DDFFF2E5DEFFF5EDE6FFBC826EFF000000120000000CC793
+        7FFFFAF4F1FFCDBEB8FF6F5448FF614337FF614035FF5F3F34FF5E3F33FF5D3D
+        32FF5D3D34FF6A4C44FFCABCB6FFF9F5F1FFC18875FF000000100000000ACC99
+        86FFFDFAFAFF7D6054FF745043FF744F43FF744E43FF734E43FF734E42FF724D
+        42FF724C41FF724C40FF73584DFFFDFAFAFFC58F7CFF0000000E00000008CF9F
+        8DFFFFFFFFFF7A5A4CFF8E695AFFF9F4F1FFF0E6E0FFF0E5DFFFEFE5DEFFEFE5
+        DEFFF6EFEBFF866253FF704F43FFFFFFFFFFCA9683FF0000000B00000005BE95
+        84E9F5ECE8FF866656FF977262FFFAF6F4FFF2E8E3FFF1E8E1FFF1E7E2FFF1E7
+        E1FFF8F2EEFF8E6A5BFF7A5B4CFFF5EAE6FFBA8E7DEA00000008000000023429
+        2545A78375CC947262FFA07B6AFFFCF9F8FFF3EBE6FFF4EAE5FFF2EAE5FFF3EA
+        E3FFF9F5F3FF977263FF876658FFA68072CE3428234800000003000000000000
+        0001000000030000000AC89B89FFFDFBFAFFF5EDE8FFF4EDE8FFF5EDE7FFF5EC
+        E7FFFBF7F6FFC59685FF00000011000000040000000200000000000000000000
+        00000000000000000005CA9E8DFFFEFCFCFFF7F0ECFFF6EFEBFFF7EFEBFFF5EF
+        EAFFFCFAF8FFC89A89FF00000009000000000000000000000000000000000000
+        00000000000000000003CDA291FFFEFEFDFFFEFDFDFFFEFDFCFFFEFCFCFFFEFC
+        FBFFFDFBFAFFCB9F8DFF00000007000000000000000000000000000000000000
+        000000000000000000019A796DBFCFA493FFCEA493FFCEA493FFCEA492FFCDA3
+        91FFCDA391FF98786BC100000004000000000000000000000000}
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 9
+      OnClick = cxButton1Click
+    end
+    object cxButton2: TcxButton
+      Left = 1043
+      Top = 3
+      Width = 111
+      Height = 25
+      Hint = #52636#47141
+      Caption = #51648#52636#44208#51032#49436'2'
+      LookAndFeel.NativeStyle = False
+      LookAndFeel.SkinName = 'DevExpressStyle'
+      OptionsImage.Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000000000000000000000000000000000000000000000000
+        000000000000000000030000000C000000120000001400000014000000150000
+        0015000000140000000D00000003000000000000000000000000000000000000
+        00000000000000000009896256C2BD8A78FFBE8A78FFBD8A78FFBD8978FFBD89
+        78FFBE8978FF876356C30000000B000000000000000000000000000000030000
+        000E0000001500000021C08D7CFFF6EEE9FFF5EDE9FFF5EDE9FFF5ECE8FFF4EC
+        E8FFF5ECE7FFBF8D7BFF00000026000000180000000F000000040000000C7B50
+        42C5A76E5BFF9F6755FFC2917FFFF7F0ECFFE2B47DFFE2B37AFFE1B077FFE0AE
+        72FFF6EEEAFFC2907FFF845545FF895847FF613E32C70000000E00000011BB7E
+        6BFFECD9CCFFE3CEBEFFC59483FFF9F2F0FFE4B984FFE3B781FFE3B47CFFE0B1
+        76FFF7F0EDFFC59483FFE0CBBCFFEBD8CBFFB67763FF0000001400000010BE85
+        71FFF1E5DAFFECDBD0FF7A4835FF7A4835FF7A4835FF7A4835FF7A4835FF7A48
+        35FF7A4835FF7A4835FFEBDBCFFFF1E2D8FFB97C69FF000000130000000EC28B
+        78FFF5EEE7FFF2E7DDFFF2E7DEFFF3E7DEFFF2E5DEFFF3E5DEFFF2E7DDFFF2E7
+        DDFFF2E7DEFFF2E7DDFFF2E5DEFFF5EDE6FFBC826EFF000000120000000CC793
+        7FFFFAF4F1FFCDBEB8FF6F5448FF614337FF614035FF5F3F34FF5E3F33FF5D3D
+        32FF5D3D34FF6A4C44FFCABCB6FFF9F5F1FFC18875FF000000100000000ACC99
+        86FFFDFAFAFF7D6054FF745043FF744F43FF744E43FF734E43FF734E42FF724D
+        42FF724C41FF724C40FF73584DFFFDFAFAFFC58F7CFF0000000E00000008CF9F
+        8DFFFFFFFFFF7A5A4CFF8E695AFFF9F4F1FFF0E6E0FFF0E5DFFFEFE5DEFFEFE5
+        DEFFF6EFEBFF866253FF704F43FFFFFFFFFFCA9683FF0000000B00000005BE95
+        84E9F5ECE8FF866656FF977262FFFAF6F4FFF2E8E3FFF1E8E1FFF1E7E2FFF1E7
+        E1FFF8F2EEFF8E6A5BFF7A5B4CFFF5EAE6FFBA8E7DEA00000008000000023429
+        2545A78375CC947262FFA07B6AFFFCF9F8FFF3EBE6FFF4EAE5FFF2EAE5FFF3EA
+        E3FFF9F5F3FF977263FF876658FFA68072CE3428234800000003000000000000
+        0001000000030000000AC89B89FFFDFBFAFFF5EDE8FFF4EDE8FFF5EDE7FFF5EC
+        E7FFFBF7F6FFC59685FF00000011000000040000000200000000000000000000
+        00000000000000000005CA9E8DFFFEFCFCFFF7F0ECFFF6EFEBFFF7EFEBFFF5EF
+        EAFFFCFAF8FFC89A89FF00000009000000000000000000000000000000000000
+        00000000000000000003CDA291FFFEFEFDFFFEFDFDFFFEFDFCFFFEFCFCFFFEFC
+        FBFFFDFBFAFFCB9F8DFF00000007000000000000000000000000000000000000
+        000000000000000000019A796DBFCFA493FFCEA493FFCEA493FFCEA492FFCDA3
+        91FFCDA391FF98786BC100000004000000000000000000000000}
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 10
+      OnClick = cxButton2Click
+    end
   end
   object cxGrid1: TcxGrid
     Left = 0
     Top = 31
-    Width = 1155
+    Width = 1172
     Height = 666
     Align = alClient
     TabOrder = 1
@@ -363,15 +461,114 @@ object fmEmpPayroll: TfmEmpPayroll
       Navigator.Buttons.SaveBookmark.Visible = False
       Navigator.Buttons.GotoBookmark.Visible = False
       Navigator.Buttons.Filter.Visible = False
+      Navigator.InfoPanel.DisplayMask = '[RecordIndex] / [RecordCount]'
+      Navigator.InfoPanel.Visible = True
+      Navigator.Visible = True
       DataController.DataSource = ds_EMP_PAYROLL_SEL
       DataController.Summary.DefaultGroupSummaryItems = <>
-      DataController.Summary.FooterSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridPayrollYUNGUM
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridPayrollGOYONG_BOHUM
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridPayrollGUNGANG_BOHUM
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridPayrollYOYANG_BOHUM
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridPayrollSANJAE_BOHUM
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridPayrollYOUNGSU_PRICE
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridPayrollGONGJE_PRICE
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridPayrollJUMINSE
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridPayrollSODUKSE
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridPayrollTOTAL_PRICE
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridPayrollEXTRA_PRICE
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridPayrollHOLIDAY_PRICE
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridPayrollEXTEND_PRICE
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridPayrollFAMILY_PRICE
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridPayrollBASIC_PRICE
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridPayrollWORK_DAYS
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridPayrollWORK_HOURS
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridPayrollEXTEND_HOURS
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridPayrollHOLIDAY_HOURS
+        end>
       DataController.Summary.SummaryGroups = <>
       OptionsBehavior.CellHints = True
       OptionsCustomize.ColumnsQuickCustomization = True
       OptionsSelection.CellSelect = False
       OptionsSelection.HideFocusRectOnExit = False
       OptionsView.CellEndEllipsis = True
+      OptionsView.Footer = True
       OptionsView.GroupByBox = False
       OptionsView.Indicator = True
       object gridPayrollID: TcxGridDBColumn
@@ -526,26 +723,6 @@ object fmEmpPayroll: TfmEmpPayroll
         Properties.UseThousandSeparator = True
         HeaderAlignmentHorz = taCenter
       end
-      object gridPayrollCALC_NOTICE1: TcxGridDBColumn
-        Caption = #44592#48376#44553' '#49328#52636#49885
-        DataBinding.FieldName = 'CALC_NOTICE1'
-        Width = 164
-      end
-      object gridPayrollCALC_NOTICE2: TcxGridDBColumn
-        Caption = #49884#44036#50808#49688#45817' '#49328#52636#49885
-        DataBinding.FieldName = 'CALC_NOTICE2'
-        Width = 190
-      end
-      object gridPayrollCALC_NOTICE3: TcxGridDBColumn
-        Caption = #47749#51208#55092#44032#48708' '#49328#52636#49885
-        DataBinding.FieldName = 'CALC_NOTICE3'
-        Width = 175
-      end
-      object gridPayrollCALC_NOTICE4: TcxGridDBColumn
-        Caption = #44032#51313#49688#45817' '#49328#52636#49885
-        DataBinding.FieldName = 'CALC_NOTICE4'
-        Width = 185
-      end
       object gridPayrollETC1_NAME: TcxGridDBColumn
         DataBinding.FieldName = 'ETC1_NAME'
         Visible = False
@@ -563,24 +740,44 @@ object fmEmpPayroll: TfmEmpPayroll
         Visible = False
       end
       object gridPayrollYUNGUM: TcxGridDBColumn
+        Caption = #44397#48124#50672#44552
         DataBinding.FieldName = 'YUNGUM'
-        Visible = False
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = ',0;-,0'
+        Properties.UseThousandSeparator = True
+        HeaderAlignmentHorz = taCenter
       end
       object gridPayrollGOYONG_BOHUM: TcxGridDBColumn
+        Caption = #44256#50857#48372#54744
         DataBinding.FieldName = 'GOYONG_BOHUM'
-        Visible = False
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = ',0;-,0'
+        Properties.UseThousandSeparator = True
+        HeaderAlignmentHorz = taCenter
       end
       object gridPayrollGUNGANG_BOHUM: TcxGridDBColumn
+        Caption = #44148#44053#48372#54744
         DataBinding.FieldName = 'GUNGANG_BOHUM'
-        Visible = False
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = ',0;-,0'
+        Properties.UseThousandSeparator = True
+        HeaderAlignmentHorz = taCenter
       end
       object gridPayrollYOYANG_BOHUM: TcxGridDBColumn
+        Caption = #51109#44592#50836#50577#48372#54744
         DataBinding.FieldName = 'YOYANG_BOHUM'
-        Visible = False
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = ',0;-,0'
+        Properties.UseThousandSeparator = True
+        HeaderAlignmentHorz = taCenter
       end
       object gridPayrollSANJAE_BOHUM: TcxGridDBColumn
+        Caption = #49328#51116#48372#54744
         DataBinding.FieldName = 'SANJAE_BOHUM'
-        Visible = False
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = ',0;-,0'
+        Properties.UseThousandSeparator = True
+        HeaderAlignmentHorz = taCenter
       end
     end
     object cxGrid1Level1: TcxGridLevel
@@ -917,22 +1114,6 @@ object fmEmpPayroll: TfmEmpPayroll
     object EMP_PAYROLL_SELYOUNGSU_PRICE: TIntegerField
       FieldName = 'YOUNGSU_PRICE'
     end
-    object EMP_PAYROLL_SELCALC_NOTICE1: TStringField
-      FieldName = 'CALC_NOTICE1'
-      Size = 100
-    end
-    object EMP_PAYROLL_SELCALC_NOTICE2: TStringField
-      FieldName = 'CALC_NOTICE2'
-      Size = 100
-    end
-    object EMP_PAYROLL_SELCALC_NOTICE3: TStringField
-      FieldName = 'CALC_NOTICE3'
-      Size = 100
-    end
-    object EMP_PAYROLL_SELCALC_NOTICE4: TStringField
-      FieldName = 'CALC_NOTICE4'
-      Size = 100
-    end
     object EMP_PAYROLL_SELSODUKSE: TIntegerField
       FieldName = 'SODUKSE'
     end
@@ -1077,30 +1258,6 @@ object fmEmpPayroll: TfmEmpPayroll
         DataType = ftInteger
         Name = 'YOUNGSU_PRICE'
         ParamType = ptInput
-      end
-      item
-        DataType = ftString
-        Name = 'CALC_NOTICE1'
-        ParamType = ptInput
-        Size = 100
-      end
-      item
-        DataType = ftString
-        Name = 'CALC_NOTICE2'
-        ParamType = ptInput
-        Size = 100
-      end
-      item
-        DataType = ftString
-        Name = 'CALC_NOTICE3'
-        ParamType = ptInput
-        Size = 100
-      end
-      item
-        DataType = ftString
-        Name = 'CALC_NOTICE4'
-        ParamType = ptInput
-        Size = 100
       end
       item
         DataType = ftInteger
@@ -1560,30 +1717,6 @@ object fmEmpPayroll: TfmEmpPayroll
         ParamType = ptInput
       end
       item
-        DataType = ftString
-        Name = 'CALC_NOTICE1'
-        ParamType = ptInput
-        Size = 100
-      end
-      item
-        DataType = ftString
-        Name = 'CALC_NOTICE2'
-        ParamType = ptInput
-        Size = 100
-      end
-      item
-        DataType = ftString
-        Name = 'CALC_NOTICE3'
-        ParamType = ptInput
-        Size = 100
-      end
-      item
-        DataType = ftString
-        Name = 'CALC_NOTICE4'
-        ParamType = ptInput
-        Size = 100
-      end
-      item
         DataType = ftInteger
         Name = 'SODUKSE'
         ParamType = ptInput
@@ -1591,58 +1724,6 @@ object fmEmpPayroll: TfmEmpPayroll
       item
         DataType = ftInteger
         Name = 'JUMINSE'
-        ParamType = ptInput
-      end
-      item
-        DataType = ftInteger
-        Name = 'EXTRA_PRICE'
-        ParamType = ptInput
-      end
-      item
-        DataType = ftString
-        Name = 'ETC1_NAME'
-        ParamType = ptInput
-        Size = 30
-      end
-      item
-        DataType = ftInteger
-        Name = 'ETC1_PRICE'
-        ParamType = ptInput
-      end
-      item
-        DataType = ftString
-        Name = 'ETC2_NAME'
-        ParamType = ptInput
-        Size = 30
-      end
-      item
-        DataType = ftInteger
-        Name = 'ETC2_PRICE'
-        ParamType = ptInput
-      end
-      item
-        DataType = ftInteger
-        Name = 'YUNGUM'
-        ParamType = ptInput
-      end
-      item
-        DataType = ftInteger
-        Name = 'GOYONG_BOHUM'
-        ParamType = ptInput
-      end
-      item
-        DataType = ftInteger
-        Name = 'GUNGANG_BOHUM'
-        ParamType = ptInput
-      end
-      item
-        DataType = ftInteger
-        Name = 'YOYANG_BOHUM'
-        ParamType = ptInput
-      end
-      item
-        DataType = ftInteger
-        Name = 'SANJAE_BOHUM'
         ParamType = ptInput
       end>
     CommandStoredProcName = 'EMP_PAYROLL_UPD'
@@ -1664,8 +1745,8 @@ object fmEmpPayroll: TfmEmpPayroll
       'begin'
       ''
       'end.')
-    Left = 888
-    Top = 152
+    Left = 864
+    Top = 64
     Datasets = <
       item
         DataSet = frxDBDataset1
@@ -2227,9 +2308,9 @@ object fmEmpPayroll: TfmEmpPayroll
         ParentFont = False
       end
       object Memo22: TfrxMemoView
-        Left = 393.527830000000000000
+        Left = 378.527830000000000000
         Top = 426.472790000000000000
-        Width = 86.929190000000000000
+        Width = 113.385900000000000000
         Height = 18.897650000000000000
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
@@ -2634,7 +2715,7 @@ object fmEmpPayroll: TfmEmpPayroll
       end
       object Memo35: TfrxMemoView
         Left = 37.795300000000000000
-        Top = 753.850960000000000000
+        Top = 785.850960000000000000
         Width = 86.929190000000000000
         Height = 18.897650000000000000
         Font.Charset = DEFAULT_CHARSET
@@ -2649,7 +2730,7 @@ object fmEmpPayroll: TfmEmpPayroll
       end
       object Memo36: TfrxMemoView
         Left = 37.795300000000000000
-        Top = 785.425790000000000000
+        Top = 754.425790000000000000
         Width = 86.929190000000000000
         Height = 18.897650000000000000
         Font.Charset = DEFAULT_CHARSET
@@ -2679,7 +2760,7 @@ object fmEmpPayroll: TfmEmpPayroll
       end
       object Memo38: TfrxMemoView
         Left = 37.795300000000000000
-        Top = 851.016390000000000000
+        Top = 917.016390000000000000
         Width = 86.929190000000000000
         Height = 18.897650000000000000
         Font.Charset = DEFAULT_CHARSET
@@ -2718,7 +2799,7 @@ object fmEmpPayroll: TfmEmpPayroll
       end
       object Memo39: TfrxMemoView
         Left = 37.795300000000000000
-        Top = 884.410020000000000000
+        Top = 851.410020000000000000
         Width = 86.929190000000000000
         Height = 18.897650000000000000
         Font.Charset = DEFAULT_CHARSET
@@ -2733,7 +2814,7 @@ object fmEmpPayroll: TfmEmpPayroll
       end
       object Memo40: TfrxMemoView
         Left = 37.795300000000000000
-        Top = 918.425790000000000000
+        Top = 885.425790000000000000
         Width = 86.929190000000000000
         Height = 18.897650000000000000
         Font.Charset = DEFAULT_CHARSET
@@ -2820,7 +2901,7 @@ object fmEmpPayroll: TfmEmpPayroll
       end
       object frxDBDataset1calc_note1: TfrxMemoView
         Left = 158.740260000000000000
-        Top = 690.653990000000000000
+        Top = 691.260360000000000000
         Width = 400.630180000000000000
         Height = 18.897650000000000000
         DataField = 'calc_note1'
@@ -2839,7 +2920,7 @@ object fmEmpPayroll: TfmEmpPayroll
       end
       object frxDBDataset1calc_note2: TfrxMemoView
         Left = 158.740260000000000000
-        Top = 721.890230000000000000
+        Top = 723.055660000000000000
         Width = 400.630180000000000000
         Height = 18.897650000000000000
         DataField = 'calc_note2'
@@ -2858,7 +2939,7 @@ object fmEmpPayroll: TfmEmpPayroll
       end
       object frxDBDataset1calc_note3: TfrxMemoView
         Left = 158.740260000000000000
-        Top = 753.906000000000000000
+        Top = 754.425790000000000000
         Width = 400.630180000000000000
         Height = 18.897650000000000000
         DataField = 'calc_note3'
@@ -2877,7 +2958,7 @@ object fmEmpPayroll: TfmEmpPayroll
       end
       object frxDBDataset1calc_note4: TfrxMemoView
         Left = 158.740260000000000000
-        Top = 785.362710000000000000
+        Top = 785.850960000000000000
         Width = 400.630180000000000000
         Height = 18.897650000000000000
         DataField = 'calc_note4'
@@ -2896,7 +2977,7 @@ object fmEmpPayroll: TfmEmpPayroll
       end
       object Memo42: TfrxMemoView
         Left = 577.827150000000000000
-        Top = 691.653990000000000000
+        Top = 691.260360000000000000
         Width = 120.944960000000000000
         Height = 18.897650000000000000
         DataField = 'basic_price'
@@ -2917,7 +2998,7 @@ object fmEmpPayroll: TfmEmpPayroll
       end
       object Memo43: TfrxMemoView
         Left = 578.268090000000000000
-        Top = 721.890230000000000000
+        Top = 723.055660000000000000
         Width = 120.944960000000000000
         Height = 18.897650000000000000
         DataField = 'ext_price'
@@ -2938,7 +3019,7 @@ object fmEmpPayroll: TfmEmpPayroll
       end
       object Memo44: TfrxMemoView
         Left = 582.047620000000000000
-        Top = 753.906000000000000000
+        Top = 785.850960000000000000
         Width = 117.165430000000000000
         Height = 18.897650000000000000
         DataField = 'bonus'
@@ -2959,13 +3040,15 @@ object fmEmpPayroll: TfmEmpPayroll
       end
       object frxDBDataset1family_price: TfrxMemoView
         Left = 582.047620000000000000
-        Top = 785.142240000000000000
+        Top = 754.425790000000000000
         Width = 117.165430000000000000
         Height = 18.897650000000000000
         DataField = 'family_price'
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
+        DisplayFormat.ThousandSeparator = ','
         DisplayFormat.FormatStr = '#,#'
+        DisplayFormat.Kind = fkNumeric
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -16
@@ -3245,12 +3328,6 @@ object fmEmpPayroll: TfmEmpPayroll
           '[frxDBDataset1."jigub_total"]')
         ParentFont = False
       end
-      object Shape1: TfrxShapeView
-        Top = 7.559060000000000000
-        Width = 718.110700000000000000
-        Height = 967.559680000000000000
-        Frame.Width = 2.000000000000000000
-      end
       object frxDBDataset1busu: TfrxMemoView
         Left = 105.826840000000000000
         Top = 132.283550000000000000
@@ -3287,13 +3364,163 @@ object fmEmpPayroll: TfmEmpPayroll
           '[frxDBDataset1."jikgub"]')
         ParentFont = False
       end
+      object frxDBDataset1calc_note5: TfrxMemoView
+        Left = 158.740260000000000000
+        Top = 817.221090000000000000
+        Width = 400.630180000000000000
+        Height = 18.897650000000000000
+        DataField = 'calc_note5'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."calc_note5"]')
+        ParentFont = False
+      end
+      object frxDBDataset1calc_note6: TfrxMemoView
+        Left = 158.740260000000000000
+        Top = 851.410020000000000000
+        Width = 400.630180000000000000
+        Height = 18.897650000000000000
+        DataField = 'calc_note6'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."calc_note6"]')
+        ParentFont = False
+      end
+      object frxDBDataset1calc_note7: TfrxMemoView
+        Left = 158.740260000000000000
+        Top = 885.425790000000000000
+        Width = 400.630180000000000000
+        Height = 18.897650000000000000
+        DataField = 'calc_note7'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."calc_note7"]')
+        ParentFont = False
+      end
+      object frxDBDataset1calc_note8: TfrxMemoView
+        Left = 158.740260000000000000
+        Top = 917.016390000000000000
+        Width = 400.630180000000000000
+        Height = 18.897650000000000000
+        DataField = 'calc_note8'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."calc_note8"]')
+        ParentFont = False
+      end
+      object frxDBDataset1yungum1: TfrxMemoView
+        Left = 582.047620000000000000
+        Top = 817.221090000000000000
+        Width = 117.165430000000000000
+        Height = 18.897650000000000000
+        DataField = 'yungum'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          '[frxDBDataset1."yungum"]')
+        ParentFont = False
+      end
+      object frxDBDataset1gungang1: TfrxMemoView
+        Left = 578.268090000000000000
+        Top = 851.410020000000000000
+        Width = 120.944960000000000000
+        Height = 18.897650000000000000
+        DataField = 'gungang'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          '[frxDBDataset1."gungang"]')
+        ParentFont = False
+      end
+      object frxDBDataset1yoyang1: TfrxMemoView
+        Left = 578.268090000000000000
+        Top = 885.425790000000000000
+        Width = 120.944960000000000000
+        Height = 18.897650000000000000
+        DataField = 'yoyang'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          '[frxDBDataset1."yoyang"]')
+        ParentFont = False
+      end
+      object frxDBDataset1goyong1: TfrxMemoView
+        Left = 578.268090000000000000
+        Top = 917.016390000000000000
+        Width = 120.944960000000000000
+        Height = 18.897650000000000000
+        DataField = 'goyong'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          '[frxDBDataset1."goyong"]')
+        ParentFont = False
+      end
+      object Shape1: TfrxShapeView
+        Top = 7.559060000000000000
+        Width = 718.110700000000000000
+        Height = 967.559680000000000000
+        Frame.Width = 2.000000000000000000
+      end
     end
   end
   object dxMemData1: TdxMemData
     Indexes = <>
     SortOptions = []
-    Left = 776
-    Top = 152
+    Left = 864
+    Top = 160
     object dxMemData1year_month: TIntegerField
       FieldName = 'year_month'
     end
@@ -3366,6 +3593,18 @@ object fmEmpPayroll: TfmEmpPayroll
       FieldName = 'calc_note5'
       Size = 100
     end
+    object dxMemData1calc_note6: TStringField
+      FieldName = 'calc_note6'
+      Size = 100
+    end
+    object dxMemData1calc_note7: TStringField
+      FieldName = 'calc_note7'
+      Size = 100
+    end
+    object dxMemData1calc_note8: TStringField
+      FieldName = 'calc_note8'
+      Size = 100
+    end
     object dxMemData1family_price: TIntegerField
       FieldName = 'family_price'
     end
@@ -3397,6 +3636,14 @@ object fmEmpPayroll: TfmEmpPayroll
     end
     object dxMemData1sanjae: TIntegerField
       FieldName = 'sanjae'
+    end
+    object dxMemData1total_amount_string: TStringField
+      DisplayWidth = 100
+      FieldName = 'total_amount_string'
+      Size = 100
+    end
+    object dxMemData1total_out_amount: TIntegerField
+      FieldName = 'total_out_amount'
     end
   end
   object EMP_TAX_TABLE_SEL: TUniStoredProc
@@ -3531,8 +3778,8 @@ object fmEmpPayroll: TfmEmpPayroll
   end
   object DataSource2: TDataSource
     DataSet = dxMemData1
-    Left = 776
-    Top = 200
+    Left = 864
+    Top = 208
   end
   object frxDBDataset1: TfrxDBDataset
     UserName = 'frxDBDataset1'
@@ -3561,6 +3808,9 @@ object fmEmpPayroll: TfmEmpPayroll
       'calc_note3=calc_note3'
       'calc_note4=calc_note4'
       'calc_note5=calc_note5'
+      'calc_note6=calc_note6'
+      'calc_note7=calc_note7'
+      'calc_note8=calc_note8'
       'family_price=family_price'
       'etc1_price=etc1_price'
       'etc1_name=etc1_name'
@@ -3570,10 +3820,3097 @@ object fmEmpPayroll: TfmEmpPayroll
       'goyong=goyong'
       'gungang=gungang'
       'yoyang=yoyang'
-      'sanjae=sanjae')
+      'sanjae=sanjae'
+      'total_amount_string=total_amount_string'
+      'total_out_amount=total_out_amount')
     DataSet = dxMemData1
     BCDToCurrency = False
-    Left = 888
-    Top = 200
+    Left = 864
+    Top = 112
+  end
+  object EMP_PAYROLL_CALC_DESC_SEL: TUniStoredProc
+    StoredProcName = 'EMP_PAYROLL_CALC_DESC_SEL'
+    Connection = dm.UniConnection1
+    Left = 560
+    Top = 208
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'PAYID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'ID'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'PAY_ID'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftString
+        Name = 'BASIC_PAY'
+        ParamType = ptOutput
+        Size = 100
+      end
+      item
+        DataType = ftString
+        Name = 'EXTEND_TIME'
+        ParamType = ptOutput
+        Size = 100
+      end
+      item
+        DataType = ftString
+        Name = 'FAMILY_PAY'
+        ParamType = ptOutput
+        Size = 100
+      end
+      item
+        DataType = ftString
+        Name = 'BONUS_PAY'
+        ParamType = ptOutput
+        Size = 100
+      end
+      item
+        DataType = ftString
+        Name = 'YUNGUM'
+        ParamType = ptOutput
+        Size = 100
+      end
+      item
+        DataType = ftString
+        Name = 'GUNGANG'
+        ParamType = ptOutput
+        Size = 100
+      end
+      item
+        DataType = ftString
+        Name = 'YOYANG'
+        ParamType = ptOutput
+        Size = 100
+      end
+      item
+        DataType = ftString
+        Name = 'GOYONG'
+        ParamType = ptOutput
+        Size = 100
+      end>
+    CommandStoredProcName = 'EMP_PAYROLL_CALC_DESC_SEL'
+    object EMP_PAYROLL_CALC_DESC_SELID: TIntegerField
+      FieldName = 'ID'
+    end
+    object EMP_PAYROLL_CALC_DESC_SELPAY_ID: TIntegerField
+      FieldName = 'PAY_ID'
+    end
+    object EMP_PAYROLL_CALC_DESC_SELBASIC_PAY: TStringField
+      FieldName = 'BASIC_PAY'
+      Size = 100
+    end
+    object EMP_PAYROLL_CALC_DESC_SELEXTEND_TIME: TStringField
+      FieldName = 'EXTEND_TIME'
+      Size = 100
+    end
+    object EMP_PAYROLL_CALC_DESC_SELFAMILY_PAY: TStringField
+      FieldName = 'FAMILY_PAY'
+      Size = 100
+    end
+    object EMP_PAYROLL_CALC_DESC_SELBONUS_PAY: TStringField
+      FieldName = 'BONUS_PAY'
+      Size = 100
+    end
+    object EMP_PAYROLL_CALC_DESC_SELYUNGUM: TStringField
+      FieldName = 'YUNGUM'
+      Size = 100
+    end
+    object EMP_PAYROLL_CALC_DESC_SELGUNGANG: TStringField
+      FieldName = 'GUNGANG'
+      Size = 100
+    end
+    object EMP_PAYROLL_CALC_DESC_SELYOYANG: TStringField
+      FieldName = 'YOYANG'
+      Size = 100
+    end
+    object EMP_PAYROLL_CALC_DESC_SELGOYONG: TStringField
+      FieldName = 'GOYONG'
+      Size = 100
+    end
+  end
+  object ds_EMP_PAYROLL_CALC_DESC_SEL: TDataSource
+    DataSet = EMP_PAYROLL_CALC_DESC_SEL
+    Left = 560
+    Top = 256
+  end
+  object EMP_PAYROLL_CALC_DESC_IU: TUniStoredProc
+    StoredProcName = 'EMP_PAYROLL_CALC_DESC_IU'
+    Connection = dm.UniConnection1
+    Left = 560
+    Top = 304
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'PAY_ID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'BASIC_PAY'
+        ParamType = ptInput
+        Size = 100
+      end
+      item
+        DataType = ftString
+        Name = 'EXTEND_TIME'
+        ParamType = ptInput
+        Size = 100
+      end
+      item
+        DataType = ftString
+        Name = 'FAMILY_PAY'
+        ParamType = ptInput
+        Size = 100
+      end
+      item
+        DataType = ftString
+        Name = 'BONUS_PAY'
+        ParamType = ptInput
+        Size = 100
+      end
+      item
+        DataType = ftString
+        Name = 'YUNGUM'
+        ParamType = ptInput
+        Size = 100
+      end
+      item
+        DataType = ftString
+        Name = 'GUNGANG'
+        ParamType = ptInput
+        Size = 100
+      end
+      item
+        DataType = ftString
+        Name = 'YOYANG'
+        ParamType = ptInput
+        Size = 100
+      end
+      item
+        DataType = ftString
+        Name = 'GOYONG'
+        ParamType = ptInput
+        Size = 100
+      end>
+    CommandStoredProcName = 'EMP_PAYROLL_CALC_DESC_IU'
+  end
+  object frxReport2: TfrxReport
+    Version = '5.1.9'
+    DataSet = frxDBDataset1
+    DataSetName = 'frxDBDataset1'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 44985.266758958340000000
+    ReportOptions.LastChange = 44985.266758958340000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 952
+    Top = 64
+    Datasets = <
+      item
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+      end>
+    Variables = <>
+    Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      object Memo1: TfrxMemoView
+        Left = 230.551330000000000000
+        Top = 41.574830000000000000
+        Width = 200.315090000000000000
+        Height = 30.236240000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -27
+        Font.Name = #44404#47548#52404
+        Font.Style = [fsBold]
+        Memo.UTF8W = (
+          #51648' '#52636' '#44208' '#51032' '#49436)
+        ParentFont = False
+      end
+      object frxDBDataset1busu: TfrxMemoView
+        Left = 37.795300000000000000
+        Top = 102.047310000000000000
+        Width = 340.157700000000000000
+        Height = 30.236240000000000000
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -24
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."busu"] '#51452#48124#51088#52824#54924)
+        ParentFont = False
+        VAlign = vaCenter
+      end
+      object Memo2: TfrxMemoView
+        Left = 408.189240000000000000
+        Top = 86.929190000000000000
+        Width = 18.897650000000000000
+        Height = 56.692950000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -15
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          #44208
+          ''
+          #51116)
+        ParentFont = False
+      end
+      object Memo3: TfrxMemoView
+        Left = 457.323130000000000000
+        Top = 82.929190000000000000
+        Width = 52.913420000000000000
+        Height = 15.118120000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -15
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #45812#45817#51088)
+        ParentFont = False
+      end
+      object Memo4: TfrxMemoView
+        Left = 551.811380000000000000
+        Top = 82.929190000000000000
+        Width = 52.913420000000000000
+        Height = 15.118120000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -15
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #48512#54924#51109)
+        ParentFont = False
+      end
+      object Memo5: TfrxMemoView
+        Left = 646.299630000000000000
+        Top = 82.929190000000000000
+        Width = 52.913420000000000000
+        Height = 15.118120000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -15
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #54924'  '#51109)
+        ParentFont = False
+      end
+      object Line1: TfrxLineView
+        Left = 438.425480000000000000
+        Top = 75.590600000000000000
+        Height = 75.590600000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Line2: TfrxLineView
+        Left = 529.134200000000000000
+        Top = 75.590600000000000000
+        Height = 75.590600000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Line3: TfrxLineView
+        Left = 623.622450000000000000
+        Top = 75.590600000000000000
+        Height = 75.590600000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Line4: TfrxLineView
+        Left = 396.850650000000000000
+        Top = 75.590600000000000000
+        Height = 75.590600000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object frxDBDataset1total_amount_string: TfrxMemoView
+        Left = 37.795300000000000000
+        Top = 162.519790000000000000
+        Width = 638.740570000000000000
+        Height = 18.897650000000000000
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = [fsBold, fsUnderline]
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."total_amount_string"]')
+        ParentFont = False
+        VAlign = vaCenter
+      end
+      object Line5: TfrxLineView
+        Top = 188.976500000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line6: TfrxLineView
+        Top = 151.181200000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line7: TfrxLineView
+        Left = 438.425480000000000000
+        Top = 105.826840000000000000
+        Width = 279.685220000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line8: TfrxLineView
+        Left = 188.976500000000000000
+        Top = 75.590600000000000000
+        Width = 529.134200000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+        Frame.Width = 2.000000000000000000
+      end
+      object Line9: TfrxLineView
+        Top = 75.590600000000000000
+        Width = 188.976500000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line10: TfrxLineView
+        Top = 37.795300000000000000
+        Width = 188.976500000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+        Frame.Width = 2.000000000000000000
+      end
+      object Line11: TfrxLineView
+        Left = 188.976500000000000000
+        Top = 37.795300000000000000
+        Height = 37.795300000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+        Frame.Width = 2.000000000000000000
+      end
+      object Line12: TfrxLineView
+        Top = 37.795300000000000000
+        Height = 944.882500000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+        Frame.Width = 2.000000000000000000
+      end
+      object Line13: TfrxLineView
+        Top = 226.771800000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line14: TfrxLineView
+        Top = 264.567100000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Memo6: TfrxMemoView
+        Left = 18.897650000000000000
+        Top = 200.315090000000000000
+        Width = 143.622140000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          #48156#51032' '#48143' '#50896#51064#54665#50948)
+        ParentFont = False
+      end
+      object Memo7: TfrxMemoView
+        Left = 415.748300000000000000
+        Top = 200.315090000000000000
+        Width = 75.590600000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          #51648' '#52636' '#51068)
+        ParentFont = False
+      end
+      object Line15: TfrxLineView
+        Left = 188.976500000000000000
+        Top = 188.976500000000000000
+        Height = 37.795300000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Line16: TfrxLineView
+        Left = 377.953000000000000000
+        Top = 188.976500000000000000
+        Height = 37.795300000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Line17: TfrxLineView
+        Left = 529.134200000000000000
+        Top = 188.976500000000000000
+        Height = 37.795300000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Memo8: TfrxMemoView
+        Left = 275.905690000000000000
+        Top = 238.110390000000000000
+        Width = 98.267780000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          #51648' '#52636' '#45236' '#50669)
+        ParentFont = False
+      end
+      object Memo9: TfrxMemoView
+        Left = 173.858380000000000000
+        Top = 275.905690000000000000
+        Width = 120.944960000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          #51648#52636#49464#48512#45236#50669)
+        ParentFont = False
+      end
+      object Memo10: TfrxMemoView
+        Left = 495.118430000000000000
+        Top = 275.905690000000000000
+        Width = 120.944960000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          #52292#51452'('#51648#44553#52376')')
+        ParentFont = False
+      end
+      object Memo11: TfrxMemoView
+        Left = 533.338900000000000000
+        Top = 309.921460000000000000
+        Width = 105.826840000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          #49345#54840'/'#49457#47749'('#45824#54364')')
+        ParentFont = False
+      end
+      object Memo12: TfrxMemoView
+        Left = 648.961040000000000000
+        Top = 294.803340000000000000
+        Width = 60.472480000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51648#44553#48169#48277)
+        ParentFont = False
+      end
+      object Memo13: TfrxMemoView
+        Left = 455.527830000000000000
+        Top = 313.921460000000000000
+        Width = 45.354360000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44552#50529)
+        ParentFont = False
+      end
+      object Memo14: TfrxMemoView
+        Left = 238.110390000000000000
+        Top = 309.921460000000000000
+        Width = 120.944960000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #49328#52636#45236#50669)
+        ParentFont = False
+      end
+      object Memo15: TfrxMemoView
+        Left = 125.401670000000000000
+        Top = 309.921460000000000000
+        Width = 68.031540000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51201#50836)
+        ParentFont = False
+      end
+      object Memo16: TfrxMemoView
+        Left = 65.590600000000000000
+        Top = 309.921460000000000000
+        Width = 37.795300000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #48708#47785)
+        ParentFont = False
+      end
+      object Memo17: TfrxMemoView
+        Left = 15.559060000000000000
+        Top = 277.905690000000000000
+        Width = 30.236240000000000000
+        Height = 49.133890000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          #51648#52636#44208#51032#48264#54840)
+        ParentFont = False
+      end
+      object Memo18: TfrxMemoView
+        Left = 649.299630000000000000
+        Top = 351.496290000000000000
+        Width = 60.472480000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44228#51340#51060#52404)
+        ParentFont = False
+      end
+      object Memo19: TfrxMemoView
+        Left = 649.299630000000000000
+        Top = 388.512060000000000000
+        Width = 60.472480000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51648#47196#45225#48512)
+        ParentFont = False
+      end
+      object Memo20: TfrxMemoView
+        Left = 649.299630000000000000
+        Top = 427.086890000000000000
+        Width = 60.472480000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51648#47196#45225#48512)
+        ParentFont = False
+      end
+      object Memo21: TfrxMemoView
+        Left = 649.299630000000000000
+        Top = 464.882190000000000000
+        Width = 60.472480000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44228#51340#51060#52404)
+        ParentFont = False
+      end
+      object Memo22: TfrxMemoView
+        Left = 649.299630000000000000
+        Top = 502.897960000000000000
+        Width = 60.472480000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44228#51340#51060#52404)
+        ParentFont = False
+      end
+      object Memo23: TfrxMemoView
+        Left = 649.299630000000000000
+        Top = 540.472790000000000000
+        Width = 60.472480000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44228#51340#51060#52404)
+        ParentFont = False
+      end
+      object Memo24: TfrxMemoView
+        Left = 649.299630000000000000
+        Top = 578.268090000000000000
+        Width = 60.472480000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44228#51340#51060#52404)
+        ParentFont = False
+      end
+      object Memo25: TfrxMemoView
+        Left = 65.929190000000000000
+        Top = 351.496290000000000000
+        Width = 37.795300000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44553#50668)
+        ParentFont = False
+      end
+      object Memo26: TfrxMemoView
+        Left = 65.929190000000000000
+        Top = 388.512060000000000000
+        Width = 37.795300000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44553#50668)
+        ParentFont = False
+      end
+      object frxDBDataset1jikgub: TfrxMemoView
+        Left = 117.842610000000000000
+        Top = 343.937230000000000000
+        Width = 83.149660000000000000
+        Height = 34.015770000000000000
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."jikgub"]'
+          '[frxDBDataset1."year_month"]'#44553#50668)
+        ParentFont = False
+      end
+      object Memo32: TfrxMemoView
+        Left = 115.952845000000000000
+        Top = 388.512060000000000000
+        Width = 86.929190000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44540#47196#49548#46301#49464)
+        ParentFont = False
+      end
+      object Memo33: TfrxMemoView
+        Left = 115.952845000000000000
+        Top = 427.086890000000000000
+        Width = 86.929190000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51648#48169#49548#46301#49464)
+        ParentFont = False
+      end
+      object Memo34: TfrxMemoView
+        Left = 115.952845000000000000
+        Top = 464.882190000000000000
+        Width = 86.929190000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44397#48124#50672#44552)
+        ParentFont = False
+      end
+      object Memo35: TfrxMemoView
+        Left = 115.952845000000000000
+        Top = 502.897960000000000000
+        Width = 86.929190000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44148#44053#48372#54744)
+        ParentFont = False
+      end
+      object Memo36: TfrxMemoView
+        Left = 116.504020000000000000
+        Top = 540.472790000000000000
+        Width = 86.929190000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51109#44592#50836#50577#48372#54744)
+        ParentFont = False
+      end
+      object Memo37: TfrxMemoView
+        Left = 115.952845000000000000
+        Top = 578.268090000000000000
+        Width = 86.929190000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44256#50857#48372#54744)
+        ParentFont = False
+      end
+      object frxDBDataset1calc_note1: TfrxMemoView
+        Left = 215.346630000000000000
+        Top = 351.496290000000000000
+        Width = 215.433210000000000000
+        Height = 18.897650000000000000
+        DataField = 'calc_note1'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."calc_note1"]')
+        ParentFont = False
+      end
+      object Memo38: TfrxMemoView
+        Left = 215.346630000000000000
+        Top = 388.512060000000000000
+        Width = 215.433210000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44540#47196#49548#46301#44036#51060#49464#50529#54364' '#44592#51456)
+        ParentFont = False
+      end
+      object Memo39: TfrxMemoView
+        Left = 215.346630000000000000
+        Top = 427.086890000000000000
+        Width = 215.433210000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44540#47196#49548#46301#49464'*10%')
+        ParentFont = False
+      end
+      object frxDBDataset1calc_note5: TfrxMemoView
+        Left = 215.346630000000000000
+        Top = 464.882190000000000000
+        Width = 215.433210000000000000
+        Height = 18.897650000000000000
+        DataField = 'calc_note5'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."calc_note5"]')
+        ParentFont = False
+      end
+      object frxDBDataset1calc_note6: TfrxMemoView
+        Left = 215.346630000000000000
+        Top = 502.897960000000000000
+        Width = 215.433210000000000000
+        Height = 18.897650000000000000
+        DataField = 'calc_note6'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."calc_note6"]')
+        ParentFont = False
+      end
+      object frxDBDataset1calc_note7: TfrxMemoView
+        Left = 215.346630000000000000
+        Top = 540.472790000000000000
+        Width = 215.433210000000000000
+        Height = 18.897650000000000000
+        DataField = 'calc_note7'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."calc_note7"]')
+        ParentFont = False
+      end
+      object frxDBDataset1calc_note8: TfrxMemoView
+        Left = 215.346630000000000000
+        Top = 578.268090000000000000
+        Width = 215.433210000000000000
+        Height = 18.897650000000000000
+        DataField = 'calc_note8'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."calc_note8"]')
+        ParentFont = False
+      end
+      object frxDBDataset1jigub_total: TfrxMemoView
+        Left = 441.220780000000000000
+        Top = 351.496290000000000000
+        Width = 79.370130000000000000
+        Height = 18.897650000000000000
+        DataField = 'jigub_total'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.ThousandSeparator = ','
+        DisplayFormat.FormatStr = '#,0'
+        DisplayFormat.Kind = fkNumeric
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          '[frxDBDataset1."jigub_total"]')
+        ParentFont = False
+      end
+      object frxDBDataset1sodukse: TfrxMemoView
+        Left = 441.220780000000000000
+        Top = 388.512060000000000000
+        Width = 79.370130000000000000
+        Height = 18.897650000000000000
+        DataField = 'sodukse'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.ThousandSeparator = ','
+        DisplayFormat.FormatStr = '#,0'
+        DisplayFormat.Kind = fkNumeric
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          '[frxDBDataset1."sodukse"]')
+        ParentFont = False
+      end
+      object frxDBDataset1juminse: TfrxMemoView
+        Left = 441.220780000000000000
+        Top = 427.086890000000000000
+        Width = 79.370130000000000000
+        Height = 18.897650000000000000
+        DataField = 'juminse'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.ThousandSeparator = ','
+        DisplayFormat.FormatStr = '#,0'
+        DisplayFormat.Kind = fkNumeric
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          '[frxDBDataset1."juminse"]')
+        ParentFont = False
+      end
+      object frxDBDataset1yungum: TfrxMemoView
+        Left = 441.220780000000000000
+        Top = 464.882190000000000000
+        Width = 79.370130000000000000
+        Height = 18.897650000000000000
+        DataField = 'yungum'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.ThousandSeparator = ','
+        DisplayFormat.FormatStr = '#,0'
+        DisplayFormat.Kind = fkNumeric
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          '[frxDBDataset1."yungum"]')
+        ParentFont = False
+      end
+      object frxDBDataset1gungang: TfrxMemoView
+        Left = 441.220780000000000000
+        Top = 502.897960000000000000
+        Width = 79.370130000000000000
+        Height = 18.897650000000000000
+        DataField = 'gungang'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.ThousandSeparator = ','
+        DisplayFormat.FormatStr = '#,0'
+        DisplayFormat.Kind = fkNumeric
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          '[frxDBDataset1."gungang"]')
+        ParentFont = False
+      end
+      object frxDBDataset1yoyang: TfrxMemoView
+        Left = 441.220780000000000000
+        Top = 540.472790000000000000
+        Width = 79.370130000000000000
+        Height = 18.897650000000000000
+        DataField = 'yoyang'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.ThousandSeparator = ','
+        DisplayFormat.FormatStr = '#,0'
+        DisplayFormat.Kind = fkNumeric
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          '[frxDBDataset1."yoyang"]')
+        ParentFont = False
+      end
+      object frxDBDataset1goyong: TfrxMemoView
+        Left = 441.220780000000000000
+        Top = 578.268090000000000000
+        Width = 79.370130000000000000
+        Height = 18.897650000000000000
+        DataField = 'goyong'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.ThousandSeparator = ','
+        DisplayFormat.FormatStr = '#,0'
+        DisplayFormat.Kind = fkNumeric
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          '[frxDBDataset1."goyong"]')
+        ParentFont = False
+      end
+      object frxDBDataset1ename: TfrxMemoView
+        Left = 541.709030000000000000
+        Top = 351.496290000000000000
+        Width = 86.929190000000000000
+        Height = 18.897650000000000000
+        DataField = 'ename'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."ename"]')
+        ParentFont = False
+      end
+      object Memo40: TfrxMemoView
+        Left = 537.929500000000000000
+        Top = 388.512060000000000000
+        Width = 94.488250000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51032#51221#48512#49464#47924#49436)
+        ParentFont = False
+      end
+      object Memo41: TfrxMemoView
+        Left = 537.929500000000000000
+        Top = 427.086890000000000000
+        Width = 94.488250000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51032#51221#48512#49884#51109)
+        ParentFont = False
+      end
+      object Memo42: TfrxMemoView
+        Left = 537.929500000000000000
+        Top = 464.882190000000000000
+        Width = 94.488250000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44397#48124#50672#44552#44277#45800)
+        ParentFont = False
+      end
+      object Memo43: TfrxMemoView
+        Left = 537.929500000000000000
+        Top = 502.897960000000000000
+        Width = 94.488250000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44148#44053#48372#54744#44277#45800)
+        ParentFont = False
+      end
+      object Memo44: TfrxMemoView
+        Left = 537.929500000000000000
+        Top = 540.472790000000000000
+        Width = 94.488250000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44148#44053#48372#54744#44277#45800)
+        ParentFont = False
+      end
+      object Memo45: TfrxMemoView
+        Left = 537.929500000000000000
+        Top = 578.268090000000000000
+        Width = 94.488250000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44540#47196#48373#51648#44277#45800)
+        ParentFont = False
+      end
+      object Memo46: TfrxMemoView
+        Left = 6.118120000000000000
+        Top = 351.496290000000000000
+        Width = 45.354360000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51228'2'#54840)
+        ParentFont = False
+      end
+      object Memo47: TfrxMemoView
+        Left = 6.118120000000000000
+        Top = 388.512060000000000000
+        Width = 45.354360000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51228'2'#54840)
+        ParentFont = False
+      end
+      object Memo48: TfrxMemoView
+        Left = 6.118120000000000000
+        Top = 427.086890000000000000
+        Width = 45.354360000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51228'2'#54840)
+        ParentFont = False
+      end
+      object Memo49: TfrxMemoView
+        Left = 6.118120000000000000
+        Top = 464.882190000000000000
+        Width = 45.354360000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51228'2'#54840)
+        ParentFont = False
+      end
+      object Memo50: TfrxMemoView
+        Left = 6.118120000000000000
+        Top = 502.897960000000000000
+        Width = 45.354360000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51228'2'#54840)
+        ParentFont = False
+      end
+      object Memo51: TfrxMemoView
+        Left = 6.118120000000000000
+        Top = 540.472790000000000000
+        Width = 45.354360000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51228'2'#54840)
+        ParentFont = False
+      end
+      object Memo52: TfrxMemoView
+        Left = 6.118120000000000000
+        Top = 578.268090000000000000
+        Width = 45.354360000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51228'2'#54840)
+        ParentFont = False
+      end
+      object Line18: TfrxLineView
+        Top = 340.157700000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line19: TfrxLineView
+        Top = 377.953000000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line20: TfrxLineView
+        Top = 415.748300000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line21: TfrxLineView
+        Top = 453.543600000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line22: TfrxLineView
+        Top = 491.338900000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line23: TfrxLineView
+        Top = 529.134200000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line24: TfrxLineView
+        Top = 566.929500000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line25: TfrxLineView
+        Top = 604.724800000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line26: TfrxLineView
+        Left = 60.472480000000000000
+        Top = 302.362400000000000000
+        Width = 582.047620000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line27: TfrxLineView
+        Left = 642.520100000000000000
+        Top = 264.567100000000000000
+        Height = 340.157700000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Line28: TfrxLineView
+        Left = 57.590600000000000000
+        Top = 264.567100000000000000
+        Height = 453.543600000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Memo27: TfrxMemoView
+        Left = 65.929190000000000000
+        Top = 427.086890000000000000
+        Width = 37.795300000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44553#50668)
+        ParentFont = False
+      end
+      object Memo28: TfrxMemoView
+        Left = 65.929190000000000000
+        Top = 464.882190000000000000
+        Width = 37.795300000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44553#50668)
+        ParentFont = False
+      end
+      object Memo29: TfrxMemoView
+        Left = 65.929190000000000000
+        Top = 502.897960000000000000
+        Width = 37.795300000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44553#50668)
+        ParentFont = False
+      end
+      object Memo30: TfrxMemoView
+        Left = 65.929190000000000000
+        Top = 540.472790000000000000
+        Width = 37.795300000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44553#50668)
+        ParentFont = False
+      end
+      object Memo31: TfrxMemoView
+        Left = 65.929190000000000000
+        Top = 578.268090000000000000
+        Width = 37.795300000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44553#50668)
+        ParentFont = False
+      end
+      object Line29: TfrxLineView
+        Left = 113.283550000000000000
+        Top = 302.362400000000000000
+        Height = 302.362400000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Line30: TfrxLineView
+        Left = 207.874150000000000000
+        Top = 302.362400000000000000
+        Height = 340.157700000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Line31: TfrxLineView
+        Left = 434.748300000000000000
+        Top = 264.567100000000000000
+        Height = 377.953000000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Line32: TfrxLineView
+        Left = 529.236550000000000000
+        Top = 302.362400000000000000
+        Height = 340.157700000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object frxDBDataset1jigubil: TfrxMemoView
+        Left = 548.031850000000000000
+        Top = 200.315090000000000000
+        Width = 132.283550000000000000
+        Height = 18.897650000000000000
+        DataField = 'jigubil'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          '[frxDBDataset1."jigubil"]')
+        ParentFont = False
+      end
+      object Memo53: TfrxMemoView
+        Left = 211.653680000000000000
+        Top = 200.315090000000000000
+        Width = 132.283550000000000000
+        Height = 18.897650000000000000
+        DataField = 'jigubil'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          '[frxDBDataset1."jigubil"]')
+        ParentFont = False
+      end
+      object Line33: TfrxLineView
+        Top = 982.677800000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+        Frame.Width = 2.000000000000000000
+      end
+      object Line34: TfrxLineView
+        Left = 718.331170000000000000
+        Top = 75.590600000000000000
+        Height = 907.087200000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+        Frame.Width = 2.000000000000000000
+      end
+      object Line35: TfrxLineView
+        Top = 642.520100000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Memo54: TfrxMemoView
+        Left = 132.283550000000000000
+        Top = 616.283860000000000000
+        Width = 37.795300000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = [fsBold]
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #54633#44228)
+        ParentFont = False
+      end
+      object Line36: TfrxLineView
+        Top = 718.110700000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line37: TfrxLineView
+        Top = 793.701300000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Memo55: TfrxMemoView
+        Left = 15.118120000000000000
+        Top = 665.638220000000000000
+        Width = 30.236240000000000000
+        Height = 37.795300000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          #51613#48729#51088#47308)
+        ParentFont = False
+      end
+      object Memo56: TfrxMemoView
+        Left = 86.929190000000000000
+        Top = 661.417750000000000000
+        Width = 582.047620000000000000
+        Height = 41.574830000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          
+            #51228'1'#54840': '#44540#47924#49345#54889#48512', '#49884#44036#50808' '#44540#47924#49345#54889#54364', '#50896#52380#51669#49688#45225#48512#50689#49688#51613', '#44228#51340#49324#48376', '#44228#51340#51060#52404' '#54869#51064#51613', '#51076#44552#47749#49464#49436', 4'#45824#48372#54744#47308' '#44256 +
+            #51648#45236#50669#49436)
+        ParentFont = False
+      end
+      object Memo57: TfrxMemoView
+        Left = 222.992270000000000000
+        Top = 735.008350000000000000
+        Width = 275.905690000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #50948' '#44552#50529#51012' '#51064#52636#54616#50668' '#51648#44553#54616#44256#51088' '#54633#45768#45796'.')
+        ParentFont = False
+      end
+      object frxDBDataset1jigubil1: TfrxMemoView
+        Left = 264.567100000000000000
+        Top = 763.465060000000000000
+        Width = 166.299320000000000000
+        Height = 18.897650000000000000
+        DataField = 'jigubil'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."jigubil"]')
+        ParentFont = False
+      end
+      object Memo58: TfrxMemoView
+        Left = 22.677180000000000000
+        Top = 812.598950000000000000
+        Width = 684.094930000000000000
+        Height = 117.165430000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          '* '#44057#51008' '#45216#51676#50640' '#50668#47084' '#44148#51012' '#51648#52636#54616#45716' '#44221#50864' 1'#44060' '#51648#52636#44208#51032#49436#50640' '#51068#44292' '#44032#45733'('#51648#52636' '#45216#51676#44032' '#45796#47480' '#44221#50864' '#48520#44032')'
+          '   '#8251' '#45216#51676#44032' '#46041#51068#54616#45908#46972#46020' '#51648#52636' '#54637#47785#51060' '#45796#47484' '#49884' '#48152#46300#49884' '#48516#47532#54616#50668' '#54408#51032#54644#50556' '#54632'.'
+          '* '#44208#51116#46976': '#45800#52404#51032' '#51649#51228' '#46321' '#54788#54889#50640' '#46384#46972' '#49688#51221#54616#50668' '#49324#50857' '
+          '* '#48156#51032' '#48143' '#50896#51064#54665#50948': '#51648#52636#44228#54925#51012' '#49688#47549#54620' '#45216#51676' '#46608#45716' '#54408#51032#54620' '#45216#51676
+          '* '#51648#52636#48512#44592#51116#51068': '#53685#51109#50640#49436' '#51088#44552#51012' '#51064#52636#54620' '#45216#51676'('#54924#44228#51109#48512'-'#51648#52636#48512#50640' '#46321#51116#54620' '#45216#51676')'
+          '* '#51613#48729#51088#47308': '#48708#47785#48324#47196' '#51648#52636#50640' '#54596#50836#54620' '#52397#44396', '#51613#48729#50640' '#54596#50836#54620' '#51088#47308#47484' '#44592#51116#54616#44256' '#54644#45817#51088#47308' '#52392#48512
+          '* '#44036#51060#50689#49688#51613' '#52392#48512' '#48520#44032)
+        ParentFont = False
+      end
+      object Memo59: TfrxMemoView
+        Left = 46.456710000000000000
+        Top = 43.354360000000000000
+        Width = 105.826840000000000000
+        Height = 30.236240000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51648#52636#44208#51032#48264#54840
+          #51228' 2 '#54840)
+        ParentFont = False
+      end
+      object frxDBDataset1total_out_amount: TfrxMemoView
+        Left = 441.205010000000000000
+        Top = 615.063390000000000000
+        Width = 79.370130000000000000
+        Height = 18.897650000000000000
+        DataField = 'total_out_amount'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.ThousandSeparator = ','
+        DisplayFormat.FormatStr = '#,0'
+        DisplayFormat.Kind = fkNumeric
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = [fsBold]
+        HAlign = haRight
+        Memo.UTF8W = (
+          '[frxDBDataset1."total_out_amount"]')
+        ParentFont = False
+      end
+    end
+  end
+  object frxReport3: TfrxReport
+    Version = '5.1.9'
+    DataSet = frxDBDataset1
+    DataSetName = 'frxDBDataset1'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 44985.266758958300000000
+    ReportOptions.LastChange = 44985.266758958300000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 1032
+    Top = 64
+    Datasets = <
+      item
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+      end>
+    Variables = <>
+    Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      object Memo1: TfrxMemoView
+        Left = 230.551330000000000000
+        Top = 41.574830000000000000
+        Width = 200.315090000000000000
+        Height = 30.236240000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -27
+        Font.Name = #44404#47548#52404
+        Font.Style = [fsBold]
+        Memo.UTF8W = (
+          #51648' '#52636' '#44208' '#51032' '#49436)
+        ParentFont = False
+      end
+      object frxDBDataset1busu: TfrxMemoView
+        Left = 37.795300000000000000
+        Top = 102.047310000000000000
+        Width = 340.157700000000000000
+        Height = 30.236240000000000000
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -24
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."busu"] '#51452#48124#51088#52824#54924)
+        ParentFont = False
+        VAlign = vaCenter
+      end
+      object Memo2: TfrxMemoView
+        Left = 408.189240000000000000
+        Top = 86.929190000000000000
+        Width = 18.897650000000000000
+        Height = 56.692950000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -15
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          #44208
+          ''
+          #51116)
+        ParentFont = False
+      end
+      object Memo3: TfrxMemoView
+        Left = 457.323130000000000000
+        Top = 82.929190000000000000
+        Width = 52.913420000000000000
+        Height = 15.118120000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -15
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #45812#45817#51088)
+        ParentFont = False
+      end
+      object Memo4: TfrxMemoView
+        Left = 551.811380000000000000
+        Top = 82.929190000000000000
+        Width = 52.913420000000000000
+        Height = 15.118120000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -15
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #48512#54924#51109)
+        ParentFont = False
+      end
+      object Memo5: TfrxMemoView
+        Left = 646.299630000000000000
+        Top = 82.929190000000000000
+        Width = 52.913420000000000000
+        Height = 15.118120000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -15
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #54924'  '#51109)
+        ParentFont = False
+      end
+      object Line1: TfrxLineView
+        Left = 438.425480000000000000
+        Top = 75.590600000000000000
+        Height = 75.590600000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Line2: TfrxLineView
+        Left = 529.134200000000000000
+        Top = 75.590600000000000000
+        Height = 75.590600000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Line3: TfrxLineView
+        Left = 623.622450000000000000
+        Top = 75.590600000000000000
+        Height = 75.590600000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Line4: TfrxLineView
+        Left = 396.850650000000000000
+        Top = 75.590600000000000000
+        Height = 75.590600000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object frxDBDataset1total_amount_string: TfrxMemoView
+        Left = 37.795300000000000000
+        Top = 162.519790000000000000
+        Width = 638.740570000000000000
+        Height = 18.897650000000000000
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = [fsBold, fsUnderline]
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."total_amount_string"]')
+        ParentFont = False
+        VAlign = vaCenter
+      end
+      object Line5: TfrxLineView
+        Top = 188.976500000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line6: TfrxLineView
+        Top = 151.181200000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line7: TfrxLineView
+        Left = 438.425480000000000000
+        Top = 105.826840000000000000
+        Width = 279.685220000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line8: TfrxLineView
+        Left = 188.976500000000000000
+        Top = 75.590600000000000000
+        Width = 529.134200000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+        Frame.Width = 2.000000000000000000
+      end
+      object Line9: TfrxLineView
+        Top = 75.590600000000000000
+        Width = 188.976500000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line10: TfrxLineView
+        Top = 37.795300000000000000
+        Width = 188.976500000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+        Frame.Width = 2.000000000000000000
+      end
+      object Line11: TfrxLineView
+        Left = 188.976500000000000000
+        Top = 37.795300000000000000
+        Height = 37.795300000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+        Frame.Width = 2.000000000000000000
+      end
+      object Line12: TfrxLineView
+        Top = 37.795300000000000000
+        Height = 944.882500000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+        Frame.Width = 2.000000000000000000
+      end
+      object Line13: TfrxLineView
+        Top = 226.771800000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line14: TfrxLineView
+        Top = 264.567100000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Memo6: TfrxMemoView
+        Left = 18.897650000000000000
+        Top = 200.315090000000000000
+        Width = 143.622140000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          #48156#51032' '#48143' '#50896#51064#54665#50948)
+        ParentFont = False
+      end
+      object Memo7: TfrxMemoView
+        Left = 415.748300000000000000
+        Top = 200.315090000000000000
+        Width = 75.590600000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          #51648' '#52636' '#51068)
+        ParentFont = False
+      end
+      object Line15: TfrxLineView
+        Left = 188.976500000000000000
+        Top = 188.976500000000000000
+        Height = 37.795300000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Line16: TfrxLineView
+        Left = 377.953000000000000000
+        Top = 188.976500000000000000
+        Height = 37.795300000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Line17: TfrxLineView
+        Left = 529.134200000000000000
+        Top = 188.976500000000000000
+        Height = 37.795300000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Memo8: TfrxMemoView
+        Left = 275.905690000000000000
+        Top = 238.110390000000000000
+        Width = 98.267780000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          #51648' '#52636' '#45236' '#50669)
+        ParentFont = False
+      end
+      object Memo9: TfrxMemoView
+        Left = 173.858380000000000000
+        Top = 275.905690000000000000
+        Width = 120.944960000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          #51648#52636#49464#48512#45236#50669)
+        ParentFont = False
+      end
+      object Memo10: TfrxMemoView
+        Left = 495.118430000000000000
+        Top = 275.905690000000000000
+        Width = 120.944960000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          #52292#51452'('#51648#44553#52376')')
+        ParentFont = False
+      end
+      object Memo11: TfrxMemoView
+        Left = 533.338900000000000000
+        Top = 313.921460000000000000
+        Width = 105.826840000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          #49345#54840'/'#49457#47749'('#45824#54364')')
+        ParentFont = False
+      end
+      object Memo12: TfrxMemoView
+        Left = 648.961040000000000000
+        Top = 294.803340000000000000
+        Width = 60.472480000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51648#44553#48169#48277)
+        ParentFont = False
+      end
+      object Memo13: TfrxMemoView
+        Left = 455.527830000000000000
+        Top = 313.921460000000000000
+        Width = 45.354360000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44552#50529)
+        ParentFont = False
+      end
+      object Memo14: TfrxMemoView
+        Left = 238.110390000000000000
+        Top = 313.921460000000000000
+        Width = 120.944960000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #49328#52636#45236#50669)
+        ParentFont = False
+      end
+      object Memo15: TfrxMemoView
+        Left = 141.401670000000000000
+        Top = 313.921460000000000000
+        Width = 37.795300000000000000
+        Height = 15.118120000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51201#50836)
+        ParentFont = False
+      end
+      object Memo16: TfrxMemoView
+        Left = 65.590600000000000000
+        Top = 313.921460000000000000
+        Width = 37.795300000000000000
+        Height = 15.118120000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #48708#47785)
+        ParentFont = False
+      end
+      object Memo17: TfrxMemoView
+        Left = 15.559060000000000000
+        Top = 277.905690000000000000
+        Width = 30.236240000000000000
+        Height = 49.133890000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          #51648#52636#44208#51032#48264#54840)
+        ParentFont = False
+      end
+      object Memo21: TfrxMemoView
+        Left = 649.299630000000000000
+        Top = 351.882190000000000000
+        Width = 60.472480000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44228#51340#51060#52404)
+        ParentFont = False
+      end
+      object Memo22: TfrxMemoView
+        Left = 649.299630000000000000
+        Top = 389.897960000000000000
+        Width = 60.472480000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44228#51340#51060#52404)
+        ParentFont = False
+      end
+      object Memo23: TfrxMemoView
+        Left = 649.299630000000000000
+        Top = 426.472790000000000000
+        Width = 60.472480000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44228#51340#51060#52404)
+        ParentFont = False
+      end
+      object Memo24: TfrxMemoView
+        Left = 649.299630000000000000
+        Top = 483.268090000000000000
+        Width = 60.472480000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44228#51340#51060#52404)
+        ParentFont = False
+      end
+      object Memo34: TfrxMemoView
+        Left = 142.952845000000000000
+        Top = 344.882190000000000000
+        Width = 34.015770000000000000
+        Height = 30.236240000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44397#48124#50672#44552)
+        ParentFont = False
+      end
+      object Memo35: TfrxMemoView
+        Left = 142.952845000000000000
+        Top = 381.897960000000000000
+        Width = 34.015770000000000000
+        Height = 30.236240000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44148#44053#48372#54744)
+        ParentFont = False
+      end
+      object Memo36: TfrxMemoView
+        Left = 137.283550000000000000
+        Top = 420.472790000000000000
+        Width = 45.354360000000000000
+        Height = 30.236240000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51109#44592#50836#50577#48372#54744)
+        ParentFont = False
+      end
+      object Memo37: TfrxMemoView
+        Left = 144.842610000000000000
+        Top = 476.268090000000000000
+        Width = 30.236240000000000000
+        Height = 37.795300000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44256#50857#48372#54744)
+        ParentFont = False
+      end
+      object frxDBDataset1calc_note5: TfrxMemoView
+        Left = 215.346630000000000000
+        Top = 351.882190000000000000
+        Width = 215.433210000000000000
+        Height = 18.897650000000000000
+        DataField = 'calc_note5'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."calc_note5"]')
+        ParentFont = False
+      end
+      object frxDBDataset1calc_note6: TfrxMemoView
+        Left = 215.346630000000000000
+        Top = 389.897960000000000000
+        Width = 215.433210000000000000
+        Height = 18.897650000000000000
+        DataField = 'calc_note6'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."calc_note6"]')
+        ParentFont = False
+      end
+      object frxDBDataset1calc_note7: TfrxMemoView
+        Left = 215.346630000000000000
+        Top = 426.472790000000000000
+        Width = 215.433210000000000000
+        Height = 18.897650000000000000
+        DataField = 'calc_note7'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."calc_note7"]')
+        ParentFont = False
+      end
+      object frxDBDataset1yungum: TfrxMemoView
+        Left = 441.220780000000000000
+        Top = 351.882190000000000000
+        Width = 79.370130000000000000
+        Height = 18.897650000000000000
+        DataField = 'yungum'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.ThousandSeparator = ','
+        DisplayFormat.FormatStr = '#,0'
+        DisplayFormat.Kind = fkNumeric
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          '[frxDBDataset1."yungum"]')
+        ParentFont = False
+      end
+      object frxDBDataset1gungang: TfrxMemoView
+        Left = 441.220780000000000000
+        Top = 389.897960000000000000
+        Width = 79.370130000000000000
+        Height = 18.897650000000000000
+        DataField = 'gungang'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.ThousandSeparator = ','
+        DisplayFormat.FormatStr = '#,0'
+        DisplayFormat.Kind = fkNumeric
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          '[frxDBDataset1."gungang"]')
+        ParentFont = False
+      end
+      object frxDBDataset1yoyang: TfrxMemoView
+        Left = 441.220780000000000000
+        Top = 426.472790000000000000
+        Width = 79.370130000000000000
+        Height = 18.897650000000000000
+        DataField = 'yoyang'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.ThousandSeparator = ','
+        DisplayFormat.FormatStr = '#,0'
+        DisplayFormat.Kind = fkNumeric
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          '[frxDBDataset1."yoyang"]')
+        ParentFont = False
+      end
+      object frxDBDataset1goyong: TfrxMemoView
+        Left = 441.220780000000000000
+        Top = 464.268090000000000000
+        Width = 79.370130000000000000
+        Height = 18.897650000000000000
+        DataField = 'goyong'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.ThousandSeparator = ','
+        DisplayFormat.FormatStr = '#,0'
+        DisplayFormat.Kind = fkNumeric
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          '[frxDBDataset1."goyong"]')
+        ParentFont = False
+      end
+      object Memo42: TfrxMemoView
+        Left = 537.929500000000000000
+        Top = 351.882190000000000000
+        Width = 94.488250000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44397#48124#50672#44552#44277#45800)
+        ParentFont = False
+      end
+      object Memo43: TfrxMemoView
+        Left = 537.929500000000000000
+        Top = 389.897960000000000000
+        Width = 94.488250000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44148#44053#48372#54744#44277#45800)
+        ParentFont = False
+      end
+      object Memo44: TfrxMemoView
+        Left = 537.929500000000000000
+        Top = 426.472790000000000000
+        Width = 94.488250000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44148#44053#48372#54744#44277#45800)
+        ParentFont = False
+      end
+      object Memo45: TfrxMemoView
+        Left = 537.929500000000000000
+        Top = 483.268090000000000000
+        Width = 94.488250000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44540#47196#48373#51648#44277#45800)
+        ParentFont = False
+      end
+      object Memo49: TfrxMemoView
+        Left = 6.118120000000000000
+        Top = 351.882190000000000000
+        Width = 45.354360000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51228'3'#54840)
+        ParentFont = False
+      end
+      object Memo50: TfrxMemoView
+        Left = 6.118120000000000000
+        Top = 389.897960000000000000
+        Width = 45.354360000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51228'3'#54840)
+        ParentFont = False
+      end
+      object Memo51: TfrxMemoView
+        Left = 6.118120000000000000
+        Top = 426.472790000000000000
+        Width = 45.354360000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51228'3'#54840)
+        ParentFont = False
+      end
+      object Memo52: TfrxMemoView
+        Left = 6.118120000000000000
+        Top = 484.268090000000000000
+        Width = 45.354360000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51228'3'#54840)
+        ParentFont = False
+      end
+      object Line18: TfrxLineView
+        Top = 340.157700000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line19: TfrxLineView
+        Top = 377.953000000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line20: TfrxLineView
+        Top = 415.748300000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line21: TfrxLineView
+        Top = 453.543600000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line22: TfrxLineView
+        Left = 188.976500000000000000
+        Top = 491.338900000000000000
+        Width = 340.157700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line23: TfrxLineView
+        Top = 529.134200000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line24: TfrxLineView
+        Top = 566.929500000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line25: TfrxLineView
+        Top = 604.724800000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line26: TfrxLineView
+        Left = 60.472480000000000000
+        Top = 302.362400000000000000
+        Width = 582.047620000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line27: TfrxLineView
+        Left = 642.520100000000000000
+        Top = 264.567100000000000000
+        Height = 340.157700000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Line28: TfrxLineView
+        Left = 57.590600000000000000
+        Top = 264.567100000000000000
+        Height = 453.543600000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Memo28: TfrxMemoView
+        Left = 64.929190000000000000
+        Top = 343.882190000000000000
+        Width = 60.472480000000000000
+        Height = 30.236240000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #49324#54924#48372#54744#48512#45812#44552)
+        ParentFont = False
+      end
+      object Line29: TfrxLineView
+        Left = 132.283550000000000000
+        Top = 302.362400000000000000
+        Height = 302.362400000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Line30: TfrxLineView
+        Left = 187.874150000000000000
+        Top = 302.362400000000000000
+        Height = 340.157700000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Line31: TfrxLineView
+        Left = 434.748300000000000000
+        Top = 264.567100000000000000
+        Height = 377.953000000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Line32: TfrxLineView
+        Left = 529.236550000000000000
+        Top = 302.362400000000000000
+        Height = 340.157700000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object frxDBDataset1jigubil: TfrxMemoView
+        Left = 548.031850000000000000
+        Top = 200.315090000000000000
+        Width = 132.283550000000000000
+        Height = 18.897650000000000000
+        DataField = 'jigubil'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          '[frxDBDataset1."jigubil"]')
+        ParentFont = False
+      end
+      object Memo53: TfrxMemoView
+        Left = 211.653680000000000000
+        Top = 200.315090000000000000
+        Width = 132.283550000000000000
+        Height = 18.897650000000000000
+        DataField = 'jigubil'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          '[frxDBDataset1."jigubil"]')
+        ParentFont = False
+      end
+      object Line33: TfrxLineView
+        Top = 982.677800000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+        Frame.Width = 2.000000000000000000
+      end
+      object Line34: TfrxLineView
+        Left = 718.331170000000000000
+        Top = 75.590600000000000000
+        Height = 907.087200000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+        Frame.Width = 2.000000000000000000
+      end
+      object Line35: TfrxLineView
+        Top = 642.520100000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Memo54: TfrxMemoView
+        Left = 132.283550000000000000
+        Top = 616.283860000000000000
+        Width = 37.795300000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = [fsBold]
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #54633#44228)
+        ParentFont = False
+      end
+      object Line36: TfrxLineView
+        Top = 718.110700000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Line37: TfrxLineView
+        Top = 793.701300000000000000
+        Width = 718.110700000000000000
+        Color = clBlack
+        Frame.Typ = [ftTop]
+      end
+      object Memo55: TfrxMemoView
+        Left = 15.118120000000000000
+        Top = 665.638220000000000000
+        Width = 30.236240000000000000
+        Height = 37.795300000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          #51613#48729#51088#47308)
+        ParentFont = False
+      end
+      object Memo56: TfrxMemoView
+        Left = 86.929190000000000000
+        Top = 673.417750000000000000
+        Width = 582.047620000000000000
+        Height = 15.118120000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          #51228'3'#54840': 4'#45824#48372#54744#54633#49328#48372#54744#47308' '#44256#51648#45236#50669#49436', '#44228#51340#51060#52404' '#54869#51064#51613)
+        ParentFont = False
+      end
+      object Memo57: TfrxMemoView
+        Left = 222.992270000000000000
+        Top = 735.008350000000000000
+        Width = 275.905690000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #50948' '#44552#50529#51012' '#51064#52636#54616#50668' '#51648#44553#54616#44256#51088' '#54633#45768#45796'.')
+        ParentFont = False
+      end
+      object frxDBDataset1jigubil1: TfrxMemoView
+        Left = 264.567100000000000000
+        Top = 763.465060000000000000
+        Width = 166.299320000000000000
+        Height = 18.897650000000000000
+        DataField = 'jigubil'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '[frxDBDataset1."jigubil"]')
+        ParentFont = False
+      end
+      object Memo58: TfrxMemoView
+        Left = 22.677180000000000000
+        Top = 812.598950000000000000
+        Width = 684.094930000000000000
+        Height = 117.165430000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        Memo.UTF8W = (
+          '* '#44057#51008' '#45216#51676#50640' '#50668#47084' '#44148#51012' '#51648#52636#54616#45716' '#44221#50864' 1'#44060' '#51648#52636#44208#51032#49436#50640' '#51068#44292' '#44032#45733'('#51648#52636' '#45216#51676#44032' '#45796#47480' '#44221#50864' '#48520#44032')'
+          '   '#8251' '#45216#51676#44032' '#46041#51068#54616#45908#46972#46020' '#51648#52636' '#54637#47785#51060' '#45796#47484' '#49884' '#48152#46300#49884' '#48516#47532#54616#50668' '#54408#51032#54644#50556' '#54632'.'
+          '* '#44208#51116#46976': '#45800#52404#51032' '#51649#51228' '#46321' '#54788#54889#50640' '#46384#46972' '#49688#51221#54616#50668' '#49324#50857' '
+          '* '#48156#51032' '#48143' '#50896#51064#54665#50948': '#51648#52636#44228#54925#51012' '#49688#47549#54620' '#45216#51676' '#46608#45716' '#54408#51032#54620' '#45216#51676
+          '* '#51648#52636#48512#44592#51116#51068': '#53685#51109#50640#49436' '#51088#44552#51012' '#51064#52636#54620' '#45216#51676'('#54924#44228#51109#48512'-'#51648#52636#48512#50640' '#46321#51116#54620' '#45216#51676')'
+          '* '#51613#48729#51088#47308': '#48708#47785#48324#47196' '#51648#52636#50640' '#54596#50836#54620' '#52397#44396', '#51613#48729#50640' '#54596#50836#54620' '#51088#47308#47484' '#44592#51116#54616#44256' '#54644#45817#51088#47308' '#52392#48512
+          '* '#44036#51060#50689#49688#51613' '#52392#48512' '#48520#44032)
+        ParentFont = False
+      end
+      object Memo59: TfrxMemoView
+        Left = 46.456710000000000000
+        Top = 43.354360000000000000
+        Width = 105.826840000000000000
+        Height = 30.236240000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51648#52636#44208#51032#48264#54840
+          #51228' 3 '#54840)
+        ParentFont = False
+      end
+      object frxDBDataset1total_out_amount: TfrxMemoView
+        Left = 441.205010000000000000
+        Top = 615.063390000000000000
+        Width = 79.370130000000000000
+        Height = 18.897650000000000000
+        DataField = 'total_out_amount'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.ThousandSeparator = ','
+        DisplayFormat.FormatStr = '#,0'
+        DisplayFormat.Kind = fkNumeric
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = [fsBold]
+        HAlign = haRight
+        Memo.UTF8W = (
+          '[frxDBDataset1."total_out_amount"]')
+        ParentFont = False
+      end
+      object Memo18: TfrxMemoView
+        Left = 64.252010000000000000
+        Top = 381.732530000000000000
+        Width = 60.472480000000000000
+        Height = 30.236240000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #49324#54924#48372#54744#48512#45812#44552)
+        ParentFont = False
+      end
+      object Memo19: TfrxMemoView
+        Left = 64.252010000000000000
+        Top = 419.527830000000000000
+        Width = 60.472480000000000000
+        Height = 30.236240000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #49324#54924#48372#54744#48512#45812#44552)
+        ParentFont = False
+      end
+      object Memo20: TfrxMemoView
+        Left = 64.252010000000000000
+        Top = 477.323130000000000000
+        Width = 60.472480000000000000
+        Height = 30.236240000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #49324#54924#48372#54744#48512#45812#44552)
+        ParentFont = False
+      end
+      object Memo25: TfrxMemoView
+        Left = 64.252010000000000000
+        Top = 534.118430000000000000
+        Width = 60.472480000000000000
+        Height = 30.236240000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #49324#54924#48372#54744#48512#45812#44552)
+        ParentFont = False
+      end
+      object Memo26: TfrxMemoView
+        Left = 7.559060000000000000
+        Top = 537.897960000000000000
+        Width = 45.354360000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #51228'3'#54840)
+        ParentFont = False
+      end
+      object Memo27: TfrxMemoView
+        Left = 142.952845000000000000
+        Top = 533.677490000000000000
+        Width = 34.015770000000000000
+        Height = 30.236240000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #49328#51116#48372#54744)
+        ParentFont = False
+      end
+      object Line38: TfrxLineView
+        Left = 265.464750000000000000
+        Top = 453.543600000000000000
+        Height = 75.590600000000000000
+        Color = clBlack
+        Frame.Typ = [ftLeft]
+      end
+      object Memo29: TfrxMemoView
+        Left = 193.653680000000000000
+        Top = 458.102660000000000000
+        Width = 64.252010000000000000
+        Height = 30.236240000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #49892#50629#44553#50668#48372#54744#47308)
+        ParentFont = False
+      end
+      object Memo30: TfrxMemoView
+        Left = 190.433210000000000000
+        Top = 495.118430000000000000
+        Width = 71.811070000000000000
+        Height = 30.236240000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44256#50504#51649#45733
+          #44060#48156#48372#54744#47308)
+        ParentFont = False
+      end
+      object Memo31: TfrxMemoView
+        Left = 266.244280000000000000
+        Top = 459.323130000000000000
+        Width = 170.078850000000000000
+        Height = 30.236240000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '2,211,220*0.9% +'
+          #51116#49328#51221#48372#54744#47308'(1'#50900#48516#51068#54624#44228#49328')')
+        ParentFont = False
+      end
+      object Memo32: TfrxMemoView
+        Left = 264.567100000000000000
+        Top = 495.118430000000000000
+        Width = 170.078850000000000000
+        Height = 30.236240000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '2,211,220*0.25% +'
+          #51116#49328#51221#48372#54744#47308'(1'#50900#48516#51068#54624#44228#49328')')
+        ParentFont = False
+      end
+      object Memo33: TfrxMemoView
+        Left = 226.771800000000000000
+        Top = 532.913730000000000000
+        Width = 170.078850000000000000
+        Height = 30.236240000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          '2,211,220*1.06% +'
+          #51116#49328#51221#48372#54744#47308'(1'#50900#48516#51068#54624#44228#49328')')
+        ParentFont = False
+      end
+      object Memo38: TfrxMemoView
+        Left = 441.205010000000000000
+        Top = 500.897960000000000000
+        Width = 79.370130000000000000
+        Height = 15.118120000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          '9,080')
+        ParentFont = False
+      end
+      object Memo40: TfrxMemoView
+        Left = 651.842920000000000000
+        Top = 540.472790000000000000
+        Width = 60.472480000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44228#51340#51060#52404)
+        ParentFont = False
+      end
+      object Memo41: TfrxMemoView
+        Left = 540.472790000000000000
+        Top = 540.472790000000000000
+        Width = 94.488250000000000000
+        Height = 18.897650000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          #44540#47196#48373#51648#44277#45800)
+        ParentFont = False
+      end
+      object frxDBDataset1sanjae: TfrxMemoView
+        Left = 442.205010000000000000
+        Top = 540.472790000000000000
+        Width = 79.370130000000000000
+        Height = 18.897650000000000000
+        DataField = 'sanjae'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        DisplayFormat.ThousandSeparator = ','
+        DisplayFormat.FormatStr = '#,0'
+        DisplayFormat.Kind = fkNumeric
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = #48148#53461#52404
+        Font.Style = []
+        HAlign = haRight
+        Memo.UTF8W = (
+          '[frxDBDataset1."sanjae"]')
+        ParentFont = False
+      end
+    end
   end
 end

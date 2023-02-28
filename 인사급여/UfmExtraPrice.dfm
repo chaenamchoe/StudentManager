@@ -25,8 +25,6 @@ object fmExtraPrice: TfmExtraPrice
     Align = alLeft
     Caption = #52628#44032#51076#44552
     TabOrder = 0
-    ExplicitTop = 8
-    ExplicitHeight = 256
     object Label1: TLabel
       Left = 39
       Top = 40
@@ -120,8 +118,6 @@ object fmExtraPrice: TfmExtraPrice
     Align = alLeft
     Caption = #52628#44032#44277#51228
     TabOrder = 1
-    ExplicitTop = 8
-    ExplicitHeight = 303
     object Label2: TLabel
       Left = 48
       Top = 40
@@ -160,7 +156,7 @@ object fmExtraPrice: TfmExtraPrice
     object YUNGUM: TcxCurrencyEdit
       Left = 115
       Top = 37
-      EditValue = 0
+      EditValue = '99490'
       Properties.Alignment.Horz = taRightJustify
       Properties.DisplayFormat = ',0;-,0'
       Properties.UseLeftAlignmentOnEditing = False
@@ -171,7 +167,7 @@ object fmExtraPrice: TfmExtraPrice
     object GOYONG_BOHUM: TcxCurrencyEdit
       Left = 115
       Top = 68
-      EditValue = 0
+      EditValue = '32730'
       Properties.Alignment.Horz = taRightJustify
       Properties.DisplayFormat = ',0;-,0'
       Properties.UseLeftAlignmentOnEditing = False
@@ -182,7 +178,7 @@ object fmExtraPrice: TfmExtraPrice
     object GUNGANG_BOHUM: TcxCurrencyEdit
       Left = 115
       Top = 99
-      EditValue = 0
+      EditValue = '78380'
       Properties.Alignment.Horz = taRightJustify
       Properties.DisplayFormat = ',0;-,0'
       Properties.UseLeftAlignmentOnEditing = False
@@ -193,7 +189,7 @@ object fmExtraPrice: TfmExtraPrice
     object YOYANG_BOHUM: TcxCurrencyEdit
       Left = 115
       Top = 130
-      EditValue = 0
+      EditValue = '10040'
       Properties.Alignment.Horz = taRightJustify
       Properties.DisplayFormat = ',0;-,0'
       Properties.UseLeftAlignmentOnEditing = False

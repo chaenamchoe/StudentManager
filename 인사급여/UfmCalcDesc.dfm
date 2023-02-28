@@ -3,7 +3,7 @@ object fmCalcDesc: TfmCalcDesc
   Top = 0
   BorderStyle = bsDialog
   Caption = #49328#52636#49885
-  ClientHeight = 258
+  ClientHeight = 365
   ClientWidth = 626
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -20,14 +20,11 @@ object fmCalcDesc: TfmCalcDesc
     Left = 3
     Top = 3
     Width = 620
-    Height = 252
+    Height = 359
     Align = alClient
     Caption = #49328#52636#49885' '#46608#45716' '#49328#52636#48169#48277
     TabOrder = 0
-    ExplicitLeft = 24
-    ExplicitTop = 24
-    ExplicitWidth = 185
-    ExplicitHeight = 105
+    ExplicitHeight = 252
     object Label1: TLabel
       Left = 88
       Top = 40
@@ -56,28 +53,57 @@ object fmCalcDesc: TfmCalcDesc
       Height = 17
       Caption = #44032#51313#49688#45817':'
     end
-    object Edit1: TEdit
+    object Label5: TLabel
+      Left = 74
+      Top = 164
+      Width = 61
+      Height = 17
+      Caption = #44397#48124#50672#44552':'
+    end
+    object Label6: TLabel
+      Left = 74
+      Top = 195
+      Width = 61
+      Height = 17
+      Caption = #44148#44053#48372#54744':'
+    end
+    object Label7: TLabel
+      Left = 46
+      Top = 226
+      Width = 89
+      Height = 17
+      Caption = #51109#44592#50836#50577#48372#54744':'
+    end
+    object Label8: TLabel
+      Left = 74
+      Top = 257
+      Width = 61
+      Height = 17
+      Caption = #44256#50857#48372#54744':'
+    end
+    object BASIC_PAY: TEdit
       Left = 141
       Top = 37
       Width = 436
       Height = 25
       TabOrder = 0
     end
-    object Edit2: TEdit
+    object EXTEND_TIME: TEdit
       Left = 141
       Top = 68
       Width = 436
       Height = 25
       TabOrder = 1
+      Text = '15,870*'#49884#44036#50808#44540#47924' '#49884#44036
     end
-    object Edit3: TEdit
+    object BONUS_PAY: TEdit
       Left = 141
       Top = 99
       Width = 436
       Height = 25
       TabOrder = 2
     end
-    object Edit4: TEdit
+    object FAMILY_PAY: TEdit
       Left = 141
       Top = 130
       Width = 436
@@ -85,8 +111,8 @@ object fmCalcDesc: TfmCalcDesc
       TabOrder = 3
     end
     object btnSaveColumn: TcxButton
-      Left = 205
-      Top = 181
+      Left = 197
+      Top = 309
       Width = 84
       Height = 26
       Hint = #51312#54924#52972#47100#49444#51221#51200#51109
@@ -134,8 +160,8 @@ object fmCalcDesc: TfmCalcDesc
       TabOrder = 4
     end
     object btnDelete: TcxButton
-      Left = 299
-      Top = 181
+      Left = 291
+      Top = 309
       Width = 81
       Height = 26
       Caption = #52712#49548
@@ -180,6 +206,38 @@ object fmCalcDesc: TfmCalcDesc
       ParentShowHint = False
       ShowHint = True
       TabOrder = 5
+    end
+    object YUNGUM: TEdit
+      Left = 141
+      Top = 161
+      Width = 436
+      Height = 25
+      TabOrder = 6
+      Text = #44592#48376#44553' * 4.5%'
+    end
+    object GUNGANG: TEdit
+      Left = 141
+      Top = 192
+      Width = 436
+      Height = 25
+      TabOrder = 7
+      Text = #44592#48376#44553' * 3.545%'
+    end
+    object YOYANG: TEdit
+      Left = 141
+      Top = 223
+      Width = 436
+      Height = 25
+      TabOrder = 8
+      Text = #44148#44053#48372#54744#47308'*(0.9082%/7.09%)'
+    end
+    object GOYONG: TEdit
+      Left = 141
+      Top = 254
+      Width = 436
+      Height = 25
+      TabOrder = 9
+      Text = #44592#48376#44553'*0.9%'
     end
   end
 end

@@ -612,7 +612,7 @@ object fmTeacherPay: TfmTeacherPay
       Navigator.InfoPanel.Visible = True
       Navigator.Visible = True
       DataController.DataSource = d_TEACHER_MONTHLY_PAY_SEL
-      DataController.Options = [dcoAssignGroupingValues, dcoAssignMasterDetailKeys, dcoSaveExpanding, dcoGroupsAlwaysExpanded]
+      DataController.Options = [dcoAnsiSort, dcoAssignGroupingValues, dcoAssignMasterDetailKeys, dcoSaveExpanding, dcoGroupsAlwaysExpanded, dcoImmediatePost]
       DataController.Summary.DefaultGroupSummaryItems = <
         item
           Format = '#,'
@@ -1100,7 +1100,7 @@ object fmTeacherPay: TfmTeacherPay
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
       ReportDocument.Caption = #48372#44256#49436
-      ReportDocument.CreationDate = 43588.253614328710000000
+      ReportDocument.CreationDate = 44984.478978541670000000
       ReportTitle.AdjustOnReportScale = True
       ReportTitle.Font.Charset = DEFAULT_CHARSET
       ReportTitle.Font.Color = clBlack

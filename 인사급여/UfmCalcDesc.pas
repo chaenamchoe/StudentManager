@@ -26,12 +26,20 @@ type
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
-    Edit1: TEdit;
-    Edit2: TEdit;
-    Edit3: TEdit;
-    Edit4: TEdit;
+    BASIC_PAY: TEdit;
+    EXTEND_TIME: TEdit;
+    BONUS_PAY: TEdit;
+    FAMILY_PAY: TEdit;
     btnSaveColumn: TcxButton;
     btnDelete: TcxButton;
+    Label5: TLabel;
+    YUNGUM: TEdit;
+    Label6: TLabel;
+    GUNGANG: TEdit;
+    Label7: TLabel;
+    YOYANG: TEdit;
+    Label8: TLabel;
+    GOYONG: TEdit;
   private
     { Private declarations }
   public

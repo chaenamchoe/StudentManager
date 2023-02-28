@@ -314,6 +314,7 @@ object dm: Tdm
     Connection = UniConnection1
     SQL.Strings = (
       'select ID, DONG_ID, T_NAME from TEACHER'
+      'where is_active = 1'
       'order by t_name')
     SpecificOptions.Strings = (
       'InterBase.FetchAll=True')

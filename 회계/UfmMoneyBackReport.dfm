@@ -212,6 +212,7 @@ object fmMoneyBackReport: TfmMoneyBackReport
       Width = 735
       Height = 668
       HorzScrollBar.Visible = False
+      VertScrollBar.Position = 295
       VertScrollBar.Smooth = True
       VertScrollBar.Tracking = True
       Align = alClient
@@ -219,7 +220,7 @@ object fmMoneyBackReport: TfmMoneyBackReport
       TabOrder = 1
       object PanelPreview: TPanel
         Left = 6
-        Top = 3
+        Top = -292
         Width = 691
         Height = 966
         Color = clWhite
@@ -550,8 +551,8 @@ object fmMoneyBackReport: TfmMoneyBackReport
           ParentFont = False
         end
         object Label15: TLabel
-          Left = 307
-          Top = 718
+          Left = 301
+          Top = 724
           Width = 159
           Height = 16
           Caption = #50948' '#44552#50529#51012' '#50689#49688#54633#45768#45796'.'
@@ -564,25 +565,12 @@ object fmMoneyBackReport: TfmMoneyBackReport
         end
         object lblReceiptDate: TLabel
           Left = 299
-          Top = 740
+          Top = 752
           Width = 170
           Height = 16
           Alignment = taCenter
           AutoSize = False
           Caption = '2015. 03. 05('#54868')'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = #48148#53461
-          Font.Style = []
-          ParentFont = False
-        end
-        object Label26: TLabel
-          Left = 307
-          Top = 766
-          Width = 53
-          Height = 16
-          Caption = #50689#49688#51088':'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -16
@@ -734,7 +722,7 @@ object fmMoneyBackReport: TfmMoneyBackReport
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
       ReportDocument.Caption = #51648#52636#44208#51032#49436
-      ReportDocument.CreationDate = 44967.492225509260000000
+      ReportDocument.CreationDate = 44984.645648587960000000
       BuiltInReportLink = True
       HiddenComponents = {}
       ExcludedComponents = {}

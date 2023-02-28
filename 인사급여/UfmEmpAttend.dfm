@@ -770,7 +770,7 @@ object fmEmpAttend: TfmEmpAttend
       end
       object btnDefault: TcxButton
         Left = 172
-        Top = 70
+        Top = 57
         Width = 93
         Height = 51
         Hint = #49440#53469#44053#51340#49688#51221
@@ -3425,7 +3425,7 @@ object fmEmpAttend: TfmEmpAttend
         Font.Style = []
         HAlign = haCenter
         Memo.UTF8W = (
-          #44204#44540#51068#49688)
+          #44208#44540#51068#49688)
         ParentFont = False
       end
       object Memo31: TfrxMemoView

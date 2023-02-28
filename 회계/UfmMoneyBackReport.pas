@@ -90,7 +90,6 @@ type
     q_MONEY_BACK_REPORT: TUniQuery;
     Label15: TLabel;
     lblReceiptDate: TLabel;
-    Label26: TLabel;
     Label48: TLabel;
     Shape2: TShape;
     Shape13: TShape;
