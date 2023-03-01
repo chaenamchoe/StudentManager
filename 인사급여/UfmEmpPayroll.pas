@@ -229,6 +229,19 @@ type
     dxMemData1total_out_amount: TIntegerField;
     frxReport3: TfrxReport;
     cxButton2: TcxButton;
+    btnAnnualLeave: TcxButton;
+    EMP_ANNUAL_LEAVE_SEL: TUniStoredProc;
+    ds_EMP_ANNUAL_LEAVE_SEL: TDataSource;
+    EMP_ANNUAL_LEAVE_SELID: TIntegerField;
+    EMP_ANNUAL_LEAVE_SELW_YEAR: TIntegerField;
+    EMP_ANNUAL_LEAVE_SELEMP_ID: TIntegerField;
+    EMP_ANNUAL_LEAVE_SELANN_LEAVE: TIntegerField;
+    EMP_ANNUAL_LEAVE_SELUSED_LEAVE: TIntegerField;
+    EMP_ANNUAL_LEAVE_INS: TUniStoredProc;
+    EMP_ATTENDING_SEL_AL: TUniStoredProc;
+    ds_EMP_ATTENDING_SEL_AL: TDataSource;
+    EMP_ATTENDING_SEL_ALCNT: TIntegerField;
+    EMP_ANNUAL_LEAVE_UPD: TUniStoredProc;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
     procedure btnRetrieveClick(Sender: TObject);
@@ -240,7 +253,9 @@ type
     procedure btnExtraPriceClick(Sender: TObject);
     procedure cxButton1Click(Sender: TObject);
     procedure cxButton2Click(Sender: TObject);
+    procedure btnAnnualLeaveClick(Sender: TObject);
   private
+    procedure RecalcAnnualLeave;
     { Private declarations }
   public
     { Public declarations }
@@ -252,7 +267,7 @@ var
 implementation
 
 uses
-  GlobalVar, Udm, UfmCalcDesc, UfmExtraPrice;
+  GlobalVar, Udm, UfmCalcDesc, UfmExtraPrice, UfmAnnualLeave;
 
 {$R *.dfm}
 
@@ -755,6 +770,68 @@ begin
   frxReport3.ShowReport;
 end;
 
+procedure TfmEmpPayroll.btnAnnualLeaveClick(Sender: TObject);
+var
+  al_used : Integer;
+begin
+  fmAnnualLeave := TfmAnnualLeave.Create(Self);
+  try
+    EMP_ATTENDING_SEL_AL.ParamByName('WYEAR').Value := spYear.EditValue;
+    EMP_ATTENDING_SEL_AL.ParamByName('EID').Value := gridPayrollE_ID.EditValue;
+    EMP_ATTENDING_SEL_AL.Open;
+    ds_EMP_ATTENDING_SEL_AL.DataSet.Refresh;
+    if EMP_ATTENDING_SEL_AL.RecordCount > 0 then
+      al_used := EMP_ATTENDING_SEL_ALCNT.Value
+    else
+      al_used := 0;
+
+    EMP_ANNUAL_LEAVE_UPD.ParamByName('W_YEAR').Value := spYear.EditValue;
+    EMP_ANNUAL_LEAVE_UPD.ParamByName('EMP_ID').Value := gridPayrollE_ID.EditValue;
+    EMP_ANNUAL_LEAVE_UPD.ParamByName('USED_LEAVE').Value := al_used;
+    EMP_ANNUAL_LEAVE_UPD.ExecProc;
+
+    EMP_ANNUAL_LEAVE_SEL.ParamByName('W_YEAR').Value := spYear.EditValue;
+    EMP_ANNUAL_LEAVE_SEL.ParamByName('EMP_ID').Value := gridPayrollE_ID.EditValue;
+    EMP_ANNUAL_LEAVE_SEL.Open;
+    ds_EMP_ANNUAL_LEAVE_SEL.DataSet.Refresh;
+
+    fmAnnualLeave.W_YEAR.EditValue := spYear.EditValue;
+    fmAnnualLeave.GET_AL.EditValue := EMP_ANNUAL_LEAVE_SELANN_LEAVE.Value;
+    fmAnnualLeave.USED_AL.EditValue := EMP_ANNUAL_LEAVE_SELUSED_LEAVE.Value;
+
+    fmAnnualLeave.ShowModal;
+  finally
+    fmAnnualLeave.Free;
+  end;
+end;
+
+procedure TfmEmpPayroll.RecalcAnnualLeave;
+begin
+  EMP_ANNUAL_LEAVE_SEL.ParamByName('WYEAR').Value := spYear.EditValue;
+  EMP_ANNUAL_LEAVE_SEL.ParamByName('EID').Value := gridPayrollE_ID.EditValue;
+  EMP_ANNUAL_LEAVE_SEL.Open;
+  ds_EMP_ANNUAL_LEAVE_SEL.DataSet.Refresh;
+
+  if EMP_ANNUAL_LEAVE_SEL.RecordCount > 0 then begin
+    EMP_ANNUAL_LEAVE_SEL.ParamByName('WYEAR').Value := spYear.EditValue;
+    EMP_ANNUAL_LEAVE_SEL.ParamByName('EID').Value := gridPayrollE_ID.EditValue;
+    EMP_ANNUAL_LEAVE_SEL.Open;
+    ds_EMP_ANNUAL_LEAVE_SEL.DataSet.Refresh;
+  end else begin
+    EMP_ANNUAL_LEAVE_INS.ParamByName('W_YEAR').Value := spYear.EditValue;
+    EMP_ANNUAL_LEAVE_INS.ParamByName('EMP_ID').Value := gridPayrollE_ID.EditValue;
+    EMP_ANNUAL_LEAVE_INS.ParamByName('ANN_LEAVE').Value := 12;
+    EMP_ANNUAL_LEAVE_INS.ParamByName('USED_LEAVE').Value := 0;
+    EMP_ANNUAL_LEAVE_INS.ExecProc;
+
+    EMP_ANNUAL_LEAVE_SEL.ParamByName('WYEAR').Value := spYear.EditValue;
+    EMP_ANNUAL_LEAVE_SEL.ParamByName('EID').Value := gridPayrollE_ID.EditValue;
+    EMP_ANNUAL_LEAVE_SEL.Open;
+    ds_EMP_ANNUAL_LEAVE_SEL.DataSet.Refresh;
+  end;
+
+end;
+
 procedure TfmEmpPayroll.btnExtraPriceClick(Sender: TObject);
 var
   extra_price, etc1, etc2, yungum, goyong, gungang, yoyang, sanjae : Integer;
@@ -852,14 +929,14 @@ begin
   icbMonth.EditValue := MonthOf(Date);
   EMP_BASIC_SEL_LOOKUP.Open;
   ds_EMP_BASIC_SEL_LOOKUP.DataSet.Refresh;
-
   EMP_ATTENDING_SEL.ParamByName('WYEAR').Value := spYear.EditValue;
   EMP_ATTENDING_SEL.ParamByName('WMONTH').Value := icbMonth.EditValue;
   EMP_ATTENDING_SEL.Open;
   ds_EMP_ATTENDING_SEL.DataSet.Refresh;
-
   btnRetrieve.Click;
+  RecalcAnnualLeave;
 end;
+
 
 initialization RegisterClasses([TfmEmpPayroll]);
 

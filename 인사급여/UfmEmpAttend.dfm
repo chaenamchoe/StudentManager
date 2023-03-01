@@ -425,6 +425,7 @@ object fmEmpAttend: TfmEmpAttend
             Description = #53664
             Value = 7
           end>
+        OnCustomDrawCell = gridAttendW_WEEKCustomDrawCell
         HeaderAlignmentHorz = taCenter
         Width = 35
       end
@@ -490,7 +491,12 @@ object fmEmpAttend: TfmEmpAttend
           item
             Description = #44208#44540
             Value = 7
+          end
+          item
+            Description = #55092#51068
+            Value = 8
           end>
+        OnCustomDrawCell = gridAttendW_KINDCustomDrawCell
         HeaderAlignmentHorz = taCenter
         Width = 80
       end
@@ -503,7 +509,7 @@ object fmEmpAttend: TfmEmpAttend
         Width = 64
       end
       object gridAttendW_REASON: TcxGridDBColumn
-        Caption = #49324#50976
+        Caption = #52488#44284#49324#50976
         DataBinding.FieldName = 'W_REASON'
         Width = 334
       end
@@ -558,7 +564,7 @@ object fmEmpAttend: TfmEmpAttend
         Top = 196
         Width = 56
         Height = 17
-        Caption = #50672#51109#49324#50976
+        Caption = #52488#44284#49324#50976
       end
       object Label6: TLabel
         Left = 14
@@ -618,6 +624,10 @@ object fmEmpAttend: TfmEmpAttend
           item
             Description = #44208#44540
             Value = 7
+          end
+          item
+            Description = #55092#51068
+            Value = 8
           end>
         TabOrder = 4
         Width = 99
@@ -914,6 +924,10 @@ object fmEmpAttend: TfmEmpAttend
               item
                 Description = #44208#44540
                 Value = 7
+              end
+              item
+                Description = #55092#51068
+                Value = 8
               end>
             HeaderAlignmentHorz = taCenter
             Width = 144

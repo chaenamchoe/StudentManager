@@ -163,6 +163,12 @@ type
     procedure btnEditClick(Sender: TObject);
     procedure icbMonthPropertiesEditValueChanged(Sender: TObject);
     procedure spYearPropertiesEditValueChanged(Sender: TObject);
+    procedure gridAttendW_WEEKCustomDrawCell(Sender: TcxCustomGridTableView;
+      ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo;
+      var ADone: Boolean);
+    procedure gridAttendW_KINDCustomDrawCell(Sender: TcxCustomGridTableView;
+      ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo;
+      var ADone: Boolean);
   private
     procedure EditData;
     function GetDateStatus(date: TDateTime): string;
@@ -359,13 +365,18 @@ begin
   dxMemData1.Close;
   dxMemData1.Open;
   if cnt > 5 then cnt := 5;
-
+  total_hour := 0;
   for i := 0 to cnt - 1 do begin
     wdate[i] := gridAttendWDATE.EditValue;
     in_time[i] := gridAttendIN_TIME.EditValue;
     out_time[i] := gridAttendOUT_TIME.EditValue;
-    w_hour[i] := gridAttendW_HOUR.EditValue;
+    w_hour[i] := gridAttendEXT_HOUR.EditValue;
     w_reason[i] := gridAttendW_REASON.EditValue;
+    total_hour := total_hour + w_hour[i];
+    if total_hour >= 10 then begin
+      total_hour := 10;
+      Break;
+    end;
     gridAttend.DataController.GotoNext;
   end;
   dxMemData1.Append;
@@ -407,8 +418,7 @@ begin
     dxMemData1w_hour5.Value := w_hour[4];
     dxMemData1w_reason5.Value := w_reason[4];
   end;
-  total_hour := gridAttend.DataController.Summary.FooterSummaryValues[1];
-  dxMemData1total_hour.Value := total_hour - (cnt * 8);
+  dxMemData1total_hour.Value := total_hour;
   dxMemData1confirmer.Value := CenterChiefName;
   dxMemData1.Post;
   EMP_ATTENDING_SEL.Filtered := False;
@@ -419,7 +429,7 @@ end;
 
 procedure TfmEmpAttend.btnNewClick(Sender: TObject);
 var
-  w_hour : Integer;
+  toprow : Integer;
 begin
   UniQuery1.SQL.Clear;
   UniQuery1.SQL.Add('select id from emp_attending where wdate = :wdate;');
@@ -430,22 +440,35 @@ begin
     ShowMessage('오늘의 출석자료가 이미 있습니다.');
     Exit;
   end else begin
-    if not VarIsNull(out_time.EditValue) then
-      w_hour := HoursBetween(in_time.EditValue, out_time.EditValue)
-    else
-      w_hour := 0;
+    if not VarIsNull(out_time.EditValue) then begin
+      w_hour.EditValue := HoursBetween(in_time.EditValue, out_time.EditValue);
+      if w_hour.EditValue > 9 then begin
+        ext_hour.EditValue := w_hour.EditValue - 9;
+        w_hour.EditValue := 9;
+      end else
+        ext_hour.EditValue := 0;
+    end else begin
+      w_hour.EditValue := 0;
+      ext_hour.EditValue := 0;
+    end;
+    toprow := gridAttend.Controller.TopRowIndex;
+    gridAttend.DataController.SaveBookmark;
     EMP_ATTENDING_INS.ParamByName('E_ID').Value := 1;
     EMP_ATTENDING_INS.ParamByName('WDATE').Value := wdate.Date;
-    EMP_ATTENDING_INS.ParamByName('IN_TIME').Value := Now;
-    EMP_ATTENDING_INS.ParamByName('OUT_TIME').Clear;
-    EMP_ATTENDING_INS.ParamByName('W_KIND').Value := 0;
-    EMP_ATTENDING_INS.ParamByName('W_REASON').Value := '';
+    EMP_ATTENDING_INS.ParamByName('IN_TIME').Value := in_time.EditValue;
+    EMP_ATTENDING_INS.ParamByName('OUT_TIME').Value := out_time.EditValue;
+    EMP_ATTENDING_INS.ParamByName('W_KIND').Value := icbKind.EditValue;
+    EMP_ATTENDING_INS.ParamByName('W_REASON').Value := Memo1.Text;
     EMP_ATTENDING_INS.ParamByName('W_WEEK').Value := DayOfWeek(wdate.Date);
-    EMP_ATTENDING_INS.ParamByName('W_HOUR').Value := w_hour;
+    EMP_ATTENDING_INS.ParamByName('W_HOUR').Value := w_hour.EditValue;
+    EMP_ATTENDING_INS.ParamByName('EXT_HOUR').Value := ext_hour.EditValue;
     EMP_ATTENDING_INS.ExecProc;
     ds_EMP_ATTENDING_SEL.DataSet.Refresh;
+    btnRetrieve.Click;
+    gridAttend.DataController.GotoBookmark;
+    gridAttend.Controller.TopRowIndex := toprow;
+    gridAttend.DataController.GotoLast;
   end;
-  btnRetrieve.Click;
 end;
 
 procedure TfmEmpAttend.btnDefaultClick(Sender: TObject);
@@ -454,7 +477,8 @@ begin
   out_time.EditValue := StrToTime('18:00');
   w_hour.EditValue := 9;
   icbKind.EditValue := 0;
-  btnSave.Click;
+  ext_hour.EditValue := 0;
+  btnNew.Click;
 end;
 
 procedure TfmEmpAttend.btnDeleteClick(Sender: TObject);
@@ -465,6 +489,7 @@ begin
     + #13#10 + '정말 삭제할까요?', 'Application.Title', MB_YESNO + MB_ICONWARNING) =
     IDYES then
   begin
+    gridAttend.DataController.SaveBookmark;
     id := gridAttendID.EditValue;
     top_row := gridAttend.Controller.TopRowIndex;
     UniQuery1.SQL.Clear;
@@ -472,6 +497,7 @@ begin
     UniQuery1.ParamByName('id').Value := id;
     UniQuery1.ExecSQL;
     btnRetrieve.Click;
+    gridAttend.DataController.GotoBookmark;
   end;
 end;
 
@@ -536,6 +562,39 @@ procedure TfmEmpAttend.gridAttendFocusedRecordChanged(
   AFocusedRecord: TcxCustomGridRecord; ANewItemRecordFocusingChanged: Boolean);
 begin
   EditData;
+end;
+
+procedure TfmEmpAttend.gridAttendW_KINDCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+  case AViewInfo.Value of
+    1..3: begin
+      ACanvas.Brush.Color := clYellow;
+      ACanvas.Font.Color := clBlack;
+    end;
+    5..7: begin
+      ACanvas.Brush.Color := clRed;
+      ACanvas.Font.Color := clWhite;
+    end;
+    4, 8: begin
+      ACanvas.Brush.Color := clGreen;
+      ACanvas.Font.Color := clWhite;
+    end;
+  end;
+end;
+
+procedure TfmEmpAttend.gridAttendW_WEEKCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+  if AViewInfo.Value = 7 then begin
+    ACanvas.Brush.Color := clWebLightSkyBlue;
+  end;
+  if AViewInfo.Value = 1 then begin
+    ACanvas.Brush.Color := clRed;
+    ACanvas.Font.Color := clWhite;
+  end;
 end;
 
 procedure TfmEmpAttend.icbMonthPropertiesEditValueChanged(Sender: TObject);

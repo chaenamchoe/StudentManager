@@ -4584,6 +4584,11 @@ object dm: Tdm
         DataType = ftSmallint
         Name = 'W_WEEK'
         ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'EXT_HOUR'
+        ParamType = ptInput
       end>
     CommandStoredProcName = 'EMP_ATTENDING_IU'
   end

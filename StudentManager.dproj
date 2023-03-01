@@ -363,6 +363,9 @@
 			<DCCReference Include="강좌\UfmTeacherExtrapay.pas">
 				<Form>fmTeacherExtrapay</Form>
 			</DCCReference>
+			<DCCReference Include="인사급여\UfmAnnualLeave.pas">
+				<Form>fmAnnualLeave</Form>
+			</DCCReference>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>

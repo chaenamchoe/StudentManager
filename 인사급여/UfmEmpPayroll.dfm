@@ -25,30 +25,30 @@ object fmEmpPayroll: TfmEmpPayroll
     Align = alTop
     TabOrder = 0
     object Label1: TLabel
-      Left = 16
+      Left = 8
       Top = 6
-      Width = 61
+      Width = 33
       Height = 17
-      Caption = #51312#54924#45380#46020':'
+      Caption = #45380#46020':'
     end
     object Label2: TLabel
-      Left = 252
+      Left = 188
       Top = 7
       Width = 19
       Height = 17
       Caption = #50900':'
     end
     object spYear: TcxSpinEdit
-      Left = 83
+      Left = 44
       Top = 3
       Properties.Alignment.Horz = taCenter
       TabOrder = 0
       Width = 78
     end
     object btnRetrieve: TcxButton
-      Left = 161
+      Left = 122
       Top = 3
-      Width = 71
+      Width = 61
       Height = 25
       Hint = #51312#54924
       Caption = #51312#54924
@@ -95,7 +95,7 @@ object fmEmpPayroll: TfmEmpPayroll
       OnClick = btnRetrieveClick
     end
     object btnAdd: TcxButton
-      Left = 323
+      Left = 259
       Top = 3
       Width = 97
       Height = 25
@@ -143,7 +143,7 @@ object fmEmpPayroll: TfmEmpPayroll
       OnClick = btnAddClick
     end
     object icbMonth: TcxImageComboBox
-      Left = 272
+      Left = 208
       Top = 3
       Properties.Alignment.Horz = taCenter
       Properties.Items = <
@@ -200,9 +200,9 @@ object fmEmpPayroll: TfmEmpPayroll
       Width = 51
     end
     object btnRecalc: TcxButton
-      Left = 492
+      Left = 518
       Top = 3
-      Width = 97
+      Width = 88
       Height = 25
       Caption = #49440#53469#51116#44228#49328
       LookAndFeel.NativeStyle = False
@@ -262,9 +262,9 @@ object fmEmpPayroll: TfmEmpPayroll
       OnClick = btnPrintClick
     end
     object btnCalcDesc: TcxButton
-      Left = 706
+      Left = 727
       Top = 3
-      Width = 97
+      Width = 84
       Height = 25
       Caption = #49328#52636#49885#46321#47197
       LookAndFeel.NativeStyle = False
@@ -275,7 +275,7 @@ object fmEmpPayroll: TfmEmpPayroll
       OnClick = btnCalcDescClick
     end
     object btnDelete: TcxButton
-      Left = 421
+      Left = 357
       Top = 3
       Width = 61
       Height = 25
@@ -324,9 +324,9 @@ object fmEmpPayroll: TfmEmpPayroll
       OnClick = btnDeleteClick
     end
     object btnExtraPrice: TcxButton
-      Left = 591
+      Left = 607
       Top = 3
-      Width = 114
+      Width = 107
       Height = 25
       Caption = #52628#44032' '#51076#44552'/'#44277#51228
       LookAndFeel.NativeStyle = False
@@ -433,6 +433,19 @@ object fmEmpPayroll: TfmEmpPayroll
       ShowHint = True
       TabOrder = 10
       OnClick = cxButton2Click
+    end
+    object btnAnnualLeave: TcxButton
+      Left = 421
+      Top = 3
+      Width = 73
+      Height = 25
+      Caption = #50672#44032#51312#54924
+      LookAndFeel.NativeStyle = False
+      LookAndFeel.SkinName = 'DevExpressStyle'
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 11
+      OnClick = btnAnnualLeaveClick
     end
   end
   object cxGrid1: TcxGrid
@@ -6912,5 +6925,150 @@ object fmEmpPayroll: TfmEmpPayroll
         ParentFont = False
       end
     end
+  end
+  object EMP_ANNUAL_LEAVE_SEL: TUniStoredProc
+    StoredProcName = 'EMP_ANNUAL_LEAVE_SEL'
+    Connection = dm.UniConnection1
+    Left = 560
+    Top = 88
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'WYEAR'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'EID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'ID'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'W_YEAR'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'EMP_ID'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'ANN_LEAVE'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'USED_LEAVE'
+        ParamType = ptOutput
+      end>
+    CommandStoredProcName = 'EMP_ANNUAL_LEAVE_SEL'
+    object EMP_ANNUAL_LEAVE_SELID: TIntegerField
+      FieldName = 'ID'
+    end
+    object EMP_ANNUAL_LEAVE_SELW_YEAR: TIntegerField
+      FieldName = 'W_YEAR'
+    end
+    object EMP_ANNUAL_LEAVE_SELEMP_ID: TIntegerField
+      FieldName = 'EMP_ID'
+    end
+    object EMP_ANNUAL_LEAVE_SELANN_LEAVE: TIntegerField
+      FieldName = 'ANN_LEAVE'
+    end
+    object EMP_ANNUAL_LEAVE_SELUSED_LEAVE: TIntegerField
+      FieldName = 'USED_LEAVE'
+    end
+  end
+  object ds_EMP_ANNUAL_LEAVE_SEL: TDataSource
+    DataSet = EMP_ANNUAL_LEAVE_SEL
+    Left = 560
+    Top = 136
+  end
+  object EMP_ANNUAL_LEAVE_INS: TUniStoredProc
+    StoredProcName = 'EMP_ANNUAL_LEAVE_INS'
+    Connection = dm.UniConnection1
+    Left = 704
+    Top = 88
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'W_YEAR'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'EMP_ID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'ANN_LEAVE'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'USED_LEAVE'
+        ParamType = ptInput
+      end>
+    CommandStoredProcName = 'EMP_ANNUAL_LEAVE_INS'
+  end
+  object EMP_ATTENDING_SEL_AL: TUniStoredProc
+    StoredProcName = 'EMP_ATTENDING_SEL_AL'
+    Connection = dm.UniConnection1
+    Left = 704
+    Top = 136
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'WYEAR'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'EID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'CNT'
+        ParamType = ptOutput
+      end>
+    CommandStoredProcName = 'EMP_ATTENDING_SEL_AL'
+    object EMP_ATTENDING_SEL_ALCNT: TIntegerField
+      FieldName = 'CNT'
+    end
+  end
+  object ds_EMP_ATTENDING_SEL_AL: TDataSource
+    DataSet = EMP_ATTENDING_SEL_AL
+    Left = 704
+    Top = 184
+  end
+  object EMP_ANNUAL_LEAVE_UPD: TUniStoredProc
+    StoredProcName = 'EMP_ANNUAL_LEAVE_UPD'
+    Connection = dm.UniConnection1
+    Left = 704
+    Top = 232
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'W_YEAR'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'EMP_ID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'USED_LEAVE'
+        ParamType = ptInput
+      end>
+    CommandStoredProcName = 'EMP_ANNUAL_LEAVE_UPD'
   end
 end

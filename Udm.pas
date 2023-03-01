@@ -1132,10 +1132,11 @@ begin
   EMP_ATTENDING_IU.ParamByName('WDATE').Value := Date;
   EMP_ATTENDING_IU.ParamByName('IN_TIME').Value := Now;
   EMP_ATTENDING_IU.ParamByName('OUT_TIME').Clear;
-  EMP_ATTENDING_IU.ParamByName('W_KIND').Value := -1;
+  EMP_ATTENDING_IU.ParamByName('W_KIND').Value := 0;
   EMP_ATTENDING_IU.ParamByName('W_REASON').Value := '';
   EMP_ATTENDING_IU.ParamByName('W_WEEK').Value := DayOfWeek(Date);
   EMP_ATTENDING_IU.ParamByName('W_HOUR').Value := 0;
+  EMP_ATTENDING_IU.ParamByName('EXT_HOUR').Value := 0;
   EMP_ATTENDING_IU.ExecProc;
 end;
 

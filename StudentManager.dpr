@@ -112,7 +112,8 @@ uses
   UfmEmpPayroll in '인사급여\UfmEmpPayroll.pas' {fmEmpPayroll},
   UfmCalcDesc in '인사급여\UfmCalcDesc.pas' {fmCalcDesc},
   UfmExtraPrice in '인사급여\UfmExtraPrice.pas' {fmExtraPrice},
-  UfmTeacherExtrapay in '강좌\UfmTeacherExtrapay.pas' {fmTeacherExtrapay};
+  UfmTeacherExtrapay in '강좌\UfmTeacherExtrapay.pas' {fmTeacherExtrapay},
+  UfmAnnualLeave in '인사급여\UfmAnnualLeave.pas' {fmAnnualLeave};
 
 {$R *.res}
 
@@ -127,6 +128,7 @@ begin
     if fmLogin.ModalResult = mrOk then begin
       Application.CreateForm(TfmMain, fmMain);
   Application.CreateForm(Tdm, dm);
+  Application.CreateForm(TfmAnnualLeave, fmAnnualLeave);
   Application.Run;
     end else begin
       fmLogin.Hide;
