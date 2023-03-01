@@ -644,7 +644,7 @@ begin
     q_basic_value.Open;
     d_basic_value.DataSet.Refresh;
     t_classroom_look.Active := True;
-    t_lecture_list.Active := True;
+    t_lecture_list.Open;
     q_CLASSROOM.ParamByName('dong_id').AsString := LoginUserDong;
     q_CLASSROOM.Active := True;
     q_TEACHER_LOOK.Active := True;

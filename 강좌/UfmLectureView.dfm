@@ -840,6 +840,24 @@ object fmLectureView: TfmLectureView
         Width = 31
         OnCompareRowValuesForCellMerging = gridLectureL_MONTHCompareRowValuesForCellMerging
       end
+      object gridLectureMONTH1_DAYS: TcxGridDBColumn
+        Caption = #51068'(1'#50900')'
+        DataBinding.FieldName = 'MONTH1_DAYS'
+        HeaderAlignmentHorz = taCenter
+        Width = 51
+      end
+      object gridLectureMONTH2_DAYS: TcxGridDBColumn
+        Caption = #51068'(2'#50900')'
+        DataBinding.FieldName = 'MONTH2_DAYS'
+        HeaderAlignmentHorz = taCenter
+        Width = 48
+      end
+      object gridLectureMONTH3_DAYS: TcxGridDBColumn
+        Caption = #51068'(3'#50900')'
+        DataBinding.FieldName = 'MONTH3_DAYS'
+        HeaderAlignmentHorz = taCenter
+        Width = 52
+      end
       object gridLectureTOTAL_DAY: TcxGridDBColumn
         Caption = #52509#44053#51032#51068
         DataBinding.FieldName = 'TOTAL_DAY'
@@ -948,27 +966,6 @@ object fmLectureView: TfmLectureView
         OnCustomDrawCell = gridLectureCALC_KINDCustomDrawCell
         HeaderAlignmentHorz = taCenter
         Width = 44
-      end
-      object gridLectureMONTH1_DAYS: TcxGridDBColumn
-        Caption = #51201#50857'1'
-        DataBinding.FieldName = 'MONTH1_DAYS'
-        Visible = False
-        HeaderAlignmentHorz = taCenter
-        Width = 40
-      end
-      object gridLectureMONTH2_DAYS: TcxGridDBColumn
-        Caption = #51201#50857'2'
-        DataBinding.FieldName = 'MONTH2_DAYS'
-        Visible = False
-        HeaderAlignmentHorz = taCenter
-        Width = 40
-      end
-      object gridLectureMONTH3_DAYS: TcxGridDBColumn
-        Caption = #51201#50857'3'
-        DataBinding.FieldName = 'MONTH3_DAYS'
-        Visible = False
-        HeaderAlignmentHorz = taCenter
-        Width = 39
       end
       object gridLectureCLASSROOM_ID: TcxGridDBColumn
         DataBinding.FieldName = 'CLASSROOM_ID'
@@ -1301,6 +1298,7 @@ object fmLectureView: TfmLectureView
     object dxComponentPrinter1Link1: TdxGridReportLink
       Active = True
       Component = cxGrid1
+      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
       PrinterPage.Header = 6350
@@ -1322,13 +1320,14 @@ object fmLectureView: TfmLectureView
       PrinterPage.PageSize.Y = 297000
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
-      ReportDocument.CreationDate = 43714.403043854170000000
+      ReportDocument.CreationDate = 44986.888511469910000000
       ReportTitle.Font.Charset = DEFAULT_CHARSET
       ReportTitle.Font.Color = clBlack
       ReportTitle.Font.Height = -21
       ReportTitle.Font.Name = 'Times New Roman'
       ReportTitle.Font.Style = [fsBold]
       ReportTitle.Text = #44053#51340#46321#47197#54788#54889
+      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -13

@@ -193,6 +193,7 @@ type
     N57: TMenuItem;
     N58: TMenuItem;
     EMP_ATTENDING_INS: TUniStoredProc;
+    N210: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure ActionLectureRegistExecute(Sender: TObject);
     procedure ActionTeacherViewExecute(Sender: TObject);
@@ -259,6 +260,7 @@ type
     procedure N56Click(Sender: TObject);
     procedure N57Click(Sender: TObject);
     procedure N58Click(Sender: TObject);
+    procedure N210Click(Sender: TObject);
   private
     procedure CloseAllWindows;
     { Private declarations }
@@ -763,6 +765,13 @@ procedure TfmMain.N1Click(Sender: TObject);
 begin
   HtmlHelp(0, Application.HelpFile, HH_DISPLAY_INDEX, 0);
   //ShellExecute(0,'open','강좌관리.chm',nil,nil, SW_NORMAL);
+end;
+
+procedure TfmMain.N210Click(Sender: TObject);
+begin
+  if SDI_Mode.Checked then
+    CloseAllWindows;
+  CreateChild('TfmTeacherExtrapay', '강사수당관리2');
 end;
 
 procedure TfmMain.N33Click(Sender: TObject);

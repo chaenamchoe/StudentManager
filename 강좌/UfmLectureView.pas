@@ -642,9 +642,9 @@ begin
         ParamByName('TOTAL_TIME').AsFloat     := 0;
         ParamByName('TEACHER_PERCENT').AsInteger := StrToInt(fmLectureEdit.edtSudangPercent.Text);
         ParamByName('CALC_KIND').AsInteger     := fmLectureEdit.cbChangeMonth.EditValue;
-        ParamByName('MONTH1_DAYS').AsInteger     := fmLectureEdit.cbChangeKind.EditValue;
-        ParamByName('MONTH2_DAYS').AsInteger     := fmLectureEdit.edtSecondMonth.EditValue;
-        ParamByName('MONTH3_DAYS').AsInteger     := fmLectureEdit.edtThirdMonth.EditValue;
+        ParamByName('MONTH1_DAYS').AsInteger     := fmLectureEdit.edtMonth1Days.EditValue;
+        ParamByName('MONTH2_DAYS').AsInteger     := fmLectureEdit.edtMonth2Days.EditValue;
+        ParamByName('MONTH3_DAYS').AsInteger     := fmLectureEdit.edtMonth3Days.EditValue;
         ParamByName('L_IDX').AsInteger           := fmLectureEdit.edtIDX.EditValue;
         ParamByName('L_UID').AsInteger           := fmLectureEdit.lcbLecture.EditValue;
         ParamByName('MONTH1_PRICE').AsFloat      := fmLectureEdit.edtMonth1Price.EditValue;
@@ -704,6 +704,9 @@ begin
     fmLectureEdit.edtSecondMonth.EditValue := dm.sp_lectureMONTH2_DAYS.AsInteger;
     fmLectureEdit.edtThirdMonth.EditValue := dm.sp_lectureMONTH3_DAYS.AsInteger;
     fmLectureEdit.edtIDX.EditValue        := dm.sp_lectureL_IDX.AsInteger;
+    fmLectureEdit.edtMonth1Days.EditValue := dm.sp_lectureMONTH1_DAYS.AsFloat;
+    fmLectureEdit.edtMonth2Days.EditValue := dm.sp_lectureMONTH2_DAYS.AsFloat;
+    fmLectureEdit.edtMonth3Days.EditValue := dm.sp_lectureMONTH3_DAYS.AsFloat;
     fmLectureEdit.edtMonth1Price.EditValue := dm.sp_lectureMONTH1_PRICE.AsFloat;
     fmLectureEdit.edtMonth2Price.EditValue := dm.sp_lectureMONTH2_PRICE.AsFloat;
     fmLectureEdit.edtMonth3Price.EditValue := dm.sp_lectureMONTH3_PRICE.AsFloat;
@@ -757,9 +760,9 @@ begin
         ParamByName('TOTAL_TIME').AsFloat     := dm.sp_lectureTOTAL_TIME.AsInteger;
         ParamByName('TEACHER_PERCENT').AsInteger := StrToInt(fmLectureEdit.edtSudangPercent.Text);
         ParamByName('CALC_KIND').AsInteger     := fmLectureEdit.cbChangeMonth.EditValue;
-        ParamByName('MONTH1_DAYS').AsInteger     := fmLectureEdit.cbChangeKind.EditValue;
-        ParamByName('MONTH2_DAYS').AsInteger     := fmLectureEdit.edtSecondMonth.EditValue;
-        ParamByName('MONTH3_DAYS').AsInteger     := fmLectureEdit.edtThirdMonth.EditValue;
+        ParamByName('MONTH1_DAYS').AsInteger     := fmLectureEdit.edtMonth1Days.EditValue;
+        ParamByName('MONTH2_DAYS').AsInteger     := fmLectureEdit.edtMonth2Days.EditValue;
+        ParamByName('MONTH3_DAYS').AsInteger     := fmLectureEdit.edtMonth3Days.EditValue;
         ParamByName('L_IDX').AsInteger           := fmLectureEdit.edtIDX.EditValue;
         ParamByName('L_UID').AsInteger           := fmLectureEdit.lcbLecture.EditValue;
         ParamByName('MONTH1_PRICE').AsFloat      := fmLectureEdit.edtMonth1Price.EditValue;

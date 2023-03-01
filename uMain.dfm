@@ -1280,6 +1280,10 @@ object fmMain: TfmMain
       object N6: TMenuItem
         Action = ActionTeacherPay
       end
+      object N210: TMenuItem
+        Caption = #44053#49324#49688#45817#44288#47532'2'
+        OnClick = N210Click
+      end
       object N35: TMenuItem
         Action = ActionCompansation
       end

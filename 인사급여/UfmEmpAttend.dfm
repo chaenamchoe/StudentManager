@@ -245,6 +245,7 @@ object fmEmpAttend: TfmEmpAttend
       Left = 83
       Top = 3
       Properties.Alignment.Horz = taCenter
+      Properties.OnEditValueChanged = spYearPropertiesEditValueChanged
       TabOrder = 5
       Width = 78
     end
@@ -302,6 +303,7 @@ object fmEmpAttend: TfmEmpAttend
           Description = '12'#50900
           Value = 12
         end>
+      Properties.OnEditValueChanged = icbMonthPropertiesEditValueChanged
       TabOrder = 6
       Width = 65
     end
@@ -362,6 +364,11 @@ object fmEmpAttend: TfmEmpAttend
           Format = '#,0'
           Kind = skSum
           Column = gridAttendW_HOUR
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridAttendEXT_HOUR
         end>
       DataController.Summary.SummaryGroups = <>
       OptionsBehavior.CellHints = True
@@ -382,7 +389,7 @@ object fmEmpAttend: TfmEmpAttend
       object gridAttendWDATE: TcxGridDBColumn
         Caption = #45216#51676
         DataBinding.FieldName = 'WDATE'
-        Width = 83
+        Width = 78
       end
       object gridAttendW_WEEK: TcxGridDBColumn
         Caption = #50836#51068
@@ -419,7 +426,7 @@ object fmEmpAttend: TfmEmpAttend
             Value = 7
           end>
         HeaderAlignmentHorz = taCenter
-        Width = 38
+        Width = 35
       end
       object gridAttendIN_TIME: TcxGridDBColumn
         Caption = #52636#44540
@@ -428,7 +435,7 @@ object fmEmpAttend: TfmEmpAttend
         Properties.Alignment.Horz = taCenter
         Properties.TimeFormat = tfHourMin
         HeaderAlignmentHorz = taCenter
-        Width = 61
+        Width = 57
       end
       object gridAttendOUT_TIME: TcxGridDBColumn
         Caption = #53748#44540
@@ -437,13 +444,13 @@ object fmEmpAttend: TfmEmpAttend
         Properties.Alignment.Horz = taCenter
         Properties.TimeFormat = tfHourMin
         HeaderAlignmentHorz = taCenter
-        Width = 61
+        Width = 57
       end
       object gridAttendW_HOUR: TcxGridDBColumn
         Caption = #49884#44036
         DataBinding.FieldName = 'W_HOUR'
         HeaderAlignmentHorz = taCenter
-        Width = 61
+        Width = 57
       end
       object gridAttendW_KIND: TcxGridDBColumn
         Caption = #44396#48516
@@ -452,7 +459,7 @@ object fmEmpAttend: TfmEmpAttend
         Properties.Alignment.Horz = taCenter
         Properties.Items = <
           item
-            Description = #51221#49345#44540#47924
+            Description = #51221#49345
             ImageIndex = 0
             Value = 0
           end
@@ -469,7 +476,7 @@ object fmEmpAttend: TfmEmpAttend
             Value = 3
           end
           item
-            Description = #49884#44036#50808#49688#45817
+            Description = #52488#44284
             Value = 4
           end
           item
@@ -485,12 +492,24 @@ object fmEmpAttend: TfmEmpAttend
             Value = 7
           end>
         HeaderAlignmentHorz = taCenter
-        Width = 86
+        Width = 80
+      end
+      object gridAttendEXT_HOUR: TcxGridDBColumn
+        Caption = #52488#44284#49884#44036
+        DataBinding.FieldName = 'EXT_HOUR'
+        PropertiesClassName = 'TcxTextEditProperties'
+        Properties.Alignment.Horz = taCenter
+        HeaderAlignmentHorz = taCenter
+        Width = 64
       end
       object gridAttendW_REASON: TcxGridDBColumn
         Caption = #49324#50976
         DataBinding.FieldName = 'W_REASON'
-        Width = 332
+        Width = 334
+      end
+      object gridAttendE_ID: TcxGridDBColumn
+        DataBinding.FieldName = 'E_ID'
+        Visible = False
       end
     end
     object cxGrid1Level1: TcxGridLevel
@@ -509,59 +528,66 @@ object fmEmpAttend: TfmEmpAttend
       Left = 4
       Top = 4
       Width = 310
-      Height = 299
+      Height = 293
       Align = alTop
       Caption = #51088#47308' '#46321#47197'/'#49688#51221
       TabOrder = 0
       object Label2: TLabel
         Left = 16
         Top = 141
-        Width = 28
+        Width = 56
         Height = 17
-        Caption = #44396#48516
+        Caption = #44540#47924#44396#48516
       end
       object Label3: TLabel
         Left = 14
         Top = 59
-        Width = 28
+        Width = 56
         Height = 17
-        Caption = #52636#44540
+        Caption = #52636#44540#49884#44036
       end
       object Label4: TLabel
         Left = 16
         Top = 86
-        Width = 28
+        Width = 56
         Height = 17
-        Caption = #53748#44540
+        Caption = #53748#44540#49884#44036
       end
       object Label5: TLabel
         Left = 16
-        Top = 168
-        Width = 28
+        Top = 196
+        Width = 56
         Height = 17
-        Caption = #49324#50976
+        Caption = #50672#51109#49324#50976
       end
       object Label6: TLabel
         Left = 14
         Top = 32
-        Width = 28
+        Width = 56
         Height = 17
-        Caption = #45216#51676
+        Caption = #44540#47924#51068#51088
       end
       object Label7: TLabel
         Left = 16
         Top = 113
-        Width = 28
+        Width = 56
         Height = 17
-        Caption = #49884#44036
+        Caption = #44540#47924#49884#44036
+      end
+      object Label8: TLabel
+        Left = 16
+        Top = 167
+        Width = 56
+        Height = 17
+        Caption = #52488#44284#49884#44036
       end
       object icbKind: TcxImageComboBox
-        Left = 56
+        Left = 78
         Top = 137
         EditValue = 0
         Properties.Items = <
           item
-            Description = #51221#49345#44540#47924
+            Description = #51221#49345
             ImageIndex = 0
             Value = 0
           end
@@ -578,7 +604,7 @@ object fmEmpAttend: TfmEmpAttend
             Value = 3
           end
           item
-            Description = #49884#44036#50808#49688#45817
+            Description = #52488#44284
             Value = 4
           end
           item
@@ -594,10 +620,10 @@ object fmEmpAttend: TfmEmpAttend
             Value = 7
           end>
         TabOrder = 4
-        Width = 113
+        Width = 99
       end
       object in_time: TcxTimeEdit
-        Left = 56
+        Left = 78
         Top = 56
         EditValue = 0d
         Properties.TimeFormat = tfHourMin
@@ -606,7 +632,7 @@ object fmEmpAttend: TfmEmpAttend
         Width = 73
       end
       object out_time: TcxTimeEdit
-        Left = 56
+        Left = 78
         Top = 83
         EditValue = 0d
         Properties.TimeFormat = tfHourMin
@@ -615,15 +641,15 @@ object fmEmpAttend: TfmEmpAttend
         Width = 73
       end
       object Memo1: TMemo
-        Left = 56
-        Top = 165
-        Width = 233
-        Height = 73
+        Left = 78
+        Top = 193
+        Width = 209
+        Height = 56
         TabOrder = 5
       end
       object btnSave: TcxButton
-        Left = 160
-        Top = 253
+        Left = 178
+        Top = 251
         Width = 97
         Height = 25
         Hint = #48264#54840#48320#44221#51200#51109
@@ -671,15 +697,15 @@ object fmEmpAttend: TfmEmpAttend
         OnClick = btnSaveClick
       end
       object wdate: TcxDateEdit
-        Left = 56
+        Left = 78
         Top = 29
         Properties.OnCloseUp = wdatePropertiesCloseUp
         TabOrder = 0
         Width = 113
       end
       object btnNew: TcxButton
-        Left = 60
-        Top = 253
+        Left = 78
+        Top = 251
         Width = 94
         Height = 25
         Hint = #49888#44508#44053#51340#46321#47197
@@ -727,13 +753,13 @@ object fmEmpAttend: TfmEmpAttend
         OnClick = btnNewClick
       end
       object w_hour: TcxSpinEdit
-        Left = 56
+        Left = 78
         Top = 110
         TabOrder = 3
         Width = 73
       end
       object w_week: TcxImageComboBox
-        Left = 168
+        Left = 190
         Top = 29
         Properties.Items = <
           item
@@ -788,11 +814,17 @@ object fmEmpAttend: TfmEmpAttend
         TabOrder = 9
         OnClick = btnDefaultClick
       end
+      object ext_hour: TcxSpinEdit
+        Left = 78
+        Top = 164
+        TabOrder = 10
+        Width = 73
+      end
     end
     object GroupBox2: TGroupBox
       AlignWithMargins = True
       Left = 4
-      Top = 309
+      Top = 303
       Width = 310
       Height = 202
       Align = alTop
@@ -851,7 +883,7 @@ object fmEmpAttend: TfmEmpAttend
             Properties.Alignment.Horz = taCenter
             Properties.Items = <
               item
-                Description = #51221#49345#44540#47924
+                Description = #51221#49345
                 ImageIndex = 0
                 Value = 0
               end
@@ -868,7 +900,7 @@ object fmEmpAttend: TfmEmpAttend
                 Value = 3
               end
               item
-                Description = #49884#44036#50808#49688#45817
+                Description = #52488#44284
                 Value = 4
               end
               item
@@ -954,6 +986,16 @@ object fmEmpAttend: TfmEmpAttend
         DataType = ftInteger
         Name = 'W_WEEK'
         ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'E_ID'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'EXT_HOUR'
+        ParamType = ptOutput
       end>
     CommandStoredProcName = 'EMP_ATTENDING_SEL'
     object EMP_ATTENDING_SELID: TIntegerField
@@ -986,6 +1028,12 @@ object fmEmpAttend: TfmEmpAttend
     object EMP_ATTENDING_SELW_WEEK: TIntegerField
       Alignment = taCenter
       FieldName = 'W_WEEK'
+    end
+    object EMP_ATTENDING_SELE_ID: TIntegerField
+      FieldName = 'E_ID'
+    end
+    object EMP_ATTENDING_SELEXT_HOUR: TIntegerField
+      FieldName = 'EXT_HOUR'
     end
   end
   object ds_EMP_ATTENDING_SEL: TDataSource
@@ -1054,6 +1102,11 @@ object fmEmpAttend: TfmEmpAttend
         DataType = ftInteger
         Name = 'W_HOUR'
         ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'EXT_HOUR'
+        ParamType = ptInput
       end>
     CommandStoredProcName = 'EMP_ATTENDING_UPD_ALL'
   end
@@ -1102,6 +1155,11 @@ object fmEmpAttend: TfmEmpAttend
       item
         DataType = ftInteger
         Name = 'W_HOUR'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'EXT_HOUR'
         ParamType = ptInput
       end>
     CommandStoredProcName = 'EMP_ATTENDING_INS'

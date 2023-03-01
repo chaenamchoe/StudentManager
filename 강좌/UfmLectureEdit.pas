@@ -91,6 +91,14 @@ type
     edtTeacher3: TcxLookupComboBox;
     Label18: TLabel;
     IS_ACTIVE: TcxImageComboBox;
+    Label19: TLabel;
+    edtMonth1Days: TcxCurrencyEdit;
+    Label20: TLabel;
+    edtMonth2Days: TcxCurrencyEdit;
+    Label21: TLabel;
+    edtMonth3Days: TcxCurrencyEdit;
+    Label22: TLabel;
+    edtMonthTotalDays: TcxCurrencyEdit;
     procedure CheckBox1Click(Sender: TObject);
     procedure edtStartTimePropertiesEditValueChanged(Sender: TObject);
     procedure edtEndTimePropertiesEditValueChanged(Sender: TObject);
@@ -103,6 +111,7 @@ type
     procedure edtMonth1PricePropertiesEditValueChanged(Sender: TObject);
     procedure edtKisuPropertiesEditValueChanged(Sender: TObject);
     procedure edtTeacherPropertiesEditValueChanged(Sender: TObject);
+    procedure edtMonth1DaysPropertiesEditValueChanged(Sender: TObject);
   private
     procedure GetTimeDuration;
     function GetWorkingDaysBetween(const StartDate, EndDate: TDateTime;
@@ -282,6 +291,12 @@ begin
       lblMon3.Caption := '12ПљКа';
     end;
   end;
+end;
+
+procedure TfmLectureEdit.edtMonth1DaysPropertiesEditValueChanged(
+  Sender: TObject);
+begin
+  edtMonthTotalDays.EditValue := edtMonth1Days.EditValue + edtMonth2Days.EditValue + edtMonth3Days.EditValue;
 end;
 
 procedure TfmLectureEdit.edtMonth1PricePropertiesEditValueChanged(

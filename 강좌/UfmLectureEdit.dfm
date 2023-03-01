@@ -3,7 +3,7 @@ object fmLectureEdit: TfmLectureEdit
   Top = 0
   BorderStyle = bsDialog
   Caption = #44053#51340' '#46321#47197'/'#49688#51221
-  ClientHeight = 339
+  ClientHeight = 443
   ClientWidth = 437
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -19,7 +19,7 @@ object fmLectureEdit: TfmLectureEdit
     Left = 8
     Top = 8
     Width = 421
-    Height = 321
+    Height = 427
     Caption = #44053#51032' '#46321#47197'/'#49688#51221
     TabOrder = 0
     object Label1: TLabel
@@ -65,11 +65,11 @@ object fmLectureEdit: TfmLectureEdit
       Caption = #44053#49324#47749'('#50900'1)'
     end
     object Label9: TLabel
-      Left = 336
-      Top = 187
-      Width = 65
+      Left = 346
+      Top = 231
+      Width = 52
       Height = 13
-      Caption = #49688#44053#47308#54633#44228
+      Caption = #49688#44053#47308#44228
     end
     object Label10: TLabel
       Left = 291
@@ -108,14 +108,14 @@ object fmLectureEdit: TfmLectureEdit
     end
     object Label11: TLabel
       Left = 16
-      Top = 235
+      Top = 283
       Width = 104
       Height = 13
       Caption = #44053#49324#49688#45817#50836#50984'(%):'
     end
     object Label12: TLabel
       Left = 215
-      Top = 301
+      Top = 348
       Width = 95
       Height = 13
       Caption = #44053#49324#48320#44221#51201#50857#50900':'
@@ -130,21 +130,21 @@ object fmLectureEdit: TfmLectureEdit
     end
     object lblMon1: TLabel
       Left = 32
-      Top = 187
+      Top = 231
       Width = 69
       Height = 13
       Caption = #49688#44053#47308'('#50900'1)'
     end
     object lblMon2: TLabel
       Left = 125
-      Top = 187
+      Top = 231
       Width = 69
       Height = 13
       Caption = #49688#44053#47308'('#50900'2)'
     end
     object lblMon3: TLabel
       Left = 218
-      Top = 187
+      Top = 231
       Width = 69
       Height = 13
       Caption = #49688#44053#47308'('#50900'3)'
@@ -165,10 +165,38 @@ object fmLectureEdit: TfmLectureEdit
     end
     object Label18: TLabel
       Left = 217
-      Top = 235
+      Top = 283
       Width = 56
       Height = 13
       Caption = #44053#51340#49345#53468':'
+    end
+    object Label19: TLabel
+      Left = 31
+      Top = 189
+      Width = 69
+      Height = 13
+      Caption = #44053#51032#51068'('#50900'1)'
+    end
+    object Label20: TLabel
+      Left = 125
+      Top = 189
+      Width = 69
+      Height = 13
+      Caption = #44053#51032#51068'('#50900'2)'
+    end
+    object Label21: TLabel
+      Left = 218
+      Top = 189
+      Width = 69
+      Height = 13
+      Caption = #44053#51032#51068'('#50900'3)'
+    end
+    object Label22: TLabel
+      Left = 346
+      Top = 189
+      Width = 52
+      Height = 13
+      Caption = #44053#51032#51068#44228
     end
     object GroupBox2: TGroupBox
       Left = 16
@@ -250,7 +278,7 @@ object fmLectureEdit: TfmLectureEdit
     end
     object edtWeekTemp: TcxTextEdit
       Left = 264
-      Top = 320
+      Top = 367
       TabStop = False
       Properties.ReadOnly = True
       Style.Color = clInactiveCaption
@@ -260,7 +288,7 @@ object fmLectureEdit: TfmLectureEdit
     end
     object edtWeekCount: TcxTextEdit
       Left = 203
-      Top = 320
+      Top = 367
       TabStop = False
       Properties.ReadOnly = True
       Style.Color = clInactiveCaption
@@ -416,7 +444,7 @@ object fmLectureEdit: TfmLectureEdit
     end
     object edtTime: TcxTextEdit
       Left = 17
-      Top = 320
+      Top = 367
       TabStop = False
       TabOrder = 25
       Visible = False
@@ -424,7 +452,7 @@ object fmLectureEdit: TfmLectureEdit
     end
     object edtTimeStr: TcxTextEdit
       Left = 66
-      Top = 320
+      Top = 367
       TabStop = False
       TabOrder = 26
       Visible = False
@@ -448,7 +476,7 @@ object fmLectureEdit: TfmLectureEdit
     end
     object edtPrice: TcxCurrencyEdit
       Left = 304
-      Top = 201
+      Top = 245
       TabStop = False
       EditValue = 0.000000000000000000
       ParentFont = False
@@ -491,7 +519,7 @@ object fmLectureEdit: TfmLectureEdit
     end
     object edtSudangPercent: TEdit
       Left = 125
-      Top = 232
+      Top = 280
       Width = 49
       Height = 21
       ImeName = 'Microsoft IME 2010'
@@ -501,7 +529,7 @@ object fmLectureEdit: TfmLectureEdit
     end
     object btnSave: TBitBtn
       Left = 136
-      Top = 267
+      Top = 307
       Width = 75
       Height = 25
       Caption = #51200#51109
@@ -528,7 +556,7 @@ object fmLectureEdit: TfmLectureEdit
     end
     object BitBtn2: TBitBtn
       Left = 217
-      Top = 267
+      Top = 307
       Width = 75
       Height = 25
       Caption = #52712#49548
@@ -537,7 +565,7 @@ object fmLectureEdit: TfmLectureEdit
     end
     object cbChangeMonth: TcxImageComboBox
       Left = 316
-      Top = 297
+      Top = 344
       EditValue = 0
       Properties.Items = <
         item
@@ -608,7 +636,7 @@ object fmLectureEdit: TfmLectureEdit
     end
     object PanelMonthDays: TPanel
       Left = 9
-      Top = 351
+      Top = 394
       Width = 401
       Height = 24
       BevelOuter = bvNone
@@ -693,7 +721,7 @@ object fmLectureEdit: TfmLectureEdit
     end
     object edtSecondMonth: TcxSpinEdit
       Left = 94
-      Top = 298
+      Top = 345
       Properties.Alignment.Horz = taCenter
       Properties.AssignedValues.MinValue = True
       Properties.ImmediatePost = True
@@ -739,7 +767,7 @@ object fmLectureEdit: TfmLectureEdit
     end
     object edtMonth1Price: TcxCurrencyEdit
       Left = 16
-      Top = 201
+      Top = 245
       EditValue = 0.000000000000000000
       Properties.Alignment.Horz = taRightJustify
       Properties.DisplayFormat = ',0.;-,0.'
@@ -756,7 +784,7 @@ object fmLectureEdit: TfmLectureEdit
     end
     object edtMonth2Price: TcxCurrencyEdit
       Left = 109
-      Top = 201
+      Top = 245
       EditValue = 0.000000000000000000
       Properties.Alignment.Horz = taRightJustify
       Properties.DisplayFormat = ',0.;-,0.'
@@ -773,7 +801,7 @@ object fmLectureEdit: TfmLectureEdit
     end
     object edtMonth3Price: TcxCurrencyEdit
       Left = 202
-      Top = 201
+      Top = 245
       EditValue = 0.000000000000000000
       Properties.Alignment.Horz = taRightJustify
       Properties.DisplayFormat = ',0.;-,0.'
@@ -826,7 +854,7 @@ object fmLectureEdit: TfmLectureEdit
     end
     object IS_ACTIVE: TcxImageComboBox
       Left = 279
-      Top = 231
+      Top = 276
       EditValue = 0
       Properties.Items = <
         item
@@ -840,6 +868,85 @@ object fmLectureEdit: TfmLectureEdit
         end>
       TabOrder = 30
       Width = 85
+    end
+    object edtMonth1Days: TcxCurrencyEdit
+      Left = 16
+      Top = 203
+      EditValue = 0.000000000000000000
+      Properties.Alignment.Horz = taRightJustify
+      Properties.DisplayFormat = ',0.;-,0.'
+      Properties.UseDisplayFormatWhenEditing = True
+      Properties.UseLeftAlignmentOnEditing = False
+      Properties.UseThousandSeparator = True
+      Properties.OnEditValueChanged = edtMonth1DaysPropertiesEditValueChanged
+      Style.LookAndFeel.NativeStyle = False
+      StyleDisabled.LookAndFeel.NativeStyle = False
+      StyleFocused.LookAndFeel.NativeStyle = False
+      StyleHot.LookAndFeel.NativeStyle = False
+      TabOrder = 31
+      Width = 85
+    end
+    object edtMonth2Days: TcxCurrencyEdit
+      Left = 109
+      Top = 203
+      EditValue = 0.000000000000000000
+      Properties.Alignment.Horz = taRightJustify
+      Properties.DisplayFormat = ',0.;-,0.'
+      Properties.UseDisplayFormatWhenEditing = True
+      Properties.UseLeftAlignmentOnEditing = False
+      Properties.UseThousandSeparator = True
+      Properties.OnEditValueChanged = edtMonth1DaysPropertiesEditValueChanged
+      Style.LookAndFeel.NativeStyle = False
+      StyleDisabled.LookAndFeel.NativeStyle = False
+      StyleFocused.LookAndFeel.NativeStyle = False
+      StyleHot.LookAndFeel.NativeStyle = False
+      TabOrder = 32
+      Width = 85
+    end
+    object edtMonth3Days: TcxCurrencyEdit
+      Left = 202
+      Top = 203
+      EditValue = 0.000000000000000000
+      Properties.Alignment.Horz = taRightJustify
+      Properties.DisplayFormat = ',0.;-,0.'
+      Properties.UseDisplayFormatWhenEditing = True
+      Properties.UseLeftAlignmentOnEditing = False
+      Properties.UseThousandSeparator = True
+      Properties.OnEditValueChanged = edtMonth1DaysPropertiesEditValueChanged
+      Style.LookAndFeel.NativeStyle = False
+      StyleDisabled.LookAndFeel.NativeStyle = False
+      StyleFocused.LookAndFeel.NativeStyle = False
+      StyleHot.LookAndFeel.NativeStyle = False
+      TabOrder = 33
+      Width = 85
+    end
+    object edtMonthTotalDays: TcxCurrencyEdit
+      Left = 304
+      Top = 203
+      TabStop = False
+      EditValue = 0.000000000000000000
+      ParentFont = False
+      Properties.Alignment.Horz = taRightJustify
+      Properties.AutoSelect = False
+      Properties.DisplayFormat = ',0.;-,0.'
+      Properties.HideSelection = False
+      Properties.ReadOnly = True
+      Properties.UseDisplayFormatWhenEditing = True
+      Properties.UseLeftAlignmentOnEditing = False
+      Properties.UseThousandSeparator = True
+      Style.Color = clInactiveCaption
+      Style.Font.Charset = DEFAULT_CHARSET
+      Style.Font.Color = clBlue
+      Style.Font.Height = -13
+      Style.Font.Name = #44404#47548
+      Style.Font.Style = [fsBold]
+      Style.LookAndFeel.NativeStyle = False
+      Style.IsFontAssigned = True
+      StyleDisabled.LookAndFeel.NativeStyle = False
+      StyleFocused.LookAndFeel.NativeStyle = False
+      StyleHot.LookAndFeel.NativeStyle = False
+      TabOrder = 34
+      Width = 97
     end
   end
 end

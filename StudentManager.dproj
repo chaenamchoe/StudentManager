@@ -360,6 +360,9 @@
 			<DCCReference Include="인사급여\UfmExtraPrice.pas">
 				<Form>fmExtraPrice</Form>
 			</DCCReference>
+			<DCCReference Include="강좌\UfmTeacherExtrapay.pas">
+				<Form>fmTeacherExtrapay</Form>
+			</DCCReference>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>
@@ -392,7 +395,7 @@
 						<VersionInfo Name="MajorVer">1</VersionInfo>
 						<VersionInfo Name="MinorVer">0</VersionInfo>
 						<VersionInfo Name="Release">3</VersionInfo>
-						<VersionInfo Name="Build">35</VersionInfo>
+						<VersionInfo Name="Build">36</VersionInfo>
 						<VersionInfo Name="Debug">False</VersionInfo>
 						<VersionInfo Name="PreRelease">False</VersionInfo>
 						<VersionInfo Name="Special">False</VersionInfo>
@@ -404,7 +407,7 @@
 					<VersionInfoKeys>
 						<VersionInfoKeys Name="CompanyName">ccnsoft</VersionInfoKeys>
 						<VersionInfoKeys Name="FileDescription"/>
-						<VersionInfoKeys Name="FileVersion">1.0.3.35</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">1.0.3.36</VersionInfoKeys>
 						<VersionInfoKeys Name="InternalName"/>
 						<VersionInfoKeys Name="LegalCopyright">ccnsoft 2013</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalTrademarks">강좌/수강관리</VersionInfoKeys>

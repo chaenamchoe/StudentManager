@@ -138,6 +138,12 @@ type
     cxGrid2Level1: TcxGridLevel;
     gridTotalKIND: TcxGridDBColumn;
     gridTotalCNT: TcxGridDBColumn;
+    Label8: TLabel;
+    ext_hour: TcxSpinEdit;
+    EMP_ATTENDING_SELE_ID: TIntegerField;
+    EMP_ATTENDING_SELEXT_HOUR: TIntegerField;
+    gridAttendE_ID: TcxGridDBColumn;
+    gridAttendEXT_HOUR: TcxGridDBColumn;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
     procedure btnRetrieveClick(Sender: TObject);
@@ -155,6 +161,8 @@ type
     procedure btnDefaultClick(Sender: TObject);
     procedure btnExtReportClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
+    procedure icbMonthPropertiesEditValueChanged(Sender: TObject);
+    procedure spYearPropertiesEditValueChanged(Sender: TObject);
   private
     procedure EditData;
     function GetDateStatus(date: TDateTime): string;
@@ -226,15 +234,21 @@ end;
 
 procedure TfmEmpAttend.btnSaveClick(Sender: TObject);
 var
-  id, toprow, w_hour : Integer;
+  id, toprow, calc_hour, std_hour : Integer;
 begin
   id := gridAttendID.EditValue;
   toprow := gridAttend.Controller.TopRowIndex;
   gridAttend.DataController.SaveBookmark;
-  if not VarIsNull(out_time.EditValue) then
-    w_hour := HoursBetween(in_time.EditValue, out_time.EditValue) - 1
-  else
-    w_hour := 0;
+  if not VarIsNull(out_time.EditValue) then begin
+    calc_hour := HoursBetween(in_time.EditValue, out_time.EditValue);
+    if calc_hour > 9 then begin
+      w_hour.EditValue := 9;
+      ext_hour.EditValue := calc_hour - 9;
+    end;
+  end else begin
+    w_hour.EditValue := 0;
+    ext_hour.EditValue := 0;
+  end;
   EMP_ATTENDING_UPD_ALL.ParamByName('ID').Value := id;
   EMP_ATTENDING_UPD_ALL.ParamByName('WDATE').Value := wdate.Date;
   EMP_ATTENDING_UPD_ALL.ParamByName('IN_TIME').Value := in_time.EditValue;
@@ -242,7 +256,8 @@ begin
   EMP_ATTENDING_UPD_ALL.ParamByName('W_KIND').Value := icbKind.EditValue;
   EMP_ATTENDING_UPD_ALL.ParamByName('W_REASON').Value := Memo1.Text;
   EMP_ATTENDING_UPD_ALL.ParamByName('W_WEEK').Value := DayOfWeek(gridAttendWDATE.EditValue);
-  EMP_ATTENDING_UPD_ALL.ParamByName('W_HOUR').Value := w_hour;
+  EMP_ATTENDING_UPD_ALL.ParamByName('W_HOUR').Value := w_hour.EditValue;
+  EMP_ATTENDING_UPD_ALL.ParamByName('EXT_HOUR').Value := ext_hour.EditValue;
   EMP_ATTENDING_UPD_ALL.ExecProc;
   ds_EMP_ATTENDING_SEL.DataSet.Refresh;
   ds_EMP_ATTENDING_SEL.DataSet.Locate('ID', id, []);
@@ -456,7 +471,7 @@ begin
     UniQuery1.SQL.Add('delete from emp_attending where (id = :id);');
     UniQuery1.ParamByName('id').Value := id;
     UniQuery1.ExecSQL;
-    ds_EMP_ATTENDING_SEL.DataSet.Refresh;
+    btnRetrieve.Click;
   end;
 end;
 
@@ -485,6 +500,7 @@ begin
     EMP_ATTENDING_INS.ParamByName('W_REASON').Value := '';
     EMP_ATTENDING_INS.ParamByName('W_WEEK').Value := DayOfWeek(Date);
     EMP_ATTENDING_INS.ParamByName('W_HOUR').Value := 0;
+    EMP_ATTENDING_INS.ParamByName('EXT_HOUR').Value := 0;
     EMP_ATTENDING_INS.ExecProc;
     ds_EMP_ATTENDING_SEL.DataSet.Refresh;
   end;
@@ -509,6 +525,7 @@ begin
   in_time.EditValue := gridAttendIN_TIME.EditValue;
   out_time.EditValue := gridAttendOUT_TIME.EditValue;
   w_hour.EditValue := gridAttendW_HOUR.EditValue;
+  ext_hour.EditValue := gridAttendEXT_HOUR.EditValue;
   w_week.EditValue := gridAttendW_WEEK.EditValue;
   icbKind.EditValue := gridAttendW_KIND.EditValue;
   Memo1.Text := VarToStrDef(gridAttendW_REASON.EditValue, '');
@@ -521,16 +538,43 @@ begin
   EditData;
 end;
 
-procedure TfmEmpAttend.in_timePropertiesEditValueChanged(Sender: TObject);
+procedure TfmEmpAttend.icbMonthPropertiesEditValueChanged(Sender: TObject);
 begin
-  if not VarIsNull(in_time.EditValue) and not VarIsNull(out_time.EditValue) then
-    w_hour.EditValue := HoursBetween(in_time.EditValue, out_time.EditValue) - 1;
+  btnRetrieve.Click;
+end;
+
+procedure TfmEmpAttend.in_timePropertiesEditValueChanged(Sender: TObject);
+var
+  calc_hour : Integer;
+begin
+  if not VarIsNull(in_time.EditValue) and not VarIsNull(out_time.EditValue) then begin
+    calc_hour := HoursBetween(in_time.EditValue, out_time.EditValue);
+    if calc_hour > 9 then begin
+      w_hour.EditValue := 9;
+      ext_hour.EditValue := calc_hour - 9;
+    end else begin
+      ext_hour.EditValue := 0;
+    end;
+  end;
 end;
 
 procedure TfmEmpAttend.out_timePropertiesEditValueChanged(Sender: TObject);
+var
+  calc_hour : Integer;
 begin
-  if not VarIsNull(in_time.EditValue) and not VarIsNull(out_time.EditValue) then
-    w_hour.EditValue := HoursBetween(in_time.EditValue, out_time.EditValue) - 1;
+  if not VarIsNull(in_time.EditValue) and not VarIsNull(out_time.EditValue) then begin
+    calc_hour := HoursBetween(in_time.EditValue, out_time.EditValue);
+    if calc_hour > 9 then begin
+      w_hour.EditValue := 9;
+      ext_hour.EditValue := calc_hour - 9;
+    end else
+      ext_hour.EditValue := 0;
+  end;
+end;
+
+procedure TfmEmpAttend.spYearPropertiesEditValueChanged(Sender: TObject);
+begin
+  btnRetrieve.Click;
 end;
 
 procedure TfmEmpAttend.wdatePropertiesCloseUp(Sender: TObject);
