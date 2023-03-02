@@ -329,7 +329,8 @@ begin
     tprice := gridOutList.DataController.Summary.FooterSummaryValues[2];
   end;
   r_date := gridOutListR_DATE.EditValue;
-  JUKYO := '수강료환불(' + f_name + '외 ' + IntToStr(cnt) + '명)';
+  JUKYO := '수강료환불(' + f_name + '외 총'
+   + IntToStr(cnt) + '명)';
   money_str := FormatFloat('#,원', tprice);
   msg := '다중환불로 등록한 회계자료는 반환결의를 수동으로 처리해야 합니다.' + #10#13 +
          jukyo + ' 금액:' + money_str + '의 자료를 등록합니다.';

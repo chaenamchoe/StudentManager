@@ -217,6 +217,8 @@ type
     LECTURE_LIST_SELL_QTY: TSmallintField;
     LECTURE_LIST_SELREG_SDATE: TStringField;
     LECTURE_LIST_SELREG_EDATE: TStringField;
+    sp_lectureTEACHER_ID2: TStringField;
+    sp_lectureTEACHER_ID3: TStringField;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure btnAddClick(Sender: TObject);
@@ -679,6 +681,7 @@ begin
   strList := TStringList.Create;
   SP := TUniStoredProc.Create(self);
   try
+    toprow := gridLecture.Controller.TopRowIndex;
     fmLectureEdit.IsEditMode := True;
     fmLectureEdit.lcbLecture.EditValue    := dm.sp_lectureL_UID.AsInteger;
     LectureID                             := dm.sp_LECTUREID.AsString;
@@ -707,6 +710,7 @@ begin
     fmLectureEdit.edtMonth1Days.EditValue := dm.sp_lectureMONTH1_DAYS.AsFloat;
     fmLectureEdit.edtMonth2Days.EditValue := dm.sp_lectureMONTH2_DAYS.AsFloat;
     fmLectureEdit.edtMonth3Days.EditValue := dm.sp_lectureMONTH3_DAYS.AsFloat;
+    fmLectureEdit.edtMonthTotalDays.EditValue := dm.sp_lectureTOTAL_DAY.AsInteger;
     fmLectureEdit.edtMonth1Price.EditValue := dm.sp_lectureMONTH1_PRICE.AsFloat;
     fmLectureEdit.edtMonth2Price.EditValue := dm.sp_lectureMONTH2_PRICE.AsFloat;
     fmLectureEdit.edtMonth3Price.EditValue := dm.sp_lectureMONTH3_PRICE.AsFloat;
@@ -756,7 +760,7 @@ begin
         ParamByName('REGIST_MEN').AsInteger   := dm.sp_lectureREGIST_MEN.AsInteger;
         ParamByName('WAIT_MEN').AsInteger     := dm.sp_lectureWAIT_MEN.AsInteger;
         ParamByName('DROP_MEN').AsInteger     := dm.sp_lectureDROP_MEN.AsInteger;
-        ParamByName('TOTAL_DAY').AsInteger    := dm.sp_lectureTOTAL_DAY.AsInteger;
+        ParamByName('TOTAL_DAY').AsInteger    := fmLectureEdit.edtMonthTotalDays.EditValue;
         ParamByName('TOTAL_TIME').AsFloat     := dm.sp_lectureTOTAL_TIME.AsInteger;
         ParamByName('TEACHER_PERCENT').AsInteger := StrToInt(fmLectureEdit.edtSudangPercent.Text);
         ParamByName('CALC_KIND').AsInteger     := fmLectureEdit.cbChangeMonth.EditValue;
@@ -770,7 +774,6 @@ begin
         ParamByName('MONTH3_PRICE').AsFloat      := fmLectureEdit.edtMonth3Price.EditValue;
         ExecProc;
       end;
-      toprow := gridLecture.Controller.TopRowIndex;
       dm.d_LECTURE.DataSet.Refresh;
       dm.d_LECTURE.DataSet.Locate('ID', LectureID, []);
       btnAttendance.Click;
@@ -854,6 +857,7 @@ var
   WeekDays, LectureID : string;
   StartDate, EndDate : TDateTime;
   lecture_time, total_time : Double;
+  m1cnt, m2cnt, m3cnt : integer;
 begin
   try
     LectureID := dm.sp_LECTUREID.AsString;
@@ -867,22 +871,28 @@ begin
   end;
   gridLecture.DataController.SaveBookmark;
 
-  strList := TStringList.Create;
-  strList.CommaText := WeekDays;
-  tcnt := 0;
-  WeekDayNo := 1;
-  for t := 0 to strList.Count - 1 do begin
-    if strList[t] = '월' then WeekDayNo := 1;  //1=월, 2=화, 3=수, 4=목, 5=금, 6=토, 7=일
-    if strList[t] = '화' then WeekDayNo := 2;
-    if strList[t] = '수' then WeekDayNo := 3;
-    if strList[t] = '목' then WeekDayNo := 4;
-    if strList[t] = '금' then WeekDayNo := 5;
-    if strList[t] = '토' then WeekDayNo := 6;
-    if strList[t] = '일' then WeekDayNo := 7;
-    cnt := CountWeek(StartDate, EndDate, WeekDayNo);
-    tcnt := tcnt + cnt;
-  end;
+//  strList := TStringList.Create;
+//  strList.CommaText := WeekDays;
+//  tcnt := 0;
+//  WeekDayNo := 1;
+//  for t := 0 to strList.Count - 1 do begin
+//    if strList[t] = '월' then WeekDayNo := 1;  //1=월, 2=화, 3=수, 4=목, 5=금, 6=토, 7=일
+//    if strList[t] = '화' then WeekDayNo := 2;
+//    if strList[t] = '수' then WeekDayNo := 3;
+//    if strList[t] = '목' then WeekDayNo := 4;
+//    if strList[t] = '금' then WeekDayNo := 5;
+//    if strList[t] = '토' then WeekDayNo := 6;
+//    if strList[t] = '일' then WeekDayNo := 7;
+//    cnt := CountWeek(StartDate, EndDate, WeekDayNo);
+//    tcnt := tcnt + cnt;
+//  end;
+  m1cnt := gridLectureMONTH1_DAYS.EditValue;
+  m2cnt := gridLectureMONTH2_DAYS.EditValue;
+  m3cnt := gridLectureMONTH3_DAYS.EditValue;
+  lecture_time := gridLectureL_TIME.EditValue;
+  tcnt := m1cnt + m2cnt + m3cnt;
   total_time := tcnt * lecture_time;
+
   UpdateLectureDayTime(LectureID, tcnt, total_time);
   dm.d_LECTURE.DataSet.Refresh;
   gridLecture.DataController.GotoBookmark;

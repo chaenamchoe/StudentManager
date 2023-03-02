@@ -296,181 +296,38 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
       DataController.Options = [dcoAssignGroupingValues, dcoAssignMasterDetailKeys, dcoSaveExpanding, dcoGroupsAlwaysExpanded]
       DataController.Summary.DefaultGroupSummaryItems = <
         item
-          Format = '#,'
+          Format = '#,0'
           Kind = skSum
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end
-        item
-          Format = '['#54633#44228'] 0 '#44053#51340
-          Kind = skCount
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end>
-      DataController.Summary.FooterSummaryItems = <
-        item
-          Format = '#,0 '#47749
-          Kind = skCount
+          OnGetText = gridExtrapayTcxGridDBDataControllerTcxDataSummaryDefaultGroupSummaryItems0GetText
+          Column = gridExtrapayNET_PRICE
         end
         item
           Format = '#,0'
           Kind = skSum
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end
-        item
-          Format = '#,0'
-          Kind = skSum
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end
-        item
-          Format = '['#54633#44228'] 0 '#44053#51340
-          Kind = skCount
-        end
-        item
-          Format = '#,'
-          Kind = skSum
-        end
-        item
-          Format = '#,0'
-          Kind = skSum
-          Column = gridExtrapayLECTURE_PRICE
-        end
-        item
-          Format = '#,0'
-          Kind = skSum
-          Column = gridExtrapayBOJUN_PRICE
-        end
-        item
-          Format = '#,0'
-          Kind = skSum
-          Column = gridExtrapayBOJUN_CNT
-        end
-        item
-          Format = '#,0'
-          Kind = skSum
-          Column = gridExtrapayBOJUN_TOTAL
-        end
-        item
-          Format = '#,0'
-          Kind = skSum
-          Column = gridExtrapayTOTAL_PRICE
-        end
-        item
-          Format = '#,0'
-          Kind = skSum
+          OnGetText = gridExtrapayTcxGridDBDataControllerTcxDataSummaryDefaultGroupSummaryItems1GetText
           Column = gridExtrapaySODUKSE
         end
         item
           Format = '#,0'
           Kind = skSum
+          OnGetText = gridExtrapayTcxGridDBDataControllerTcxDataSummaryDefaultGroupSummaryItems2GetText
           Column = gridExtrapayJUMINSE
         end
         item
           Format = '#,0'
           Kind = skSum
-          Column = gridExtrapayNET_PRICE
+          OnGetText = gridExtrapayTcxGridDBDataControllerTcxDataSummaryDefaultGroupSummaryItems3GetText
+          Column = gridExtrapayTOTAL_PRICE
+        end
+        item
+          Format = '#,0 '#47749
+          Kind = skCount
+          Column = gridExtrapayTEACHER_ID
+        end>
+      DataController.Summary.FooterSummaryItems = <
+        item
+          Kind = skCount
+          Column = gridExtrapayColumn1
         end>
       DataController.Summary.SummaryGroups = <>
       OptionsCustomize.ColumnsQuickCustomization = True
@@ -480,27 +337,45 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
       OptionsData.Editing = False
       OptionsData.Inserting = False
       OptionsSelection.CellSelect = False
+      OptionsView.FocusRect = False
       OptionsView.Footer = True
       OptionsView.FooterAutoHeight = True
       OptionsView.FooterMultiSummaries = True
       OptionsView.GroupByBox = False
       OptionsView.GroupByHeaderLayout = ghlHorizontal
-      OptionsView.GroupSummaryLayout = gslAlignWithColumnsAndDistribute
+      OptionsView.GroupSummaryLayout = gslAlignWithColumns
       OptionsView.Indicator = True
       Styles.OnGetContentStyle = gridCompensationStylesGetContentStyle
       Styles.Group = cxStyleBlue
+      object gridExtrapayTEACHER_IDX: TcxGridDBColumn
+        DataBinding.FieldName = 'TEACHER_IDX'
+        Visible = False
+        SortIndex = 0
+        SortOrder = soAscending
+      end
+      object gridExtrapayID: TcxGridDBColumn
+        DataBinding.FieldName = 'ID'
+        Visible = False
+        SortIndex = 1
+        SortOrder = soAscending
+      end
+      object gridExtrapayL_MONTH: TcxGridDBColumn
+        Caption = #50900#48516
+        DataBinding.FieldName = 'L_MONTH'
+        PropertiesClassName = 'TcxTextEditProperties'
+        Properties.Alignment.Horz = taCenter
+        Visible = False
+        GroupIndex = 0
+        HeaderAlignmentHorz = taCenter
+        Width = 45
+      end
       object gridExtrapayColumn1: TcxGridDBColumn
         Caption = 'No'
-        DataBinding.ValueType = 'Integer'
         PropertiesClassName = 'TcxTextEditProperties'
         Properties.Alignment.Horz = taCenter
         OnGetDataText = gridExtrapayColumn1GetDataText
         HeaderAlignmentHorz = taCenter
         Width = 45
-      end
-      object gridExtrapayID: TcxGridDBColumn
-        DataBinding.FieldName = 'ID'
-        Visible = False
       end
       object gridExtrapayLECTURE_ID: TcxGridDBColumn
         Caption = #44053#51340#53076#46300
@@ -527,6 +402,11 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
         HeaderAlignmentHorz = taCenter
         Width = 134
       end
+      object gridExtrapayL_YEAR: TcxGridDBColumn
+        DataBinding.FieldName = 'L_YEAR'
+        Visible = False
+        VisibleForCustomization = False
+      end
       object gridExtrapayTEACHER_ID: TcxGridDBColumn
         Caption = #44053#49324#47749
         DataBinding.FieldName = 'TEACHER_ID'
@@ -538,21 +418,10 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
             FieldName = 'T_NAME'
           end>
         Properties.ListSource = dm.d_TEACHER_LOOK
+        OnCustomDrawCell = gridExtrapayTEACHER_IDCustomDrawCell
         HeaderAlignmentHorz = taCenter
+        Options.CellMerging = True
         Width = 91
-      end
-      object gridExtrapayL_YEAR: TcxGridDBColumn
-        DataBinding.FieldName = 'L_YEAR'
-        Visible = False
-        VisibleForCustomization = False
-      end
-      object gridExtrapayL_MONTH: TcxGridDBColumn
-        Caption = #50900#48516
-        DataBinding.FieldName = 'L_MONTH'
-        PropertiesClassName = 'TcxTextEditProperties'
-        Properties.Alignment.Horz = taCenter
-        HeaderAlignmentHorz = taCenter
-        Width = 45
       end
       object gridExtrapayNET_PRICE: TcxGridDBColumn
         Caption = #51648#44553#50529
@@ -560,8 +429,11 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
         PropertiesClassName = 'TcxCurrencyEditProperties'
         Properties.DisplayFormat = ',0;-,0'
         Properties.UseThousandSeparator = True
+        OnCustomDrawCell = gridExtrapayNET_PRICECustomDrawCell
         HeaderAlignmentHorz = taCenter
+        Options.CellMerging = True
         Width = 86
+        OnCompareRowValuesForCellMerging = gridExtrapayNET_PRICECompareRowValuesForCellMerging
       end
       object gridExtrapaySODUKSE: TcxGridDBColumn
         Caption = #49548#46301#49464
@@ -569,7 +441,10 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
         PropertiesClassName = 'TcxCurrencyEditProperties'
         Properties.DisplayFormat = ',0;-,0'
         Properties.UseThousandSeparator = True
+        OnCustomDrawCell = gridExtrapaySODUKSECustomDrawCell
         HeaderAlignmentHorz = taCenter
+        Options.CellMerging = True
+        OnCompareRowValuesForCellMerging = gridExtrapaySODUKSECompareRowValuesForCellMerging
       end
       object gridExtrapayJUMINSE: TcxGridDBColumn
         Caption = #51648#48169#49464
@@ -577,7 +452,10 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
         PropertiesClassName = 'TcxCurrencyEditProperties'
         Properties.DisplayFormat = ',0;-,0'
         Properties.UseThousandSeparator = True
+        OnCustomDrawCell = gridExtrapayJUMINSECustomDrawCell
         HeaderAlignmentHorz = taCenter
+        Options.CellMerging = True
+        OnCompareRowValuesForCellMerging = gridExtrapaySODUKSECompareRowValuesForCellMerging
       end
       object gridExtrapayTOTAL_PRICE: TcxGridDBColumn
         Caption = #49688#45817#54633#44228
@@ -585,8 +463,11 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
         PropertiesClassName = 'TcxCurrencyEditProperties'
         Properties.DisplayFormat = ',0;-,0'
         Properties.UseThousandSeparator = True
+        OnCustomDrawCell = gridExtrapayTOTAL_PRICECustomDrawCell
         HeaderAlignmentHorz = taCenter
+        Options.CellMerging = True
         Width = 80
+        OnCompareRowValuesForCellMerging = gridExtrapaySODUKSECompareRowValuesForCellMerging
       end
       object gridExtrapayCITY_PRICE: TcxGridDBColumn
         Caption = #45800#44032'('#49884#44036')'
@@ -660,6 +541,89 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
       GridView = gridExtrapay
     end
   end
+  object cxGrid2: TcxGrid
+    Left = 536
+    Top = 288
+    Width = 569
+    Height = 200
+    TabOrder = 2
+    Visible = False
+    object gridTotal: TcxGridDBTableView
+      Navigator.Buttons.CustomButtons = <>
+      Navigator.Buttons.First.Visible = False
+      Navigator.Buttons.PriorPage.Visible = False
+      Navigator.Buttons.Prior.Visible = False
+      Navigator.Buttons.Next.Visible = False
+      Navigator.Buttons.NextPage.Visible = False
+      Navigator.Buttons.Last.Visible = False
+      Navigator.Buttons.Insert.Visible = False
+      Navigator.Buttons.Append.Visible = False
+      Navigator.Buttons.Delete.Visible = False
+      Navigator.Buttons.Edit.Visible = False
+      Navigator.Buttons.Post.Visible = False
+      Navigator.Buttons.Cancel.Visible = False
+      Navigator.Buttons.Refresh.Visible = False
+      Navigator.Buttons.SaveBookmark.Visible = False
+      Navigator.Buttons.GotoBookmark.Visible = False
+      Navigator.Buttons.Filter.Visible = False
+      DataController.DataSource = ds_TEACHER_EXTRAPAY_CALCTOTAL
+      DataController.Summary.DefaultGroupSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridTotalSUM_OF_TOTAL_AMOUNT
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridTotalSUM_OF_SODUK
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridTotalSUM_OF_JUMIN
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridTotalSUM_OF_NET_AMOUNT
+        end>
+      DataController.Summary.SummaryGroups = <>
+      OptionsBehavior.CellHints = True
+      OptionsCustomize.ColumnsQuickCustomization = True
+      OptionsSelection.CellSelect = False
+      OptionsSelection.HideFocusRectOnExit = False
+      OptionsView.CellEndEllipsis = True
+      OptionsView.ColumnAutoWidth = True
+      OptionsView.Footer = True
+      OptionsView.GroupByBox = False
+      OptionsView.Indicator = True
+      object gridTotalTEACHER_ID: TcxGridDBColumn
+        DataBinding.FieldName = 'TEACHER_ID'
+        Width = 125
+      end
+      object gridTotalSUM_OF_TOTAL_AMOUNT: TcxGridDBColumn
+        DataBinding.FieldName = 'SUM_OF_TOTAL_AMOUNT'
+        Width = 92
+      end
+      object gridTotalSUM_OF_SODUK: TcxGridDBColumn
+        DataBinding.FieldName = 'SUM_OF_SODUK'
+        Width = 92
+      end
+      object gridTotalSUM_OF_JUMIN: TcxGridDBColumn
+        DataBinding.FieldName = 'SUM_OF_JUMIN'
+        Width = 90
+      end
+      object gridTotalSUM_OF_NET_AMOUNT: TcxGridDBColumn
+        DataBinding.FieldName = 'SUM_OF_NET_AMOUNT'
+        Width = 92
+      end
+    end
+    object cxGrid2Level1: TcxGridLevel
+      GridView = gridTotal
+    end
+  end
   object dxComponentPrinter1: TdxComponentPrinter
     CurrentLink = dxComponentPrinter1Link1
     OverWriteExistingFiles = True
@@ -673,6 +637,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
     object dxComponentPrinter1Link1: TdxGridReportLink
       Active = True
       Component = cxGrid1
+      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
       PrinterPage.Header = 6350
@@ -695,7 +660,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
       PrinterPage.ScaleMode = smFit
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
-      ReportDocument.CreationDate = 44986.829439884260000000
+      ReportDocument.CreationDate = 44987.648102326390000000
       ReportTitle.Font.Charset = DEFAULT_CHARSET
       ReportTitle.Font.Color = clBlack
       ReportTitle.Font.Height = -21
@@ -703,6 +668,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
       ReportTitle.Font.Style = [fsBold]
       ReportTitle.Text = #44053#51340#46321#47197#54788#54889
       ShrinkToPageWidth = True
+      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -13
@@ -1445,6 +1411,11 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
         ParamType = ptOutput
       end
       item
+        DataType = ftInteger
+        Name = 'IDX'
+        ParamType = ptOutput
+      end
+      item
         DataType = ftString
         Name = 'LECTURE_ID'
         ParamType = ptOutput
@@ -1530,6 +1501,11 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
         DataType = ftInteger
         Name = 'NET_PRICE'
         ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'TEACHER_IDX'
+        ParamType = ptOutput
       end>
     CommandStoredProcName = 'TEACHER_EXTRAPAY_SEL'
     object TEACHER_EXTRAPAY_SELID: TIntegerField
@@ -1587,6 +1563,12 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
     end
     object TEACHER_EXTRAPAY_SELL_UID: TIntegerField
       FieldName = 'L_UID'
+    end
+    object TEACHER_EXTRAPAY_SELTEACHER_IDX: TIntegerField
+      FieldName = 'TEACHER_IDX'
+    end
+    object TEACHER_EXTRAPAY_SELIDX: TIntegerField
+      FieldName = 'IDX'
     end
   end
   object ds_TEACHER_EXTRAPAY_SEL: TDataSource
@@ -1687,5 +1669,75 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
         ParamType = ptInput
       end>
     CommandStoredProcName = 'TEACHER_EXTRAPAY_CREATE'
+  end
+  object ds_TEACHER_EXTRAPAY_CALCTOTAL: TDataSource
+    DataSet = TEACHER_EXTRAPAY_CALCTOTAL
+    Left = 728
+    Top = 192
+  end
+  object UniQuery1: TUniQuery
+    Connection = dm.UniConnection1
+    Left = 728
+    Top = 240
+  end
+  object TEACHER_EXTRAPAY_CALCTOTAL: TUniStoredProc
+    StoredProcName = 'TEACHER_EXTRAPAY_CALCTOTAL'
+    Connection = dm.UniConnection1
+    Left = 728
+    Top = 144
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'PYEAR'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'PMONTH'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'TEACHER_ID'
+        ParamType = ptOutput
+        Size = 17
+      end
+      item
+        DataType = ftInteger
+        Name = 'SUM_OF_TOTAL_AMOUNT'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'SUM_OF_SODUK'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'SUM_OF_JUMIN'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'SUM_OF_NET_AMOUNT'
+        ParamType = ptOutput
+      end>
+    CommandStoredProcName = 'TEACHER_EXTRAPAY_CALCTOTAL'
+    object TEACHER_EXTRAPAY_CALCTOTALTEACHER_ID: TStringField
+      FieldName = 'TEACHER_ID'
+      Size = 17
+    end
+    object TEACHER_EXTRAPAY_CALCTOTALSUM_OF_TOTAL_AMOUNT: TIntegerField
+      FieldName = 'SUM_OF_TOTAL_AMOUNT'
+    end
+    object TEACHER_EXTRAPAY_CALCTOTALSUM_OF_SODUK: TIntegerField
+      FieldName = 'SUM_OF_SODUK'
+    end
+    object TEACHER_EXTRAPAY_CALCTOTALSUM_OF_JUMIN: TIntegerField
+      FieldName = 'SUM_OF_JUMIN'
+    end
+    object TEACHER_EXTRAPAY_CALCTOTALSUM_OF_NET_AMOUNT: TIntegerField
+      FieldName = 'SUM_OF_NET_AMOUNT'
+    end
   end
 end

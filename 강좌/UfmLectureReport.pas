@@ -190,6 +190,9 @@ type
     q_REQUEST_VIEWOUT_PRICE3: TFloatField;
     gridLectureTEACHER_ID2: TcxGridDBColumn;
     gridLectureTEACHER_ID3: TcxGridDBColumn;
+    frxReport2: TfrxReport;
+    frxReport3: TfrxReport;
+    frxReport4: TfrxReport;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure btnRetrieveClick(Sender: TObject);
@@ -265,7 +268,7 @@ begin
 
   dxMemData1.Post;
 
-  frxReport1.LoadFromFile(gsDefaultFolder + 'StudyReport.fr3');
+//  frxReport1.LoadFromFile(gsDefaultFolder + 'StudyReport.fr3');
   frxReport1.ShowReport;
 end;
 
@@ -308,8 +311,7 @@ begin
 
   dxMemData1.Post;
 
-  frxReport1.LoadFromFile(gsDefaultFolder + 'AttendingFront.fr3');
-  frxReport1.ShowReport;
+  frxReport3.ShowReport;
 end;
 
 procedure TfmLectureReport.btnRetrieveClick(Sender: TObject);
@@ -367,8 +369,7 @@ begin
       gridLecture.DataController.GotoNext;
     end;
 
-    frxReport1.LoadFromFile(gsDefaultFolder + 'teacher_attending.fr3');
-    frxReport1.ShowReport;
+    frxReport2.ShowReport;
   except on E: Exception do
     ShowMessage(e.Message);
   end;
@@ -425,28 +426,28 @@ begin
     else
       MakeTimeTable(1);
 
-    if ReportDayCount = 1 then begin
-      report_form := 'AttendingList1.fr3';
-      frxReport1.LoadFromFile(gsDefaultFolder + report_form);
-      SetReportLines(1);
-    end else if ReportDayCount = 2 then begin
-      report_form := 'AttendingList2.fr3';
-      frxReport1.LoadFromFile(gsDefaultFolder + report_form);
-      SetReportLines(2);
-    end else if ReportDayCount = 3 then begin
-      report_form := 'AttendingList3.fr3';
-      frxReport1.LoadFromFile(gsDefaultFolder + report_form);
-      SetReportLines(3);
-    end else if ReportDayCount = 4 then begin
-      report_form := 'AttendingList5.fr3';
-      frxReport1.LoadFromFile(gsDefaultFolder + report_form);
-      SetReportLines(4);
-    end else if ReportDayCount = 5 then begin
-      report_form := 'AttendingList5.fr3';
-      frxReport1.LoadFromFile(gsDefaultFolder + report_form);
-      SetReportLines(4);
-    end;
-    frxReport1.ShowReport;
+//    if ReportDayCount = 1 then begin
+//      report_form := 'AttendingList1.fr3';
+//      frxReport1.LoadFromFile(gsDefaultFolder + report_form);
+//      SetReportLines(1);
+//    end else if ReportDayCount = 2 then begin
+//      report_form := 'AttendingList2.fr3';
+//      frxReport1.LoadFromFile(gsDefaultFolder + report_form);
+//      SetReportLines(2);
+//    end else if ReportDayCount = 3 then begin
+//      report_form := 'AttendingList3.fr3';
+//      frxReport1.LoadFromFile(gsDefaultFolder + report_form);
+//      SetReportLines(3);
+//    end else if ReportDayCount = 4 then begin
+//      report_form := 'AttendingList5.fr3';
+//      frxReport1.LoadFromFile(gsDefaultFolder + report_form);
+//      SetReportLines(4);
+//    end else if ReportDayCount = 5 then begin
+//      report_form := 'AttendingList5.fr3';
+//      frxReport1.LoadFromFile(gsDefaultFolder + report_form);
+//      SetReportLines(4);
+//    end;
+    frxReport4.ShowReport;
   except on E: Exception do
     ShowMessage(e.Message);
   end;

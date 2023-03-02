@@ -2229,8 +2229,9 @@ object dm: Tdm
     object sp_lectureL_NAME: TStringField
       Alignment = taCenter
       DisplayLabel = #44053#51340#47749
+      DisplayWidth = 60
       FieldName = 'L_NAME'
-      Size = 30
+      Size = 60
     end
     object sp_lectureL_TIME_WEEK: TIntegerField
       Alignment = taCenter

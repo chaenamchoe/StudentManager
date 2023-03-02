@@ -1298,7 +1298,6 @@ object fmLectureView: TfmLectureView
     object dxComponentPrinter1Link1: TdxGridReportLink
       Active = True
       Component = cxGrid1
-      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
       PrinterPage.Header = 6350
@@ -1320,14 +1319,13 @@ object fmLectureView: TfmLectureView
       PrinterPage.PageSize.Y = 297000
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
-      ReportDocument.CreationDate = 44986.888511469910000000
+      ReportDocument.CreationDate = 44987.634958240740000000
       ReportTitle.Font.Charset = DEFAULT_CHARSET
       ReportTitle.Font.Color = clBlack
       ReportTitle.Font.Height = -21
       ReportTitle.Font.Name = 'Times New Roman'
       ReportTitle.Font.Style = [fsBold]
       ReportTitle.Text = #44053#51340#46321#47197#54788#54889
-      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -13
@@ -1595,6 +1593,7 @@ object fmLectureView: TfmLectureView
         ParamType = ptOutput
       end>
     CommandStoredProcName = 'LECTURE_ACTIVE_SEL'
+    StoredProcIsQuery = True
     object sp_lectureID: TStringField
       FieldName = 'ID'
       Size = 17
@@ -1610,7 +1609,7 @@ object fmLectureView: TfmLectureView
     end
     object sp_lectureL_STEP: TIntegerField
       Alignment = taCenter
-      DisplayLabel = #44592#49688
+      DisplayLabel = #48516#44592
       FieldName = 'L_STEP'
     end
     object sp_lectureL_NAME: TStringField
@@ -1644,8 +1643,18 @@ object fmLectureView: TfmLectureView
     end
     object sp_lectureTEACHER_ID: TStringField
       Alignment = taCenter
-      DisplayLabel = #44053#49324#47749
+      DisplayLabel = #44053#49324'-'#50900'1'
       FieldName = 'TEACHER_ID'
+      Size = 17
+    end
+    object sp_lectureTEACHER_ID2: TStringField
+      DisplayLabel = #44053#49324'-'#50900'2'
+      FieldName = 'TEACHER_ID2'
+      Size = 17
+    end
+    object sp_lectureTEACHER_ID3: TStringField
+      DisplayLabel = #44053#49324'-'#50900'3'
+      FieldName = 'TEACHER_ID3'
       Size = 17
     end
     object sp_lectureL_PRICE: TFloatField
@@ -1713,7 +1722,7 @@ object fmLectureView: TfmLectureView
     end
     object sp_lectureTOTAL_DAY: TIntegerField
       Alignment = taCenter
-      DisplayLabel = #44053#51032#51068
+      DisplayLabel = #52509#44053#51032#51068
       FieldName = 'TOTAL_DAY'
     end
     object sp_lectureTOTAL_TIME: TFloatField
@@ -1723,38 +1732,47 @@ object fmLectureView: TfmLectureView
     end
     object sp_lectureTEACHER_PERCENT: TSmallintField
       Alignment = taCenter
+      DisplayLabel = #49688#45817'%'
       FieldName = 'TEACHER_PERCENT'
     end
     object sp_lectureCALC_KIND: TSmallintField
       Alignment = taCenter
+      DisplayLabel = #44228#49328#48169#49885
       FieldName = 'CALC_KIND'
     end
     object sp_lectureMONTH1_DAYS: TSmallintField
       Alignment = taCenter
+      DisplayLabel = #51068#49688'-'#50900'1'
       FieldName = 'MONTH1_DAYS'
     end
     object sp_lectureMONTH2_DAYS: TSmallintField
       Alignment = taCenter
+      DisplayLabel = #51068#49688'-'#50900'2'
       FieldName = 'MONTH2_DAYS'
     end
     object sp_lectureMONTH3_DAYS: TSmallintField
       Alignment = taCenter
+      DisplayLabel = #51068#49688'-'#50900'3'
       FieldName = 'MONTH3_DAYS'
     end
     object sp_lectureL_IDX: TSmallintField
       Alignment = taCenter
+      DisplayLabel = #49692#48264
       FieldName = 'L_IDX'
     end
     object sp_lectureL_UID: TIntegerField
       FieldName = 'L_UID'
     end
     object sp_lectureMONTH1_PRICE: TFloatField
+      DisplayLabel = #49688#44053#47308'1'
       FieldName = 'MONTH1_PRICE'
     end
     object sp_lectureMONTH2_PRICE: TFloatField
+      DisplayLabel = #49688#44053#47308'2'
       FieldName = 'MONTH2_PRICE'
     end
     object sp_lectureMONTH3_PRICE: TFloatField
+      DisplayLabel = #49688#44053#47308'3'
       FieldName = 'MONTH3_PRICE'
     end
     object sp_lecturePARENT_LECTURE_ID: TStringField
