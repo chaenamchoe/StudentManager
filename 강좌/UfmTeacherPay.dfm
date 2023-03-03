@@ -1,7 +1,7 @@
 object fmTeacherPay: TfmTeacherPay
   Left = 0
   Top = 0
-  Caption = #44053#49324#49688#45817#44288#47532
+  Caption = #44053#49324#49688#45817'1'
   ClientHeight = 672
   ClientWidth = 1113
   Color = clBtnFace
@@ -1077,7 +1077,6 @@ object fmTeacherPay: TfmTeacherPay
     object dxComponentPrinter1Link1: TdxGridReportLink
       Active = True
       Component = cxGrid1
-      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
       PrinterPage.Header = 6350
@@ -1101,7 +1100,7 @@ object fmTeacherPay: TfmTeacherPay
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
       ReportDocument.Caption = #48372#44256#49436
-      ReportDocument.CreationDate = 44987.649969583330000000
+      ReportDocument.CreationDate = 44988.287049224530000000
       ReportTitle.AdjustOnReportScale = True
       ReportTitle.Font.Charset = DEFAULT_CHARSET
       ReportTitle.Font.Color = clBlack
@@ -1110,7 +1109,6 @@ object fmTeacherPay: TfmTeacherPay
       ReportTitle.Font.Style = [fsBold]
       ReportTitle.Text = #44053#49324#49688#45817#51648#44553#54788#54889
       ShrinkToPageWidth = True
-      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -13

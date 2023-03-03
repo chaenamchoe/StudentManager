@@ -194,6 +194,7 @@ type
     N58: TMenuItem;
     EMP_ATTENDING_INS: TUniStoredProc;
     N210: TMenuItem;
+    N310: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure ActionLectureRegistExecute(Sender: TObject);
     procedure ActionTeacherViewExecute(Sender: TObject);
@@ -261,6 +262,7 @@ type
     procedure N57Click(Sender: TObject);
     procedure N58Click(Sender: TObject);
     procedure N210Click(Sender: TObject);
+    procedure N310Click(Sender: TObject);
   private
     procedure CloseAllWindows;
     { Private declarations }
@@ -596,7 +598,7 @@ procedure TfmMain.ActionTeacherPayExecute(Sender: TObject);
 begin
   if SDI_Mode.Checked then
     CloseAllWindows;
-  CreateChild('TfmTeacherPay', ActionTeacherPay.Caption);
+  CreateChild('TfmTeacherPay', '강사수당1');
 end;
 
 procedure TfmMain.ActionTeacherViewExecute(Sender: TObject);
@@ -771,7 +773,14 @@ procedure TfmMain.N210Click(Sender: TObject);
 begin
   if SDI_Mode.Checked then
     CloseAllWindows;
-  CreateChild('TfmTeacherExtrapay', '강사수당관리2');
+  CreateChild('TfmTeacherExtrapay', '강사수당2');
+end;
+
+procedure TfmMain.N310Click(Sender: TObject);
+begin
+  if SDI_Mode.Checked then
+    CloseAllWindows;
+  CreateChild('TfmTeacherTaxTotal', '강사수당3');
 end;
 
 procedure TfmMain.N33Click(Sender: TObject);

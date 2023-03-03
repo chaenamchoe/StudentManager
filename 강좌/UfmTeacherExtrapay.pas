@@ -30,7 +30,7 @@ uses
   dxSkinLiquidSky, dxSkinLondonLiquidSky, dxSkinMoneyTwins, dxSkinPumpkin,
   dxSkinSilver, dxSkinSpringTime, dxSkinStardust, dxSkinSummer2008,
   dxSkinTheAsphaltWorld, dxSkinValentine, dxSkinWhiteprint, dxSkinXmas2008Blue,
-  cxCurrencyEdit;
+  cxCurrencyEdit, cxContainer, cxCheckBox;
 
 type
   TfmTeacherExtrapay = class(TForm)
@@ -199,7 +199,7 @@ type
     btnCreateNew: TcxButton;
     TEACHER_EXTRAPAY_DEL: TUniStoredProc;
     TEACHER_EXTRAPAY_CREATE: TUniStoredProc;
-    gridExtrapayColumn1: TcxGridDBColumn;
+    gridExtrapayIDX: TcxGridDBColumn;
     TEACHER_EXTRAPAY_SELTEACHER_IDX: TIntegerField;
     gridExtrapayTEACHER_IDX: TcxGridDBColumn;
     ds_TEACHER_EXTRAPAY_CALCTOTAL: TDataSource;
@@ -219,6 +219,27 @@ type
     gridTotalSUM_OF_JUMIN: TcxGridDBColumn;
     gridTotalSUM_OF_NET_AMOUNT: TcxGridDBColumn;
     TEACHER_EXTRAPAY_SELIDX: TIntegerField;
+    TEACHER_EXTRAPAY_SELTOTAL_PRICE2: TIntegerField;
+    TEACHER_EXTRAPAY_SELSODUKSE2: TIntegerField;
+    TEACHER_EXTRAPAY_SELJUMINSE2: TIntegerField;
+    TEACHER_EXTRAPAY_SELNET_PRICE2: TIntegerField;
+    gridExtrapayTOTAL_PRICE2: TcxGridDBColumn;
+    gridExtrapaySODUKSE2: TcxGridDBColumn;
+    gridExtrapayJUMINSE2: TcxGridDBColumn;
+    gridExtrapayNET_PRICE2: TcxGridDBColumn;
+    TEACHER_EXTRAPAY_UPDTAX: TUniStoredProc;
+    gridExtrapayColumn1: TcxGridDBColumn;
+    gridExtrapayColumn2: TcxGridDBColumn;
+    TEACHER_SEL_LOOKUP: TUniStoredProc;
+    ds_TEACHER_SEL_LOOKUP: TDataSource;
+    TEACHER_SEL_LOOKUPID: TStringField;
+    TEACHER_SEL_LOOKUPT_NAME: TStringField;
+    TEACHER_SEL_LOOKUPT_TEL: TStringField;
+    TEACHER_SEL_LOOKUPBANK_NAME: TStringField;
+    TEACHER_SEL_LOOKUPBANK_NO: TStringField;
+    TEACHER_SEL_LOOKUPBANK_CODE: TStringField;
+    TEACHER_SEL_LOOKUPIDX: TIntegerField;
+    chkShowAll: TcxCheckBox;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnRetrieveClick(Sender: TObject);
     procedure btnExportClick(Sender: TObject);
@@ -230,9 +251,6 @@ type
     procedure gridCompensationStylesGetContentStyle(
       Sender: TcxCustomGridTableView; ARecord: TcxCustomGridRecord;
       AItem: TcxCustomGridTableItem; var AStyle: TcxStyle);
-    procedure gridExtrapayDC_TOTALCustomDrawCell(
-      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
-      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
     procedure btnCalcClick(Sender: TObject);
     procedure btnCreateNewClick(Sender: TObject);
     procedure gridExtrapayTEACHER_IDCustomDrawCell(
@@ -260,7 +278,7 @@ type
     procedure gridExtrapayTOTAL_PRICECustomDrawCell(
       Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
       AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
-    procedure gridExtrapayColumn1GetDataText(Sender: TcxCustomGridTableItem;
+    procedure gridExtrapayIDXGetDataText(Sender: TcxCustomGridTableItem;
       ARecordIndex: Integer; var AText: string);
     procedure gridExtrapayTcxGridDBDataControllerTcxDataSummaryDefaultGroupSummaryItems0GetText(
       Sender: TcxDataSummaryItem; const AValue: Variant; AIsFooter: Boolean;
@@ -274,6 +292,16 @@ type
     procedure gridExtrapayTcxGridDBDataControllerTcxDataSummaryDefaultGroupSummaryItems3GetText(
       Sender: TcxDataSummaryItem; const AValue: Variant; AIsFooter: Boolean;
       var AText: string);
+    procedure gridExtrapayColumn1CompareRowValuesForCellMerging(
+      Sender: TcxGridColumn; ARow1: TcxGridDataRow;
+      AProperties1: TcxCustomEditProperties; const AValue1: Variant;
+      ARow2: TcxGridDataRow; AProperties2: TcxCustomEditProperties;
+      const AValue2: Variant; var AAreEqual: Boolean);
+    procedure gridExtrapayColumn2CompareRowValuesForCellMerging(
+      Sender: TcxGridColumn; ARow1: TcxGridDataRow;
+      AProperties1: TcxCustomEditProperties; const AValue1: Variant;
+      ARow2: TcxGridDataRow; AProperties2: TcxCustomEditProperties;
+      const AValue2: Variant; var AAreEqual: Boolean);
   private
     function GetTeacherName(teacher_id: string): string;
     function GetRegistedCount(lecture_id: string; calc_mon : Integer): Integer;
@@ -370,20 +398,27 @@ begin
   cnt := TEACHER_EXTRAPAY_CALCTOTAL.RecordCount;
   TEACHER_EXTRAPAY_CALCTOTAL.First;
   for i := 0 to cnt - 1 do begin
-    teacher_id := TEACHER_EXTRAPAY_CALCTOTALTEACHER_ID.Value;
-    tprice := TEACHER_EXTRAPAY_CALCTOTALSUM_OF_TOTAL_AMOUNT.Value;
-    sodukse := TEACHER_EXTRAPAY_CALCTOTALSUM_OF_SODUK.Value;
-    juminse := TEACHER_EXTRAPAY_CALCTOTALSUM_OF_JUMIN.Value;
-    net_price := TEACHER_EXTRAPAY_CALCTOTALSUM_OF_NET_AMOUNT.Value;
-    UniQuery1.SQL.Clear;
-    UniQuery1.SQL.Add('update teacher_extrapay set total_price = :tprice, sodukse = :sodukse, juminse = :juminse, net_price = :net_price ');
-    UniQuery1.SQL.Add('where teacher_id = :t_id');
-    UniQuery1.ParamByName('tprice').Value := tprice;
-    UniQuery1.ParamByName('sodukse').Value := sodukse;
-    UniQuery1.ParamByName('juminse').Value := juminse;
-    UniQuery1.ParamByName('net_price').Value := net_price;
-    UniQuery1.ParamByName('t_id').Value := teacher_id;
-    UniQuery1.ExecSQL;
+//    teacher_id := TEACHER_EXTRAPAY_CALCTOTALTEACHER_ID.Value;
+//    tprice := TEACHER_EXTRAPAY_CALCTOTALSUM_OF_TOTAL_AMOUNT.Value;
+//    sodukse := TEACHER_EXTRAPAY_CALCTOTALSUM_OF_SODUK.Value;
+//    juminse := TEACHER_EXTRAPAY_CALCTOTALSUM_OF_JUMIN.Value;
+//    net_price := TEACHER_EXTRAPAY_CALCTOTALSUM_OF_NET_AMOUNT.Value;
+
+    TEACHER_EXTRAPAY_UPDTAX.ParamByName('TEACHER_ID').Value := TEACHER_EXTRAPAY_CALCTOTALTEACHER_ID.Value;
+    TEACHER_EXTRAPAY_UPDTAX.ParamByName('TOTAL_PRICE').Value := TEACHER_EXTRAPAY_CALCTOTALSUM_OF_TOTAL_AMOUNT.Value;
+    TEACHER_EXTRAPAY_UPDTAX.ParamByName('SODUKSE').Value := TEACHER_EXTRAPAY_CALCTOTALSUM_OF_SODUK.Value;
+    TEACHER_EXTRAPAY_UPDTAX.ParamByName('JUMINSE').Value := TEACHER_EXTRAPAY_CALCTOTALSUM_OF_JUMIN.Value;
+    TEACHER_EXTRAPAY_UPDTAX.ParamByName('NET_PRICE').Value := TEACHER_EXTRAPAY_CALCTOTALSUM_OF_NET_AMOUNT.Value;
+    TEACHER_EXTRAPAY_UPDTAX.ExecProc;
+//    UniQuery1.SQL.Clear;
+//    UniQuery1.SQL.Add('update teacher_extrapay set total_price = :tprice, sodukse = :sodukse, juminse = :juminse, net_price = :net_price ');
+//    UniQuery1.SQL.Add('where teacher_id = :t_id');
+//    UniQuery1.ParamByName('tprice').Value := tprice;
+//    UniQuery1.ParamByName('sodukse').Value := sodukse;
+//    UniQuery1.ParamByName('juminse').Value := juminse;
+//    UniQuery1.ParamByName('net_price').Value := net_price;
+//    UniQuery1.ParamByName('t_id').Value := teacher_id;
+//    UniQuery1.ExecSQL;
     TEACHER_EXTRAPAY_CALCTOTAL.Next;
   end;
 end;
@@ -453,16 +488,16 @@ var
   mon : Integer;
 begin
   mon := frmYearMonth1.cbMonth.ItemIndex + 1;
-
-  TEACHER_EXTRAPAY_CALCTOTAL.ParamByName('PYEAR').Value := StrToInt(frmYearMonth1.cbYear.Text);
-  TEACHER_EXTRAPAY_CALCTOTAL.ParamByName('PMONTH').Value := mon;
-  TEACHER_EXTRAPAY_CALCTOTAL.Open;
-  ds_TEACHER_EXTRAPAY_CALCTOTAL.DataSet.Refresh;
-
   TEACHER_EXTRAPAY_SEL.ParamByName('LYEAR').Value := StrToInt(frmYearMonth1.cbYear.Text);
   TEACHER_EXTRAPAY_SEL.ParamByName('LMON').Value := mon;
   TEACHER_EXTRAPAY_SEL.Open;
   ds_TEACHER_EXTRAPAY_SEL.DataSet.Refresh;
+  if chkShowAll.Checked then begin
+    TEACHER_EXTRAPAY_SEL.Filter := 'TOTAL_PRICE > 0';
+    TEACHER_EXTRAPAY_SEL.Filtered := True;
+  end else begin
+    TEACHER_EXTRAPAY_SEL.Filtered := False;
+  end;
 end;
 
 procedure TfmTeacherExtrapay.btnSaveColumnClick(Sender: TObject);
@@ -487,6 +522,8 @@ end;
 procedure TfmTeacherExtrapay.FormCreate(Sender: TObject);
 begin
   frmYearMonth1.InitYearMonth;
+  TEACHER_SEL_LOOKUP.Open;
+  ds_TEACHER_SEL_LOOKUP.DataSet.Refresh;
   //btnRetrieve.Click;
 end;
 
@@ -511,7 +548,7 @@ begin
     Result := Query.FieldByName('t_name').AsString;
 end;
 
-procedure TfmTeacherExtrapay.gridExtrapayColumn1GetDataText(
+procedure TfmTeacherExtrapay.gridExtrapayIDXGetDataText(
   Sender: TcxCustomGridTableItem; ARecordIndex: Integer; var AText: string);
 var
   AIndex: Integer;
@@ -520,18 +557,28 @@ begin
   AText := IntToStr(AIndex);
 end;
 
-procedure TfmTeacherExtrapay.gridExtrapayDC_TOTALCustomDrawCell(
-  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
-  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+procedure TfmTeacherExtrapay.gridExtrapayColumn1CompareRowValuesForCellMerging(
+  Sender: TcxGridColumn; ARow1: TcxGridDataRow;
+  AProperties1: TcxCustomEditProperties; const AValue1: Variant;
+  ARow2: TcxGridDataRow; AProperties2: TcxCustomEditProperties;
+  const AValue2: Variant; var AAreEqual: Boolean);
 var
-  col_out : Integer;
+  AIndex : Integer;
 begin
-//  col_out := AViewInfo.GridRecord.Values[gridCompensation.GetColumnByFieldName('DC_TOTAL').Index];
-//  if col_out > 0 then begin
-//    ACanvas.Brush.Color := clYellow;
-//    ACanvas.Font.Color := clBlue;
-//    ACanvas.Font.Style := [fsBold];
-//  end;
+  AIndex := gridExtrapay.GetColumnByFieldName('TEACHER_ID').Index;
+  AAreEqual :=  VarEquals(AValue1, AValue2) and VarEquals(ARow1.Values[AIndex], ARow2.Values[AIndex]);
+end;
+
+procedure TfmTeacherExtrapay.gridExtrapayColumn2CompareRowValuesForCellMerging(
+  Sender: TcxGridColumn; ARow1: TcxGridDataRow;
+  AProperties1: TcxCustomEditProperties; const AValue1: Variant;
+  ARow2: TcxGridDataRow; AProperties2: TcxCustomEditProperties;
+  const AValue2: Variant; var AAreEqual: Boolean);
+var
+  AIndex : Integer;
+begin
+  AIndex := gridExtrapay.GetColumnByFieldName('TEACHER_ID').Index;
+  AAreEqual :=  VarEquals(AValue1, AValue2) and VarEquals(ARow1.Values[AIndex], ARow2.Values[AIndex]);
 end;
 
 procedure TfmTeacherExtrapay.gridExtrapayJUMINSECustomDrawCell(
@@ -603,32 +650,30 @@ procedure TfmTeacherExtrapay.gridExtrapayTcxGridDBDataControllerTcxDataSummaryDe
   Sender: TcxDataSummaryItem; const AValue: Variant; AIsFooter: Boolean;
   var AText: string);
 begin
-  if gridTotal.DataController.Summary.FooterSummaryValues[3] > 0 then
-    AText := FormatFloat('#,', gridTotal.DataController.Summary.FooterSummaryValues[3]);
+  AText := FormatFloat('#,', gridExtrapay.DataController.Summary.FooterSummaryValues[3]);
 end;
 
 procedure TfmTeacherExtrapay.gridExtrapayTcxGridDBDataControllerTcxDataSummaryDefaultGroupSummaryItems1GetText(
   Sender: TcxDataSummaryItem; const AValue: Variant; AIsFooter: Boolean;
   var AText: string);
 begin
-  if gridTotal.DataController.Summary.FooterSummaryValues[1] > 0 then
-    AText := FormatFloat('#,', gridTotal.DataController.Summary.FooterSummaryValues[1]);
+  AText := FormatFloat('#,', gridExtrapay.DataController.Summary.FooterSummaryValues[1]);
 end;
 
 procedure TfmTeacherExtrapay.gridExtrapayTcxGridDBDataControllerTcxDataSummaryDefaultGroupSummaryItems2GetText(
   Sender: TcxDataSummaryItem; const AValue: Variant; AIsFooter: Boolean;
   var AText: string);
+var
+  juminse2 : TcxDataSummaryItem;
 begin
-  if gridTotal.DataController.Summary.FooterSummaryValues[2] > 0 then
-    AText := FormatFloat('#,', gridTotal.DataController.Summary.FooterSummaryValues[2]);
+  AText := FormatFloat('#,', gridExtrapay.DataController.Summary.FooterSummaryValues[2]);
 end;
 
 procedure TfmTeacherExtrapay.gridExtrapayTcxGridDBDataControllerTcxDataSummaryDefaultGroupSummaryItems3GetText(
   Sender: TcxDataSummaryItem; const AValue: Variant; AIsFooter: Boolean;
   var AText: string);
 begin
-  if gridTotal.DataController.Summary.FooterSummaryValues[0] > 0 then
-    AText := FormatFloat('#,', gridTotal.DataController.Summary.FooterSummaryValues[0]);
+  AText := FormatFloat('#,', gridExtrapay.DataController.Summary.FooterSummaryValues[0]);
 end;
 
 procedure TfmTeacherExtrapay.gridExtrapayTEACHER_IDCustomDrawCell(
