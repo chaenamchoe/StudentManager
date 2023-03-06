@@ -679,11 +679,46 @@ object fmTeacherPay: TfmTeacherPay
           Column = gridPaymentsudang_sum
         end
         item
-          Format = '#,'
+          Format = '#,0'
           Kind = skSum
           Column = gridPaymenttex_sum
         end>
-      DataController.Summary.FooterSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridPaymentLECTURE_TOTAL_AMOUNT
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridPaymentNET_CENTER_AMOUNT
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridPaymentTOTAL_AMOUNT
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridPaymentSODUK
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridPaymentJUMIN
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridPaymenttex_sum
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridPaymentNET_AMOUNT
+        end>
       DataController.Summary.SummaryGroups = <>
       OptionsCustomize.ColumnsQuickCustomization = True
       OptionsData.CancelOnExit = False
@@ -695,7 +730,6 @@ object fmTeacherPay: TfmTeacherPay
       OptionsSelection.InvertSelect = False
       OptionsSelection.UnselectFocusedRecordOnExit = False
       OptionsView.CellEndEllipsis = True
-      OptionsView.FooterAutoHeight = True
       OptionsView.GroupByBox = False
       OptionsView.GroupByHeaderLayout = ghlHorizontal
       OptionsView.GroupSummaryLayout = gslAlignWithColumns
@@ -788,6 +822,13 @@ object fmTeacherPay: TfmTeacherPay
         Options.CellMerging = True
         OnCompareRowValuesForCellMerging = gridPaymentTOTAL_AMOUNTCompareRowValuesForCellMerging
       end
+      object gridPaymenttex_sum: TcxGridDBColumn
+        Caption = #49464#44552#54633#44228
+        DataBinding.FieldName = 'tex_sum'
+        HeaderAlignmentHorz = taCenter
+        Options.CellMerging = True
+        OnCompareRowValuesForCellMerging = gridPaymenttex_sumCompareRowValuesForCellMerging
+      end
       object gridPaymentNET_AMOUNT: TcxGridDBColumn
         DataBinding.FieldName = 'NET_AMOUNT'
         HeaderAlignmentHorz = taCenter
@@ -817,11 +858,13 @@ object fmTeacherPay: TfmTeacherPay
       end
       object gridPaymentL_IDX: TcxGridDBColumn
         DataBinding.FieldName = 'L_IDX'
+        Visible = False
         SortIndex = 1
         SortOrder = soAscending
       end
       object gridPaymentT_IDX: TcxGridDBColumn
         DataBinding.FieldName = 'T_IDX'
+        Visible = False
         SortIndex = 0
         SortOrder = soAscending
       end
@@ -831,23 +874,16 @@ object fmTeacherPay: TfmTeacherPay
         HeaderAlignmentHorz = taCenter
         Width = 82
       end
-      object gridPaymenttex_sum: TcxGridDBColumn
-        Caption = #49464#44552#54633#44228
-        DataBinding.FieldName = 'tex_sum'
-        HeaderAlignmentHorz = taCenter
-        Options.CellMerging = True
-        OnCompareRowValuesForCellMerging = gridPaymenttex_sumCompareRowValuesForCellMerging
-      end
     end
     object cxGrid1Level1: TcxGridLevel
       GridView = gridPayment
     end
   end
   object cxGrid2: TcxGrid
-    Left = 202
-    Top = 375
+    Left = 290
+    Top = 504
     Width = 583
-    Height = 122
+    Height = 97
     TabOrder = 2
     Visible = False
     object gridTotal: TcxGridDBTableView
@@ -962,8 +998,8 @@ object fmTeacherPay: TfmTeacherPay
     end
   end
   object cxGrid3: TcxGrid
-    Left = 202
-    Top = 503
+    Left = 234
+    Top = 361
     Width = 663
     Height = 137
     TabOrder = 4
@@ -1100,7 +1136,7 @@ object fmTeacherPay: TfmTeacherPay
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
       ReportDocument.Caption = #48372#44256#49436
-      ReportDocument.CreationDate = 44988.287049224530000000
+      ReportDocument.CreationDate = 44991.721004328710000000
       ReportTitle.AdjustOnReportScale = True
       ReportTitle.Font.Charset = DEFAULT_CHARSET
       ReportTitle.Font.Color = clBlack
@@ -2303,6 +2339,12 @@ object fmTeacherPay: TfmTeacherPay
         DataType = ftSmallint
         Name = 'T_IDX'
         ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'TEACHER_ID2'
+        ParamType = ptInput
+        Size = 17
       end>
     CommandStoredProcName = 'TEACHER_MONTHLY_PAY_INS'
   end
@@ -3288,5 +3330,9 @@ object fmTeacherPay: TfmTeacherPay
     DataSet = dxMemData2
     Left = 1016
     Top = 464
+  end
+  object SaveDialog1: TSaveDialog
+    Left = 496
+    Top = 160
   end
 end

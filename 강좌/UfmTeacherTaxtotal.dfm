@@ -24,7 +24,6 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
     Height = 29
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 1165
     inline frmYearMonth1: TfrmYearMonth
       Left = 12
       Top = 4
@@ -40,6 +39,9 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
         Top = 4
         ExplicitLeft = 0
         ExplicitTop = 4
+      end
+      inherited cbMonth: TComboBox
+        OnChange = frmYearMonth1cbMonthChange
       end
     end
     object btnRetrieve: TcxButton
@@ -92,7 +94,7 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
       OnClick = btnRetrieveClick
     end
     object btnExport: TcxButton
-      Left = 382
+      Left = 426
       Top = 2
       Width = 99
       Height = 25
@@ -141,7 +143,7 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
       OnClick = btnExportClick
     end
     object btnAttendList: TcxButton
-      Left = 482
+      Left = 526
       Top = 2
       Width = 63
       Height = 25
@@ -198,13 +200,23 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
       TabOrder = 4
       OnClick = btnCreateNewClick
     end
+    object btnTaxfree: TcxButton
+      Left = 326
+      Top = 2
+      Width = 94
+      Height = 25
+      Caption = #49464#50529#47732#51228#44228#49328
+      LookAndFeel.SkinName = 'DevExpressStyle'
+      TabOrder = 5
+      OnClick = btnTaxfreeClick
+    end
   end
   object cxGrid1: TcxGrid
     Left = 0
     Top = 29
-    Width = 609
+    Width = 1265
     Height = 652
-    Align = alLeft
+    Align = alClient
     TabOrder = 1
     LookAndFeel.SkinName = 'Black'
     object gridTaxtotal: TcxGridDBTableView
@@ -299,7 +311,7 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
         Properties.Alignment.Horz = taCenter
         OnGetDataText = gridTaxtotalTEACHER_IDXGetDataText
         HeaderAlignmentHorz = taCenter
-        Width = 43
+        Width = 51
       end
       object gridTaxtotalTEACHER_ID: TcxGridDBColumn
         Caption = #44053#49324#47749
@@ -311,7 +323,7 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
             FieldName = 'T_NAME'
           end>
         Properties.ListSource = ds_TEACHER_SEL_LOOKUP
-        Width = 88
+        Width = 98
       end
       object gridTaxtotalTOTAL_AMOUNT: TcxGridDBColumn
         Caption = #54633#44228#44552#50529
@@ -319,23 +331,89 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
         PropertiesClassName = 'TcxCurrencyEditProperties'
         Properties.DisplayFormat = ',0;-,0'
         Properties.UseThousandSeparator = True
-        Width = 123
+        HeaderAlignmentHorz = taCenter
+        Width = 107
+      end
+      object gridTaxtotalTOTAL_AMOUNT1: TcxGridDBColumn
+        Caption = #49688#45817'1 '#54633#44228
+        DataBinding.FieldName = 'TOTAL_AMOUNT1'
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = ',0;-,0'
+        Properties.Nullable = False
+        Properties.UseThousandSeparator = True
+        Width = 85
+      end
+      object gridTaxtotalSODUKSE1: TcxGridDBColumn
+        Caption = #49688#45817'1 '#49548#46301#49464
+        DataBinding.FieldName = 'SODUKSE1'
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = ',0;-,0'
+        Properties.UseThousandSeparator = True
+        HeaderAlignmentHorz = taCenter
+        Width = 100
+      end
+      object gridTaxtotalJUMINSE1: TcxGridDBColumn
+        Caption = #49688#45817'1 '#51648#48169#49464
+        DataBinding.FieldName = 'JUMINSE1'
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = ',0;-,0'
+        Properties.UseThousandSeparator = True
+        HeaderAlignmentHorz = taCenter
+        Width = 104
+      end
+      object gridTaxtotalTOTAL_AMOUNT2: TcxGridDBColumn
+        Caption = #49688#45817'2 '#54633#44228
+        DataBinding.FieldName = 'TOTAL_AMOUNT2'
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = ',0;-,0'
+        Properties.Nullable = False
+        Properties.UseThousandSeparator = True
+        Width = 84
+      end
+      object gridTaxtotalSODUKSE2: TcxGridDBColumn
+        Caption = #49688#45817'2 '#49548#46301#49464
+        DataBinding.FieldName = 'SODUKSE2'
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = ',0;-,0'
+        Properties.UseThousandSeparator = True
+        HeaderAlignmentHorz = taCenter
+        Width = 100
+      end
+      object gridTaxtotalJUMINSE2: TcxGridDBColumn
+        Caption = #49688#45817'2 '#51648#48169#49464
+        DataBinding.FieldName = 'JUMINSE2'
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = ',0;-,0'
+        Properties.UseThousandSeparator = True
+        HeaderAlignmentHorz = taCenter
+        Width = 105
       end
       object gridTaxtotalSODUKSE: TcxGridDBColumn
-        Caption = #49548#46301#49464
+        Caption = #49548#46301#49464#44228
         DataBinding.FieldName = 'SODUKSE'
         PropertiesClassName = 'TcxCurrencyEditProperties'
         Properties.DisplayFormat = ',0;-,0'
         Properties.UseThousandSeparator = True
-        Width = 106
+        HeaderAlignmentHorz = taCenter
+        Width = 104
       end
       object gridTaxtotalJUMINSE: TcxGridDBColumn
-        Caption = #51648#48169#49548#46301#49464
+        Caption = #51648#48169#49548#46301#49464#44228
         DataBinding.FieldName = 'JUMINSE'
         PropertiesClassName = 'TcxCurrencyEditProperties'
         Properties.DisplayFormat = ',0;-,0'
         Properties.UseThousandSeparator = True
-        Width = 107
+        HeaderAlignmentHorz = taCenter
+        Width = 103
+      end
+      object gridTaxtotalTOTAL_TAX: TcxGridDBColumn
+        Caption = #49464#50529#54633#44228
+        DataBinding.FieldName = 'TOTAL_TAX'
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = ',0;-,0'
+        Properties.UseThousandSeparator = True
+        HeaderAlignmentHorz = taCenter
+        Width = 85
       end
       object gridTaxtotalNET_AMOUNT: TcxGridDBColumn
         Caption = #52264#44048#51648#44553#50529
@@ -343,7 +421,16 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
         PropertiesClassName = 'TcxCurrencyEditProperties'
         Properties.DisplayFormat = ',0;-,0'
         Properties.UseThousandSeparator = True
-        Width = 113
+        HeaderAlignmentHorz = taCenter
+        Width = 110
+      end
+      object gridTaxtotalNET_AMOUNT1: TcxGridDBColumn
+        DataBinding.FieldName = 'NET_AMOUNT1'
+        Visible = False
+      end
+      object gridTaxtotalNET_AMOUNT2: TcxGridDBColumn
+        DataBinding.FieldName = 'NET_AMOUNT2'
+        Visible = False
       end
     end
     object cxGrid1Level1: TcxGridLevel
@@ -412,6 +499,11 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
       end
       item
         DataType = ftInteger
+        Name = 'TEACHER_IDX'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
         Name = 'TOTAL_AMOUNT'
         ParamType = ptOutput
       end
@@ -432,7 +524,47 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
       end
       item
         DataType = ftInteger
-        Name = 'TEACHER_IDX'
+        Name = 'TOTAL_AMOUNT1'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'SODUKSE1'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'JUMINSE1'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'NET_AMOUNT1'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'TOTAL_AMOUNT2'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'SODUKSE2'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'JUMINSE2'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'NET_AMOUNT2'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'TOTAL_TAX'
         ParamType = ptOutput
       end>
     CommandStoredProcName = 'TEACHER_TAXTOTAL_SEL'
@@ -463,6 +595,33 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
     end
     object TEACHER_TAXTOTAL_SELTEACHER_IDX: TIntegerField
       FieldName = 'TEACHER_IDX'
+    end
+    object TEACHER_TAXTOTAL_SELTOTAL_AMOUNT1: TIntegerField
+      FieldName = 'TOTAL_AMOUNT1'
+    end
+    object TEACHER_TAXTOTAL_SELSODUKSE1: TIntegerField
+      FieldName = 'SODUKSE1'
+    end
+    object TEACHER_TAXTOTAL_SELJUMINSE1: TIntegerField
+      FieldName = 'JUMINSE1'
+    end
+    object TEACHER_TAXTOTAL_SELNET_AMOUNT1: TIntegerField
+      FieldName = 'NET_AMOUNT1'
+    end
+    object TEACHER_TAXTOTAL_SELTOTAL_AMOUNT2: TIntegerField
+      FieldName = 'TOTAL_AMOUNT2'
+    end
+    object TEACHER_TAXTOTAL_SELSODUKSE2: TIntegerField
+      FieldName = 'SODUKSE2'
+    end
+    object TEACHER_TAXTOTAL_SELJUMINSE2: TIntegerField
+      FieldName = 'JUMINSE2'
+    end
+    object TEACHER_TAXTOTAL_SELNET_AMOUNT2: TIntegerField
+      FieldName = 'NET_AMOUNT2'
+    end
+    object TEACHER_TAXTOTAL_SELTOTAL_TAX: TIntegerField
+      FieldName = 'TOTAL_TAX'
     end
   end
   object ds_TEACHER_TAXTOTAL_SEL: TDataSource
@@ -635,7 +794,7 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
       PrinterPage.ScaleMode = smFit
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
-      ReportDocument.CreationDate = 44988.379331388890000000
+      ReportDocument.CreationDate = 44991.713128321760000000
       ReportTitle.Font.Charset = DEFAULT_CHARSET
       ReportTitle.Font.Color = clBlack
       ReportTitle.Font.Height = -21
@@ -661,5 +820,29 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
       OptionsView.GroupFooters = False
       BuiltInReportLink = True
     end
+  end
+  object TEACHER_CHECK_TAXFREE: TUniStoredProc
+    StoredProcName = 'TEACHER_CHECK_TAXFREE'
+    Connection = dm.UniConnection1
+    Left = 400
+    Top = 120
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'WYEAR'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'WMON'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'TEACHER_ID'
+        ParamType = ptInput
+        Size = 17
+      end>
+    CommandStoredProcName = 'TEACHER_CHECK_TAXFREE'
   end
 end

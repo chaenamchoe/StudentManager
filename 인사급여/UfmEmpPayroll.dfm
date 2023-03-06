@@ -3457,6 +3457,8 @@ object fmEmpPayroll: TfmEmpPayroll
         DataField = 'yungum'
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
+        DisplayFormat.FormatStr = '#,#'
+        DisplayFormat.Kind = fkNumeric
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -16
@@ -3475,6 +3477,8 @@ object fmEmpPayroll: TfmEmpPayroll
         DataField = 'gungang'
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
+        DisplayFormat.FormatStr = '#,#'
+        DisplayFormat.Kind = fkNumeric
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -16
@@ -3493,6 +3497,8 @@ object fmEmpPayroll: TfmEmpPayroll
         DataField = 'yoyang'
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
+        DisplayFormat.FormatStr = '#,#'
+        DisplayFormat.Kind = fkNumeric
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -16
@@ -3511,6 +3517,8 @@ object fmEmpPayroll: TfmEmpPayroll
         DataField = 'goyong'
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
+        DisplayFormat.FormatStr = '#,#'
+        DisplayFormat.Kind = fkNumeric
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -16

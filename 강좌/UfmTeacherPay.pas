@@ -289,6 +289,7 @@ type
     gridExceldong_name: TcxGridDBColumn;
     gridExcelidx: TcxGridDBColumn;
     cxButton1: TcxButton;
+    SaveDialog1: TSaveDialog;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure btnRetrieveClick(Sender: TObject);
@@ -964,7 +965,7 @@ begin
     end else begin
        exit;
     end;
-    ExportGridToExcel(nameonly, cxGrid1, true, true, false, 'xls');
+    ExportGridToExcel(nameonly, cxGrid1, true, true, true, 'xls');
     ShowMessage('¿¢¼¿ÆÄÀÏ ÀúÀå¿Ï·á!');
   finally
     saveDLG.Free;
@@ -1078,6 +1079,7 @@ begin
     TEACHER_MONTHLY_PAY_INS.ParamByName('DATA_KIND').Value := 0;
     TEACHER_MONTHLY_PAY_INS.ParamByName('L_IDX').Value :=                TEACHER_PAYMENT_SELL_IDX.Value;
     TEACHER_MONTHLY_PAY_INS.ParamByName('T_IDX').Value :=                TEACHER_PAYMENT_SELT_IDX.Value;
+    TEACHER_MONTHLY_PAY_INS.ParamByName('TEACHER_ID2').Value :=          teacher_id;
     TEACHER_MONTHLY_PAY_INS.Execute;
     nteacher_id := TEACHER_ID;
 

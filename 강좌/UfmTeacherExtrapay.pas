@@ -30,7 +30,7 @@ uses
   dxSkinLiquidSky, dxSkinLondonLiquidSky, dxSkinMoneyTwins, dxSkinPumpkin,
   dxSkinSilver, dxSkinSpringTime, dxSkinStardust, dxSkinSummer2008,
   dxSkinTheAsphaltWorld, dxSkinValentine, dxSkinWhiteprint, dxSkinXmas2008Blue,
-  cxCurrencyEdit, cxContainer, cxCheckBox;
+  cxCurrencyEdit, cxContainer, cxCheckBox, frxClass, frxDBSet;
 
 type
   TfmTeacherExtrapay = class(TForm)
@@ -240,6 +240,37 @@ type
     TEACHER_SEL_LOOKUPBANK_CODE: TStringField;
     TEACHER_SEL_LOOKUPIDX: TIntegerField;
     chkShowAll: TcxCheckBox;
+    dxMemData2: TdxMemData;
+    dxMemData2id: TIntegerField;
+    dxMemData2teacher: TStringField;
+    dxMemData2net_pay: TFloatField;
+    dxMemData2bank_name: TStringField;
+    dxMemData2bank_no: TStringField;
+    dxMemData2report_title: TStringField;
+    dxMemData2dong_name: TStringField;
+    dxMemData2idx: TIntegerField;
+    frxReport1: TfrxReport;
+    frxDBDataset1: TfrxDBDataset;
+    DataSource2: TDataSource;
+    cxGrid3: TcxGrid;
+    gridExcel: TcxGridDBTableView;
+    gridExcelRecId: TcxGridDBColumn;
+    gridExcelidx: TcxGridDBColumn;
+    gridExcelteacher: TcxGridDBColumn;
+    gridExcelnet_pay: TcxGridDBColumn;
+    gridExcelbank_name: TcxGridDBColumn;
+    gridExcelbank_no: TcxGridDBColumn;
+    gridExcelreport_title: TcxGridDBColumn;
+    gridExceldong_name: TcxGridDBColumn;
+    cxGrid3Level1: TcxGridLevel;
+    btnReportBank: TcxButton;
+    cxButton1: TcxButton;
+    q_teacher: TUniQuery;
+    q_teacherT_NAME: TStringField;
+    q_teacherBANK_NAME: TStringField;
+    q_teacherBANK_NO: TStringField;
+    q_teacherIDX: TIntegerField;
+    d_teacher: TDataSource;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnRetrieveClick(Sender: TObject);
     procedure btnExportClick(Sender: TObject);
@@ -302,11 +333,29 @@ type
       AProperties1: TcxCustomEditProperties; const AValue1: Variant;
       ARow2: TcxGridDataRow; AProperties2: TcxCustomEditProperties;
       const AValue2: Variant; var AAreEqual: Boolean);
+    procedure btnReportBankClick(Sender: TObject);
+    procedure cxButton1Click(Sender: TObject);
+    procedure gridExcelnet_payCompareRowValuesForCellMerging(
+      Sender: TcxGridColumn; ARow1: TcxGridDataRow;
+      AProperties1: TcxCustomEditProperties; const AValue1: Variant;
+      ARow2: TcxGridDataRow; AProperties2: TcxCustomEditProperties;
+      const AValue2: Variant; var AAreEqual: Boolean);
+    procedure gridExcelbank_nameCompareRowValuesForCellMerging(
+      Sender: TcxGridColumn; ARow1: TcxGridDataRow;
+      AProperties1: TcxCustomEditProperties; const AValue1: Variant;
+      ARow2: TcxGridDataRow; AProperties2: TcxCustomEditProperties;
+      const AValue2: Variant; var AAreEqual: Boolean);
+    procedure gridExcelbank_noCompareRowValuesForCellMerging(
+      Sender: TcxGridColumn; ARow1: TcxGridDataRow;
+      AProperties1: TcxCustomEditProperties; const AValue1: Variant;
+      ARow2: TcxGridDataRow; AProperties2: TcxCustomEditProperties;
+      const AValue2: Variant; var AAreEqual: Boolean);
   private
     function GetTeacherName(teacher_id: string): string;
     function GetRegistedCount(lecture_id: string; calc_mon : Integer): Integer;
     function GetDCCount(lecture_id: string; dc_kind, calc_mon : Integer): Integer;
     procedure RunGenerateTotalPrice;
+    procedure GetTeacherInfo(teacher_id: string);
     { Private declarations }
   public
     { Public declarations }
@@ -384,6 +433,7 @@ begin
   RunGenerateTotalPrice;
   ds_TEACHER_EXTRAPAY_SEL.DataSet.Refresh;
   gridExtrapay.DataController.GotoFirst;
+  btnRetrieve.Click;
 end;
 
 procedure TfmTeacherExtrapay.RunGenerateTotalPrice;
@@ -439,6 +489,8 @@ begin
       '명령을 실행하면 기존 데이터를 삭제한 후 다시 생성을 합니다.' + #13#10 + '정말 실행을 할까요?',
       'Application.Title', MB_YESNO + MB_ICONWARNING) = IDYES then
     begin
+      TEACHER_EXTRAPAY_SEL.Filtered := False;
+
       TEACHER_EXTRAPAY_DEL.ParamByName('WYEAR').Value := StrToInt(frmYearMonth1.cbYear.Text);
       TEACHER_EXTRAPAY_DEL.ParamByName('WMONTH').Value := mon;
       TEACHER_EXTRAPAY_DEL.ExecProc;
@@ -456,7 +508,12 @@ begin
       TEACHER_EXTRAPAY_CREATE.ExecProc;
       ds_TEACHER_EXTRAPAY_SEL.DataSet.Refresh;
   end;
-
+  if chkShowAll.Checked then begin
+    TEACHER_EXTRAPAY_SEL.Filter := 'TOTAL_PRICE > 0';
+    TEACHER_EXTRAPAY_SEL.Filtered := True;
+  end else begin
+    TEACHER_EXTRAPAY_SEL.Filtered := False;
+  end;
   btnCalc.Click;
 end;
 
@@ -483,6 +540,51 @@ begin
   end;
 end;
 
+procedure TfmTeacherExtrapay.GetTeacherInfo(teacher_id : string);
+begin
+  q_teacher.ParamByName('teacher_id').Value := teacher_id;
+  q_teacher.Active := True;
+  d_teacher.DataSet.Refresh;
+end;
+
+procedure TfmTeacherExtrapay.btnReportBankClick(Sender: TObject);
+var
+  titleStr : string;
+  i, cnt, t : Integer;
+  t_name, t_id, tid_o : string;
+begin
+  titleStr := frmYearMonth1.cbYear.Text + '년도' + IntToStr(frmYearMonth1.cbMonth.ItemIndex + 1) + '월분 강사수당지급';
+  with gridExtrapay do begin
+    cnt := DataController.RecordCount + 1;
+    dxMemData2.Close;
+    dxMemData2.Open;
+    DataController.GotoFirst;
+    t := 1;
+    tid_o := '';
+    for i := 0 to cnt - 1 do begin
+      t_id := gridExtrapayTEACHER_ID.EditValue;
+      if t_id <> tid_o then begin
+        GetTeacherInfo(t_id);
+        dxMemData2.Append;
+        dxMemData2id.Value := gridExtrapayIDX.EditValue;
+        dxMemData2idx.Value := t;
+        dxMemData2teacher.Value := q_teacherT_NAME.Value;
+        dxMemData2net_pay.Value := gridExtrapayNET_PRICE.EditValue;
+        dxMemData2bank_name.Value := q_teacherBANK_NAME.Value;
+        dxMemData2bank_no.Value := q_teacherBANK_NO.Value;
+        dxMemData2report_title.Value := titleStr;
+        dxMemData2dong_name.Value := LoginUserDongName + ' 주민자치위원회';
+        dxMemData2.Post;
+        tid_o := t_id;
+        t := t + 1;
+      end;
+      DataController.GotoNext;
+    end;
+  end;
+  DataSource2.DataSet.Refresh;
+  frxReport1.ShowReport;
+end;
+
 procedure TfmTeacherExtrapay.btnRetrieveClick(Sender: TObject);
 var
   mon : Integer;
@@ -506,6 +608,59 @@ var
 begin
   fname := gsDefaultFolder + '감면보전현황.ini';
   gridExtrapay.StoreToIniFile(fname, True, [gsoUseSummary], '');
+end;
+
+procedure TfmTeacherExtrapay.cxButton1Click(Sender: TObject);
+var
+  titleStr : string;
+  i, cnt, t : Integer;
+  t_name, t_id, tid_o : string;
+  filepath, nameonly : string;
+  saveDLG : TSaveDialog;
+begin
+  with gridExtrapay do begin
+    cnt := DataController.RecordCount + 1;
+    dxMemData2.Close;
+    dxMemData2.Open;
+    DataController.GotoFirst;
+    tid_o := '';
+    t := 1;
+    for i := 1 to cnt do begin
+      t_id := gridExtrapayTEACHER_ID.EditValue;
+      if t_id <> tid_o then begin
+        GetTeacherInfo(t_id);
+        dxMemData2.Append;
+        dxMemData2idx.Value := t;
+        dxMemData2teacher.Value := q_teacherT_NAME.Value;
+        dxMemData2net_pay.Value := gridExtrapayNET_PRICE.EditValue;
+        dxMemData2bank_name.Value := q_teacherBANK_NAME.Value;
+        dxMemData2bank_no.Value := q_teacherBANK_NO.Value;
+        dxMemData2report_title.Value := '';
+        dxMemData2dong_name.Value := '';
+        dxMemData2.Post;
+        t := t + 1;
+      end;
+      tid_o := t_id;
+      DataController.GotoNext;
+    end;
+  end;
+  DataSource2.DataSet.Refresh;
+  saveDLG := TSaveDialog.Create(self);
+  try
+    saveDLG.Filter := '엑셀파일 (*.xls)|*.xls';
+    saveDLG.FileName := '강사수당지급내역_' + DateTimeToStr(Date) + '.xls';
+    saveDLG.DefaultExt := 'xls';
+    if saveDLG.Execute then begin
+       filepath := saveDLG.FileName;
+       nameonly := copy(filepath, 1, length(filepath) - 4);
+    end else begin
+       exit;
+    end;
+    ExportGridToExcel(nameonly, cxGrid3, true, true, false, 'xls');
+    ShowMessage('엑셀파일 저장완료!');
+  finally
+    saveDLG.Free;
+  end;
 end;
 
 procedure TfmTeacherExtrapay.FormActivate(Sender: TObject);
@@ -557,6 +712,42 @@ begin
   AText := IntToStr(AIndex);
 end;
 
+procedure TfmTeacherExtrapay.gridExcelbank_nameCompareRowValuesForCellMerging(
+  Sender: TcxGridColumn; ARow1: TcxGridDataRow;
+  AProperties1: TcxCustomEditProperties; const AValue1: Variant;
+  ARow2: TcxGridDataRow; AProperties2: TcxCustomEditProperties;
+  const AValue2: Variant; var AAreEqual: Boolean);
+var
+  AIndex : Integer;
+begin
+  AIndex := gridExcel.GetColumnByFieldName('teacher').Index;
+  AAreEqual :=  VarEquals(AValue1, AValue2) and VarEquals(ARow1.Values[AIndex], ARow2.Values[AIndex]);
+end;
+
+procedure TfmTeacherExtrapay.gridExcelbank_noCompareRowValuesForCellMerging(
+  Sender: TcxGridColumn; ARow1: TcxGridDataRow;
+  AProperties1: TcxCustomEditProperties; const AValue1: Variant;
+  ARow2: TcxGridDataRow; AProperties2: TcxCustomEditProperties;
+  const AValue2: Variant; var AAreEqual: Boolean);
+var
+  AIndex : Integer;
+begin
+  AIndex := gridExcel.GetColumnByFieldName('teacher').Index;
+  AAreEqual :=  VarEquals(AValue1, AValue2) and VarEquals(ARow1.Values[AIndex], ARow2.Values[AIndex]);
+end;
+
+procedure TfmTeacherExtrapay.gridExcelnet_payCompareRowValuesForCellMerging(
+  Sender: TcxGridColumn; ARow1: TcxGridDataRow;
+  AProperties1: TcxCustomEditProperties; const AValue1: Variant;
+  ARow2: TcxGridDataRow; AProperties2: TcxCustomEditProperties;
+  const AValue2: Variant; var AAreEqual: Boolean);
+var
+  AIndex : Integer;
+begin
+  AIndex := gridExcel.GetColumnByFieldName('teacher').Index;
+  AAreEqual :=  VarEquals(AValue1, AValue2) and VarEquals(ARow1.Values[AIndex], ARow2.Values[AIndex]);
+end;
+
 procedure TfmTeacherExtrapay.gridExtrapayColumn1CompareRowValuesForCellMerging(
   Sender: TcxGridColumn; ARow1: TcxGridDataRow;
   AProperties1: TcxCustomEditProperties; const AValue1: Variant;
@@ -565,8 +756,14 @@ procedure TfmTeacherExtrapay.gridExtrapayColumn1CompareRowValuesForCellMerging(
 var
   AIndex : Integer;
 begin
-  AIndex := gridExtrapay.GetColumnByFieldName('TEACHER_ID').Index;
-  AAreEqual :=  VarEquals(AValue1, AValue2) and VarEquals(ARow1.Values[AIndex], ARow2.Values[AIndex]);
+  try
+    AIndex := gridExtrapay.GetColumnByFieldName('TEACHER_ID').Index;
+    AAreEqual :=  VarEquals(AValue1, AValue2) and VarEquals(ARow1.Values[AIndex], ARow2.Values[AIndex]);
+  except on E: Exception do
+
+  end;
+//  if VarIsNull(AValue1) or VarIsNull(AValue2) then Exit;
+
 end;
 
 procedure TfmTeacherExtrapay.gridExtrapayColumn2CompareRowValuesForCellMerging(
@@ -577,8 +774,12 @@ procedure TfmTeacherExtrapay.gridExtrapayColumn2CompareRowValuesForCellMerging(
 var
   AIndex : Integer;
 begin
-  AIndex := gridExtrapay.GetColumnByFieldName('TEACHER_ID').Index;
-  AAreEqual :=  VarEquals(AValue1, AValue2) and VarEquals(ARow1.Values[AIndex], ARow2.Values[AIndex]);
+  try
+    AIndex := gridExtrapay.GetColumnByFieldName('TEACHER_ID').Index;
+    AAreEqual :=  VarEquals(AValue1, AValue2) and VarEquals(ARow1.Values[AIndex], ARow2.Values[AIndex]);
+  except on E: Exception do
+
+  end;
 end;
 
 procedure TfmTeacherExtrapay.gridExtrapayJUMINSECustomDrawCell(
@@ -603,8 +804,12 @@ procedure TfmTeacherExtrapay.gridExtrapayNET_PRICECompareRowValuesForCellMerging
 var
   AIndex : Integer;
 begin
-  AIndex := gridExtrapay.GetColumnByFieldName('TEACHER_ID').Index;
-  AAreEqual :=  VarEquals(AValue1, AValue2) and VarEquals(ARow1.Values[AIndex], ARow2.Values[AIndex]);
+  try
+    AIndex := gridExtrapay.GetColumnByFieldName('TEACHER_ID').Index;
+    AAreEqual :=  VarEquals(AValue1, AValue2) and VarEquals(ARow1.Values[AIndex], ARow2.Values[AIndex]);
+  except on E: Exception do
+
+  end;
 end;
 
 procedure TfmTeacherExtrapay.gridExtrapayNET_PRICECustomDrawCell(

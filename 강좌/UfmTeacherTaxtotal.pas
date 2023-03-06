@@ -77,6 +77,26 @@ type
     TEACHER_TAXTOTAL_DEL: TUniStoredProc;
     dxComponentPrinter1: TdxComponentPrinter;
     dxComponentPrinter1Link1: TdxGridReportLink;
+    TEACHER_TAXTOTAL_SELTOTAL_AMOUNT1: TIntegerField;
+    TEACHER_TAXTOTAL_SELSODUKSE1: TIntegerField;
+    TEACHER_TAXTOTAL_SELJUMINSE1: TIntegerField;
+    TEACHER_TAXTOTAL_SELNET_AMOUNT1: TIntegerField;
+    TEACHER_TAXTOTAL_SELTOTAL_AMOUNT2: TIntegerField;
+    TEACHER_TAXTOTAL_SELSODUKSE2: TIntegerField;
+    TEACHER_TAXTOTAL_SELJUMINSE2: TIntegerField;
+    TEACHER_TAXTOTAL_SELNET_AMOUNT2: TIntegerField;
+    gridTaxtotalTOTAL_AMOUNT1: TcxGridDBColumn;
+    gridTaxtotalSODUKSE1: TcxGridDBColumn;
+    gridTaxtotalJUMINSE1: TcxGridDBColumn;
+    gridTaxtotalNET_AMOUNT1: TcxGridDBColumn;
+    gridTaxtotalTOTAL_AMOUNT2: TcxGridDBColumn;
+    gridTaxtotalSODUKSE2: TcxGridDBColumn;
+    gridTaxtotalJUMINSE2: TcxGridDBColumn;
+    gridTaxtotalNET_AMOUNT2: TcxGridDBColumn;
+    TEACHER_TAXTOTAL_SELTOTAL_TAX: TIntegerField;
+    gridTaxtotalTOTAL_TAX: TcxGridDBColumn;
+    TEACHER_CHECK_TAXFREE: TUniStoredProc;
+    btnTaxfree: TcxButton;
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnRetrieveClick(Sender: TObject);
@@ -84,6 +104,8 @@ type
     procedure gridTaxtotalTEACHER_IDXGetDataText(Sender: TcxCustomGridTableItem;
       ARecordIndex: Integer; var AText: string);
     procedure btnExportClick(Sender: TObject);
+    procedure frmYearMonth1cbMonthChange(Sender: TObject);
+    procedure btnTaxfreeClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -102,7 +124,8 @@ uses
 
 procedure TfmTeacherTaxtotal.btnCreateNewClick(Sender: TObject);
 var
-  mon, l_step : Integer;
+  mon, l_step, i, cnt, total_amount : Integer;
+  teacher_id : string;
 begin
   mon := frmYearMonth1.cbMonth.ItemIndex + 1;
   case mon of
@@ -115,11 +138,40 @@ begin
   TEACHER_TAXTOTAL_DEL.ParamByName('WMON').Value := mon;
   TEACHER_TAXTOTAL_DEL.ExecProc;
 
+  btnRetrieve.Click;
+
   TEACHER_TAXTOTAL_CREATE.ParamByName('WYEAR').Value := StrToInt(frmYearMonth1.cbYear.Text);
   TEACHER_TAXTOTAL_CREATE.ParamByName('WSTEP').Value := l_step;
   TEACHER_TAXTOTAL_CREATE.ParamByName('WMON').Value := mon;
   TEACHER_TAXTOTAL_CREATE.ExecProc;
+
   ds_TEACHER_TAXTOTAL_SEL.DataSet.Refresh;
+
+  gridTaxtotal.DataController.GotoFirst;
+  btnTaxfree.Click;
+  ShowMessage('자료가 정상적으로 생성되었습니다.');
+end;
+
+procedure TfmTeacherTaxtotal.btnTaxfreeClick(Sender: TObject);
+var
+  i, cnt, total_amount, mon : Integer;
+  teacher_id : string;
+begin
+  mon := frmYearMonth1.cbMonth.ItemIndex + 1;
+  cnt := gridTaxtotal.DataController.RecordCount + 1;
+  gridTaxtotal.DataController.GotoFirst;
+  for i := 1 to cnt do begin
+    total_amount := gridTaxtotalTOTAL_AMOUNT.EditValue;
+    teacher_id := gridTaxtotalTEACHER_ID.EditValue;
+    if not (total_amount > 125000) then begin
+      TEACHER_CHECK_TAXFREE.ParamByName('WYEAR').Value := StrToInt(frmYearMonth1.cbYear.Text);
+      TEACHER_CHECK_TAXFREE.ParamByName('WMON').Value := mon;
+      TEACHER_CHECK_TAXFREE.ParamByName('TEACHER_ID').Value := teacher_id;
+      TEACHER_CHECK_TAXFREE.ExecProc;
+    end;
+    gridTaxtotal.DataController.GotoNext;
+  end;
+  btnRetrieve.Click;
 end;
 
 procedure TfmTeacherTaxtotal.btnExportClick(Sender: TObject);
@@ -167,6 +219,12 @@ begin
   btnRetrieve.Click;
 end;
 
+
+procedure TfmTeacherTaxtotal.frmYearMonth1cbMonthChange(Sender: TObject);
+begin
+  frmYearMonth1.cbMonthChange(Sender);
+  btnRetrieve.Click;
+end;
 
 procedure TfmTeacherTaxtotal.gridTaxtotalTEACHER_IDXGetDataText(
   Sender: TcxCustomGridTableItem; ARecordIndex: Integer; var AText: string);

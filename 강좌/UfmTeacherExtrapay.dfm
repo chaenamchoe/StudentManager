@@ -26,7 +26,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
     Align = alTop
     TabOrder = 0
     object btnSaveColumn: TcxButton
-      Left = 919
+      Left = 1087
       Top = 2
       Width = 41
       Height = 25
@@ -143,7 +143,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
       OnClick = btnRetrieveClick
     end
     object btnExport: TcxButton
-      Left = 750
+      Left = 614
       Top = 2
       Width = 99
       Height = 25
@@ -192,7 +192,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
       OnClick = btnExportClick
     end
     object btnAttendList: TcxButton
-      Left = 850
+      Left = 714
       Top = 2
       Width = 63
       Height = 25
@@ -264,13 +264,110 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
       Left = 245
       Top = 5
       Caption = '0'#50896' '#49704#44608
-      State = cbsChecked
       Style.LookAndFeel.SkinName = 'DevExpressStyle'
       StyleDisabled.LookAndFeel.SkinName = 'DevExpressStyle'
       StyleFocused.LookAndFeel.SkinName = 'DevExpressStyle'
       StyleHot.LookAndFeel.SkinName = 'DevExpressStyle'
       TabOrder = 7
       Width = 84
+    end
+    object btnReportBank: TcxButton
+      Left = 812
+      Top = 2
+      Width = 85
+      Height = 25
+      Hint = #51008#54665#51228#52636#50857' '#52636#47141
+      Caption = #51008#54665#51228#52636
+      LookAndFeel.NativeStyle = False
+      LookAndFeel.SkinName = 'DevExpressStyle'
+      OptionsImage.Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000000000000000000000000000000000000000000000000
+        000000000000000000030000000C000000120000001400000014000000150000
+        0015000000140000000D00000003000000000000000000000000000000000000
+        00000000000000000009896256C2BD8A78FFBE8A78FFBD8A78FFBD8978FFBD89
+        78FFBE8978FF876356C30000000B000000000000000000000000000000030000
+        000E0000001500000021C08D7CFFF6EEE9FFF5EDE9FFF5EDE9FFF5ECE8FFF4EC
+        E8FFF5ECE7FFBF8D7BFF00000026000000180000000F000000040000000C7B50
+        42C5A76E5BFF9F6755FFC2917FFFF7F0ECFFE2B47DFFE2B37AFFE1B077FFE0AE
+        72FFF6EEEAFFC2907FFF845545FF895847FF613E32C70000000E00000011BB7E
+        6BFFECD9CCFFE3CEBEFFC59483FFF9F2F0FFE4B984FFE3B781FFE3B47CFFE0B1
+        76FFF7F0EDFFC59483FFE0CBBCFFEBD8CBFFB67763FF0000001400000010BE85
+        71FFF1E5DAFFECDBD0FF7A4835FF7A4835FF7A4835FF7A4835FF7A4835FF7A48
+        35FF7A4835FF7A4835FFEBDBCFFFF1E2D8FFB97C69FF000000130000000EC28B
+        78FFF5EEE7FFF2E7DDFFF2E7DEFFF3E7DEFFF2E5DEFFF3E5DEFFF2E7DDFFF2E7
+        DDFFF2E7DEFFF2E7DDFFF2E5DEFFF5EDE6FFBC826EFF000000120000000CC793
+        7FFFFAF4F1FFCDBEB8FF6F5448FF614337FF614035FF5F3F34FF5E3F33FF5D3D
+        32FF5D3D34FF6A4C44FFCABCB6FFF9F5F1FFC18875FF000000100000000ACC99
+        86FFFDFAFAFF7D6054FF745043FF744F43FF744E43FF734E43FF734E42FF724D
+        42FF724C41FF724C40FF73584DFFFDFAFAFFC58F7CFF0000000E00000008CF9F
+        8DFFFFFFFFFF7A5A4CFF8E695AFFF9F4F1FFF0E6E0FFF0E5DFFFEFE5DEFFEFE5
+        DEFFF6EFEBFF866253FF704F43FFFFFFFFFFCA9683FF0000000B00000005BE95
+        84E9F5ECE8FF866656FF977262FFFAF6F4FFF2E8E3FFF1E8E1FFF1E7E2FFF1E7
+        E1FFF8F2EEFF8E6A5BFF7A5B4CFFF5EAE6FFBA8E7DEA00000008000000023429
+        2545A78375CC947262FFA07B6AFFFCF9F8FFF3EBE6FFF4EAE5FFF2EAE5FFF3EA
+        E3FFF9F5F3FF977263FF876658FFA68072CE3428234800000003000000000000
+        0001000000030000000AC89B89FFFDFBFAFFF5EDE8FFF4EDE8FFF5EDE7FFF5EC
+        E7FFFBF7F6FFC59685FF00000011000000040000000200000000000000000000
+        00000000000000000005CA9E8DFFFEFCFCFFF7F0ECFFF6EFEBFFF7EFEBFFF5EF
+        EAFFFCFAF8FFC89A89FF00000009000000000000000000000000000000000000
+        00000000000000000003CDA291FFFEFEFDFFFEFDFDFFFEFDFCFFFEFCFCFFFEFC
+        FBFFFDFBFAFFCB9F8DFF00000007000000000000000000000000000000000000
+        000000000000000000019A796DBFCFA493FFCEA493FFCEA493FFCEA492FFCDA3
+        91FFCDA391FF98786BC100000004000000000000000000000000}
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 8
+      OnClick = btnReportBankClick
+    end
+    object cxButton1: TcxButton
+      Left = 898
+      Top = 2
+      Width = 85
+      Height = 25
+      Hint = #51008#54665#51228#52636#50857' '#52636#47141
+      Caption = #51008#54665#51228#52636
+      LookAndFeel.NativeStyle = False
+      LookAndFeel.SkinName = 'DevExpressStyle'
+      OptionsImage.Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000000000000000000000000000000000000000000000000
+        000000000000000000003C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C
+        3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF000000000000
+        000000000000000000003C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C
+        3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF000000000000
+        000000000000000000003C3C3CFF3C3C3CFF0000000000000000000000000000
+        0000000000000000000000000000000000003C3C3CFF3C3C3CFF3C3C3CFF3C3C
+        3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C
+        3CFF3C3C3CFF3C3C3CFF3C3C3CFF000000003C3C3CFF3C3C3CFF3C3C3CFF0000
+        00003C3C3CFF000000003C3C3CFF0000000000000000000000003C3C3CFF0000
+        0000000000001E1E1E803C3C3CFF000000003C3C3CFF3C3C3CFF3C3C3CFF0000
+        00001E1E1E80000000003C3C3CFF000000003C3C3CFF3C3C3CFF3C3C3CFF3C3C
+        3CFF3C3C3CFF000000003C3C3CFF000000003C3C3CFF3C3C3CFF3C3C3CFF1E1E
+        1E80000000001E1E1E803C3C3CFF000000003C3C3CFF3C3C3CFF3C3C3CFF1E1E
+        1E80000000001E1E1E803C3C3CFF000000003C3C3CFF3C3C3CFF3C3C3CFF0000
+        00001E1E1E80000000003C3C3CFF000000003C3C3CFF3C3C3CFF3C3C3CFF0000
+        00003C3C3CFF3C3C3CFF3C3C3CFF000000003C3C3CFF3C3C3CFF3C3C3CFF0000
+        00003C3C3CFF000000003C3C3CFF000000003C3C3CFF3C3C3CFF3C3C3CFF1E1E
+        1E8000000000000000003C3C3CFF000000003C3C3CFF3C3C3CFF3C3C3CFF3C3C
+        3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C
+        3CFF3C3C3CFF3C3C3CFF3C3C3CFF000000003C3C3CFF3C3C3CFF000000000000
+        000000000000000000003C3C3CFF3C3C3CFF0000000000000000000000000000
+        0000000000000000000000000000000000003C3C3CFF3C3C3CFF000000000000
+        000000000000000000003C3C3CFF3C3C3CFF0000000000000000000000000000
+        0000000000003C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF000000000000
+        000000000000000000003C3C3CFF3C3C3CFF0000000000000000000000000000
+        0000000000003C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF1E1E1E7E000000000000
+        000000000000000000003C3C3CFF3C3C3CFF0000000000000000000000000000
+        0000000000003C3C3CFF3C3C3CFF3C3C3CFF1E1E1E7E00000000000000000000
+        000000000000000000003C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C
+        3CFF3C3C3CFF3C3C3CFF3C3C3CFF1E1E1E7E0000000000000000000000000000
+        000000000000000000003C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C
+        3CFF3C3C3CFF3C3C3CFF1E1E1E7E000000000000000000000000}
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 9
+      OnClick = cxButton1Click
     end
   end
   object cxGrid1: TcxGrid
@@ -635,10 +732,10 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
     end
   end
   object cxGrid2: TcxGrid
-    Left = 536
-    Top = 288
+    Left = 572
+    Top = 193
     Width = 569
-    Height = 200
+    Height = 129
     TabOrder = 2
     Visible = False
     object gridTotal: TcxGridDBTableView
@@ -717,6 +814,108 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
       GridView = gridTotal
     end
   end
+  object cxGrid3: TcxGrid
+    Left = 394
+    Top = 328
+    Width = 663
+    Height = 208
+    TabOrder = 3
+    Visible = False
+    object gridExcel: TcxGridDBTableView
+      Navigator.Buttons.CustomButtons = <>
+      Navigator.Buttons.First.Visible = False
+      Navigator.Buttons.PriorPage.Visible = False
+      Navigator.Buttons.Prior.Visible = False
+      Navigator.Buttons.Next.Visible = False
+      Navigator.Buttons.NextPage.Visible = False
+      Navigator.Buttons.Last.Visible = False
+      Navigator.Buttons.Insert.Visible = False
+      Navigator.Buttons.Append.Enabled = False
+      Navigator.Buttons.Append.Visible = False
+      Navigator.Buttons.Delete.Visible = False
+      Navigator.Buttons.Edit.Visible = False
+      Navigator.Buttons.Post.Visible = False
+      Navigator.Buttons.Cancel.Visible = False
+      Navigator.Buttons.Refresh.Visible = False
+      Navigator.Buttons.SaveBookmark.Visible = False
+      Navigator.Buttons.GotoBookmark.Visible = False
+      Navigator.Buttons.Filter.Visible = True
+      DataController.DataSource = DataSource2
+      DataController.Summary.DefaultGroupSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridExcelnet_pay
+        end
+        item
+          Format = '#,0'
+          Kind = skCount
+          Column = gridExcelteacher
+        end>
+      DataController.Summary.SummaryGroups = <>
+      OptionsBehavior.CellHints = True
+      OptionsBehavior.NavigatorHints = True
+      OptionsCustomize.ColumnsQuickCustomization = True
+      OptionsData.CancelOnExit = False
+      OptionsData.Deleting = False
+      OptionsData.DeletingConfirmation = False
+      OptionsData.Editing = False
+      OptionsData.Inserting = False
+      OptionsSelection.CellSelect = False
+      OptionsView.CellEndEllipsis = True
+      OptionsView.CellAutoHeight = True
+      OptionsView.Footer = True
+      OptionsView.GroupByBox = False
+      OptionsView.Indicator = True
+      object gridExcelRecId: TcxGridDBColumn
+        DataBinding.FieldName = 'RecId'
+        Visible = False
+      end
+      object gridExcelidx: TcxGridDBColumn
+        Caption = 'No'
+        DataBinding.FieldName = 'idx'
+        Width = 51
+      end
+      object gridExcelteacher: TcxGridDBColumn
+        Caption = #44053#49324#47749
+        DataBinding.FieldName = 'teacher'
+        Options.CellMerging = True
+        Width = 104
+      end
+      object gridExcelnet_pay: TcxGridDBColumn
+        Caption = #49892#49688#47161#50529
+        DataBinding.FieldName = 'net_pay'
+        Options.CellMerging = True
+        Width = 119
+        OnCompareRowValuesForCellMerging = gridExcelnet_payCompareRowValuesForCellMerging
+      end
+      object gridExcelbank_name: TcxGridDBColumn
+        Caption = #51008#54665#47749
+        DataBinding.FieldName = 'bank_name'
+        Options.CellMerging = True
+        OnCompareRowValuesForCellMerging = gridExcelbank_nameCompareRowValuesForCellMerging
+      end
+      object gridExcelbank_no: TcxGridDBColumn
+        Caption = #44228#51340#48264#54840
+        DataBinding.FieldName = 'bank_no'
+        Options.CellMerging = True
+        Width = 139
+        OnCompareRowValuesForCellMerging = gridExcelbank_noCompareRowValuesForCellMerging
+      end
+      object gridExcelreport_title: TcxGridDBColumn
+        DataBinding.FieldName = 'report_title'
+        Visible = False
+      end
+      object gridExceldong_name: TcxGridDBColumn
+        DataBinding.FieldName = 'dong_name'
+        Visible = False
+      end
+    end
+    object cxGrid3Level1: TcxGridLevel
+      GridView = gridExcel
+    end
+  end
   object dxComponentPrinter1: TdxComponentPrinter
     CurrentLink = dxComponentPrinter1Link1
     OverWriteExistingFiles = True
@@ -752,7 +951,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
       PrinterPage.ScaleMode = smFit
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
-      ReportDocument.CreationDate = 44988.238721817130000000
+      ReportDocument.CreationDate = 44991.425522442130000000
       ReportTitle.Font.Charset = DEFAULT_CHARSET
       ReportTitle.Font.Color = clBlack
       ReportTitle.Font.Height = -21
@@ -1976,5 +2175,499 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
     DataSet = TEACHER_SEL_LOOKUP
     Left = 952
     Top = 184
+  end
+  object dxMemData2: TdxMemData
+    Indexes = <
+      item
+        FieldName = 'idx'
+        SortOptions = []
+      end>
+    SortOptions = []
+    Left = 360
+    Top = 496
+    object dxMemData2id: TIntegerField
+      FieldName = 'id'
+    end
+    object dxMemData2teacher: TStringField
+      FieldName = 'teacher'
+    end
+    object dxMemData2net_pay: TFloatField
+      FieldName = 'net_pay'
+      DisplayFormat = '#,0'
+    end
+    object dxMemData2bank_name: TStringField
+      FieldName = 'bank_name'
+    end
+    object dxMemData2bank_no: TStringField
+      FieldName = 'bank_no'
+      Size = 30
+    end
+    object dxMemData2report_title: TStringField
+      FieldName = 'report_title'
+      Size = 100
+    end
+    object dxMemData2dong_name: TStringField
+      FieldName = 'dong_name'
+      Size = 30
+    end
+    object dxMemData2idx: TIntegerField
+      FieldName = 'idx'
+    end
+  end
+  object frxReport1: TfrxReport
+    Version = '5.1.9'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 42440.967877916660000000
+    ReportOptions.LastChange = 42461.440476284720000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      ''
+      'begin'
+      ''
+      'end.')
+    Left = 288
+    Top = 496
+    Datasets = <
+      item
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+      end>
+    Variables = <>
+    Style = <
+      item
+        Name = 'Title'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+      end
+      item
+        Name = 'Header'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+      end
+      item
+        Name = 'Group header'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = []
+        Frame.Typ = [ftBottom]
+      end
+      item
+        Name = 'Data'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = []
+      end
+      item
+        Name = 'Group footer'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = []
+        Frame.Typ = [ftTop]
+      end
+      item
+        Name = 'Header line'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = []
+        Frame.Typ = [ftBottom]
+        Frame.Width = 2.000000000000000000
+      end>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      object ReportTitle1: TfrxReportTitle
+        FillType = ftBrush
+        Height = 52.913420000000000000
+        Top = 18.897650000000000000
+        Width = 718.110700000000000000
+        object Memo1: TfrxMemoView
+          Align = baWidth
+          Top = 3.000000000000000000
+          Width = 718.110700000000000000
+          Height = 30.236240000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -21
+          Font.Name = #44404#47548
+          Font.Style = [fsBold, fsUnderline]
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '[frxDBDataset1."report_title"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object frxDBDataset1dong_name: TfrxMemoView
+          Left = 211.653680000000000000
+          Top = 30.795300000000000000
+          Width = 294.803340000000000000
+          Height = 18.897650000000000000
+          DataField = 'dong_name'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = #44404#47548
+          Font.Style = [fsBold]
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '[frxDBDataset1."dong_name"]')
+          ParentFont = False
+        end
+      end
+      object PageHeader1: TfrxPageHeader
+        FillType = ftBrush
+        Height = 26.456710000000000000
+        Top = 94.488250000000000000
+        Width = 718.110700000000000000
+        object Memo2: TfrxMemoView
+          Width = 718.110023860000000000
+          Height = 26.456710000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftTop, ftBottom]
+          Frame.Width = 2.000000000000000000
+          ParentFont = False
+        end
+        object Memo3: TfrxMemoView
+          Left = 40.000000000000000000
+          Top = 4.000000000000000000
+          Width = 35.208824100000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = #44404#47548
+          Font.Style = [fsBold]
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'No')
+          ParentFont = False
+        end
+        object Memo4: TfrxMemoView
+          Left = 114.208824100000000000
+          Top = 4.000000000000000000
+          Width = 81.981974360000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = #44404#47548
+          Font.Style = [fsBold]
+          Memo.UTF8W = (
+            #44053#49324#47749)
+          ParentFont = False
+        end
+        object Memo14: TfrxMemoView
+          Left = 209.239071550000000000
+          Top = 4.000000000000000000
+          Width = 91.671913850000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = #44404#47548
+          Font.Style = [fsBold]
+          HAlign = haRight
+          Memo.UTF8W = (
+            #49892#49688#47161#50529)
+          ParentFont = False
+        end
+        object Memo15: TfrxMemoView
+          Left = 341.572395390000000000
+          Top = 4.000000000000000000
+          Width = 99.926661030000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = #44404#47548
+          Font.Style = [fsBold]
+          Memo.UTF8W = (
+            #51008#54665#47749)
+          ParentFont = False
+        end
+        object Memo16: TfrxMemoView
+          Left = 452.499056420000000000
+          Top = 4.000000000000000000
+          Width = 136.886787440000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = #44404#47548
+          Font.Style = [fsBold]
+          Memo.UTF8W = (
+            #44228#51340#48264#54840)
+          ParentFont = False
+        end
+      end
+      object MasterData1: TfrxMasterData
+        FillType = ftBrush
+        Height = 22.677180000000000000
+        Top = 181.417440000000000000
+        Width = 718.110700000000000000
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        RowCount = 0
+        object Memo17: TfrxMemoView
+          Left = 40.000000000000000000
+          Top = 3.000000000000000000
+          Width = 35.208824100000000000
+          Height = 18.897650000000000000
+          DataField = 'idx'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -15
+          Font.Name = #44404#47548
+          Font.Style = [fsBold]
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '[frxDBDataset1."idx"]')
+          ParentFont = False
+          SuppressRepeated = True
+        end
+        object Memo18: TfrxMemoView
+          Left = 114.208824100000000000
+          Top = 3.000000000000000000
+          Width = 81.981974360000000000
+          Height = 18.897650000000000000
+          DataField = 'teacher'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -15
+          Font.Name = #44404#47548
+          Font.Style = [fsBold]
+          Memo.UTF8W = (
+            '[frxDBDataset1."teacher"]')
+          ParentFont = False
+          SuppressRepeated = True
+        end
+        object Memo28: TfrxMemoView
+          Left = 209.239071550000000000
+          Top = 3.000000000000000000
+          Width = 91.671913850000000000
+          Height = 18.897650000000000000
+          DataField = 'net_pay'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          DisplayFormat.ThousandSeparator = ','
+          DisplayFormat.FormatStr = '#,0'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -15
+          Font.Name = #44404#47548
+          Font.Style = [fsBold]
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[frxDBDataset1."net_pay"]')
+          ParentFont = False
+        end
+        object Memo29: TfrxMemoView
+          Left = 341.572395390000000000
+          Top = 3.000000000000000000
+          Width = 99.926661030000000000
+          Height = 18.897650000000000000
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -15
+          Font.Name = #44404#47548
+          Font.Style = [fsBold]
+          Memo.UTF8W = (
+            '[frxDBDataset1."bank_name"]')
+          ParentFont = False
+        end
+        object Memo30: TfrxMemoView
+          Left = 452.499056420000000000
+          Top = 3.000000000000000000
+          Width = 189.800207440000000000
+          Height = 18.897650000000000000
+          DataField = 'bank_no'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -15
+          Font.Name = #44404#47548
+          Font.Style = [fsBold]
+          Memo.UTF8W = (
+            '[frxDBDataset1."bank_no"]')
+          ParentFont = False
+          SuppressRepeated = True
+        end
+        object Line1: TfrxLineView
+          Left = 1.779530000000000000
+          Top = 21.897650000000000000
+          Width = 714.331170000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+      end
+      object PageFooter1: TfrxPageFooter
+        FillType = ftBrush
+        Height = 26.456710000000000000
+        Top = 313.700990000000000000
+        Width = 718.110700000000000000
+        object Memo31: TfrxMemoView
+          Align = baWidth
+          Width = 718.110700000000000000
+          Frame.Typ = [ftTop]
+          Frame.Width = 2.000000000000000000
+        end
+        object Memo32: TfrxMemoView
+          Top = 1.000000000000000000
+          Height = 22.677180000000000000
+          AutoWidth = True
+          Memo.UTF8W = (
+            '[Date] [Time]')
+        end
+        object Memo33: TfrxMemoView
+          Align = baRight
+          Left = 600.945270000000000000
+          Top = 3.000000000000000000
+          Width = 117.165430000000000000
+          Height = 22.677180000000000000
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Page [Page#]')
+        end
+      end
+      object Footer1: TfrxFooter
+        FillType = ftBrush
+        Height = 26.456710000000000000
+        Top = 226.771800000000000000
+        Width = 718.110700000000000000
+        object Memo5: TfrxMemoView
+          Left = 186.874150000000000000
+          Top = 3.779530000000000000
+          Width = 114.349093850000000000
+          Height = 18.897650000000000000
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          DisplayFormat.ThousandSeparator = ','
+          DisplayFormat.FormatStr = '#,0'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -15
+          Font.Name = #44404#47548
+          Font.Style = [fsBold]
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[SUM(<frxDBDataset1."net_pay">,MasterData1)]')
+          ParentFont = False
+          SuppressRepeated = True
+        end
+        object Memo6: TfrxMemoView
+          Left = 113.385900000000000000
+          Top = 3.779530000000000000
+          Width = 51.745734360000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = #44404#47548
+          Font.Style = [fsBold]
+          HAlign = haRight
+          Memo.UTF8W = (
+            #54633#44228':')
+          ParentFont = False
+        end
+      end
+    end
+  end
+  object frxDBDataset1: TfrxDBDataset
+    UserName = 'frxDBDataset1'
+    CloseDataSource = False
+    FieldAliases.Strings = (
+      'RecId=RecId'
+      'id=id'
+      'teacher=teacher'
+      'net_pay=net_pay'
+      'bank_name=bank_name'
+      'bank_no=bank_no'
+      'report_title=report_title'
+      'dong_name=dong_name'
+      'idx=idx')
+    DataSet = dxMemData2
+    BCDToCurrency = False
+    Left = 288
+    Top = 544
+  end
+  object DataSource2: TDataSource
+    DataSet = dxMemData2
+    Left = 360
+    Top = 544
+  end
+  object q_teacher: TUniQuery
+    Connection = dm.UniConnection1
+    SQL.Strings = (
+      
+        'select idx, t_name, bank_name, bank_no from teacher where id = :' +
+        'teacher_id;')
+    Left = 40
+    Top = 416
+    ParamData = <
+      item
+        DataType = ftString
+        Name = 'teacher_id'
+        ParamType = ptInput
+      end>
+    object q_teacherT_NAME: TStringField
+      FieldName = 'T_NAME'
+    end
+    object q_teacherBANK_NAME: TStringField
+      FieldName = 'BANK_NAME'
+    end
+    object q_teacherBANK_NO: TStringField
+      FieldName = 'BANK_NO'
+      Size = 30
+    end
+    object q_teacherIDX: TIntegerField
+      FieldName = 'IDX'
+    end
+  end
+  object d_teacher: TDataSource
+    DataSet = q_teacher
+    Left = 40
+    Top = 464
   end
 end
