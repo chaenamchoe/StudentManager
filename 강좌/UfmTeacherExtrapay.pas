@@ -239,7 +239,6 @@ type
     TEACHER_SEL_LOOKUPBANK_NO: TStringField;
     TEACHER_SEL_LOOKUPBANK_CODE: TStringField;
     TEACHER_SEL_LOOKUPIDX: TIntegerField;
-    chkShowAll: TcxCheckBox;
     dxMemData2: TdxMemData;
     dxMemData2id: TIntegerField;
     dxMemData2teacher: TStringField;
@@ -271,6 +270,10 @@ type
     q_teacherBANK_NO: TStringField;
     q_teacherIDX: TIntegerField;
     d_teacher: TDataSource;
+    btnExpand: TcxButton;
+    btnUnexpand: TcxButton;
+    gridTotalBankName: TcxGridDBColumn;
+    gridTotalBankNo: TcxGridDBColumn;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnRetrieveClick(Sender: TObject);
     procedure btnExportClick(Sender: TObject);
@@ -350,6 +353,11 @@ type
       AProperties1: TcxCustomEditProperties; const AValue1: Variant;
       ARow2: TcxGridDataRow; AProperties2: TcxCustomEditProperties;
       const AValue2: Variant; var AAreEqual: Boolean);
+    procedure btnExpandClick(Sender: TObject);
+    procedure btnUnexpandClick(Sender: TObject);
+    procedure gridExtrapayDataControllerCompare(
+      ADataController: TcxCustomDataController; ARecordIndex1, ARecordIndex2,
+      AItemIndex: Integer; const V1, V2: Variant; var Compare: Integer);
   private
     function GetTeacherName(teacher_id: string): string;
     function GetRegistedCount(lecture_id: string; calc_mon : Integer): Integer;
@@ -393,20 +401,23 @@ var
   total_price, soduk, SODUK_FEE, jumin, JUMIN_FEE, net_price, CITY_SUDANG, LECTURE_PERCENT : integer;
   whours : Double;
 begin
+  TEACHER_EXTRAPAY_SEL.DisableControls;
   //기초자료에서 시비와 강사료 수당방식을 추출
   LECTURE_PERCENT := dm.q_basic_valueLECTURE_PERCENT.AsInteger;
   CITY_SUDANG := dm.q_basic_valueCITY_BOJO_PRICE.AsInteger;
 
-  cnt := gridExtrapay.DataController.RecordCount;
+  cnt := TEACHER_EXTRAPAY_SEL.RecordCount;// gridExtrapay.DataController.RecordCount;
+  ShowMessage(IntToStr(cnt));
   gridExtrapay.DataController.GotoFirst;
-  for i := 0 to cnt do begin
-    w_days := gridExtrapayW_DAYS.EditValue;
-    whours := gridExtrapayW_HOURS.EditValue;
+  TEACHER_EXTRAPAY_SEL.First;
+  for i := 0 to cnt - 1 do begin
+    w_days := TEACHER_EXTRAPAY_SELW_DAYS.Value;
+    whours := TEACHER_EXTRAPAY_SELW_HOURS.Value;
     sudang_price := Trunc(CITY_SUDANG * w_days * whours);
 
-    lecture_price := gridExtrapayLECTURE_PRICE.EditValue;
+    lecture_price := TEACHER_EXTRAPAY_SELLECTURE_PRICE.Value;
     bojun_uprice := Trunc(lecture_price * (LECTURE_PERCENT / 100));
-    bojun_cnt := gridExtrapayBOJUN_CNT.EditValue;
+    bojun_cnt := TEACHER_EXTRAPAY_SELBOJUN_CNT.Value;
     bojun_total := bojun_uprice * bojun_cnt;
 
     total_price := bojun_total + sudang_price;
@@ -416,7 +427,7 @@ begin
     JUMIN_FEE := Trunc(SODUK * 0.1);
     JUMIN     := Trunc(JUMIN_FEE * 0.1) * 10;
 
-    TEACHER_EXTRAPAY_UPD.ParamByName('ID').Value := gridExtrapayID.EditValue;
+    TEACHER_EXTRAPAY_UPD.ParamByName('ID').Value := TEACHER_EXTRAPAY_SELID.Value;
     TEACHER_EXTRAPAY_UPD.ParamByName('U_PRICE').Value := sudang_price; //수당금액
     TEACHER_EXTRAPAY_UPD.ParamByName('CITY_PRICE').Value := CITY_SUDANG;
     TEACHER_EXTRAPAY_UPD.ParamByName('BOJUN_PRICE').Value := bojun_uprice;
@@ -426,14 +437,12 @@ begin
     TEACHER_EXTRAPAY_UPD.ParamByName('JUMINSE').Value := jumin;
     TEACHER_EXTRAPAY_UPD.ParamByName('NET_PRICE').Value := total_price - (soduk + jumin);
     TEACHER_EXTRAPAY_UPD.ExecProc;
-    gridExtrapay.DataController.GotoNext;
+    TEACHER_EXTRAPAY_SEL.Next;
   end;
-  TEACHER_EXTRAPAY_SEL.open;
-  ds_TEACHER_EXTRAPAY_SEL.DataSet.Refresh;
-  RunGenerateTotalPrice;
   ds_TEACHER_EXTRAPAY_SEL.DataSet.Refresh;
   gridExtrapay.DataController.GotoFirst;
   btnRetrieve.Click;
+  TEACHER_EXTRAPAY_SEL.EnableControls;
 end;
 
 procedure TfmTeacherExtrapay.RunGenerateTotalPrice;
@@ -508,13 +517,12 @@ begin
       TEACHER_EXTRAPAY_CREATE.ExecProc;
       ds_TEACHER_EXTRAPAY_SEL.DataSet.Refresh;
   end;
-  if chkShowAll.Checked then begin
-    TEACHER_EXTRAPAY_SEL.Filter := 'TOTAL_PRICE > 0';
-    TEACHER_EXTRAPAY_SEL.Filtered := True;
-  end else begin
-    TEACHER_EXTRAPAY_SEL.Filtered := False;
-  end;
   btnCalc.Click;
+end;
+
+procedure TfmTeacherExtrapay.btnExpandClick(Sender: TObject);
+begin
+  gridExtrapay.DataController.Groups.FullExpand;
 end;
 
 procedure TfmTeacherExtrapay.btnExportClick(Sender: TObject);
@@ -522,6 +530,7 @@ var
   filepath, nameonly : string;
   saveDLG : TSaveDialog;
 begin
+  gridExtrapayTEACHER_ID.GroupIndex := -1;
   saveDLG := TSaveDialog.Create(self);
   try
     saveDLG.Filter := '엑셀파일 (*.xls)|*.xls';
@@ -538,6 +547,7 @@ begin
   finally
     saveDLG.Free;
   end;
+  gridExtrapayTEACHER_ID.GroupIndex := 0;
 end;
 
 procedure TfmTeacherExtrapay.GetTeacherInfo(teacher_id : string);
@@ -553,8 +563,10 @@ var
   i, cnt, t : Integer;
   t_name, t_id, tid_o : string;
 begin
+  RunGenerateTotalPrice;
+
   titleStr := frmYearMonth1.cbYear.Text + '년도' + IntToStr(frmYearMonth1.cbMonth.ItemIndex + 1) + '월분 강사수당지급';
-  with gridExtrapay do begin
+  with gridTotal do begin
     cnt := DataController.RecordCount + 1;
     dxMemData2.Close;
     dxMemData2.Open;
@@ -562,22 +574,17 @@ begin
     t := 1;
     tid_o := '';
     for i := 0 to cnt - 1 do begin
-      t_id := gridExtrapayTEACHER_ID.EditValue;
-      if t_id <> tid_o then begin
-        GetTeacherInfo(t_id);
-        dxMemData2.Append;
-        dxMemData2id.Value := gridExtrapayIDX.EditValue;
-        dxMemData2idx.Value := t;
-        dxMemData2teacher.Value := q_teacherT_NAME.Value;
-        dxMemData2net_pay.Value := gridExtrapayNET_PRICE.EditValue;
-        dxMemData2bank_name.Value := q_teacherBANK_NAME.Value;
-        dxMemData2bank_no.Value := q_teacherBANK_NO.Value;
-        dxMemData2report_title.Value := titleStr;
-        dxMemData2dong_name.Value := LoginUserDongName + ' 주민자치위원회';
-        dxMemData2.Post;
-        tid_o := t_id;
-        t := t + 1;
-      end;
+      t_id := gridTotalTEACHER_ID.EditValue;
+      dxMemData2.Append;
+      dxMemData2id.Value := t+1;
+      dxMemData2idx.Value := t+1;
+      dxMemData2teacher.Value := DataController.GetDisplayText(DataController.FocusedRowIndex, gridTotalTEACHER_ID.Index);
+      dxMemData2net_pay.Value := DataController.GetValue(i, gridTotalSUM_OF_NET_AMOUNT.Index);
+      dxMemData2bank_name.Value := DataController.GetDisplayText(DataController.FocusedRowIndex, gridTotalBankName.Index);
+      dxMemData2bank_no.Value := DataController.GetDisplayText(DataController.FocusedRowIndex, gridTotalBankNo.Index);
+      dxMemData2report_title.Value := titleStr;
+      dxMemData2dong_name.Value := LoginUserDongName + ' 주민자치회';
+      dxMemData2.Post;
       DataController.GotoNext;
     end;
   end;
@@ -594,12 +601,6 @@ begin
   TEACHER_EXTRAPAY_SEL.ParamByName('LMON').Value := mon;
   TEACHER_EXTRAPAY_SEL.Open;
   ds_TEACHER_EXTRAPAY_SEL.DataSet.Refresh;
-  if chkShowAll.Checked then begin
-    TEACHER_EXTRAPAY_SEL.Filter := 'TOTAL_PRICE > 0';
-    TEACHER_EXTRAPAY_SEL.Filtered := True;
-  end else begin
-    TEACHER_EXTRAPAY_SEL.Filtered := False;
-  end;
 end;
 
 procedure TfmTeacherExtrapay.btnSaveColumnClick(Sender: TObject);
@@ -608,6 +609,11 @@ var
 begin
   fname := gsDefaultFolder + '감면보전현황.ini';
   gridExtrapay.StoreToIniFile(fname, True, [gsoUseSummary], '');
+end;
+
+procedure TfmTeacherExtrapay.btnUnexpandClick(Sender: TObject);
+begin
+  gridExtrapay.DataController.Groups.FullCollapse;
 end;
 
 procedure TfmTeacherExtrapay.cxButton1Click(Sender: TObject);
@@ -709,7 +715,7 @@ var
   AIndex: Integer;
 begin
   AIndex := TcxGridTableView(Sender.GridView).DataController.GetRowIndexByRecordIndex(ARecordIndex, False);
-  AText := IntToStr(AIndex);
+  AText := IntToStr(AIndex + 1);
 end;
 
 procedure TfmTeacherExtrapay.gridExcelbank_nameCompareRowValuesForCellMerging(
@@ -782,17 +788,31 @@ begin
   end;
 end;
 
+procedure TfmTeacherExtrapay.gridExtrapayDataControllerCompare(
+  ADataController: TcxCustomDataController; ARecordIndex1, ARecordIndex2,
+  AItemIndex: Integer; const V1, V2: Variant; var Compare: Integer);
+var
+  AValue1, AValue2: Variant;
+begin
+  if AItemIndex = gridExtrapayTEACHER_ID.Index then begin
+    AValue1 := ADataController.Values[ARecordIndex1, gridExtrapayTEACHER_IDX.Index];
+    AValue2 := ADataController.Values[ARecordIndex2, gridExtrapayTEACHER_IDX.Index];
+    Compare := VarCompare(AValue1, AValue2);
+  end else
+    Compare := VarCompare(V1, V2);
+end;
+
 procedure TfmTeacherExtrapay.gridExtrapayJUMINSECustomDrawCell(
   Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
   AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
 begin
-  if AViewInfo.Selected then begin
-    if (AViewInfo.GridRecord.Index mod 2 = 1) then
-      ACanvas.Brush.Color := RootLookAndFeel.Painter.DefaultContentOddColor
-    else
-      ACanvas.Brush.Color := RootLookAndFeel.Painter.DefaultContentEvenColor;
-    ACanvas.Font.Color := RootLookAndFeel.Painter.DefaultContentTextColor;
-  end;
+//  if AViewInfo.Selected then begin
+//    if (AViewInfo.GridRecord.Index mod 2 = 1) then
+//      ACanvas.Brush.Color := RootLookAndFeel.Painter.DefaultContentOddColor
+//    else
+//      ACanvas.Brush.Color := RootLookAndFeel.Painter.DefaultContentEvenColor;
+//    ACanvas.Font.Color := RootLookAndFeel.Painter.DefaultContentTextColor;
+//  end;
 
 end;
 
@@ -816,13 +836,13 @@ procedure TfmTeacherExtrapay.gridExtrapayNET_PRICECustomDrawCell(
   Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
   AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
 begin
-  if AViewInfo.Selected then begin
-    if (AViewInfo.GridRecord.Index mod 2 = 1) then
-      ACanvas.Brush.Color := RootLookAndFeel.Painter.DefaultContentOddColor
-    else
-      ACanvas.Brush.Color := RootLookAndFeel.Painter.DefaultContentEvenColor;
-    ACanvas.Font.Color := RootLookAndFeel.Painter.DefaultContentTextColor;
-  end;
+//  if AViewInfo.Selected then begin
+//    if (AViewInfo.GridRecord.Index mod 2 = 1) then
+//      ACanvas.Brush.Color := RootLookAndFeel.Painter.DefaultContentOddColor
+//    else
+//      ACanvas.Brush.Color := RootLookAndFeel.Painter.DefaultContentEvenColor;
+//    ACanvas.Font.Color := RootLookAndFeel.Painter.DefaultContentTextColor;
+//  end;
 
 end;
 
@@ -842,13 +862,13 @@ procedure TfmTeacherExtrapay.gridExtrapaySODUKSECustomDrawCell(
   Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
   AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
 begin
-  if AViewInfo.Selected then begin
-    if (AViewInfo.GridRecord.Index mod 2 = 1) then
-      ACanvas.Brush.Color := RootLookAndFeel.Painter.DefaultContentOddColor
-    else
-      ACanvas.Brush.Color := RootLookAndFeel.Painter.DefaultContentEvenColor;
-    ACanvas.Font.Color := RootLookAndFeel.Painter.DefaultContentTextColor;
-  end;
+//  if AViewInfo.Selected then begin
+//    if (AViewInfo.GridRecord.Index mod 2 = 1) then
+//      ACanvas.Brush.Color := RootLookAndFeel.Painter.DefaultContentOddColor
+//    else
+//      ACanvas.Brush.Color := RootLookAndFeel.Painter.DefaultContentEvenColor;
+//    ACanvas.Font.Color := RootLookAndFeel.Painter.DefaultContentTextColor;
+//  end;
 end;
 
 procedure TfmTeacherExtrapay.gridExtrapayTcxGridDBDataControllerTcxDataSummaryDefaultGroupSummaryItems0GetText(
@@ -898,13 +918,13 @@ procedure TfmTeacherExtrapay.gridExtrapayTOTAL_PRICECustomDrawCell(
   Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
   AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
 begin
-  if AViewInfo.Selected then begin
-    if (AViewInfo.GridRecord.Index mod 2 = 1) then
-      ACanvas.Brush.Color := RootLookAndFeel.Painter.DefaultContentOddColor
-    else
-      ACanvas.Brush.Color := RootLookAndFeel.Painter.DefaultContentEvenColor;
-    ACanvas.Font.Color := RootLookAndFeel.Painter.DefaultContentTextColor;
-  end;
+//  if AViewInfo.Selected then begin
+//    if (AViewInfo.GridRecord.Index mod 2 = 1) then
+//      ACanvas.Brush.Color := RootLookAndFeel.Painter.DefaultContentOddColor
+//    else
+//      ACanvas.Brush.Color := RootLookAndFeel.Painter.DefaultContentEvenColor;
+//    ACanvas.Font.Color := RootLookAndFeel.Painter.DefaultContentTextColor;
+//  end;
 
 end;
 

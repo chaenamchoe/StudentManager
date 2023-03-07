@@ -97,6 +97,14 @@ type
     gridTaxtotalTOTAL_TAX: TcxGridDBColumn;
     TEACHER_CHECK_TAXFREE: TUniStoredProc;
     btnTaxfree: TcxButton;
+    TEACHER_TAXTOTAL_SELBANK_NAME: TStringField;
+    TEACHER_TAXTOTAL_SELBANK_NO: TStringField;
+    gridTaxtotalBANK_NAME: TcxGridDBColumn;
+    gridTaxtotalBANK_NO: TcxGridDBColumn;
+    TEACHER_TAXTOTAL_SELTAX_PAY1: TIntegerField;
+    TEACHER_TAXTOTAL_SELTAX_PAY2: TIntegerField;
+    gridTaxtotalTAX_PAY1: TcxGridDBColumn;
+    gridTaxtotalTAX_PAY2: TcxGridDBColumn;
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnRetrieveClick(Sender: TObject);
@@ -106,6 +114,10 @@ type
     procedure btnExportClick(Sender: TObject);
     procedure frmYearMonth1cbMonthChange(Sender: TObject);
     procedure btnTaxfreeClick(Sender: TObject);
+    procedure gridTaxtotalTAX_PAY1CustomDrawCell(Sender: TcxCustomGridTableView;
+      ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo;
+      var ADone: Boolean);
+    procedure btnAttendListClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -121,6 +133,20 @@ uses
   GlobalVar, Udm;
 
 {$R *.dfm}
+
+procedure TfmTeacherTaxtotal.btnAttendListClick(Sender: TObject);
+var
+  titleStr : string;
+begin
+  titleStr := '강사수당지급현황' + #13#10 +
+              '===================' + #13#10 +
+              '(' + frmYearMonth1.cbYear.Text + '년' + IntToStr(frmYearMonth1.cbMonth.ItemIndex + 1) + '월분)' + #13#10 + #13#10;
+  dxComponentPrinter1Link1.ReportTitle.Text := titleStr;
+  dxComponentPrinter1Link1.ReportTitle.Font.Name := '굴림';
+  dxComponentPrinter1Link1.ReportTitle.Font.Size := 16;
+  dxComponentPrinter1Link1.ReportTitle.Font.Style := [fsBold];
+  dxComponentPrinter1.Preview(True, dxComponentPrinter1Link1);
+end;
 
 procedure TfmTeacherTaxtotal.btnCreateNewClick(Sender: TObject);
 var
@@ -226,13 +252,22 @@ begin
   btnRetrieve.Click;
 end;
 
+procedure TfmTeacherTaxtotal.gridTaxtotalTAX_PAY1CustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+  ACanvas.Brush.Color := $00DCF8FF;
+  ACanvas.Font.Color := clBlue;
+  ACanvas.Font.Style := [fsBold];
+end;
+
 procedure TfmTeacherTaxtotal.gridTaxtotalTEACHER_IDXGetDataText(
   Sender: TcxCustomGridTableItem; ARecordIndex: Integer; var AText: string);
 var
   AIndex: Integer;
 begin
   AIndex := TcxGridTableView(Sender.GridView).DataController.GetRowIndexByRecordIndex(ARecordIndex, False);
-  AText := IntToStr(AIndex);
+  AText := IntToStr(AIndex + 1);
 end;
 
 initialization RegisterClasses([TfmTeacherTaxtotal]);

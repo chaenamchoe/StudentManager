@@ -94,6 +94,7 @@ begin
     dm.t_account_subitemSUB_NAME.AsString := sValue;
     dm.t_account_subitem.Post;
     dm.d_account_subitem.DataSet.Refresh;
+    dm.d_acc_sublook.DataSet.Refresh;
   end;
 end;
 
@@ -106,6 +107,7 @@ begin
     dm.t_account_detailDETAIL_NAME.AsString := sValue;
     dm.t_account_detail.Post;
     dm.d_account_detail.DataSet.Refresh;
+    dm.d_acc_detaillook.DataSet.Refresh;
   end;
 end;
 
@@ -180,6 +182,7 @@ begin
     dm.t_account_subitemSUB_NAME.AsString := sValue;
     dm.t_account_subitem.Post;
     dm.d_account_subitem.DataSet.Refresh;
+    dm.d_acc_sublook.DataSet.Refresh;
   end;
 end;
 
@@ -197,6 +200,7 @@ begin
     dm.t_account_detailDETAIL_NAME.AsString := sValue;
     dm.t_account_detail.Post;
     dm.d_account_detail.DataSet.Refresh;
+    dm.d_acc_detaillook.DataSet.Refresh;
   end;
 end;
 
