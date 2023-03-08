@@ -403,7 +403,7 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
         Width = 106
       end
       object gridTaxtotalTAX_PAY1: TcxGridDBColumn
-        Caption = #49888#44256#54633#44228'1'
+        Caption = #49688#44053#47308'70%'
         DataBinding.FieldName = 'TAX_PAY1'
         PropertiesClassName = 'TcxCurrencyEditProperties'
         Properties.DisplayFormat = ',0;-,0'
@@ -441,7 +441,7 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
         Width = 104
       end
       object gridTaxtotalTAX_PAY2: TcxGridDBColumn
-        Caption = #49888#44256#54633#44228'2'
+        Caption = #50948#53441#44552
         DataBinding.FieldName = 'TAX_PAY2'
         PropertiesClassName = 'TcxCurrencyEditProperties'
         Properties.DisplayFormat = ',0;-,0'
@@ -878,7 +878,6 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
     object dxComponentPrinter1Link1: TdxGridReportLink
       Active = True
       Component = cxGrid1
-      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
       PrinterPage.Header = 6350
@@ -901,7 +900,7 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
       PrinterPage.ScaleMode = smFit
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
-      ReportDocument.CreationDate = 44992.847187986110000000
+      ReportDocument.CreationDate = 44993.429525370370000000
       ReportTitle.Font.Charset = DEFAULT_CHARSET
       ReportTitle.Font.Color = clBlack
       ReportTitle.Font.Height = -21
@@ -909,7 +908,6 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
       ReportTitle.Font.Style = [fsBold]
       ReportTitle.Text = #44053#51340#46321#47197#54788#54889
       ShrinkToPageWidth = True
-      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -13
@@ -920,7 +918,6 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
       OptionsOnEveryPage.Caption = False
       OptionsOnEveryPage.FilterBar = False
       OptionsSize.AutoWidth = True
-      OptionsView.Footers = False
       OptionsView.Caption = False
       OptionsView.ExpandButtons = False
       OptionsView.FilterBar = False
@@ -951,5 +948,11 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
         Size = 17
       end>
     CommandStoredProcName = 'TEACHER_CHECK_TAXFREE'
+  end
+  object cxGridPopupMenu1: TcxGridPopupMenu
+    Grid = cxGrid1
+    PopupMenus = <>
+    Left = 1072
+    Top = 520
   end
 end

@@ -1,4 +1,4 @@
-object fmTeacherExtrapay: TfmTeacherExtrapay
+﻿object fmTeacherExtrapay: TfmTeacherExtrapay
   Left = 0
   Top = 0
   Caption = #44053#49324#49688#45817'2'
@@ -25,60 +25,12 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
     Height = 29
     Align = alTop
     TabOrder = 0
-    object btnSaveColumn: TcxButton
-      Left = 1087
-      Top = 2
-      Width = 41
-      Height = 25
-      Hint = #51312#54924#52972#47100#49444#51221#51200#51109
-      LookAndFeel.NativeStyle = False
-      LookAndFeel.SkinName = 'DevExpressStyle'
-      OptionsImage.Glyph.Data = {
-        36040000424D3604000000000000360000002800000010000000100000000100
-        2000000000000004000000000000000000000000000000000000000000040000
-        00130000001E0000002000000020000000200000002100000021000000210000
-        002200000022000000220000002300000021000000160000000500000012281E
-        16CB37291EFF463A31FFBD8150FFBC7E4DFFB97949FFB67646FFB37141FFB06D
-        3DFFAD6839FFAB6535FF42362EFF3D3026FF241A13CE00000015000000193B2C
-        21FF685C54FF483C34FFE8C28BFFE7C088FFE6BD85FFE5BB81FFE4B87CFFE3B5
-        79FFE2B276FFE2B273FF443931FF51433AFF34261DFF0000001E000000183E2F
-        24FF6C6057FF4A3F37FFD9B27DFFD8B07BFFD7AE77FFD7AB74FFD6A970FFD5A6
-        6DFFD4A56AFFD4A268FF473B33FF5B4F47FF37291EFF0000001D000000164031
-        26FF6F645CFF4C4038FFFFFFFFFFF7F1EBFFF7F0EBFFF7F0EBFFF7EFEBFFF6EF
-        EAFFF6EFEAFFF6EFE9FF463B34FF5D5249FF3A2C21FF0000001B000000144434
-        29FF73675FFF4F443CFFFFFFFFFFF8F2EDFFF8F1EDFFF7F1EDFFF7F0EDFFF8F1
-        EBFFF7F0EBFFF7F0ECFF4A4037FF5F534BFF3D2E23FF00000019000000124637
-        2CFF776B63FF50453DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-        FFFFFFFFFFFFFFFFFFFF4E433BFF61544CFF403126FF0000001700000010493A
-        2FFF796E66FF50453DFF61564EFF60564EFF60554DFF5F544CFF5E544CFF5E53
-        4BFF5D524AFF5C5249FF5B5149FF61554DFF433429FF000000150000000E4C3D
-        32FF7C706AFF674E44FF654B42FF634A41FF61473FFF5F473EFF5C443CFF5B43
-        3AFF594139FF584038FF573F37FF63574FFF46362DFF000000130000000D4E3F
-        35FF80746DFF6B5248FFF4ECE6FFE9DACEFFE9D8CDFFE9D8CCFFE9D8CBFFE8D7
-        CAFFF3EAE2FFF3E9E2FF5A4139FF645850FF483A2FFF000000110000000B5142
-        36FF827770FF70564DFFF9F5F2FFF4EAE4FFF1E6DEFFEBDCD2FFE9D9CCFF4E41
-        3DFF60534CFFF3EAE3FF5D453CFF655951FF4C3D32FF0000000F000000095344
-        39FF857A73FF755A50FFFAF6F3FFF5EDE7FFF4EDE6FFF4ECE6FFEFE2DAFF493D
-        38FF5A4D46FFF4EBE4FF60483FFF655A52FF4F3F34FF0000000D000000075545
-        3AFF887D76FF795E54FFFAF6F4FFF5EEE9FFF5EDE7FFF4EDE7FFF4ECE6FF473A
-        36FF483D36FFE9D9CDFF644C43FF675A52FF514137FF0000000B000000065748
-        3DFF898079FF7C6157FFFAF7F4FFFAF6F4FFFAF6F4FFFAF6F3FFFAF6F3FFFAF5
-        F2FFF5EEE9FFF4ECE6FF695046FF82776FFF534439FF00000009000000034235
-        2EC058493DFF7F645AFF998178FF967F75FF937A72FF8E786DFF8B7269FF866E
-        64FF82695FFF7D645BFF6E544AFF56453BFF3F332BC200000005000000000000
-        0002000000030000000400000004000000040000000400000005000000050000
-        0005000000050000000500000006000000060000000400000001}
-      ParentShowHint = False
-      ShowHint = True
-      TabOrder = 0
-      OnClick = btnSaveColumnClick
-    end
     inline frmYearMonth1: TfrmYearMonth
       Left = 12
       Top = 4
       Width = 164
       Height = 23
-      TabOrder = 1
+      TabOrder = 0
       ExplicitLeft = 12
       ExplicitTop = 4
       ExplicitWidth = 164
@@ -139,7 +91,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
         0002000000020000000200000001000000000000000000000000}
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 2
+      TabOrder = 1
       OnClick = btnRetrieveClick
     end
     object btnExport: TcxButton
@@ -188,7 +140,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
         3CFF3C3C3CFF1E1E1E7E00000000000000000000000000000000}
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 3
+      TabOrder = 2
       OnClick = btnExportClick
     end
     object btnAttendList: TcxButton
@@ -237,7 +189,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
         91FFCDA391FF98786BC100000004000000000000000000000000}
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 4
+      TabOrder = 3
       OnClick = btnAttendListClick
     end
     object btnCalc: TcxButton
@@ -247,7 +199,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
       Height = 25
       Caption = #49688#45817#51116#44228#49328
       LookAndFeel.SkinName = 'DevExpressStyle'
-      TabOrder = 5
+      TabOrder = 4
       OnClick = btnCalcClick
     end
     object btnCreateNew: TcxButton
@@ -257,7 +209,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
       Height = 25
       Caption = #49688#45817#49373#49457
       LookAndFeel.SkinName = 'DevExpressStyle'
-      TabOrder = 6
+      TabOrder = 5
       OnClick = btnCreateNewClick
     end
     object btnReportBank: TcxButton
@@ -306,11 +258,11 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
         91FFCDA391FF98786BC100000004000000000000000000000000}
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 7
+      TabOrder = 6
       OnClick = btnReportBankClick
     end
     object cxButton1: TcxButton
-      Left = 898
+      Left = 903
       Top = 2
       Width = 85
       Height = 25
@@ -355,7 +307,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
         3CFF3C3C3CFF3C3C3CFF1E1E1E7E000000000000000000000000}
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 8
+      TabOrder = 7
       OnClick = cxButton1Click
     end
     object btnExpand: TcxButton
@@ -402,7 +354,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
         1F3E000000060000000100000000000000000000000000000000}
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 9
+      TabOrder = 8
       OnClick = btnExpandClick
     end
     object btnUnexpand: TcxButton
@@ -449,8 +401,21 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
         1F3E000000060000000100000000000000000000000000000000}
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 10
+      TabOrder = 9
       OnClick = btnUnexpandClick
+    end
+    object cxCheckBox1: TcxCheckBox
+      Left = 320
+      Top = 4
+      Caption = #44536#47353#54756#45908
+      State = cbsChecked
+      Style.LookAndFeel.SkinName = 'DevExpressStyle'
+      StyleDisabled.LookAndFeel.SkinName = 'DevExpressStyle'
+      StyleFocused.LookAndFeel.SkinName = 'DevExpressStyle'
+      StyleHot.LookAndFeel.SkinName = 'DevExpressStyle'
+      TabOrder = 10
+      OnClick = cxCheckBox1Click
+      Width = 81
     end
   end
   object cxGrid1: TcxGrid
@@ -678,6 +643,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
         Properties.UseThousandSeparator = True
         OnCustomDrawCell = gridExtrapayNET_PRICECustomDrawCell
         HeaderAlignmentHorz = taCenter
+        Styles.Content = cxStyleRed
         Width = 86
         OnCompareRowValuesForCellMerging = gridExtrapayNET_PRICECompareRowValuesForCellMerging
       end
@@ -709,6 +675,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
         Properties.UseThousandSeparator = True
         OnCustomDrawCell = gridExtrapayTOTAL_PRICECustomDrawCell
         HeaderAlignmentHorz = taCenter
+        Styles.Content = cxStyleBlue
         Width = 80
         OnCompareRowValuesForCellMerging = gridExtrapaySODUKSECompareRowValuesForCellMerging
       end
@@ -778,6 +745,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
         Properties.DisplayFormat = ',0;-,0'
         Properties.UseThousandSeparator = True
         HeaderAlignmentHorz = taCenter
+        Styles.Content = cxStyleBlue
       end
       object gridExtrapayTOTAL_PRICE2: TcxGridDBColumn
         DataBinding.FieldName = 'TOTAL_PRICE2'
@@ -830,10 +798,10 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
     end
   end
   object cxGrid2: TcxGrid
-    Left = 394
-    Top = 193
-    Width = 747
-    Height = 129
+    Left = 528
+    Top = 160
+    Width = 629
+    Height = 193
     TabOrder = 2
     Visible = False
     object gridTotal: TcxGridDBTableView
@@ -854,28 +822,34 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
       Navigator.Buttons.SaveBookmark.Visible = False
       Navigator.Buttons.GotoBookmark.Visible = False
       Navigator.Buttons.Filter.Visible = False
-      DataController.DataSource = ds_TEACHER_EXTRAPAY_CALCTOTAL
+      DataController.DataSource = ds_TEACHER_EXTRAPAY_TOTAL_SEL
       DataController.Summary.DefaultGroupSummaryItems = <>
       DataController.Summary.FooterSummaryItems = <
         item
           Format = '#,0'
           Kind = skSum
-          Column = gridTotalSUM_OF_TOTAL_AMOUNT
         end
         item
           Format = '#,0'
           Kind = skSum
-          Column = gridTotalSUM_OF_SODUK
         end
         item
           Format = '#,0'
           Kind = skSum
-          Column = gridTotalSUM_OF_JUMIN
         end
         item
           Format = '#,0'
           Kind = skSum
-          Column = gridTotalSUM_OF_NET_AMOUNT
+        end
+        item
+          Format = '#,0'#47749
+          Kind = skCount
+          Column = gridTotalT_NAME
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridTotalNET_PRICE
         end>
       DataController.Summary.SummaryGroups = <>
       OptionsBehavior.CellHints = True
@@ -887,155 +861,54 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
       OptionsView.Footer = True
       OptionsView.GroupByBox = False
       OptionsView.Indicator = True
-      object gridTotalTEACHER_ID: TcxGridDBColumn
+      object No: TcxGridDBColumn
+        Caption = 'No'
+        DataBinding.FieldName = 'IDX'
+        Visible = False
+        HeaderAlignmentHorz = taCenter
+        SortIndex = 0
+        SortOrder = soAscending
+        Width = 55
+      end
+      object 강사명: TcxGridDBColumn
+        DataBinding.FieldName = 'TEACHER_ID'
+        Visible = False
+      end
+      object gridTotalColumn1: TcxGridDBColumn
+        Caption = 'No'
+        PropertiesClassName = 'TcxTextEditProperties'
+        Properties.Alignment.Horz = taCenter
+        OnGetDisplayText = gridTotalColumn1GetDisplayText
+        HeaderAlignmentHorz = taCenter
+        Width = 57
+      end
+      object gridTotalT_NAME: TcxGridDBColumn
         Caption = #44053#49324#47749
-        DataBinding.FieldName = 'TEACHER_ID'
-        PropertiesClassName = 'TcxLookupComboBoxProperties'
-        Properties.KeyFieldNames = 'ID'
-        Properties.ListColumns = <
-          item
-            FieldName = 'T_NAME'
-          end>
-        Properties.ListSource = ds_TEACHER_SEL_LOOKUP
-        Width = 125
+        DataBinding.FieldName = 'T_NAME'
+        Width = 157
       end
-      object gridTotalSUM_OF_TOTAL_AMOUNT: TcxGridDBColumn
-        DataBinding.FieldName = 'SUM_OF_TOTAL_AMOUNT'
-        Width = 92
+      object gridTotalNET_PRICE: TcxGridDBColumn
+        Caption = #51648#44553#50529
+        DataBinding.FieldName = 'NET_PRICE'
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = ',0;-,0'
+        Properties.UseThousandSeparator = True
+        HeaderAlignmentHorz = taCenter
+        Width = 126
       end
-      object gridTotalSUM_OF_SODUK: TcxGridDBColumn
-        DataBinding.FieldName = 'SUM_OF_SODUK'
-        Width = 92
-      end
-      object gridTotalSUM_OF_JUMIN: TcxGridDBColumn
-        DataBinding.FieldName = 'SUM_OF_JUMIN'
-        Width = 90
-      end
-      object gridTotalSUM_OF_NET_AMOUNT: TcxGridDBColumn
-        Caption = #44552#50529
-        DataBinding.FieldName = 'SUM_OF_NET_AMOUNT'
-        Width = 92
-      end
-      object gridTotalBankName: TcxGridDBColumn
+      object gridTotalBANK_NAME: TcxGridDBColumn
         Caption = #51008#54665#47749
-        DataBinding.FieldName = 'TEACHER_ID'
-        PropertiesClassName = 'TcxLookupComboBoxProperties'
-        Properties.KeyFieldNames = 'ID'
-        Properties.ListColumns = <
-          item
-            FieldName = 'T_NAME'
-          end>
-        Properties.ListSource = ds_TEACHER_SEL_LOOKUP
+        DataBinding.FieldName = 'BANK_NAME'
+        Width = 134
       end
-      object gridTotalBankNo: TcxGridDBColumn
+      object gridTotalBANK_NO: TcxGridDBColumn
         Caption = #44228#51340#48264#54840
-        DataBinding.FieldName = 'TEACHER_ID'
+        DataBinding.FieldName = 'BANK_NO'
+        Width = 277
       end
     end
     object cxGrid2Level1: TcxGridLevel
       GridView = gridTotal
-    end
-  end
-  object cxGrid3: TcxGrid
-    Left = 435
-    Top = 376
-    Width = 663
-    Height = 160
-    TabOrder = 3
-    Visible = False
-    object gridExcel: TcxGridDBTableView
-      Navigator.Buttons.CustomButtons = <>
-      Navigator.Buttons.First.Visible = False
-      Navigator.Buttons.PriorPage.Visible = False
-      Navigator.Buttons.Prior.Visible = False
-      Navigator.Buttons.Next.Visible = False
-      Navigator.Buttons.NextPage.Visible = False
-      Navigator.Buttons.Last.Visible = False
-      Navigator.Buttons.Insert.Visible = False
-      Navigator.Buttons.Append.Enabled = False
-      Navigator.Buttons.Append.Visible = False
-      Navigator.Buttons.Delete.Visible = False
-      Navigator.Buttons.Edit.Visible = False
-      Navigator.Buttons.Post.Visible = False
-      Navigator.Buttons.Cancel.Visible = False
-      Navigator.Buttons.Refresh.Visible = False
-      Navigator.Buttons.SaveBookmark.Visible = False
-      Navigator.Buttons.GotoBookmark.Visible = False
-      Navigator.Buttons.Filter.Visible = True
-      DataController.DataSource = DataSource2
-      DataController.Summary.DefaultGroupSummaryItems = <>
-      DataController.Summary.FooterSummaryItems = <
-        item
-          Format = '#,0'
-          Kind = skSum
-          Column = gridExcelnet_pay
-        end
-        item
-          Format = '#,0'
-          Kind = skCount
-          Column = gridExcelteacher
-        end>
-      DataController.Summary.SummaryGroups = <>
-      OptionsBehavior.CellHints = True
-      OptionsBehavior.NavigatorHints = True
-      OptionsCustomize.ColumnsQuickCustomization = True
-      OptionsData.CancelOnExit = False
-      OptionsData.Deleting = False
-      OptionsData.DeletingConfirmation = False
-      OptionsData.Editing = False
-      OptionsData.Inserting = False
-      OptionsSelection.CellSelect = False
-      OptionsView.CellEndEllipsis = True
-      OptionsView.CellAutoHeight = True
-      OptionsView.Footer = True
-      OptionsView.GroupByBox = False
-      OptionsView.Indicator = True
-      object gridExcelRecId: TcxGridDBColumn
-        DataBinding.FieldName = 'RecId'
-        Visible = False
-      end
-      object gridExcelidx: TcxGridDBColumn
-        Caption = 'No'
-        DataBinding.FieldName = 'idx'
-        Width = 51
-      end
-      object gridExcelteacher: TcxGridDBColumn
-        Caption = #44053#49324#47749
-        DataBinding.FieldName = 'teacher'
-        Options.CellMerging = True
-        Width = 104
-      end
-      object gridExcelnet_pay: TcxGridDBColumn
-        Caption = #49892#49688#47161#50529
-        DataBinding.FieldName = 'net_pay'
-        Options.CellMerging = True
-        Width = 119
-        OnCompareRowValuesForCellMerging = gridExcelnet_payCompareRowValuesForCellMerging
-      end
-      object gridExcelbank_name: TcxGridDBColumn
-        Caption = #51008#54665#47749
-        DataBinding.FieldName = 'bank_name'
-        Options.CellMerging = True
-        OnCompareRowValuesForCellMerging = gridExcelbank_nameCompareRowValuesForCellMerging
-      end
-      object gridExcelbank_no: TcxGridDBColumn
-        Caption = #44228#51340#48264#54840
-        DataBinding.FieldName = 'bank_no'
-        Options.CellMerging = True
-        Width = 139
-        OnCompareRowValuesForCellMerging = gridExcelbank_noCompareRowValuesForCellMerging
-      end
-      object gridExcelreport_title: TcxGridDBColumn
-        DataBinding.FieldName = 'report_title'
-        Visible = False
-      end
-      object gridExceldong_name: TcxGridDBColumn
-        DataBinding.FieldName = 'dong_name'
-        Visible = False
-      end
-    end
-    object cxGrid3Level1: TcxGridLevel
-      GridView = gridExcel
     end
   end
   object dxComponentPrinter1: TdxComponentPrinter
@@ -1073,7 +946,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
       PrinterPage.ScaleMode = smFit
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
-      ReportDocument.CreationDate = 44992.885385543980000000
+      ReportDocument.CreationDate = 44993.386037291670000000
       ReportTitle.Font.Charset = DEFAULT_CHARSET
       ReportTitle.Font.Color = clBlack
       ReportTitle.Font.Height = -21
@@ -1091,7 +964,6 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
       OptionsOnEveryPage.Caption = False
       OptionsOnEveryPage.FilterBar = False
       OptionsSize.AutoWidth = True
-      OptionsView.Footers = False
       OptionsView.Caption = False
       OptionsView.ExpandButtons = False
       OptionsView.FilterBar = False
@@ -2024,7 +1896,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
     StoredProcName = 'TEACHER_EXTRAPAY_UPD'
     Connection = dm.UniConnection1
     Left = 456
-    Top = 128
+    Top = 104
     ParamData = <
       item
         DataType = ftInteger
@@ -2114,81 +1986,16 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
       end>
     CommandStoredProcName = 'TEACHER_EXTRAPAY_CREATE'
   end
-  object ds_TEACHER_EXTRAPAY_CALCTOTAL: TDataSource
-    DataSet = TEACHER_EXTRAPAY_CALCTOTAL
-    Left = 744
-    Top = 112
-  end
   object UniQuery1: TUniQuery
     Connection = dm.UniConnection1
     Left = 40
     Top = 192
   end
-  object TEACHER_EXTRAPAY_CALCTOTAL: TUniStoredProc
-    StoredProcName = 'TEACHER_EXTRAPAY_CALCTOTAL'
-    Connection = dm.UniConnection1
-    Left = 744
-    Top = 64
-    ParamData = <
-      item
-        DataType = ftInteger
-        Name = 'PYEAR'
-        ParamType = ptInput
-      end
-      item
-        DataType = ftInteger
-        Name = 'PMONTH'
-        ParamType = ptInput
-      end
-      item
-        DataType = ftString
-        Name = 'TEACHER_ID'
-        ParamType = ptOutput
-        Size = 17
-      end
-      item
-        DataType = ftInteger
-        Name = 'SUM_OF_TOTAL_AMOUNT'
-        ParamType = ptOutput
-      end
-      item
-        DataType = ftInteger
-        Name = 'SUM_OF_SODUK'
-        ParamType = ptOutput
-      end
-      item
-        DataType = ftInteger
-        Name = 'SUM_OF_JUMIN'
-        ParamType = ptOutput
-      end
-      item
-        DataType = ftInteger
-        Name = 'SUM_OF_NET_AMOUNT'
-        ParamType = ptOutput
-      end>
-    CommandStoredProcName = 'TEACHER_EXTRAPAY_CALCTOTAL'
-    object TEACHER_EXTRAPAY_CALCTOTALTEACHER_ID: TStringField
-      FieldName = 'TEACHER_ID'
-      Size = 17
-    end
-    object TEACHER_EXTRAPAY_CALCTOTALSUM_OF_TOTAL_AMOUNT: TIntegerField
-      FieldName = 'SUM_OF_TOTAL_AMOUNT'
-    end
-    object TEACHER_EXTRAPAY_CALCTOTALSUM_OF_SODUK: TIntegerField
-      FieldName = 'SUM_OF_SODUK'
-    end
-    object TEACHER_EXTRAPAY_CALCTOTALSUM_OF_JUMIN: TIntegerField
-      FieldName = 'SUM_OF_JUMIN'
-    end
-    object TEACHER_EXTRAPAY_CALCTOTALSUM_OF_NET_AMOUNT: TIntegerField
-      FieldName = 'SUM_OF_NET_AMOUNT'
-    end
-  end
   object TEACHER_EXTRAPAY_UPDTAX: TUniStoredProc
     StoredProcName = 'TEACHER_EXTRAPAY_UPDTAX'
     Connection = dm.UniConnection1
     Left = 456
-    Top = 80
+    Top = 56
     ParamData = <
       item
         DataType = ftString
@@ -2222,7 +2029,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
     StoredProcName = 'TEACHER_SEL_LOOKUP'
     Connection = dm.UniConnection1
     Left = 952
-    Top = 64
+    Top = 56
     ParamData = <
       item
         DataType = ftString
@@ -2296,7 +2103,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
   object ds_TEACHER_SEL_LOOKUP: TDataSource
     DataSet = TEACHER_SEL_LOOKUP
     Left = 952
-    Top = 112
+    Top = 104
   end
   object dxMemData2: TdxMemData
     Indexes = <
@@ -2499,7 +2306,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
           ParentFont = False
         end
         object Memo4: TfrxMemoView
-          Left = 114.208824100000000000
+          Left = 93.208824100000000000
           Top = 4.000000000000000000
           Width = 81.981974360000000000
           Height = 18.897650000000000000
@@ -2513,7 +2320,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
           ParentFont = False
         end
         object Memo14: TfrxMemoView
-          Left = 209.239071550000000000
+          Left = 268.239071550000000000
           Top = 4.000000000000000000
           Width = 91.671913850000000000
           Height = 18.897650000000000000
@@ -2528,7 +2335,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
           ParentFont = False
         end
         object Memo15: TfrxMemoView
-          Left = 341.572395390000000000
+          Left = 376.572395390000000000
           Top = 4.000000000000000000
           Width = 99.926661030000000000
           Height = 18.897650000000000000
@@ -2542,7 +2349,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
           ParentFont = False
         end
         object Memo16: TfrxMemoView
-          Left = 452.499056420000000000
+          Left = 510.499056420000000000
           Top = 4.000000000000000000
           Width = 136.886787440000000000
           Height = 18.897650000000000000
@@ -2584,9 +2391,9 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
           SuppressRepeated = True
         end
         object Memo18: TfrxMemoView
-          Left = 114.208824100000000000
+          Left = 93.208824100000000000
           Top = 3.000000000000000000
-          Width = 81.981974360000000000
+          Width = 165.131634360000000000
           Height = 18.897650000000000000
           DataField = 'teacher'
           DataSet = frxDBDataset1
@@ -2602,7 +2409,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
           SuppressRepeated = True
         end
         object Memo28: TfrxMemoView
-          Left = 209.239071550000000000
+          Left = 268.239071550000000000
           Top = 3.000000000000000000
           Width = 91.671913850000000000
           Height = 18.897650000000000000
@@ -2623,9 +2430,9 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
           ParentFont = False
         end
         object Memo29: TfrxMemoView
-          Left = 341.572395390000000000
+          Left = 376.572395390000000000
           Top = 3.000000000000000000
-          Width = 99.926661030000000000
+          Width = 126.383371030000000000
           Height = 18.897650000000000000
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
@@ -2639,7 +2446,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
           ParentFont = False
         end
         object Memo30: TfrxMemoView
-          Left = 452.499056420000000000
+          Left = 510.499056420000000000
           Top = 3.000000000000000000
           Width = 189.800207440000000000
           Height = 18.897650000000000000
@@ -2699,7 +2506,7 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
         Top = 226.771800000000000000
         Width = 718.110700000000000000
         object Memo5: TfrxMemoView
-          Left = 186.874150000000000000
+          Left = 245.561891550000000000
           Top = 3.779530000000000000
           Width = 114.349093850000000000
           Height = 18.897650000000000000
@@ -2792,5 +2599,82 @@ object fmTeacherExtrapay: TfmTeacherExtrapay
     DataSet = q_teacher
     Left = 40
     Top = 464
+  end
+  object TEACHER_EXTRAPAY_TOTAL_SEL: TUniStoredProc
+    StoredProcName = 'TEACHER_EXTRAPAY_TOTAL_SEL'
+    Connection = dm.UniConnection1
+    Left = 632
+    Top = 208
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'LYEAR'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'LMONTH'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'TEACHER_ID'
+        ParamType = ptOutput
+        Size = 17
+      end
+      item
+        DataType = ftInteger
+        Name = 'IDX'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftString
+        Name = 'T_NAME'
+        ParamType = ptOutput
+        Size = 20
+      end
+      item
+        DataType = ftString
+        Name = 'BANK_NAME'
+        ParamType = ptOutput
+        Size = 20
+      end
+      item
+        DataType = ftString
+        Name = 'BANK_NO'
+        ParamType = ptOutput
+        Size = 30
+      end
+      item
+        DataType = ftLargeint
+        Name = 'NET_PRICE'
+        ParamType = ptOutput
+      end>
+    CommandStoredProcName = 'TEACHER_EXTRAPAY_TOTAL_SEL'
+    object TEACHER_EXTRAPAY_TOTAL_SELTEACHER_ID: TStringField
+      FieldName = 'TEACHER_ID'
+      Size = 17
+    end
+    object TEACHER_EXTRAPAY_TOTAL_SELIDX: TIntegerField
+      FieldName = 'IDX'
+    end
+    object TEACHER_EXTRAPAY_TOTAL_SELT_NAME: TStringField
+      FieldName = 'T_NAME'
+    end
+    object TEACHER_EXTRAPAY_TOTAL_SELBANK_NAME: TStringField
+      FieldName = 'BANK_NAME'
+    end
+    object TEACHER_EXTRAPAY_TOTAL_SELBANK_NO: TStringField
+      FieldName = 'BANK_NO'
+      Size = 30
+    end
+    object TEACHER_EXTRAPAY_TOTAL_SELNET_PRICE: TLargeintField
+      FieldName = 'NET_PRICE'
+    end
+  end
+  object ds_TEACHER_EXTRAPAY_TOTAL_SEL: TDataSource
+    DataSet = TEACHER_EXTRAPAY_TOTAL_SEL
+    Left = 632
+    Top = 256
   end
 end

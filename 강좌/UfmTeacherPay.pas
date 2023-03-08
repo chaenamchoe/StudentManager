@@ -31,7 +31,7 @@ uses
   dxSkinOffice2013DarkGray, dxSkinOffice2013LightGray, cxGridCustomPopupMenu,
   cxGridPopupMenu, UfrmYearMonth, Menus, cxButtons, cxGridBandedTableView,
   cxGridDBBandedTableView, dxmdaset, cxVariants, frxClass, frxDBSet, Gauges,
-  cxCurrencyEdit;
+  cxCurrencyEdit, cxCheckBox;
 
 type
   TKisuPeriod = record
@@ -125,8 +125,6 @@ type
     btnMoneyIn2: TcxButton;
     cxStyleRepository2: TcxStyleRepository;
     cxStyle1: TcxStyle;
-    btnDone: TcxButton;
-    btnUnDone: TcxButton;
     frxReport1: TfrxReport;
     frxDBDataset1: TfrxDBDataset;
     dxMemData2: TdxMemData;
@@ -303,7 +301,9 @@ type
     ds_TEACHER_SEL_LOOKUP: TDataSource;
     gridTotalBANK_NAME: TcxGridDBColumn;
     gridTotalBankNo: TcxGridDBColumn;
-    gridTotalt_idx: TcxGridDBColumn;
+    cxCheckBox1: TcxCheckBox;
+    TEACHER_PAYMENT_CALCTOTALT_IDX: TIntegerField;
+    gridTotalT_IDX1: TcxGridDBColumn;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure btnRetrieveClick(Sender: TObject);
@@ -319,8 +319,6 @@ type
       var AStyle: TcxStyle);
     procedure FormActivate(Sender: TObject);
     procedure btnMoneyIn2Click(Sender: TObject);
-    procedure btnDoneClick(Sender: TObject);
-    procedure btnUnDoneClick(Sender: TObject);
     procedure FormResize(Sender: TObject);
     procedure btnReportBankClick(Sender: TObject);
     procedure gridPaymentColumn1GetDataText(Sender: TcxCustomGridTableItem;
@@ -333,6 +331,17 @@ type
       ADataController: TcxCustomDataController; ARecordIndex1, ARecordIndex2,
       AItemIndex: Integer; const V1, V2: Variant; var Compare: Integer);
     procedure FormShow(Sender: TObject);
+    procedure cxCheckBox1Click(Sender: TObject);
+    procedure gridPaymentBANK_NAMECompareRowValuesForCellMerging(
+      Sender: TcxGridColumn; ARow1: TcxGridDataRow;
+      AProperties1: TcxCustomEditProperties; const AValue1: Variant;
+      ARow2: TcxGridDataRow; AProperties2: TcxCustomEditProperties;
+      const AValue2: Variant; var AAreEqual: Boolean);
+    procedure gridPaymentBANK_NOCompareRowValuesForCellMerging(
+      Sender: TcxGridColumn; ARow1: TcxGridDataRow;
+      AProperties1: TcxCustomEditProperties; const AValue1: Variant;
+      ARow2: TcxGridDataRow; AProperties2: TcxCustomEditProperties;
+      const AValue2: Variant; var AAreEqual: Boolean);
   private
     procedure CalculatePayment(pYear, pMonth: integer);
     function GetGeneralStudentCount(pMonth, pKind: integer; lecture_id: string): integer;
@@ -382,7 +391,7 @@ begin
     fmMoneyInOutEdit3.dxTemp.Active := True;
     fmMoneyInOutEdit3.dxTemp.Append;
     fmMoneyInOutEdit3.dxTempm_jukyo.AsString := jukyo;
-    fmMoneyInOutEdit3.dxTempm_out.AsFloat := gridPaymentNET_AMOUNT.EditValue;
+    fmMoneyInOutEdit3.dxTempm_out.AsFloat := gridPayment.DataController.Summary.FooterSummaryValues[6];
     fmMoneyInOutEdit3.dxTempm_date.AsDateTime := Date;
     fmMoneyInOutEdit3.dxTempm_kind.AsInteger := 2;
     fmMoneyInOutEdit3.dxTempacc_item.AsInteger := 2;
@@ -411,7 +420,6 @@ begin
 
       dm.InsertMoneyINOUT(BANK_ID, ITEM_ID, SUBITEM_ID, DETAIL_ID, KIND, IO_DATE,
           JUKYO, DONG_ID, REG_LECTURE_ID, IO_IN, IO_OUT, IO_REST);
-      btnDone.Click;
       ShowMessage('강사수당 지출내역 등록이 완료되었습니다.');
     end;
   finally
@@ -713,45 +721,52 @@ var
   filepath, nameonly : string;
   saveDLG : TSaveDialog;
 begin
-//  with gridTotal do begin
-//    cnt := DataController.RecordCount;
-//    dxMemData2.Close;
-//    dxMemData2.Open;
-//    DataController.GotoFirst;
-//    for i := 0 to cnt - 1 do begin
-//      t_id := gridTotalTEACHER_ID.EditValue;
-//      GetTeacherInfo(t_id);
-//      gridPayment.DataController.DataSet.Locate('teacher_id', q_teacherT_NAME.Value, []);
-//      dxMemData2.Append;
-//      dxMemData2id.Value := gridPaymentrno.EditValue;
-//      dxMemData2idx.Value := gridPaymentrno.EditValue;
-//      dxMemData2teacher.Value := q_teacherT_NAME.Value;
-//      dxMemData2net_pay.Value := gridTotalSUM_OF_NET_AMOUNT.EditValue;
-//      dxMemData2bank_name.Value := q_teacherBANK_NAME.Value;
-//      dxMemData2bank_no.Value := q_teacherBANK_NO.Value;
-//      dxMemData2report_title.Value := '';
-//      dxMemData2dong_name.Value := '';
-//      dxMemData2.Post;
-//      DataController.GotoNext;
-//    end;
-//  end;
-//  DataSource1.DataSet.Refresh;
-//  saveDLG := TSaveDialog.Create(self);
-//  try
-//    saveDLG.Filter := '엑셀파일 (*.xls)|*.xls';
-//    saveDLG.FileName := '강사수당지급내역_' + DateTimeToStr(Date) + '.xls';
-//    saveDLG.DefaultExt := 'xls';
-//    if saveDLG.Execute then begin
-//       filepath := saveDLG.FileName;
-//       nameonly := copy(filepath, 1, length(filepath) - 4);
-//    end else begin
-//       exit;
-//    end;
-//    ExportGridToExcel(nameonly, cxGrid3, true, true, false, 'xls');
-//    ShowMessage('엑셀파일 저장완료!');
-//  finally
-//    saveDLG.Free;
-//  end;
+  GetTotalPayment;
+  dxMemData2.Close;
+  dxMemData2.Open;
+  with gridTotal do begin
+    cnt := DataController.RecordCount;
+    DataController.GotoFirst;
+    for i := 0 to cnt - 1 do begin
+      dxMemData2.Append;
+      dxMemData2id.Value := i+1;
+      dxMemData2idx.Value := i+1;
+      dxMemData2teacher.Value := DataController.GetDisplayText(DataController.GetFocusedRowIndex, gridTotalTEACHER_ID.Index);
+      dxMemData2net_pay.Value := gridTotalSUM_OF_NET_AMOUNT.EditValue;
+      dxMemData2bank_name.Value := DataController.GetDisplayText(DataController.GetFocusedRowIndex, gridTotalBANK_NAME.Index);
+      dxMemData2bank_no.Value := DataController.GetDisplayText(DataController.GetFocusedRowIndex, gridTotalBankNo.Index);
+      dxMemData2report_title.Value := titleStr;
+      dxMemData2dong_name.Value := LoginUserDongName + ' 주민자치회';
+      dxMemData2.Post;
+      DataController.GotoNext;
+    end;
+  end;
+//  gridTotal.DataController.Refresh;
+  DataSource1.DataSet.Refresh;
+  saveDLG := TSaveDialog.Create(self);
+  try
+    saveDLG.Filter := '엑셀파일 (*.xls)|*.xls';
+    saveDLG.FileName := '강사수당1_은행용_' + DateTimeToStr(Date) + '.xls';
+    saveDLG.DefaultExt := 'xls';
+    if saveDLG.Execute then begin
+       filepath := saveDLG.FileName;
+       nameonly := copy(filepath, 1, length(filepath) - 4);
+    end else begin
+       exit;
+    end;
+    ExportGridToExcel(nameonly, cxGrid3, true, true, false, 'xls');
+    ShowMessage('엑셀파일 저장완료!');
+  finally
+    saveDLG.Free;
+  end;
+end;
+
+procedure TfmTeacherPay.cxCheckBox1Click(Sender: TObject);
+begin
+  if cxCheckBox1.Checked then
+    gridPaymentTEACHER_ID.GroupIndex := 0
+  else
+    gridPaymentTEACHER_ID.GroupIndex := -1;
 end;
 
 function TfmTeacherPay.CheckIsDone(pyear, pmonth : Integer) : Boolean;
@@ -857,7 +872,7 @@ begin
     fmMoneyInOutEdit3.dxTemp.Active := True;
     fmMoneyInOutEdit3.dxTemp.Append;
     fmMoneyInOutEdit3.dxTempm_jukyo.AsString := jukyo;
-    fmMoneyInOutEdit3.dxTempm_out.AsFloat := gridPayment.DataController.Summary.GroupSummaryValues[0, 3];
+    fmMoneyInOutEdit3.dxTempm_out.AsFloat := gridPayment.DataController.Summary.FooterSummaryValues[1];
     fmMoneyInOutEdit3.dxTempm_date.AsDateTime := Date;
     fmMoneyInOutEdit3.dxTempm_kind.AsInteger := 2;
     fmMoneyInOutEdit3.dxTempacc_item.AsInteger := 2;
@@ -886,7 +901,6 @@ begin
 
       dm.InsertMoneyINOUT(BANK_ID, ITEM_ID, SUBITEM_ID, DETAIL_ID, KIND, IO_DATE,
           JUKYO, DONG_ID, REG_LECTURE_ID, IO_IN, IO_OUT, IO_REST);
-      btnDone.Click;
       ShowMessage('센터운영비 수입내역 등록이 완료되었습니다.');
     end;
   finally
@@ -912,31 +926,6 @@ begin
   dxMemData1.EnableControls;
 end;
 
-procedure TfmTeacherPay.btnDoneClick(Sender: TObject);
-var
-  Query : TUniQuery;
-  isdone : integer;
-  pyear, pmonth : Integer;
-begin
-  pYear := StrToInt(frmYearMonth1.cbYear.Text);
-  pMonth := frmYearMonth1.cbMonth.ItemIndex + 1;
-  Query := TUniQuery.Create(Self);
-  try
-    with Query do begin
-      Connection := dm.UniConnection1;
-      SQL.Clear;
-      SQL.Add('UPDATE TEACHER_PAYMENT_FINISH set IS_DONE = 1 ');
-      SQL.Add('where PAY_YEAR = :l_year and PAY_MONTH = :l_mon');
-      ParamByName('l_year').AsInteger := pyear;
-      ParamByName('l_mon').AsInteger := pmonth;
-      ExecSQL;
-    end;
-    ShowMessage('강사수당계산 기능을 잠금하였습니다.');
-  finally
-    Query.Free;
-  end;
-end;
-
 procedure TfmTeacherPay.btnExpandClick(Sender: TObject);
 begin
   gridPayment.DataController.Groups.FullExpand;
@@ -947,10 +936,11 @@ var
   filepath, nameonly : string;
   saveDLG : TSaveDialog;
 begin
+  gridPaymentTEACHER_ID.GroupIndex := -1;
   saveDLG := TSaveDialog.Create(self);
   try
     saveDLG.Filter := '엑셀파일 (*.xls)|*.xls';
-    saveDLG.FileName := '강사수당지급내역_' + DateTimeToStr(Date) + '.xls';
+    saveDLG.FileName := '강사수당1지급내역_' + DateTimeToStr(Date) + '.xls';
     saveDLG.DefaultExt := 'xls';
     if saveDLG.Execute then begin
        filepath := saveDLG.FileName;
@@ -958,11 +948,12 @@ begin
     end else begin
        exit;
     end;
-    ExportGridToExcel(nameonly, cxGrid1, true, true, true, 'xls');
+    ExportGridToExcel(nameonly, cxGrid1, true, true, false, 'xls');
     ShowMessage('엑셀파일 저장완료!');
   finally
     saveDLG.Free;
   end;
+  gridPaymentTEACHER_ID.GroupIndex := 0;
 end;
 
 procedure TfmTeacherPay.btnPrintClick(Sender: TObject);
@@ -1084,12 +1075,10 @@ end;
 
 procedure TfmTeacherPay.GetTotalPayment;
 begin
-  TEACHER_PAYMENT_CALCTOTAL.DisableControls;
   TEACHER_PAYMENT_CALCTOTAL.ParamByName('PYEAR').Value := StrToInt(frmYearMonth1.cbYear.Text);
   TEACHER_PAYMENT_CALCTOTAL.ParamByName('PMONTH').Value := frmYearMonth1.cbMonth.ItemIndex + 1;
   TEACHER_PAYMENT_CALCTOTAL.Active := True;
   d_TEACHER_PAYMENT_CALCTOTAL.DataSet.Refresh;
-  TEACHER_PAYMENT_CALCTOTAL.EnableControls;
 end;
 procedure TfmTeacherPay.GetTeacherInfo(teacher_id : string);
 begin
@@ -1120,6 +1109,30 @@ begin
   q_lecture.Active := True;
   q_lecture.Refresh;
   Result := q_lectureL_NAME.Value;
+end;
+
+procedure TfmTeacherPay.gridPaymentBANK_NAMECompareRowValuesForCellMerging(
+  Sender: TcxGridColumn; ARow1: TcxGridDataRow;
+  AProperties1: TcxCustomEditProperties; const AValue1: Variant;
+  ARow2: TcxGridDataRow; AProperties2: TcxCustomEditProperties;
+  const AValue2: Variant; var AAreEqual: Boolean);
+var
+  AIndex : Integer;
+begin
+  AIndex := gridPayment.GetColumnByFieldName('TEACHER_ID').Index;
+  AAreEqual :=  VarEquals(AValue1, AValue2) and VarEquals(ARow1.Values[AIndex], ARow2.Values[AIndex]);
+end;
+
+procedure TfmTeacherPay.gridPaymentBANK_NOCompareRowValuesForCellMerging(
+  Sender: TcxGridColumn; ARow1: TcxGridDataRow;
+  AProperties1: TcxCustomEditProperties; const AValue1: Variant;
+  ARow2: TcxGridDataRow; AProperties2: TcxCustomEditProperties;
+  const AValue2: Variant; var AAreEqual: Boolean);
+var
+  AIndex : Integer;
+begin
+  AIndex := gridPayment.GetColumnByFieldName('TEACHER_ID').Index;
+  AAreEqual :=  VarEquals(AValue1, AValue2) and VarEquals(ARow1.Values[AIndex], ARow2.Values[AIndex]);
 end;
 
 procedure TfmTeacherPay.gridPaymentColumn1GetDataText(
@@ -1174,30 +1187,6 @@ var
 begin
   fname := gsDefaultFolder + '강사수당관리.ini';
   gridPayment.StoreToIniFile(fname, True, [gsoUseSummary], '');
-end;
-
-procedure TfmTeacherPay.btnUnDoneClick(Sender: TObject);
-var
-  Query : TUniQuery;
-  isdone, pyear, pmonth : integer;
-begin
-  pYear := StrToInt(frmYearMonth1.cbYear.Text);
-  pMonth := frmYearMonth1.cbMonth.ItemIndex + 1;
-  Query := TUniQuery.Create(Self);
-  try
-    with Query do begin
-      Connection := dm.UniConnection1;
-      SQL.Clear;
-      SQL.Add('UPDATE TEACHER_PAYMENT_FINISH set IS_DONE = 0 ');
-      SQL.Add('where PAY_YEAR = :l_year and PAY_MONTH = :l_mon');
-      ParamByName('l_year').AsInteger := pyear;
-      ParamByName('l_mon').AsInteger := pmonth;
-      ExecSQL;
-    end;
-    ShowMessage('강사수당계산 잠금기능을 해제하였습니다.');
-  finally
-    Query.Free;
-  end;
 end;
 
 procedure TfmTeacherPay.btnUnexpandClick(Sender: TObject);

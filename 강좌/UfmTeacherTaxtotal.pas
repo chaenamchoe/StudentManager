@@ -27,7 +27,8 @@ uses
   dxPSPDFExport, cxDrawTextUtils, dxPSPrVwStd, dxPSPrVwAdv, dxPSPrVwRibbon,
   dxPScxPageControlProducer, dxPScxGridLnk, dxPScxGridLayoutViewLnk,
   dxPScxEditorProducers, dxPScxExtEditorProducers, dxSkinsdxBarPainter,
-  dxSkinsdxRibbonPainter, dxPSCore, dxPScxCommon, cxGridExportLink;
+  dxSkinsdxRibbonPainter, dxPSCore, dxPScxCommon, cxGridExportLink,
+  cxGridCustomPopupMenu, cxGridPopupMenu;
 
 type
   TfmTeacherTaxtotal = class(TForm)
@@ -105,6 +106,7 @@ type
     TEACHER_TAXTOTAL_SELTAX_PAY2: TIntegerField;
     gridTaxtotalTAX_PAY1: TcxGridDBColumn;
     gridTaxtotalTAX_PAY2: TcxGridDBColumn;
+    cxGridPopupMenu1: TcxGridPopupMenu;
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnRetrieveClick(Sender: TObject);
@@ -208,7 +210,7 @@ begin
   saveDLG := TSaveDialog.Create(self);
   try
     saveDLG.Filter := '엑셀파일 (*.xls)|*.xls';
-    saveDLG.FileName := '수당감면보전현황_' + DateTimeToStr(Date) + '.xls';
+    saveDLG.FileName := '강사수당3지급내역_' + DateTimeToStr(Date) + '.xls';
     saveDLG.DefaultExt := 'xls';
     if saveDLG.Execute then begin
        filepath := saveDLG.FileName;

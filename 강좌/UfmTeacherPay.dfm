@@ -27,7 +27,6 @@ object fmTeacherPay: TfmTeacherPay
     Height = 30
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 1113
     inline frmYearMonth1: TfrmYearMonth
       Left = 13
       Top = 4
@@ -142,7 +141,7 @@ object fmTeacherPay: TfmTeacherPay
       OnClick = btnRetrieveClick
     end
     object btnCalcPay: TcxButton
-      Left = 309
+      Left = 424
       Top = 2
       Width = 86
       Height = 25
@@ -191,7 +190,7 @@ object fmTeacherPay: TfmTeacherPay
       OnClick = btnCalcPayClick
     end
     object btnRegistMoneyOut: TcxButton
-      Left = 397
+      Left = 512
       Top = 2
       Width = 113
       Height = 25
@@ -338,7 +337,7 @@ object fmTeacherPay: TfmTeacherPay
       OnClick = btnPrintClick
     end
     object btnMoneyIn2: TcxButton
-      Left = 511
+      Left = 626
       Top = 2
       Width = 127
       Height = 25
@@ -386,104 +385,6 @@ object fmTeacherPay: TfmTeacherPay
       TabOrder = 7
       OnClick = btnMoneyIn2Click
     end
-    object btnDone: TcxButton
-      Left = 639
-      Top = 2
-      Width = 59
-      Height = 25
-      Hint = #51648#52636#51088#47308#46321#47197
-      Caption = #51104#44552
-      LookAndFeel.NativeStyle = False
-      LookAndFeel.SkinName = 'DevExpressStyle'
-      OptionsImage.Glyph.Data = {
-        36040000424D3604000000000000360000002800000010000000100000000100
-        2000000000000004000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000002525
-        25B7333333FF333333FF333333FF333333FF333333FF252525B7000000000000
-        0000000000000000000000000000000000000000000000000000000000003333
-        33FF333333FF333333FF00000000333333FF333333FF333333FF000000000000
-        0000333333FF333333FF333333FF333333FF333333FF333333FF000000003333
-        33FF333333FF1D1D1D8F000000001D1D1D8F333333FF333333FF000000000000
-        0000333333FF333333FF333333FF333333FF333333FF333333FF000000003333
-        33FF333333FF0606061F000000000606061F333333FF333333FF000000000000
-        0000333333FF333333FF00000000000000000000000000000000000000003333
-        33FF333333FF1D1D1D8F0606061F1D1D1D8F333333FF333333FF000000000000
-        0000333333FF333333FF00000000000000000000000000000000000000002626
-        26BD333333FF333333FF333333FF333333FF333333FF262626BD000000000000
-        0000333333FF333333FF00000000262626BF262626BF262626BF0A0A0A300000
-        0000333333FF000000000000000000000000333333FF00000000000000000000
-        0000333333FF333333FF00000000000000000000000000000000000000000000
-        0000333333FF0D0D0D40000000000D0D0D40333333FF00000000000000000000
-        0000333333FF333333FF00000000262626BF262626BF262626BF262626BF0000
-        00000D0D0D40333333FF333333FF333333FF0D0D0D4000000000000000000000
-        0000333333FF333333FF00000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000333333FF333333FF00000000262626BF262626BF262626BF262626BF2626
-        26BF00000000333333FF333333FF000000000000000000000000000000000000
-        0000333333FF333333FF00000000000000000000000000000000000000000000
-        000000000000333333FF333333FF000000000000000000000000000000000000
-        0000333333FF333333FF00000000262626BF262626BF262626BF262626BF2626
-        26BF00000000333333FF333333FF000000000000000000000000000000000000
-        0000333333FF333333FF00000000000000000000000000000000000000000000
-        000000000000333333FF333333FF000000000000000000000000000000000000
-        0000333333FF333333FF333333FF333333FF333333FF333333FF333333FF3333
-        33FF333333FF333333FF333333FF000000000000000000000000000000000000
-        0000333333FF333333FF333333FF333333FF333333FF333333FF333333FF3333
-        33FF333333FF333333FF333333FF000000000000000000000000}
-      ParentShowHint = False
-      ShowHint = True
-      TabOrder = 8
-      OnClick = btnDoneClick
-    end
-    object btnUnDone: TcxButton
-      Left = 699
-      Top = 2
-      Width = 57
-      Height = 25
-      Hint = #51648#52636#51088#47308#46321#47197
-      Caption = #54644#51228
-      LookAndFeel.NativeStyle = False
-      LookAndFeel.SkinName = 'DevExpressStyle'
-      OptionsImage.Glyph.Data = {
-        36040000424D3604000000000000360000002800000010000000100000000100
-        2000000000000004000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000002525
-        25B7333333FF333333FF333333FF333333FF333333FF252525B7000000000000
-        0000000000000000000000000000000000000000000000000000000000003333
-        33FF333333FF333333FF00000000333333FF333333FF333333FF000000000000
-        0000333333FF333333FF333333FF333333FF333333FF333333FF000000003333
-        33FF333333FF1D1D1D8F000000001D1D1D8F333333FF333333FF000000000000
-        0000333333FF333333FF333333FF333333FF333333FF333333FF000000003333
-        33FF333333FF0606061F000000000606061F333333FF333333FF000000000000
-        0000333333FF333333FF00000000000000000000000000000000000000003333
-        33FF333333FF1D1D1D8F0606061F1D1D1D8F333333FF333333FF000000000000
-        0000333333FF333333FF00000000000000000000000000000000000000002626
-        26BD333333FF333333FF333333FF333333FF333333FF262626BD000000000000
-        0000333333FF333333FF00000000262626BF262626BF262626BF000000000D0D
-        0D40333333FF0D0D0D4000000000000000000000000000000000000000000000
-        0000333333FF333333FF00000000000000000000000000000000000000003333
-        33FF0D0D0D400000000000000000000000000000000000000000000000000000
-        0000333333FF333333FF00000000262626BF262626BF262626BF000000003333
-        33FF0D0D0D400D0D0D400D0D0D40000000000000000000000000000000000000
-        0000333333FF333333FF00000000000000000000000000000000000000000D0D
-        0D40333333FF333333FF333333FF000000000000000000000000000000000000
-        0000333333FF333333FF00000000262626BF262626BF262626BF262626BF0000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000333333FF333333FF00000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000333333FF333333FF00000000262626BF262626BF262626BF262626BF2626
-        26BF00000000333333FF333333FF000000000000000000000000000000000000
-        0000333333FF333333FF00000000000000000000000000000000000000000000
-        000000000000333333FF333333FF000000000000000000000000000000000000
-        0000333333FF333333FF333333FF333333FF333333FF333333FF333333FF3333
-        33FF333333FF333333FF333333FF000000000000000000000000000000000000
-        0000333333FF333333FF333333FF333333FF333333FF333333FF333333FF3333
-        33FF333333FF333333FF333333FF000000000000000000000000}
-      ParentShowHint = False
-      ShowHint = True
-      TabOrder = 9
-      OnClick = btnUnDoneClick
-    end
     object btnReportBank: TcxButton
       Left = 877
       Top = 2
@@ -530,7 +431,7 @@ object fmTeacherPay: TfmTeacherPay
         91FFCDA391FF98786BC100000004000000000000000000000000}
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 10
+      TabOrder = 8
       OnClick = btnReportBankClick
     end
     object cxButton1: TcxButton
@@ -579,7 +480,7 @@ object fmTeacherPay: TfmTeacherPay
         3CFF3C3C3CFF3C3C3CFF1E1E1E7E000000000000000000000000}
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 11
+      TabOrder = 9
       OnClick = cxButton1Click
     end
     object btnExpand: TcxButton
@@ -626,7 +527,7 @@ object fmTeacherPay: TfmTeacherPay
         1F3E000000060000000100000000000000000000000000000000}
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 12
+      TabOrder = 10
       OnClick = btnExpandClick
     end
     object btnUnexpand: TcxButton
@@ -673,8 +574,21 @@ object fmTeacherPay: TfmTeacherPay
         1F3E000000060000000100000000000000000000000000000000}
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 13
+      TabOrder = 11
       OnClick = btnUnexpandClick
+    end
+    object cxCheckBox1: TcxCheckBox
+      Left = 311
+      Top = 5
+      Caption = #44536#47353#54756#45908
+      State = cbsChecked
+      Style.LookAndFeel.SkinName = 'DevExpressStyle'
+      StyleDisabled.LookAndFeel.SkinName = 'DevExpressStyle'
+      StyleFocused.LookAndFeel.SkinName = 'DevExpressStyle'
+      StyleHot.LookAndFeel.SkinName = 'DevExpressStyle'
+      TabOrder = 12
+      OnClick = cxCheckBox1Click
+      Width = 81
     end
   end
   object cxGrid1: TcxGrid
@@ -686,9 +600,6 @@ object fmTeacherPay: TfmTeacherPay
     TabOrder = 1
     LookAndFeel.NativeStyle = False
     LookAndFeel.SkinName = 'Black'
-    ExplicitTop = 32
-    ExplicitWidth = 1113
-    ExplicitHeight = 642
     object gridPayment: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       Navigator.Buttons.First.Visible = True
@@ -865,6 +776,7 @@ object fmTeacherPay: TfmTeacherPay
             FieldName = 'T_NAME'
           end>
         Properties.ListSource = ds_TEACHER_SEL_LOOKUP
+        Properties.UseLeftAlignmentOnEditing = False
         GroupIndex = 0
         HeaderAlignmentHorz = taCenter
         HeaderGlyphAlignmentHorz = taCenter
@@ -920,6 +832,7 @@ object fmTeacherPay: TfmTeacherPay
         Caption = #49688#45817'(70%)'
         DataBinding.FieldName = 'TOTAL_AMOUNT'
         HeaderAlignmentHorz = taCenter
+        Styles.Content = cxStyleBlue
         Width = 92
       end
       object gridPaymentSODUK: TcxGridDBColumn
@@ -938,6 +851,7 @@ object fmTeacherPay: TfmTeacherPay
       object gridPaymentNET_AMOUNT: TcxGridDBColumn
         DataBinding.FieldName = 'NET_AMOUNT'
         HeaderAlignmentHorz = taCenter
+        Styles.Content = cxStyleRed
       end
       object gridPaymentBANK_NAME: TcxGridDBColumn
         DataBinding.FieldName = 'BANK_NAME'
@@ -945,6 +859,7 @@ object fmTeacherPay: TfmTeacherPay
         HeaderGlyphAlignmentHorz = taCenter
         Options.CellMerging = True
         Width = 60
+        OnCompareRowValuesForCellMerging = gridPaymentBANK_NAMECompareRowValuesForCellMerging
       end
       object gridPaymentBANK_NO: TcxGridDBColumn
         DataBinding.FieldName = 'BANK_NO'
@@ -952,6 +867,7 @@ object fmTeacherPay: TfmTeacherPay
         HeaderGlyphAlignmentHorz = taCenter
         Options.CellMerging = True
         Width = 120
+        OnCompareRowValuesForCellMerging = gridPaymentBANK_NOCompareRowValuesForCellMerging
       end
       object gridPaymentDATA_KIND: TcxGridDBColumn
         DataBinding.FieldName = 'DATA_KIND'
@@ -1011,8 +927,8 @@ object fmTeacherPay: TfmTeacherPay
     end
   end
   object cxGrid3: TcxGrid
-    Left = 234
-    Top = 361
+    Left = 448
+    Top = 81
     Width = 663
     Height = 137
     TabOrder = 3
@@ -1104,10 +1020,10 @@ object fmTeacherPay: TfmTeacherPay
     end
   end
   object cxGrid2: TcxGrid
-    Left = 144
-    Top = 440
+    Left = 232
+    Top = 400
     Width = 712
-    Height = 170
+    Height = 209
     TabOrder = 4
     Visible = False
     object gridTotal: TcxGridDBTableView
@@ -1130,7 +1046,27 @@ object fmTeacherPay: TfmTeacherPay
       Navigator.Buttons.Filter.Visible = False
       DataController.DataSource = d_TEACHER_PAYMENT_CALCTOTAL
       DataController.Summary.DefaultGroupSummaryItems = <>
-      DataController.Summary.FooterSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridTotalSUM_OF_NET_AMOUNT
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridTotalSUM_OF_JUMIN
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridTotalSUM_OF_SODUK
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridTotalSUM_OF_TOTAL_AMOUNT
+        end>
       DataController.Summary.SummaryGroups = <>
       OptionsCustomize.ColumnsQuickCustomization = True
       OptionsData.CancelOnExit = False
@@ -1140,6 +1076,7 @@ object fmTeacherPay: TfmTeacherPay
       OptionsData.Inserting = False
       OptionsSelection.CellSelect = False
       OptionsView.FocusRect = False
+      OptionsView.Footer = True
       OptionsView.FooterAutoHeight = True
       OptionsView.FooterMultiSummaries = True
       OptionsView.GroupByBox = False
@@ -1190,16 +1127,8 @@ object fmTeacherPay: TfmTeacherPay
           end>
         Properties.ListSource = ds_TEACHER_SEL_LOOKUP
       end
-      object gridTotalt_idx: TcxGridDBColumn
-        Caption = 't_idx'
-        DataBinding.FieldName = 'TEACHER_ID'
-        PropertiesClassName = 'TcxLookupComboBoxProperties'
-        Properties.KeyFieldNames = 'ID'
-        Properties.ListColumns = <
-          item
-            FieldName = 'IDX'
-          end>
-        Properties.ListSource = ds_TEACHER_SEL_LOOKUP
+      object gridTotalT_IDX1: TcxGridDBColumn
+        DataBinding.FieldName = 'T_IDX'
         SortIndex = 0
         SortOrder = soAscending
       end
@@ -1231,6 +1160,7 @@ object fmTeacherPay: TfmTeacherPay
     object dxComponentPrinter1Link1: TdxGridReportLink
       Active = True
       Component = cxGrid1
+      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
       PrinterPage.Header = 6350
@@ -1254,7 +1184,7 @@ object fmTeacherPay: TfmTeacherPay
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
       ReportDocument.Caption = #48372#44256#49436
-      ReportDocument.CreationDate = 44992.432395312500000000
+      ReportDocument.CreationDate = 44993.553892743050000000
       ReportTitle.AdjustOnReportScale = True
       ReportTitle.Font.Charset = DEFAULT_CHARSET
       ReportTitle.Font.Color = clBlack
@@ -1263,6 +1193,7 @@ object fmTeacherPay: TfmTeacherPay
       ReportTitle.Font.Style = [fsBold]
       ReportTitle.Text = #44053#49324#49688#45817#51648#44553#54788#54889
       ShrinkToPageWidth = True
+      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -13
@@ -1276,7 +1207,6 @@ object fmTeacherPay: TfmTeacherPay
       OptionsPreview.AutoHeight = False
       OptionsPreview.Visible = False
       OptionsSize.AutoWidth = True
-      OptionsView.Footers = False
       OptionsView.Caption = False
       OptionsView.ExpandButtons = False
       OptionsView.FilterBar = False
@@ -1289,16 +1219,16 @@ object fmTeacherPay: TfmTeacherPay
   object cxGridPopupMenu1: TcxGridPopupMenu
     Grid = cxGrid1
     PopupMenus = <>
-    Left = 896
-    Top = 536
+    Left = 904
+    Top = 552
   end
   object dxMemData1: TdxMemData
     Active = True
     Indexes = <>
     SortOptions = []
     SortedField = 'rno'
-    Left = 480
-    Top = 416
+    Left = 384
+    Top = 488
     object dxMemData1ID: TStringField
       Alignment = taCenter
       FieldName = 'ID'
@@ -1474,6 +1404,11 @@ object fmTeacherPay: TfmTeacherPay
         ParamType = ptInput
       end
       item
+        DataType = ftInteger
+        Name = 'T_IDX'
+        ParamType = ptOutput
+      end
+      item
         DataType = ftString
         Name = 'TEACHER_ID'
         ParamType = ptOutput
@@ -1515,6 +1450,9 @@ object fmTeacherPay: TfmTeacherPay
     end
     object TEACHER_PAYMENT_CALCTOTALSUM_OF_NET_AMOUNT: TFloatField
       FieldName = 'SUM_OF_NET_AMOUNT'
+    end
+    object TEACHER_PAYMENT_CALCTOTALT_IDX: TIntegerField
+      FieldName = 'T_IDX'
     end
   end
   object d_TEACHER_PAYMENT_CALCTOTAL: TDataSource
@@ -1797,7 +1735,7 @@ object fmTeacherPay: TfmTeacherPay
           ParentFont = False
         end
         object Memo14: TfrxMemoView
-          Left = 209.239071550000000000
+          Left = 295.239071550000000000
           Top = 4.000000000000000000
           Width = 91.671913850000000000
           Height = 18.897650000000000000
@@ -1812,7 +1750,7 @@ object fmTeacherPay: TfmTeacherPay
           ParentFont = False
         end
         object Memo15: TfrxMemoView
-          Left = 341.572395390000000000
+          Left = 401.572395390000000000
           Top = 4.000000000000000000
           Width = 99.926661030000000000
           Height = 18.897650000000000000
@@ -1826,7 +1764,7 @@ object fmTeacherPay: TfmTeacherPay
           ParentFont = False
         end
         object Memo16: TfrxMemoView
-          Left = 452.499056420000000000
+          Left = 512.499056420000000000
           Top = 4.000000000000000000
           Width = 136.886787440000000000
           Height = 18.897650000000000000
@@ -1870,7 +1808,7 @@ object fmTeacherPay: TfmTeacherPay
         object Memo18: TfrxMemoView
           Left = 114.208824100000000000
           Top = 3.000000000000000000
-          Width = 81.981974360000000000
+          Width = 161.352104360000000000
           Height = 18.897650000000000000
           DataField = 'teacher'
           DataSet = frxDBDataset1
@@ -1886,7 +1824,7 @@ object fmTeacherPay: TfmTeacherPay
           SuppressRepeated = True
         end
         object Memo28: TfrxMemoView
-          Left = 209.239071550000000000
+          Left = 295.239071550000000000
           Top = 3.000000000000000000
           Width = 91.671913850000000000
           Height = 18.897650000000000000
@@ -1907,7 +1845,7 @@ object fmTeacherPay: TfmTeacherPay
           ParentFont = False
         end
         object Memo29: TfrxMemoView
-          Left = 341.572395390000000000
+          Left = 401.572395390000000000
           Top = 3.000000000000000000
           Width = 99.926661030000000000
           Height = 18.897650000000000000
@@ -1923,7 +1861,7 @@ object fmTeacherPay: TfmTeacherPay
           ParentFont = False
         end
         object Memo30: TfrxMemoView
-          Left = 452.499056420000000000
+          Left = 512.499056420000000000
           Top = 3.000000000000000000
           Width = 189.800207440000000000
           Height = 18.897650000000000000
@@ -1983,7 +1921,7 @@ object fmTeacherPay: TfmTeacherPay
         Top = 226.771800000000000000
         Width = 718.110700000000000000
         object Memo5: TfrxMemoView
-          Left = 186.874150000000000000
+          Left = 272.874150000000000000
           Top = 3.779530000000000000
           Width = 114.349093850000000000
           Height = 18.897650000000000000
