@@ -24,7 +24,6 @@ object fmTeacherView: TfmTeacherView
     Height = 29
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 1009
     object Label1: TLabel
       Left = 14
       Top = 7
@@ -47,7 +46,7 @@ object fmTeacherView: TfmTeacherView
       TabOrder = 0
     end
     object btnAdd: TcxButton
-      Left = 303
+      Left = 383
       Top = 2
       Width = 62
       Height = 25
@@ -96,7 +95,7 @@ object fmTeacherView: TfmTeacherView
       OnClick = btnAddClick
     end
     object btnEdit: TcxButton
-      Left = 366
+      Left = 446
       Top = 2
       Width = 62
       Height = 25
@@ -145,7 +144,7 @@ object fmTeacherView: TfmTeacherView
       OnClick = btnEditClick
     end
     object btnDelete: TcxButton
-      Left = 429
+      Left = 509
       Top = 2
       Width = 62
       Height = 25
@@ -194,7 +193,7 @@ object fmTeacherView: TfmTeacherView
       OnClick = btnDeleteClick
     end
     object btnExport: TcxButton
-      Left = 798
+      Left = 972
       Top = 2
       Width = 34
       Height = 25
@@ -242,7 +241,7 @@ object fmTeacherView: TfmTeacherView
       OnClick = btnExportClick
     end
     object btnPrint: TcxButton
-      Left = 833
+      Left = 1007
       Top = 2
       Width = 34
       Height = 25
@@ -290,7 +289,7 @@ object fmTeacherView: TfmTeacherView
       OnClick = btnPrintClick
     end
     object btnSaveColumn: TcxButton
-      Left = 875
+      Left = 1049
       Top = 2
       Width = 29
       Height = 25
@@ -386,7 +385,7 @@ object fmTeacherView: TfmTeacherView
       OnClick = btnRetrieveClick
     end
     object btnExcelImport: TcxButton
-      Left = 691
+      Left = 865
       Top = 2
       Width = 94
       Height = 25
@@ -435,7 +434,7 @@ object fmTeacherView: TfmTeacherView
       OnClick = btnExcelImportClick
     end
     object btnSMS: TcxButton
-      Left = 510
+      Left = 772
       Top = 2
       Width = 87
       Height = 25
@@ -479,6 +478,68 @@ object fmTeacherView: TfmTeacherView
       TabOrder = 9
       OnClick = btnSMSClick
     end
+    object btnReorder: TcxButton
+      Left = 577
+      Top = 2
+      Width = 120
+      Height = 25
+      Hint = #44053#51340#48264#54840' '#51116#51221#47148
+      Caption = #44053#49324#48264#54840#51116#51221#47148
+      LookAndFeel.NativeStyle = False
+      LookAndFeel.SkinName = 'DevExpressStyle'
+      OptionsImage.Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000000000000000000000000000000000000000000008F8F
+        8F92B7B7B7C2B8B8B8C28F8F8F92000000000000000000000000000000000000
+        000000000000000000000000000000000000000000000000000000000000B9B9
+        B9C1100B97FF35319CF2B8B8B8C1000000000000000000000000000000000000
+        000000000000000000000000000000000000000000000000000000000000BCBC
+        BCC09F9EADCB100C98FFB6B6B6C28787878AB7B7B7C2B5B5B5C3B4B4B4C3B4B4
+        B4C3B4B4B4C3B4B4B4C3B3B3B3C3B5B5B5C28787878A0000000000000000BCBC
+        BCC09F9EADCA110D9AFFB6B6B6C2BABABAC1634F44FF422E24FF412D24FF402C
+        24FF402C23FF3F2C22FF3F2B23FF281A14FFB8B8B8C10000000000000000BABA
+        BAC1130F9BFF3734A0F1BABABAC18C8C8C8FB8B8B8C2B5B5B5C2B5B5B5C2B5B5
+        B5C2B5B5B5C2B5B5B5C3B5B5B5C3B7B7B7C28C8C8C8F0000000000000000A9A9
+        A9ADB4B4B4C3B4B4B4C3A9A9A9AD000000000000000000000000000000000000
+        000000000000000000000000000000000000000000000000000000000000BABA
+        BAC115129FFF14129FFFBBBBBBC1000000000000000000000000000000000000
+        000000000000000000000000000000000000000000000000000000000000BBBB
+        BBC03C3AA5F1B4B4B4C3BCBCBCC08888888ABABABAC1B8B8B8C2B8B8B8C2B8B8
+        B8C2B8B8B8C2B7B7B7C2B7B7B7C2B8B8B8C18888888A0000000000000000BDBD
+        BDC0B5B5B5C21715A3FFBBBBBBC1BBBBBBC06C5549FF4B3529FF493429FF4933
+        29FF483328FF473227FF463127FF34231BFFBBBBBBC10000000000000000BCBC
+        BCC01817A4FF3D3CA8F1BBBBBBC08D8D8D8FBBBBBBC1B9B9B9C1B9B9B9C1B9B9
+        B9C1B9B9B9C1B8B8B8C1B8B8B8C1BABABAC18D8D8D8F00000000000000009090
+        9091BBBBBBC1B9B9B9C1AAAAAAAD000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000BCBCBCC01B1AA9FFBCBCBCC0000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000009090
+        9091BBBBBBC11C1CAAFFBBBBBBC088888889BCBCBCC0BBBBBBC0BBBBBBC0BBBB
+        BBC1BBBBBBC1BBBBBBC1BBBBBBC1BBBBBBC08888888900000000000000009090
+        90924243AFF01D1EABFFBCBCBCC0BEBEBEC0735C50FF533C2EFF523B2EFF513A
+        2EFF50392DFF4F392DFF4F382CFF453025FFBDBDBDC000000000000000009090
+        9091ACACBAC61E1FADFFBDBDBDC08D8D8D8EBDBDBDC0BCBCBCC0BCBCBCC0BCBC
+        BCC0BCBCBCC0BCBCBCC0BBBBBBC0BCBCBCC08D8D8D8E00000000000000000000
+        0000BEBEBEBFBEBEBEC090909091000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000}
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 10
+      OnClick = btnReorderClick
+    end
+    object chkActiveOnly: TcxCheckBox
+      Left = 238
+      Top = 6
+      Caption = #54876#46041#51473#51064#44053#49324#47564
+      State = cbsChecked
+      Style.LookAndFeel.SkinName = 'DevExpressStyle'
+      StyleDisabled.LookAndFeel.SkinName = 'DevExpressStyle'
+      StyleFocused.LookAndFeel.SkinName = 'DevExpressStyle'
+      StyleHot.LookAndFeel.SkinName = 'DevExpressStyle'
+      TabOrder = 11
+      OnClick = chkActiveOnlyClick
+      Width = 115
+    end
   end
   object cxGrid1: TcxGrid
     Left = 0
@@ -490,8 +551,6 @@ object fmTeacherView: TfmTeacherView
     TabOrder = 1
     LookAndFeel.NativeStyle = False
     LookAndFeel.SkinName = 'Black'
-    ExplicitWidth = 1009
-    ExplicitHeight = 563
     object gridTeacher: TcxGridDBTableView
       DragMode = dmAutomatic
       OnDragDrop = gridTeacherDragDrop
@@ -663,6 +722,7 @@ object fmTeacherView: TfmTeacherView
     object dxComponentPrinter1Link1: TdxGridReportLink
       Active = True
       Component = cxGrid1
+      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
       PrinterPage.Header = 6350
@@ -685,9 +745,10 @@ object fmTeacherView: TfmTeacherView
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
       ReportDocument.Caption = #48372#44256#49436
-      ReportDocument.CreationDate = 42751.796975486110000000
+      ReportDocument.CreationDate = 44994.193271215280000000
       ReportTitle.AdjustOnReportScale = True
       ReportTitle.Text = #44053#49324#46321#47197#54788#54889
+      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -13
@@ -748,5 +809,23 @@ object fmTeacherView: TfmTeacherView
       FieldName = 'IDX'
       ReadOnly = True
     end
+  end
+  object q_update_index: TUniQuery
+    Connection = dm.UniConnection1
+    SQL.Strings = (
+      'update teacher set idx = :idx where id = :id;')
+    Left = 496
+    Top = 456
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'idx'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'id'
+        ParamType = ptInput
+      end>
   end
 end

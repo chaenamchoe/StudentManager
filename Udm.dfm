@@ -2492,6 +2492,11 @@ object dm: Tdm
         Name = 'T_BIRTH'
         ParamType = ptOutput
         Size = 10
+      end
+      item
+        DataType = ftInteger
+        Name = 'IDX'
+        ParamType = ptOutput
       end>
     CommandStoredProcName = 'TEACHER_SEL_DONG'
     object sp_teacher_dongID: TStringField

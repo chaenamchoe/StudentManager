@@ -865,6 +865,10 @@ object fmLectureEdit: TfmLectureEdit
         item
           Description = #55092#44053#51473
           Value = 1
+        end
+        item
+          Description = #54224#44053
+          Value = 2
         end>
       TabOrder = 30
       Width = 85

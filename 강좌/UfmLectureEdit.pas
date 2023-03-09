@@ -171,11 +171,11 @@ begin
     edtEndDate.SetFocus;
     Exit;
   end;
-  if edtTeacher.Text = '' then begin
-    ShowMessage('강사를 선택하세요.');
-    edtTeacher.SetFocus;
-    Exit;
-  end;
+//  if edtTeacher.Text = '' then begin
+//    ShowMessage('강사를 선택하세요.');
+//    edtTeacher.SetFocus;
+//    Exit;
+//  end;
   if edtClassroom.Text = '' then begin
     ShowMessage('강의실을 선택하세요.');
     edtClassroom.SetFocus;
@@ -189,7 +189,7 @@ begin
     stime := edtStartTime.EditValue;
     etime := edtEndTime.EditValue;
     roomid := edtClassroom.EditValue;
-    teacher_id := edtTeacher.EditValue;
+//    teacher_id := edtTeacher.EditValue;
     weekday := edtWeekTemp.Text;
     strList.CommaText := weekday;
     day_cnt := strList.Count;

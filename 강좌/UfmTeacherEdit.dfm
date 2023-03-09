@@ -3,7 +3,7 @@ object fmTeacherEdit: TfmTeacherEdit
   Top = 0
   BorderStyle = bsDialog
   Caption = #44053#49324' '#46321#47197'/'#49688#51221
-  ClientHeight = 323
+  ClientHeight = 362
   ClientWidth = 315
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -19,75 +19,82 @@ object fmTeacherEdit: TfmTeacherEdit
     Left = 8
     Top = 8
     Width = 297
-    Height = 265
+    Height = 305
     Caption = #44053#49324' '#46321#47197'/'#49688#51221
     TabOrder = 0
     object Label1: TLabel
       Left = 16
-      Top = 24
+      Top = 66
       Width = 39
       Height = 13
       Caption = #44053#49324#47749
     end
     object Label2: TLabel
       Left = 16
-      Top = 64
+      Top = 106
       Width = 26
       Height = 13
       Caption = #49457#48324
     end
     object Label3: TLabel
       Left = 153
-      Top = 64
+      Top = 106
       Width = 52
       Height = 13
       Caption = #51204#54868#48264#54840
     end
     object Label4: TLabel
       Left = 16
-      Top = 101
+      Top = 143
       Width = 26
       Height = 13
       Caption = #51452#49548
     end
     object Label6: TLabel
       Left = 16
-      Top = 139
+      Top = 181
       Width = 39
       Height = 13
       Caption = #51008#54665#47749
     end
     object Label7: TLabel
       Left = 126
-      Top = 139
+      Top = 181
       Width = 52
       Height = 13
       Caption = #44228#51340#48264#54840
     end
     object Label8: TLabel
       Left = 16
-      Top = 176
+      Top = 218
       Width = 52
       Height = 13
       Caption = #48708#44256#49324#54637
     end
     object Label9: TLabel
       Left = 153
-      Top = 24
+      Top = 66
       Width = 52
       Height = 13
       Caption = #49373#45380#50900#51068
     end
     object Label10: TLabel
       Left = 16
-      Top = 215
+      Top = 257
       Width = 52
       Height = 13
       Caption = #54876#46041#50668#48512
     end
+    object Label5: TLabel
+      Left = 16
+      Top = 24
+      Width = 26
+      Height = 13
+      Caption = #49692#48264
+    end
     object edtName: TcxTextEdit
       Left = 16
-      Top = 38
+      Top = 80
       Style.LookAndFeel.NativeStyle = False
       StyleDisabled.LookAndFeel.NativeStyle = False
       StyleFocused.LookAndFeel.NativeStyle = False
@@ -97,7 +104,7 @@ object fmTeacherEdit: TfmTeacherEdit
     end
     object edtSex: TcxImageComboBox
       Left = 16
-      Top = 77
+      Top = 119
       Properties.Items = <
         item
           Description = #45224#51088
@@ -117,7 +124,7 @@ object fmTeacherEdit: TfmTeacherEdit
     end
     object edtTel: TcxTextEdit
       Left = 153
-      Top = 77
+      Top = 119
       Style.LookAndFeel.NativeStyle = False
       StyleDisabled.LookAndFeel.NativeStyle = False
       StyleFocused.LookAndFeel.NativeStyle = False
@@ -127,7 +134,7 @@ object fmTeacherEdit: TfmTeacherEdit
     end
     object edtAddr: TcxTextEdit
       Left = 16
-      Top = 114
+      Top = 156
       Style.LookAndFeel.NativeStyle = False
       StyleDisabled.LookAndFeel.NativeStyle = False
       StyleFocused.LookAndFeel.NativeStyle = False
@@ -137,7 +144,7 @@ object fmTeacherEdit: TfmTeacherEdit
     end
     object edtBank: TcxTextEdit
       Left = 16
-      Top = 152
+      Top = 194
       Style.LookAndFeel.NativeStyle = False
       StyleDisabled.LookAndFeel.NativeStyle = False
       StyleFocused.LookAndFeel.NativeStyle = False
@@ -147,7 +154,7 @@ object fmTeacherEdit: TfmTeacherEdit
     end
     object edtBankNo: TcxTextEdit
       Left = 126
-      Top = 152
+      Top = 194
       Style.LookAndFeel.NativeStyle = False
       StyleDisabled.LookAndFeel.NativeStyle = False
       StyleFocused.LookAndFeel.NativeStyle = False
@@ -157,7 +164,7 @@ object fmTeacherEdit: TfmTeacherEdit
     end
     object edtBigo: TcxTextEdit
       Left = 16
-      Top = 190
+      Top = 232
       Style.LookAndFeel.NativeStyle = False
       StyleDisabled.LookAndFeel.NativeStyle = False
       StyleFocused.LookAndFeel.NativeStyle = False
@@ -167,7 +174,7 @@ object fmTeacherEdit: TfmTeacherEdit
     end
     object edtIsActive: TcxImageComboBox
       Left = 16
-      Top = 229
+      Top = 271
       EditValue = 1
       Properties.Items = <
         item
@@ -188,7 +195,7 @@ object fmTeacherEdit: TfmTeacherEdit
     end
     object edtBirth: TcxTextEdit
       Left = 153
-      Top = 38
+      Top = 80
       Style.LookAndFeel.NativeStyle = False
       StyleDisabled.LookAndFeel.NativeStyle = False
       StyleFocused.LookAndFeel.NativeStyle = False
@@ -196,10 +203,16 @@ object fmTeacherEdit: TfmTeacherEdit
       TabOrder = 1
       Width = 121
     end
+    object edtIdx: TcxSpinEdit
+      Left = 16
+      Top = 39
+      TabOrder = 9
+      Width = 59
+    end
   end
   object BitBtn1: TBitBtn
-    Left = 78
-    Top = 282
+    Left = 70
+    Top = 329
     Width = 75
     Height = 25
     Caption = #51200#51109
@@ -225,8 +238,8 @@ object fmTeacherEdit: TfmTeacherEdit
     TabOrder = 1
   end
   object BitBtn2: TBitBtn
-    Left = 159
-    Top = 282
+    Left = 151
+    Top = 329
     Width = 75
     Height = 25
     Caption = #52712#49548
@@ -235,7 +248,7 @@ object fmTeacherEdit: TfmTeacherEdit
   end
   object edtRegDate: TEdit
     Left = 8
-    Top = 277
+    Top = 311
     Width = 33
     Height = 21
     ImeName = 'Microsoft IME 2010'
@@ -245,7 +258,7 @@ object fmTeacherEdit: TfmTeacherEdit
   end
   object edtID: TEdit
     Left = 44
-    Top = 277
+    Top = 311
     Width = 25
     Height = 21
     ImeName = 'Microsoft IME 2010'
@@ -255,7 +268,7 @@ object fmTeacherEdit: TfmTeacherEdit
   end
   object edtDongID: TEdit
     Left = 8
-    Top = 299
+    Top = 333
     Width = 33
     Height = 21
     ImeName = 'Microsoft IME 2010'

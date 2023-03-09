@@ -19,7 +19,7 @@ uses
   dxSkinXmas2008Blue, StdCtrls, Buttons, cxTextEdit, cxDBEdit, cxMaskEdit,
   cxDropDownEdit, cxImageComboBox, ComCtrls, dxCore, cxDateUtils, cxCalendar,
   dxSkinOffice2013White, dxSkinMetropolis, dxSkinMetropolisDark,
-  dxSkinOffice2013DarkGray, dxSkinOffice2013LightGray;
+  dxSkinOffice2013DarkGray, dxSkinOffice2013LightGray, cxSpinEdit;
 
 type
   TfmTeacherEdit = class(TForm)
@@ -47,6 +47,8 @@ type
     edtID: TEdit;
     edtDongID: TEdit;
     edtBirth: TcxTextEdit;
+    Label5: TLabel;
+    edtIdx: TcxSpinEdit;
   private
     { Private declarations }
   public

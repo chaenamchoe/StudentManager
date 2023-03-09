@@ -28,7 +28,7 @@ uses
   dxSkiniMaginary, dxSkinLilian, dxSkinLiquidSky, dxSkinLondonLiquidSky,
   dxSkinMoneyTwins, dxSkinPumpkin, dxSkinSilver, dxSkinSpringTime,
   dxSkinStardust, dxSkinSummer2008, dxSkinTheAsphaltWorld, dxSkinValentine,
-  dxSkinWhiteprint, dxSkinXmas2008Blue;
+  dxSkinWhiteprint, dxSkinXmas2008Blue, cxContainer, cxCheckBox;
 
 type
   TfmTeacherView = class(TForm)
@@ -71,6 +71,9 @@ type
     UniQuery1: TUniQuery;
     UniQuery1IDX: TIntegerField;
     btnSMS: TcxButton;
+    btnReorder: TcxButton;
+    q_update_index: TUniQuery;
+    chkActiveOnly: TcxCheckBox;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnAddClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
@@ -89,6 +92,8 @@ type
       State: TDragState; var Accept: Boolean);
     procedure gridTeacherDragDrop(Sender, Source: TObject; X, Y: Integer);
     procedure btnSMSClick(Sender: TObject);
+    procedure btnReorderClick(Sender: TObject);
+    procedure chkActiveOnlyClick(Sender: TObject);
   private
     procedure SaveData(teacher_id: string; idx : Integer);
     function GetTeacherIDX: Integer;
@@ -194,6 +199,7 @@ begin
   try
     teacher_id := dm.d_teacher_dong.DataSet.FieldByName('id').AsString;
     idx := dm.d_teacher_dong.DataSet.FieldByName('idx').AsInteger;
+    fmTeacherEdit.edtIdx.EditValue  := idx;
     fmTeacherEdit.edtDongId.Text    := dm.d_teacher_dong.DataSet.FieldByName('dong_id').AsString;
     fmTeacherEdit.edtRegDate.Text   := DateToStr(dm.d_teacher_dong.DataSet.FieldByName('reg_date').AsDateTime);
     fmTeacherEdit.edtName.Text      :=  dm.d_teacher_dong.DataSet.FieldByName('T_NAME').AsString;
@@ -305,6 +311,26 @@ begin
   dxComponentPrinter1.Preview(True, dxComponentPrinter1Link1);
 end;
 
+procedure TfmTeacherView.btnReorderClick(Sender: TObject);
+var
+  i, cnt : Integer;
+  id : string;
+begin
+  dm.d_teacher_dong.DataSet.DisableControls;
+  cnt := dm.d_teacher_dong.DataSet.RecordCount;
+  dm.d_teacher_dong.DataSet.First;
+  for i := 0 to cnt - 1 do begin
+    id := dm.d_teacher_dong.DataSet.FieldByName('id').AsString;
+    q_update_index.ParamByName('idx').Value := i+1;
+    q_update_index.ParamByName('id').Value := id;
+    q_update_index.ExecSQL;
+    dm.d_teacher_dong.DataSet.Next;
+  end;
+  dm.d_teacher_dong.DataSet.Refresh;
+  dm.d_teacher_dong.DataSet.First;
+  dm.d_teacher_dong.DataSet.EnableControls;
+end;
+
 procedure TfmTeacherView.btnRetrieveClick(Sender: TObject);
 begin
   if edtName.Text <> '' then
@@ -344,6 +370,11 @@ begin
   end;
 end;
 
+procedure TfmTeacherView.chkActiveOnlyClick(Sender: TObject);
+begin
+  dm.d_teacher_dong.DataSet.Filtered := chkActiveOnly.Checked;
+end;
+
 procedure TfmTeacherView.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   Action := caFree;
@@ -353,6 +384,8 @@ procedure TfmTeacherView.FormCreate(Sender: TObject);
 begin
   dm.sp_teacher_dong.ParamByName('teacher_dong_id').AsString := LoginUserDong;
   dm.sp_teacher_dong.Active := True;
+  dm.d_teacher_dong.DataSet.Filter := 'IS_ACTIVE = 1';
+  dm.d_teacher_dong.DataSet.Filtered := True;
   dm.d_teacher_dong.DataSet.Refresh;
 end;
 

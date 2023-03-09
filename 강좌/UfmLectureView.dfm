@@ -40,7 +40,7 @@ object fmLectureView: TfmLectureView
       end
     end
     object btnSaveColumn: TcxButton
-      Left = 825
+      Left = 745
       Top = 2
       Width = 41
       Height = 25
@@ -136,12 +136,11 @@ object fmLectureView: TfmLectureView
       OnClick = btnRetrieveClick
     end
     object btnAdd: TcxButton
-      Left = 222
+      Left = 281
       Top = 2
-      Width = 61
+      Width = 34
       Height = 25
       Hint = #49888#44508#44053#51340#46321#47197
-      Caption = #46321#47197
       LookAndFeel.NativeStyle = False
       LookAndFeel.SkinName = 'DevExpressStyle'
       OptionsImage.Glyph.Data = {
@@ -185,12 +184,11 @@ object fmLectureView: TfmLectureView
       OnClick = btnAddClick
     end
     object btnEdit: TcxButton
-      Left = 284
+      Left = 316
       Top = 2
-      Width = 61
+      Width = 34
       Height = 25
       Hint = #49440#53469#44053#51340#49688#51221
-      Caption = #49688#51221
       LookAndFeel.NativeStyle = False
       LookAndFeel.SkinName = 'DevExpressStyle'
       OptionsImage.Glyph.Data = {
@@ -234,12 +232,11 @@ object fmLectureView: TfmLectureView
       OnClick = btnEditClick
     end
     object btnDelete: TcxButton
-      Left = 346
+      Left = 351
       Top = 2
-      Width = 61
+      Width = 34
       Height = 25
       Hint = #49440#53469#44053#51340#49325#51228
-      Caption = #49325#51228
       LookAndFeel.NativeStyle = False
       LookAndFeel.SkinName = 'DevExpressStyle'
       OptionsImage.Glyph.Data = {
@@ -283,7 +280,7 @@ object fmLectureView: TfmLectureView
       OnClick = btnDeleteClick
     end
     object btnExport: TcxButton
-      Left = 755
+      Left = 675
       Top = 2
       Width = 34
       Height = 25
@@ -331,7 +328,7 @@ object fmLectureView: TfmLectureView
       OnClick = btnExportClick
     end
     object btnPrint: TcxButton
-      Left = 790
+      Left = 710
       Top = 2
       Width = 34
       Height = 25
@@ -378,57 +375,8 @@ object fmLectureView: TfmLectureView
       TabOrder = 7
       OnClick = btnPrintClick
     end
-    object btnAttendance: TcxButton
-      Left = 415
-      Top = 2
-      Width = 77
-      Height = 25
-      Hint = #52636#49437#51068#49373#49457
-      Caption = #52636#49437#51068
-      LookAndFeel.NativeStyle = False
-      LookAndFeel.SkinName = 'DevExpressStyle'
-      OptionsImage.Glyph.Data = {
-        36040000424D3604000000000000360000002800000010000000100000000100
-        2000000000000004000000000000000000000000000000000000000000020000
-        000A000000100000001100000011000000110000001200000012000000120000
-        0012000000120000001300000013000000120000000C000000030000000A8159
-        4CC2B47C69FFB37B69FFB37B68FFB37A68FFB37A68FFB27A68FFB37968FFB279
-        68FFB27967FFB27867FFB17867FFB17866FF7F5649C30000000B0000000EB77F
-        6EFFFBF7F4FFF9F0EBFFFBF5F1FFFBF7F4FFFBF7F4FFF9F3EEFFF7EDE7FFFAF4
-        EFFFFBF6F3FFFBF6F3FFF9F3EFFFF6ECE5FFB47B69FF000000110000000EB984
-        72FFFBF8F5FFDAD0C9FF776258FF563D32FF553D32FFA3948DFFF8F1ECFF806B
-        62FF543B31FF543B30FF7E6961FFF7EDE7FFB77F6EFF000000110000000EBC89
-        78FFFCF9F7FFAF9F97FF8F7B71FFF8F0EBFFD9CDC7FF573F33FFC3B5AFFFF8EF
-        EAFF97867EFF816E64FFF7EEE8FFF8EEE9FFB98472FF000000100000000DC08E
-        7DFFFCFAF8FFFAF3EFFFF9F2EEFFFCF9F7FFE7E0DBFF5A4034FFCEC3BBFFF9F1
-        ECFF99887FFF837066FFF8EFEAFFF8F1EBFFBC8977FF000000100000000CC394
-        82FFFCFBF9FFFBF5F2FFFBF4F1FF5D4336FF725A4FFFB2A39CFFFAF3EFFFFAF2
-        EEFF9B8980FF847268FFF9F2EDFFF9F2EEFFC08E7CFF0000000F0000000BC798
-        87FFFDFCFAFFFCF8F5FFFDFAF9FFFBF6F2FFBDB0A9FF7F685EFFFAF4F1FFFCF9
-        F6FF9D8C84FF877268FFFAF3F0FFFAF4F0FFC49381FF0000000E0000000BC99D
-        8CFFFDFCFBFFD3C9C4FF6D5346FFFEFBFAFFBFB3ADFF614639FFF1EAE7FF8974
-        6AFF5F4538FF88746AFFFAF5F2FFFAF6F2FFC69886FF0000000D0000000ACDA1
-        90FFFEFDFCFFFCF9F8FF8C786DFF65493AFF63483BFFA18E85FFFCF7F6FFFCF7
-        F6FFBEB1AAFF8B756AFFFBF6F5FFFBF7F5FFC99D8BFF0000000D00000009CFA5
-        94FFFEFDFDFFFDFAF9FFFDF9F9FFFDFAF8FFFDF9F8FFFDFAF8FFFCF9F7FFFCF9
-        F7FFFCF9F7FFFDF8F7FFFCF9F7FFFCF9F7FFCCA290FF0000000C000000084B53
-        C3FF8D9EECFF687CE3FF6678E2FF6476E1FF6172E0FF5F70DFFF5D6CDEFF5B69
-        DCFF5966DBFF5664DAFF5462D9FF616DDCFF3337AAFF0000000B000000084C55
-        C4FF93A4EEFF6C80E6FF6A7EE4FF687BE4FF6678E2FF6375E1FF6172E0FF5E6F
-        DEFF5C6CDDFF5A69DCFF5766DAFF6472DDFF3538ABFF0000000A000000074D56
-        C6FF96A7EFFF95A6EFFF93A4EDFF90A2EDFF8F9FEDFF8B9BEBFF8898EAFF8595
-        EAFF8291E7FF7F8DE7FF7D89E5FF7987E5FF3539ACFF00000009000000043A40
-        93C14D55C5FF4B53C3FF4A51C1FF484FBFFF464DBEFF444BBBFF4249B9FF4046
-        B7FF3E44B4FF3C41B3FF3A3EB0FF393CAEFF282B80C200000006000000010000
-        0004000000060000000600000006000000070000000700000007000000070000
-        0007000000070000000800000008000000070000000500000001}
-      ParentShowHint = False
-      ShowHint = True
-      TabOrder = 8
-      OnClick = btnAttendanceClick
-    end
     object btnCopyLecture: TcxButton
-      Left = 493
+      Left = 408
       Top = 2
       Width = 83
       Height = 25
@@ -473,11 +421,11 @@ object fmLectureView: TfmLectureView
         3CFF3C3C3CFF1E1E1E7E00000000000000000000000000000000}
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 9
+      TabOrder = 8
       OnClick = btnCopyLectureClick
     end
     object CheckBox1: TCheckBox
-      Left = 666
+      Left = 581
       Top = 6
       Width = 76
       Height = 17
@@ -485,11 +433,11 @@ object fmLectureView: TfmLectureView
       Caption = #49692#49436#48320#44221
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 10
+      TabOrder = 9
       OnClick = CheckBox1Click
     end
     object btnReorder: TcxButton
-      Left = 577
+      Left = 492
       Top = 2
       Width = 83
       Height = 25
@@ -534,11 +482,11 @@ object fmLectureView: TfmLectureView
         0000000000000000000000000000000000000000000000000000}
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 11
+      TabOrder = 10
       OnClick = btnReorderClick
     end
     object btnSendServer: TcxButton
-      Left = 993
+      Left = 913
       Top = 2
       Width = 114
       Height = 25
@@ -582,11 +530,11 @@ object fmLectureView: TfmLectureView
         1433000000030000000000000000000000000000000000000000}
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 12
+      TabOrder = 11
       OnClick = btnSendServerClick
     end
     object btnOnlineRegist: TcxButton
-      Left = 878
+      Left = 798
       Top = 2
       Width = 114
       Height = 25
@@ -630,7 +578,7 @@ object fmLectureView: TfmLectureView
         3CFF3C3C3CFF1E1E1E7E00000000000000000000000000000000}
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 13
+      TabOrder = 12
       OnClick = btnOnlineRegistClick
     end
     object BitBtn1: TBitBtn
@@ -639,9 +587,22 @@ object fmLectureView: TfmLectureView
       Width = 40
       Height = 25
       Caption = #44032#51256#50724#44592
-      TabOrder = 14
+      TabOrder = 13
       Visible = False
       OnClick = BitBtn1Click
+    end
+    object chkActiveOnly: TcxCheckBox
+      Left = 216
+      Top = 5
+      Caption = #49688#44053
+      State = cbsChecked
+      Style.LookAndFeel.SkinName = 'DevExpressStyle'
+      StyleDisabled.LookAndFeel.SkinName = 'DevExpressStyle'
+      StyleFocused.LookAndFeel.SkinName = 'DevExpressStyle'
+      StyleHot.LookAndFeel.SkinName = 'DevExpressStyle'
+      TabOrder = 14
+      OnClick = chkActiveOnlyClick
+      Width = 52
     end
   end
   object cxGrid1: TcxGrid
@@ -920,13 +881,17 @@ object fmLectureView: TfmLectureView
         PropertiesClassName = 'TcxImageComboBoxProperties'
         Properties.Items = <
           item
-            Description = #49688#44053#51473
+            Description = #49688#44053
             ImageIndex = 0
             Value = 0
           end
           item
-            Description = #55092#44053#51473
+            Description = #55092#44053
             Value = 1
+          end
+          item
+            Description = #54224#44053
+            Value = 2
           end>
         HeaderAlignmentHorz = taCenter
         Width = 60
@@ -1298,6 +1263,7 @@ object fmLectureView: TfmLectureView
     object dxComponentPrinter1Link1: TdxGridReportLink
       Active = True
       Component = cxGrid1
+      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
       PrinterPage.Header = 6350
@@ -1319,13 +1285,14 @@ object fmLectureView: TfmLectureView
       PrinterPage.PageSize.Y = 297000
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
-      ReportDocument.CreationDate = 44987.634958240740000000
+      ReportDocument.CreationDate = 44994.192686168980000000
       ReportTitle.Font.Charset = DEFAULT_CHARSET
       ReportTitle.Font.Color = clBlack
       ReportTitle.Font.Height = -21
       ReportTitle.Font.Name = 'Times New Roman'
       ReportTitle.Font.Style = [fsBold]
       ReportTitle.Text = #44053#51340#46321#47197#54788#54889
+      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -13
@@ -2414,5 +2381,9 @@ object fmLectureView: TfmLectureView
     DataSet = LECTURE_LIST_SEL
     Left = 904
     Top = 384
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 176
+    Top = 216
   end
 end

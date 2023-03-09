@@ -401,7 +401,7 @@
 						<VersionInfo Name="MajorVer">1</VersionInfo>
 						<VersionInfo Name="MinorVer">0</VersionInfo>
 						<VersionInfo Name="Release">3</VersionInfo>
-						<VersionInfo Name="Build">49</VersionInfo>
+						<VersionInfo Name="Build">50</VersionInfo>
 						<VersionInfo Name="Debug">False</VersionInfo>
 						<VersionInfo Name="PreRelease">False</VersionInfo>
 						<VersionInfo Name="Special">False</VersionInfo>
@@ -413,7 +413,7 @@
 					<VersionInfoKeys>
 						<VersionInfoKeys Name="CompanyName">ccnsoft</VersionInfoKeys>
 						<VersionInfoKeys Name="FileDescription"/>
-						<VersionInfoKeys Name="FileVersion">1.0.3.49</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">1.0.3.50</VersionInfoKeys>
 						<VersionInfoKeys Name="InternalName"/>
 						<VersionInfoKeys Name="LegalCopyright">ccnsoft 2013</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalTrademarks">강좌/수강관리</VersionInfoKeys>

@@ -30,7 +30,7 @@ uses
   dxSkinMoneyTwins, dxSkinPumpkin, dxSkinSilver, dxSkinSpringTime,
   dxSkinStardust, dxSkinSummer2008, dxSkinTheAsphaltWorld, dxSkinValentine,
   dxSkinWhiteprint, dxSkinXmas2008Blue, IdBaseComponent, IdComponent,
-  IdTCPConnection, IdTCPClient, IdHTTP, Gauges;
+  IdTCPConnection, IdTCPClient, IdHTTP, Gauges, cxContainer, cxCheckBox;
 
 type
   TfmLectureView = class(TForm)
@@ -78,7 +78,6 @@ type
     btnDelete: TcxButton;
     btnExport: TcxButton;
     btnPrint: TcxButton;
-    btnAttendance: TcxButton;
     btnCopyLecture: TcxButton;
     cxStyleRepository1: TcxStyleRepository;
     cxStyleDefault: TcxStyle;
@@ -219,6 +218,8 @@ type
     LECTURE_LIST_SELREG_EDATE: TStringField;
     sp_lectureTEACHER_ID2: TStringField;
     sp_lectureTEACHER_ID3: TStringField;
+    PopupMenu1: TPopupMenu;
+    chkActiveOnly: TcxCheckBox;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure btnAddClick(Sender: TObject);
@@ -229,7 +230,6 @@ type
     procedure btnRetrieveClick(Sender: TObject);
     procedure btnDeleteClick(Sender: TObject);
     procedure btnCopyLectureClick(Sender: TObject);
-    procedure btnAttendanceClick(Sender: TObject);
     procedure btnExportClick(Sender: TObject);
     procedure btnPrintClick(Sender: TObject);
     procedure frmYearMonth1cbYearChange(Sender: TObject);
@@ -340,6 +340,7 @@ type
     procedure btnSendServerClick(Sender: TObject);
     procedure btnOnlineRegistClick(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
+    procedure chkActiveOnlyClick(Sender: TObject);
   private
     procedure DeleteAttendanceData(LectureID: string);
     procedure CheckAttendanceExists(lecture_id: string);
@@ -349,6 +350,7 @@ type
       TOTAL_TIME: DOUBLE);
     procedure SetMonthHeader;
     function CountWeek(StartDate, EndDate: TDate; CheckWeek: Integer): Integer;
+    procedure UpdateDateAndTime(LectureID : string);
     { Private declarations }
   public
     { Public declarations }
@@ -392,6 +394,8 @@ begin
   dm.sp_lecture.ParamByName('il_year').AsInteger := frmYearQuarter1.IYear;
   dm.sp_lecture.ParamByName('il_step').AsInteger := frmYearQuarter1.IQuater;
   dm.sp_lecture.Active := True;
+  dm.d_LECTURE.DataSet.Filter := 'IS_ACTIVE = 0';
+  dm.d_LECTURE.DataSet.Filtered := True;
   dm.d_LECTURE.DataSet.Refresh;
 
   dm.sp_lecture_change.ParamByName('il_year').AsInteger := frmYearQuarter1.IYear;
@@ -404,12 +408,10 @@ begin
   if dm.d_LECTURE.DataSet.RecordCount > 0 then begin
     btnEdit.Enabled := True;
     btnDelete.Enabled := True;
-    btnAttendance.Enabled := True;
     btnExport.Enabled := True;
   end else begin
     btnEdit.Enabled := False;
     btnDelete.Enabled := False;
-    btnAttendance.Enabled := False;
     btnExport.Enabled := False;
   end;
   Screen.Cursor := crArrow;
@@ -659,7 +661,7 @@ begin
       dm.d_LECTURE.DataSet.Refresh;
       dm.d_LECTURE_look.DataSet.Refresh;
       dm.d_LECTURE.DataSet.Locate('ID', newID, []);
-      btnAttendance.Click;
+      UpdateDateAndTime(newID);
       gridLecture.Controller.TopRowIndex := toprow;
     end;
   finally
@@ -776,7 +778,7 @@ begin
       end;
       dm.d_LECTURE.DataSet.Refresh;
       dm.d_LECTURE.DataSet.Locate('ID', LectureID, []);
-      btnAttendance.Click;
+      UpdateDateAndTime(LectureID);
       gridLecture.Controller.TopRowIndex := toprow;
     end;
   finally
@@ -784,6 +786,23 @@ begin
     strList.Free;
     fmLectureEdit.Free;
   end;
+end;
+
+procedure TfmLectureView.UpdateDateAndTime(LectureID : string);
+var
+  m1cnt, m2cnt, m3cnt, lecture_time, tcnt, total_time : Integer;
+begin
+  m1cnt := gridLectureMONTH1_DAYS.EditValue;
+  m2cnt := gridLectureMONTH2_DAYS.EditValue;
+  m3cnt := gridLectureMONTH3_DAYS.EditValue;
+  lecture_time := gridLectureL_TIME.EditValue;
+  tcnt := m1cnt + m2cnt + m3cnt;
+  total_time := tcnt * lecture_time;
+
+  UpdateLectureDayTime(LectureID, tcnt, total_time);
+  dm.d_LECTURE.DataSet.Refresh;
+  gridLecture.DataController.GotoBookmark;
+
 end;
 
 procedure TfmLectureView.btnExportClick(Sender: TObject);
@@ -848,54 +867,6 @@ begin
   finally
     fmLectureOnline.Free;
   end;
-end;
-
-procedure TfmLectureView.btnAttendanceClick(Sender: TObject);
-var
-  t, cnt, tcnt, WeekDayNo : Integer;
-  strList : TStringList;
-  WeekDays, LectureID : string;
-  StartDate, EndDate : TDateTime;
-  lecture_time, total_time : Double;
-  m1cnt, m2cnt, m3cnt : integer;
-begin
-  try
-    LectureID := dm.sp_LECTUREID.AsString;
-    StartDate := dm.sp_LECTURESTART_DATE.AsDateTime;
-    EndDate   := dm.sp_LECTUREEND_DATE.AsDateTime;
-    WeekDays  := dm.sp_LECTUREL_DAYS.AsString;
-    lecture_time := dm.sp_LECTUREL_TIME.AsFloat;
-  except
-    ShowMessage('시작날짜나 종료날짜가 없습니다.');
-    Exit;
-  end;
-  gridLecture.DataController.SaveBookmark;
-
-//  strList := TStringList.Create;
-//  strList.CommaText := WeekDays;
-//  tcnt := 0;
-//  WeekDayNo := 1;
-//  for t := 0 to strList.Count - 1 do begin
-//    if strList[t] = '월' then WeekDayNo := 1;  //1=월, 2=화, 3=수, 4=목, 5=금, 6=토, 7=일
-//    if strList[t] = '화' then WeekDayNo := 2;
-//    if strList[t] = '수' then WeekDayNo := 3;
-//    if strList[t] = '목' then WeekDayNo := 4;
-//    if strList[t] = '금' then WeekDayNo := 5;
-//    if strList[t] = '토' then WeekDayNo := 6;
-//    if strList[t] = '일' then WeekDayNo := 7;
-//    cnt := CountWeek(StartDate, EndDate, WeekDayNo);
-//    tcnt := tcnt + cnt;
-//  end;
-  m1cnt := gridLectureMONTH1_DAYS.EditValue;
-  m2cnt := gridLectureMONTH2_DAYS.EditValue;
-  m3cnt := gridLectureMONTH3_DAYS.EditValue;
-  lecture_time := gridLectureL_TIME.EditValue;
-  tcnt := m1cnt + m2cnt + m3cnt;
-  total_time := tcnt * lecture_time;
-
-  UpdateLectureDayTime(LectureID, tcnt, total_time);
-  dm.d_LECTURE.DataSet.Refresh;
-  gridLecture.DataController.GotoBookmark;
 end;
 
 procedure TfmLectureView.UpdateLectureDayTime(lecture_id : string; TOTAL_DAY : INTEGER; TOTAL_TIME : DOUBLE);
@@ -980,6 +951,11 @@ begin
     gridLecture.DragMode := dmAutomatic
   else
     gridLecture.DragMode := dmManual;
+end;
+
+procedure TfmLectureView.chkActiveOnlyClick(Sender: TObject);
+begin
+  dm.d_LECTURE.DataSet.Filtered := chkActiveOnly.Checked;
 end;
 
 procedure TfmLectureView.DeleteAttendanceData(LectureID : string);
@@ -1310,7 +1286,7 @@ procedure TfmLectureView.gridLectureStylesGetContentStyle(
 var
   col : Integer;
 begin
-  col := gridLecture.GetColumnByFieldName('CALC_KIND').Index;
+  col := gridLecture.GetColumnByFieldName('IS_ACTIVE').Index;
   case ARecord.Values[col] of
     1: AStyle := cxStyleBlue;
     2: AStyle := cxStyleRed;
