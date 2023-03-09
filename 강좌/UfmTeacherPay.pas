@@ -153,8 +153,6 @@ type
     TEACHER_MONTHLY_PAY_SELSODUK: TFloatField;
     TEACHER_MONTHLY_PAY_SELJUMIN: TFloatField;
     TEACHER_MONTHLY_PAY_SELNET_AMOUNT: TFloatField;
-    TEACHER_MONTHLY_PAY_SELBANK_NAME: TStringField;
-    TEACHER_MONTHLY_PAY_SELBANK_NO: TStringField;
     TEACHER_MONTHLY_PAY_SELLECTURE_TOTAL_AMOUNT: TFloatField;
     TEACHER_MONTHLY_PAY_SELNET_CENTER_AMOUNT: TFloatField;
     TEACHER_MONTHLY_PAY_SELCOMMON_FEE: TFloatField;
@@ -290,15 +288,6 @@ type
     gridTotalSUM_OF_SODUK: TcxGridDBColumn;
     gridTotalSUM_OF_JUMIN: TcxGridDBColumn;
     gridTotalSUM_OF_NET_AMOUNT: TcxGridDBColumn;
-    TEACHER_SEL_LOOKUP: TUniStoredProc;
-    TEACHER_SEL_LOOKUPID: TStringField;
-    TEACHER_SEL_LOOKUPT_NAME: TStringField;
-    TEACHER_SEL_LOOKUPT_TEL: TStringField;
-    TEACHER_SEL_LOOKUPBANK_NAME: TStringField;
-    TEACHER_SEL_LOOKUPBANK_NO: TStringField;
-    TEACHER_SEL_LOOKUPBANK_CODE: TStringField;
-    TEACHER_SEL_LOOKUPIDX: TIntegerField;
-    ds_TEACHER_SEL_LOOKUP: TDataSource;
     gridTotalBANK_NAME: TcxGridDBColumn;
     gridTotalBankNo: TcxGridDBColumn;
     cxCheckBox1: TcxCheckBox;
@@ -330,7 +319,6 @@ type
     procedure gridPaymentDataControllerCompare(
       ADataController: TcxCustomDataController; ARecordIndex1, ARecordIndex2,
       AItemIndex: Integer; const V1, V2: Variant; var Compare: Integer);
-    procedure FormShow(Sender: TObject);
     procedure cxCheckBox1Click(Sender: TObject);
     procedure gridPaymentBANK_NAMECompareRowValuesForCellMerging(
       Sender: TcxGridColumn; ARow1: TcxGridDataRow;
@@ -1219,12 +1207,6 @@ procedure TfmTeacherPay.FormResize(Sender: TObject);
 begin
   PanelProgress.Top := (ClientHeight div 2) - (PanelProgress.Height div 2);
   PanelProgress.Left := (ClientWidth div 2) - (PanelProgress.Width div 2);
-end;
-
-procedure TfmTeacherPay.FormShow(Sender: TObject);
-begin
-  TEACHER_SEL_LOOKUP.Open;
-  ds_TEACHER_SEL_LOOKUP.DataSet.Refresh;
 end;
 
 procedure TfmTeacherPay.frmYearMonth1cbMonthChange(Sender: TObject);

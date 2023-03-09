@@ -550,6 +550,15 @@ type
     UniQuery1: TUniQuery;
     q_basic_valueCENTER_CHIEF_NAME: TStringField;
     EMP_ATTENDING_IU: TUniStoredProc;
+    TEACHER_SEL_LOOKUP: TUniStoredProc;
+    TEACHER_SEL_LOOKUPID: TStringField;
+    TEACHER_SEL_LOOKUPT_NAME: TStringField;
+    TEACHER_SEL_LOOKUPT_TEL: TStringField;
+    TEACHER_SEL_LOOKUPBANK_NAME: TStringField;
+    TEACHER_SEL_LOOKUPBANK_NO: TStringField;
+    TEACHER_SEL_LOOKUPBANK_CODE: TStringField;
+    TEACHER_SEL_LOOKUPIDX: TIntegerField;
+    ds_TEACHER_SEL_LOOKUP: TDataSource;
     procedure q_CLASSROOMNewRecord(DataSet: TDataSet);
     procedure q_LECTURENewRecord(DataSet: TDataSet);
     procedure t_LOGIN_USERNewRecord(DataSet: TDataSet);
@@ -650,6 +659,7 @@ begin
     q_TEACHER_LOOK.Active := True;
     q_LECTURE_look.Active := True;
     SMS_USER_SEL.Active := True;
+    TEACHER_SEL_LOOKUP.Open;
     if INSERT_ATTEND_DATA = True then
       InsertEmpAttending;
   except on E: Exception do

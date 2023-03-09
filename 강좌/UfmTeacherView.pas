@@ -136,7 +136,6 @@ begin
 
     dm.d_teacher_dong.DataSet.Refresh;
     dm.d_teacher_dong.DataSet.Locate('id', teacher_id, []);
-    dm.d_TEACHER_LOOK.DataSet.Refresh;
   finally
     dm.d_teacher_dong.DataSet.EnableControls;
   end;
@@ -157,6 +156,8 @@ begin
       teacher_id := FormatDateTime('yyyymmddhhnnsszzz', now);
       idx := GetTeacherIDX;
       SaveData(teacher_id, idx+1);
+      dm.d_TEACHER_LOOK.DataSet.Refresh;
+      dm.ds_TEACHER_SEL_LOOKUP.DataSet.Refresh;
     end;
   finally
     fmTeacherEdit.Free;
@@ -186,6 +187,7 @@ begin
     sp.ExecProc;
     dm.d_teacher_dong.DataSet.Refresh;
     dm.d_TEACHER_LOOK.DataSet.Refresh;
+    dm.ds_TEACHER_SEL_LOOKUP.DataSet.Refresh;
     gridTeacher.DataController.GotoBookmark;
   end;
 end;
@@ -214,6 +216,8 @@ begin
     fmTeacherEdit.ShowModal;
     if fmTeacherEdit.ModalResult = mrOk then begin
       SaveData(teacher_id, idx);
+      dm.d_TEACHER_LOOK.DataSet.Refresh;
+      dm.ds_TEACHER_SEL_LOOKUP.DataSet.Refresh;
     end;
   finally
     fmTeacherEdit.Free;

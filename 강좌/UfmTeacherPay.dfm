@@ -17,7 +17,6 @@ object fmTeacherPay: TfmTeacherPay
   OnClose = FormClose
   OnCreate = FormCreate
   OnResize = FormResize
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
@@ -775,7 +774,7 @@ object fmTeacherPay: TfmTeacherPay
           item
             FieldName = 'T_NAME'
           end>
-        Properties.ListSource = ds_TEACHER_SEL_LOOKUP
+        Properties.ListSource = dm.ds_TEACHER_SEL_LOOKUP
         Properties.UseLeftAlignmentOnEditing = False
         GroupIndex = 0
         HeaderAlignmentHorz = taCenter
@@ -853,8 +852,22 @@ object fmTeacherPay: TfmTeacherPay
         HeaderAlignmentHorz = taCenter
         Styles.Content = cxStyleRed
       end
+      object gridPaymentsudang_sum: TcxGridDBColumn
+        Caption = #49688#44053#47308#52264#50529
+        DataBinding.FieldName = 'sudang_sum'
+        HeaderAlignmentHorz = taCenter
+        Width = 82
+      end
       object gridPaymentBANK_NAME: TcxGridDBColumn
-        DataBinding.FieldName = 'BANK_NAME'
+        Caption = #51008#54665#47749
+        DataBinding.FieldName = 'TEACHER_ID'
+        PropertiesClassName = 'TcxLookupComboBoxProperties'
+        Properties.KeyFieldNames = 'ID'
+        Properties.ListColumns = <
+          item
+            FieldName = 'BANK_NAME'
+          end>
+        Properties.ListSource = dm.ds_TEACHER_SEL_LOOKUP
         HeaderAlignmentHorz = taCenter
         HeaderGlyphAlignmentHorz = taCenter
         Options.CellMerging = True
@@ -862,7 +875,15 @@ object fmTeacherPay: TfmTeacherPay
         OnCompareRowValuesForCellMerging = gridPaymentBANK_NAMECompareRowValuesForCellMerging
       end
       object gridPaymentBANK_NO: TcxGridDBColumn
-        DataBinding.FieldName = 'BANK_NO'
+        Caption = #44228#51340#48264#54840
+        DataBinding.FieldName = 'TEACHER_ID'
+        PropertiesClassName = 'TcxLookupComboBoxProperties'
+        Properties.KeyFieldNames = 'ID'
+        Properties.ListColumns = <
+          item
+            FieldName = 'BANK_NO'
+          end>
+        Properties.ListSource = dm.ds_TEACHER_SEL_LOOKUP
         HeaderAlignmentHorz = taCenter
         HeaderGlyphAlignmentHorz = taCenter
         Options.CellMerging = True
@@ -885,12 +906,6 @@ object fmTeacherPay: TfmTeacherPay
         Visible = False
         SortIndex = 0
         SortOrder = soAscending
-      end
-      object gridPaymentsudang_sum: TcxGridDBColumn
-        Caption = #49688#44053#47308#52264#50529
-        DataBinding.FieldName = 'sudang_sum'
-        HeaderAlignmentHorz = taCenter
-        Width = 82
       end
     end
     object cxGrid1Level1: TcxGridLevel
@@ -1091,7 +1106,6 @@ object fmTeacherPay: TfmTeacherPay
           item
             FieldName = 'T_NAME'
           end>
-        Properties.ListSource = ds_TEACHER_SEL_LOOKUP
       end
       object gridTotalSUM_OF_TOTAL_AMOUNT: TcxGridDBColumn
         DataBinding.FieldName = 'SUM_OF_TOTAL_AMOUNT'
@@ -1114,7 +1128,6 @@ object fmTeacherPay: TfmTeacherPay
           item
             FieldName = 'BANK_NAME'
           end>
-        Properties.ListSource = ds_TEACHER_SEL_LOOKUP
       end
       object gridTotalBankNo: TcxGridDBColumn
         Caption = 'BankNo'
@@ -1125,7 +1138,6 @@ object fmTeacherPay: TfmTeacherPay
           item
             FieldName = 'BANK_NO'
           end>
-        Properties.ListSource = ds_TEACHER_SEL_LOOKUP
       end
       object gridTotalT_IDX1: TcxGridDBColumn
         DataBinding.FieldName = 'T_IDX'
@@ -1160,7 +1172,6 @@ object fmTeacherPay: TfmTeacherPay
     object dxComponentPrinter1Link1: TdxGridReportLink
       Active = True
       Component = cxGrid1
-      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
       PrinterPage.Header = 6350
@@ -1184,7 +1195,7 @@ object fmTeacherPay: TfmTeacherPay
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
       ReportDocument.Caption = #48372#44256#49436
-      ReportDocument.CreationDate = 44993.553892743050000000
+      ReportDocument.CreationDate = 44995.168883576390000000
       ReportTitle.AdjustOnReportScale = True
       ReportTitle.Font.Charset = DEFAULT_CHARSET
       ReportTitle.Font.Color = clBlack
@@ -1193,7 +1204,6 @@ object fmTeacherPay: TfmTeacherPay
       ReportTitle.Font.Style = [fsBold]
       ReportTitle.Text = #44053#49324#49688#45817#51648#44553#54788#54889
       ShrinkToPageWidth = True
-      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -13
@@ -2217,17 +2227,6 @@ object fmTeacherPay: TfmTeacherPay
       DisplayLabel = #49892#49688#47161#50529
       FieldName = 'NET_AMOUNT'
       DisplayFormat = '#,'
-    end
-    object TEACHER_MONTHLY_PAY_SELBANK_NAME: TStringField
-      Alignment = taCenter
-      DisplayLabel = #51008#54665#47749
-      FieldName = 'BANK_NAME'
-      Size = 50
-    end
-    object TEACHER_MONTHLY_PAY_SELBANK_NO: TStringField
-      DisplayLabel = #44228#51340#48264#54840
-      FieldName = 'BANK_NO'
-      Size = 30
     end
     object TEACHER_MONTHLY_PAY_SELLECTURE_TOTAL_AMOUNT: TFloatField
       FieldName = 'LECTURE_TOTAL_AMOUNT'
@@ -3390,85 +3389,5 @@ object fmTeacherPay: TfmTeacherPay
   object SaveDialog1: TSaveDialog
     Left = 496
     Top = 160
-  end
-  object TEACHER_SEL_LOOKUP: TUniStoredProc
-    StoredProcName = 'TEACHER_SEL_LOOKUP'
-    Connection = dm.UniConnection1
-    Left = 712
-    Top = 104
-    ParamData = <
-      item
-        DataType = ftString
-        Name = 'ID'
-        ParamType = ptOutput
-        Size = 17
-      end
-      item
-        DataType = ftString
-        Name = 'T_NAME'
-        ParamType = ptOutput
-        Size = 20
-      end
-      item
-        DataType = ftString
-        Name = 'T_TEL'
-        ParamType = ptOutput
-        Size = 30
-      end
-      item
-        DataType = ftString
-        Name = 'BANK_NAME'
-        ParamType = ptOutput
-        Size = 20
-      end
-      item
-        DataType = ftString
-        Name = 'BANK_NO'
-        ParamType = ptOutput
-        Size = 30
-      end
-      item
-        DataType = ftFixedChar
-        Name = 'BANK_CODE'
-        ParamType = ptOutput
-        Size = 3
-      end
-      item
-        DataType = ftInteger
-        Name = 'IDX'
-        ParamType = ptOutput
-      end>
-    CommandStoredProcName = 'TEACHER_SEL_LOOKUP'
-    object TEACHER_SEL_LOOKUPID: TStringField
-      FieldName = 'ID'
-      Size = 17
-    end
-    object TEACHER_SEL_LOOKUPT_NAME: TStringField
-      FieldName = 'T_NAME'
-    end
-    object TEACHER_SEL_LOOKUPT_TEL: TStringField
-      FieldName = 'T_TEL'
-      Size = 30
-    end
-    object TEACHER_SEL_LOOKUPBANK_NAME: TStringField
-      FieldName = 'BANK_NAME'
-    end
-    object TEACHER_SEL_LOOKUPBANK_NO: TStringField
-      FieldName = 'BANK_NO'
-      Size = 30
-    end
-    object TEACHER_SEL_LOOKUPBANK_CODE: TStringField
-      FieldName = 'BANK_CODE'
-      FixedChar = True
-      Size = 3
-    end
-    object TEACHER_SEL_LOOKUPIDX: TIntegerField
-      FieldName = 'IDX'
-    end
-  end
-  object ds_TEACHER_SEL_LOOKUP: TDataSource
-    DataSet = TEACHER_SEL_LOOKUP
-    Left = 712
-    Top = 152
   end
 end

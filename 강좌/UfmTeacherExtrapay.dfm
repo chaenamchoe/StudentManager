@@ -773,7 +773,7 @@
             FieldName = 'BANK_NAME'
           end>
         Properties.ListOptions.ShowHeader = False
-        Properties.ListSource = ds_TEACHER_SEL_LOOKUP
+        Properties.ListSource = dm.ds_TEACHER_SEL_LOOKUP
         Options.CellMerging = True
         Width = 90
         OnCompareRowValuesForCellMerging = gridExtrapayColumn1CompareRowValuesForCellMerging
@@ -788,7 +788,7 @@
             FieldName = 'BANK_NO'
           end>
         Properties.ListOptions.ShowHeader = False
-        Properties.ListSource = ds_TEACHER_SEL_LOOKUP
+        Properties.ListSource = dm.ds_TEACHER_SEL_LOOKUP
         Options.CellMerging = True
         OnCompareRowValuesForCellMerging = gridExtrapayColumn2CompareRowValuesForCellMerging
       end
@@ -924,6 +924,7 @@
     object dxComponentPrinter1Link1: TdxGridReportLink
       Active = True
       Component = cxGrid1
+      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
       PrinterPage.Header = 6350
@@ -946,7 +947,7 @@
       PrinterPage.ScaleMode = smFit
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
-      ReportDocument.CreationDate = 44993.386037291670000000
+      ReportDocument.CreationDate = 44995.168593935190000000
       ReportTitle.Font.Charset = DEFAULT_CHARSET
       ReportTitle.Font.Color = clBlack
       ReportTitle.Font.Height = -21
@@ -954,6 +955,7 @@
       ReportTitle.Font.Style = [fsBold]
       ReportTitle.Text = #44053#51340#46321#47197#54788#54889
       ShrinkToPageWidth = True
+      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -13
@@ -2024,86 +2026,6 @@
         ParamType = ptInput
       end>
     CommandStoredProcName = 'TEACHER_EXTRAPAY_UPDTAX'
-  end
-  object TEACHER_SEL_LOOKUP: TUniStoredProc
-    StoredProcName = 'TEACHER_SEL_LOOKUP'
-    Connection = dm.UniConnection1
-    Left = 952
-    Top = 56
-    ParamData = <
-      item
-        DataType = ftString
-        Name = 'ID'
-        ParamType = ptOutput
-        Size = 17
-      end
-      item
-        DataType = ftString
-        Name = 'T_NAME'
-        ParamType = ptOutput
-        Size = 20
-      end
-      item
-        DataType = ftString
-        Name = 'T_TEL'
-        ParamType = ptOutput
-        Size = 30
-      end
-      item
-        DataType = ftString
-        Name = 'BANK_NAME'
-        ParamType = ptOutput
-        Size = 20
-      end
-      item
-        DataType = ftString
-        Name = 'BANK_NO'
-        ParamType = ptOutput
-        Size = 30
-      end
-      item
-        DataType = ftFixedChar
-        Name = 'BANK_CODE'
-        ParamType = ptOutput
-        Size = 3
-      end
-      item
-        DataType = ftInteger
-        Name = 'IDX'
-        ParamType = ptOutput
-      end>
-    CommandStoredProcName = 'TEACHER_SEL_LOOKUP'
-    object TEACHER_SEL_LOOKUPID: TStringField
-      FieldName = 'ID'
-      Size = 17
-    end
-    object TEACHER_SEL_LOOKUPT_NAME: TStringField
-      FieldName = 'T_NAME'
-    end
-    object TEACHER_SEL_LOOKUPT_TEL: TStringField
-      FieldName = 'T_TEL'
-      Size = 30
-    end
-    object TEACHER_SEL_LOOKUPBANK_NAME: TStringField
-      FieldName = 'BANK_NAME'
-    end
-    object TEACHER_SEL_LOOKUPBANK_NO: TStringField
-      FieldName = 'BANK_NO'
-      Size = 30
-    end
-    object TEACHER_SEL_LOOKUPBANK_CODE: TStringField
-      FieldName = 'BANK_CODE'
-      FixedChar = True
-      Size = 3
-    end
-    object TEACHER_SEL_LOOKUPIDX: TIntegerField
-      FieldName = 'IDX'
-    end
-  end
-  object ds_TEACHER_SEL_LOOKUP: TDataSource
-    DataSet = TEACHER_SEL_LOOKUP
-    Left = 952
-    Top = 104
   end
   object dxMemData2: TdxMemData
     Indexes = <

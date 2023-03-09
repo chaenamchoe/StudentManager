@@ -722,7 +722,6 @@ object fmTeacherView: TfmTeacherView
     object dxComponentPrinter1Link1: TdxGridReportLink
       Active = True
       Component = cxGrid1
-      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
       PrinterPage.Header = 6350
@@ -745,10 +744,9 @@ object fmTeacherView: TfmTeacherView
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
       ReportDocument.Caption = #48372#44256#49436
-      ReportDocument.CreationDate = 44994.193271215280000000
+      ReportDocument.CreationDate = 44995.171516817130000000
       ReportTitle.AdjustOnReportScale = True
       ReportTitle.Text = #44053#49324#46321#47197#54788#54889
-      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -13

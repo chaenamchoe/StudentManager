@@ -217,15 +217,6 @@ type
     TEACHER_EXTRAPAY_UPDTAX: TUniStoredProc;
     gridExtrapayColumn1: TcxGridDBColumn;
     gridExtrapayColumn2: TcxGridDBColumn;
-    TEACHER_SEL_LOOKUP: TUniStoredProc;
-    ds_TEACHER_SEL_LOOKUP: TDataSource;
-    TEACHER_SEL_LOOKUPID: TStringField;
-    TEACHER_SEL_LOOKUPT_NAME: TStringField;
-    TEACHER_SEL_LOOKUPT_TEL: TStringField;
-    TEACHER_SEL_LOOKUPBANK_NAME: TStringField;
-    TEACHER_SEL_LOOKUPBANK_NO: TStringField;
-    TEACHER_SEL_LOOKUPBANK_CODE: TStringField;
-    TEACHER_SEL_LOOKUPIDX: TIntegerField;
     dxMemData2: TdxMemData;
     dxMemData2id: TIntegerField;
     dxMemData2teacher: TStringField;
@@ -600,8 +591,6 @@ end;
 procedure TfmTeacherExtrapay.FormCreate(Sender: TObject);
 begin
   frmYearMonth1.InitYearMonth;
-  TEACHER_SEL_LOOKUP.Open;
-  ds_TEACHER_SEL_LOOKUP.DataSet.Refresh;
   //btnRetrieve.Click;
 end;
 

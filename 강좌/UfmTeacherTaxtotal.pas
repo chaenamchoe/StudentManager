@@ -28,7 +28,7 @@ uses
   dxPScxPageControlProducer, dxPScxGridLnk, dxPScxGridLayoutViewLnk,
   dxPScxEditorProducers, dxPScxExtEditorProducers, dxSkinsdxBarPainter,
   dxSkinsdxRibbonPainter, dxPSCore, dxPScxCommon, cxGridExportLink,
-  cxGridCustomPopupMenu, cxGridPopupMenu;
+  cxGridCustomPopupMenu, cxGridPopupMenu, cxContainer, cxCheckBox;
 
 type
   TfmTeacherTaxtotal = class(TForm)
@@ -62,15 +62,6 @@ type
     gridTaxtotalJUMINSE: TcxGridDBColumn;
     gridTaxtotalNET_AMOUNT: TcxGridDBColumn;
     gridTaxtotalTEACHER_IDX: TcxGridDBColumn;
-    TEACHER_SEL_LOOKUP: TUniStoredProc;
-    TEACHER_SEL_LOOKUPID: TStringField;
-    TEACHER_SEL_LOOKUPT_NAME: TStringField;
-    TEACHER_SEL_LOOKUPT_TEL: TStringField;
-    TEACHER_SEL_LOOKUPBANK_NAME: TStringField;
-    TEACHER_SEL_LOOKUPBANK_NO: TStringField;
-    TEACHER_SEL_LOOKUPBANK_CODE: TStringField;
-    TEACHER_SEL_LOOKUPIDX: TIntegerField;
-    ds_TEACHER_SEL_LOOKUP: TDataSource;
     cxStyleRepository1: TcxStyleRepository;
     cxStyleDefault: TcxStyle;
     cxStyleRed: TcxStyle;
@@ -98,8 +89,6 @@ type
     gridTaxtotalTOTAL_TAX: TcxGridDBColumn;
     TEACHER_CHECK_TAXFREE: TUniStoredProc;
     btnTaxfree: TcxButton;
-    TEACHER_TAXTOTAL_SELBANK_NAME: TStringField;
-    TEACHER_TAXTOTAL_SELBANK_NO: TStringField;
     gridTaxtotalBANK_NAME: TcxGridDBColumn;
     gridTaxtotalBANK_NO: TcxGridDBColumn;
     TEACHER_TAXTOTAL_SELTAX_PAY1: TIntegerField;
@@ -107,6 +96,9 @@ type
     gridTaxtotalTAX_PAY1: TcxGridDBColumn;
     gridTaxtotalTAX_PAY2: TcxGridDBColumn;
     cxGridPopupMenu1: TcxGridPopupMenu;
+    cxCheckBox1: TcxCheckBox;
+    TEACHER_TAXTOTAL_SELLECTURE_CNT: TIntegerField;
+    gridTaxtotalLECTURE_CNT: TcxGridDBColumn;
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnRetrieveClick(Sender: TObject);
@@ -120,6 +112,10 @@ type
       ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo;
       var ADone: Boolean);
     procedure btnAttendListClick(Sender: TObject);
+    procedure cxCheckBox1Click(Sender: TObject);
+    procedure gridTaxtotalTEACHER_IDGetDisplayText(
+      Sender: TcxCustomGridTableItem; ARecord: TcxCustomGridRecord;
+      var AText: string);
   private
     { Private declarations }
   public
@@ -202,6 +198,11 @@ begin
   btnRetrieve.Click;
 end;
 
+procedure TfmTeacherTaxtotal.cxCheckBox1Click(Sender: TObject);
+begin
+  TEACHER_TAXTOTAL_SEL.Filtered := cxCheckBox1.Checked;
+end;
+
 procedure TfmTeacherTaxtotal.btnExportClick(Sender: TObject);
 var
   filepath, nameonly : string;
@@ -230,6 +231,8 @@ begin
   TEACHER_TAXTOTAL_SEL.ParamByName('WYEAR').Value := StrToInt(frmYearMonth1.cbYear.Text);
   TEACHER_TAXTOTAL_SEL.ParamByName('WMON').Value := frmYearMonth1.cbMonth.ItemIndex + 1;
   TEACHER_TAXTOTAL_SEL.Open;
+  TEACHER_TAXTOTAL_SEL.Filter := 'TOTAL_TAX > 0';
+  TEACHER_TAXTOTAL_SEL.Filtered := True;
   ds_TEACHER_TAXTOTAL_SEL.DataSet.Refresh;
 end;
 
@@ -242,8 +245,6 @@ end;
 procedure TfmTeacherTaxtotal.FormShow(Sender: TObject);
 begin
   frmYearMonth1.InitYearMonth;
-  TEACHER_SEL_LOOKUP.Open;
-  ds_TEACHER_SEL_LOOKUP.DataSet.Refresh;
   btnRetrieve.Click;
 end;
 
@@ -261,6 +262,14 @@ begin
   ACanvas.Brush.Color := $00DCF8FF;
   ACanvas.Font.Color := clBlue;
   ACanvas.Font.Style := [fsBold];
+end;
+
+procedure TfmTeacherTaxtotal.gridTaxtotalTEACHER_IDGetDisplayText(
+  Sender: TcxCustomGridTableItem; ARecord: TcxCustomGridRecord;
+  var AText: string);
+begin
+  AText := ARecord.DisplayTexts[gridTaxtotalTEACHER_ID.Index] +
+          '(' + ARecord.DisplayTexts[gridTaxtotalLECTURE_CNT.Index] + ')';
 end;
 
 procedure TfmTeacherTaxtotal.gridTaxtotalTEACHER_IDXGetDataText(

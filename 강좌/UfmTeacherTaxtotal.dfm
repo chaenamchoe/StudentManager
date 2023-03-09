@@ -211,6 +211,19 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
       TabOrder = 5
       OnClick = btnTaxfreeClick
     end
+    object cxCheckBox1: TcxCheckBox
+      Left = 435
+      Top = 5
+      Caption = #49464#50529#54633#44228'>0'
+      State = cbsChecked
+      Style.LookAndFeel.SkinName = 'DevExpressStyle'
+      StyleDisabled.LookAndFeel.SkinName = 'DevExpressStyle'
+      StyleFocused.LookAndFeel.SkinName = 'DevExpressStyle'
+      StyleHot.LookAndFeel.SkinName = 'DevExpressStyle'
+      TabOrder = 6
+      OnClick = cxCheckBox1Click
+      Width = 97
+    end
   end
   object cxGrid1: TcxGrid
     Left = 0
@@ -309,6 +322,16 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
           Format = '#,0'
           Kind = skSum
           Column = gridTaxtotalTAX_PAY2
+        end
+        item
+          Format = '#,0'
+          Kind = skSum
+          Column = gridTaxtotalLECTURE_CNT
+        end
+        item
+          Format = '#,0'
+          Kind = skCount
+          Column = gridTaxtotalTEACHER_ID
         end>
       DataController.Summary.SummaryGroups = <>
       OptionsCustomize.ColumnsQuickCustomization = True
@@ -362,8 +385,18 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
           item
             FieldName = 'T_NAME'
           end>
-        Properties.ListSource = ds_TEACHER_SEL_LOOKUP
+        Properties.ListSource = dm.ds_TEACHER_SEL_LOOKUP
+        OnGetDisplayText = gridTaxtotalTEACHER_IDGetDisplayText
         Width = 82
+      end
+      object gridTaxtotalLECTURE_CNT: TcxGridDBColumn
+        Caption = #44053#51340#49688
+        DataBinding.FieldName = 'LECTURE_CNT'
+        PropertiesClassName = 'TcxTextEditProperties'
+        Properties.Alignment.Horz = taCenter
+        Visible = False
+        HeaderAlignmentHorz = taCenter
+        Width = 52
       end
       object gridTaxtotalTOTAL_AMOUNT: TcxGridDBColumn
         Caption = #54633#44228#44552#50529
@@ -496,12 +529,26 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
       end
       object gridTaxtotalBANK_NAME: TcxGridDBColumn
         Caption = #51008#54665#47749
-        DataBinding.FieldName = 'BANK_NAME'
+        DataBinding.FieldName = 'TEACHER_ID'
+        PropertiesClassName = 'TcxLookupComboBoxProperties'
+        Properties.KeyFieldNames = 'ID'
+        Properties.ListColumns = <
+          item
+            FieldName = 'BANK_NAME'
+          end>
+        Properties.ListSource = dm.ds_TEACHER_SEL_LOOKUP
         Width = 90
       end
       object gridTaxtotalBANK_NO: TcxGridDBColumn
         Caption = #44228#51340#48264#54840
-        DataBinding.FieldName = 'BANK_NO'
+        DataBinding.FieldName = 'TEACHER_ID'
+        PropertiesClassName = 'TcxLookupComboBoxProperties'
+        Properties.KeyFieldNames = 'ID'
+        Properties.ListColumns = <
+          item
+            FieldName = 'BANK_NO'
+          end>
+        Properties.ListSource = dm.ds_TEACHER_SEL_LOOKUP
         Width = 133
       end
     end
@@ -650,16 +697,9 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
         ParamType = ptOutput
       end
       item
-        DataType = ftString
-        Name = 'BANK_NAME'
+        DataType = ftInteger
+        Name = 'LECTURE_CNT'
         ParamType = ptOutput
-        Size = 20
-      end
-      item
-        DataType = ftString
-        Name = 'BANK_NO'
-        ParamType = ptOutput
-        Size = 30
       end>
     CommandStoredProcName = 'TEACHER_TAXTOTAL_SEL'
     object TEACHER_TAXTOTAL_SELID: TIntegerField
@@ -723,98 +763,14 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
     object TEACHER_TAXTOTAL_SELTOTAL_TAX: TIntegerField
       FieldName = 'TOTAL_TAX'
     end
-    object TEACHER_TAXTOTAL_SELBANK_NAME: TStringField
-      FieldName = 'BANK_NAME'
-    end
-    object TEACHER_TAXTOTAL_SELBANK_NO: TStringField
-      FieldName = 'BANK_NO'
-      Size = 30
+    object TEACHER_TAXTOTAL_SELLECTURE_CNT: TIntegerField
+      FieldName = 'LECTURE_CNT'
     end
   end
   object ds_TEACHER_TAXTOTAL_SEL: TDataSource
     DataSet = TEACHER_TAXTOTAL_SEL
     Left = 176
     Top = 256
-  end
-  object TEACHER_SEL_LOOKUP: TUniStoredProc
-    StoredProcName = 'TEACHER_SEL_LOOKUP'
-    Connection = dm.UniConnection1
-    Left = 960
-    Top = 136
-    ParamData = <
-      item
-        DataType = ftString
-        Name = 'ID'
-        ParamType = ptOutput
-        Size = 17
-      end
-      item
-        DataType = ftString
-        Name = 'T_NAME'
-        ParamType = ptOutput
-        Size = 20
-      end
-      item
-        DataType = ftString
-        Name = 'T_TEL'
-        ParamType = ptOutput
-        Size = 30
-      end
-      item
-        DataType = ftString
-        Name = 'BANK_NAME'
-        ParamType = ptOutput
-        Size = 20
-      end
-      item
-        DataType = ftString
-        Name = 'BANK_NO'
-        ParamType = ptOutput
-        Size = 30
-      end
-      item
-        DataType = ftFixedChar
-        Name = 'BANK_CODE'
-        ParamType = ptOutput
-        Size = 3
-      end
-      item
-        DataType = ftInteger
-        Name = 'IDX'
-        ParamType = ptOutput
-      end>
-    CommandStoredProcName = 'TEACHER_SEL_LOOKUP'
-    object TEACHER_SEL_LOOKUPID: TStringField
-      FieldName = 'ID'
-      Size = 17
-    end
-    object TEACHER_SEL_LOOKUPT_NAME: TStringField
-      FieldName = 'T_NAME'
-    end
-    object TEACHER_SEL_LOOKUPT_TEL: TStringField
-      FieldName = 'T_TEL'
-      Size = 30
-    end
-    object TEACHER_SEL_LOOKUPBANK_NAME: TStringField
-      FieldName = 'BANK_NAME'
-    end
-    object TEACHER_SEL_LOOKUPBANK_NO: TStringField
-      FieldName = 'BANK_NO'
-      Size = 30
-    end
-    object TEACHER_SEL_LOOKUPBANK_CODE: TStringField
-      FieldName = 'BANK_CODE'
-      FixedChar = True
-      Size = 3
-    end
-    object TEACHER_SEL_LOOKUPIDX: TIntegerField
-      FieldName = 'IDX'
-    end
-  end
-  object ds_TEACHER_SEL_LOOKUP: TDataSource
-    DataSet = TEACHER_SEL_LOOKUP
-    Left = 960
-    Top = 184
   end
   object cxStyleRepository1: TcxStyleRepository
     Left = 72
@@ -878,6 +834,7 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
     object dxComponentPrinter1Link1: TdxGridReportLink
       Active = True
       Component = cxGrid1
+      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
       PrinterPage.Header = 6350
@@ -900,7 +857,7 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
       PrinterPage.ScaleMode = smFit
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
-      ReportDocument.CreationDate = 44993.429525370370000000
+      ReportDocument.CreationDate = 44995.163167719900000000
       ReportTitle.Font.Charset = DEFAULT_CHARSET
       ReportTitle.Font.Color = clBlack
       ReportTitle.Font.Height = -21
@@ -908,6 +865,7 @@ object fmTeacherTaxtotal: TfmTeacherTaxtotal
       ReportTitle.Font.Style = [fsBold]
       ReportTitle.Text = #44053#51340#46321#47197#54788#54889
       ShrinkToPageWidth = True
+      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -13

@@ -4598,4 +4598,84 @@ object dm: Tdm
       end>
     CommandStoredProcName = 'EMP_ATTENDING_IU'
   end
+  object TEACHER_SEL_LOOKUP: TUniStoredProc
+    StoredProcName = 'TEACHER_SEL_LOOKUP'
+    Connection = UniConnection1
+    Left = 824
+    Top = 8
+    ParamData = <
+      item
+        DataType = ftString
+        Name = 'ID'
+        ParamType = ptOutput
+        Size = 17
+      end
+      item
+        DataType = ftString
+        Name = 'T_NAME'
+        ParamType = ptOutput
+        Size = 20
+      end
+      item
+        DataType = ftString
+        Name = 'T_TEL'
+        ParamType = ptOutput
+        Size = 30
+      end
+      item
+        DataType = ftString
+        Name = 'BANK_NAME'
+        ParamType = ptOutput
+        Size = 20
+      end
+      item
+        DataType = ftString
+        Name = 'BANK_NO'
+        ParamType = ptOutput
+        Size = 30
+      end
+      item
+        DataType = ftFixedChar
+        Name = 'BANK_CODE'
+        ParamType = ptOutput
+        Size = 3
+      end
+      item
+        DataType = ftInteger
+        Name = 'IDX'
+        ParamType = ptOutput
+      end>
+    CommandStoredProcName = 'TEACHER_SEL_LOOKUP'
+    object TEACHER_SEL_LOOKUPID: TStringField
+      FieldName = 'ID'
+      Size = 17
+    end
+    object TEACHER_SEL_LOOKUPT_NAME: TStringField
+      FieldName = 'T_NAME'
+    end
+    object TEACHER_SEL_LOOKUPT_TEL: TStringField
+      FieldName = 'T_TEL'
+      Size = 30
+    end
+    object TEACHER_SEL_LOOKUPBANK_NAME: TStringField
+      FieldName = 'BANK_NAME'
+    end
+    object TEACHER_SEL_LOOKUPBANK_NO: TStringField
+      FieldName = 'BANK_NO'
+      Size = 30
+    end
+    object TEACHER_SEL_LOOKUPBANK_CODE: TStringField
+      FieldName = 'BANK_CODE'
+      FixedChar = True
+      Size = 3
+    end
+    object TEACHER_SEL_LOOKUPIDX: TIntegerField
+      FieldName = 'IDX'
+    end
+  end
+  object ds_TEACHER_SEL_LOOKUP: TDataSource
+    DataSet = TEACHER_SEL_LOOKUP
+    Left = 824
+    Top = 56
+  end
 end
